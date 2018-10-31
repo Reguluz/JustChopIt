@@ -73,12 +73,16 @@ public class CoolDownImageController : MonoBehaviour,SkillButton
 		if (_type.Equals(SkillType.AutoTarget))
 		{
 			Drag.enabled = false;
+			Owner.gameObject.GetComponentInChildren<LineRenderer>().enabled = false;
+			Owner.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
 		}
 		else
 		{
 			Debug.Log("是指向性技能");
 			Click.enabled = false;
 			Drag.Init(Owner,baseInfo.SkillType.Equals(SkillType.LineTarget));
+			Owner.gameObject.GetComponentInChildren<LineRenderer>().enabled = false;
+			Owner.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
 		}
 	}
 

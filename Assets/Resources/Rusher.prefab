@@ -79,8 +79,8 @@ GameObject:
   - component: {fileID: 33052209484787436}
   - component: {fileID: 23238463541129692}
   - component: {fileID: 64799615228159182}
-  - component: {fileID: 136162633041067204}
   - component: {fileID: 81501345671776534}
+  - component: {fileID: 136305931003437596}
   m_Layer: 0
   m_Name: Model
   m_TagString: Player
@@ -194,7 +194,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -282,7 +282,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114665111849130046}
   viewIdField: 0
-  InstantiationId: 2
+  InstantiationId: 1
   isRuntimeInstantiated: 0
 --- !u!114 &114665111849130046
 MonoBehaviour:
@@ -424,7 +424,7 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!136 &136162633041067204
+--- !u!136 &136305931003437596
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -434,9 +434,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.2
-  m_Height: 0.4014104
+  m_Height: 1.5
   m_Direction: 1
-  m_Center: {x: 0, y: 0.19999999, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198247569893825010
 ParticleSystem:
   m_ObjectHideFlags: 1
