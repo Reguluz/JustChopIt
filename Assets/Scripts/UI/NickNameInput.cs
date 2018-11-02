@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Account;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,6 +21,6 @@ public class NickNameInput : MonoBehaviour
 
 	public void SetNickName()
 	{
-		PhotonNetwork.LocalPlayer.NickName = _inputField.text;
+		AccountInfo.Nickname = _inputField.text;
 	}
 }

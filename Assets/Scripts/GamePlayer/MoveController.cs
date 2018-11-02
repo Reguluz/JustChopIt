@@ -46,12 +46,8 @@ namespace GamePlayer
 				//控制转向
 				transform.forward = Vector3.Lerp(transform.forward, direction, RotateLevel*0.002f);
 				//direction = direction.normalized;
-				//transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direction),Time.deltaTime*10);
-
-
-				//forwardposition.x = transform.up.x;
-				//forwardposition.y = transform.up.y;
-
+				Debug.Log(direction.y);
+				
 				Debug.DrawLine(transform.position, transform.position + direction,    Color.cyan);
 				Debug.DrawLine(transform.position, transform.position + transform.forward, Color.red);
 				//向前移动

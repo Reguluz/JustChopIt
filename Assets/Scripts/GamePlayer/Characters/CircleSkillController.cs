@@ -53,7 +53,7 @@ namespace GamePlayer
 #if UNITY_STANDALONE_WIN
 			if (Input.GetKey(KeyCode.J))
 			{
-				Shoot();
+				Shoot(Vector3.zero);
 			}else if (Input.GetKey(KeyCode.K)){
 				Dodge();
 			}

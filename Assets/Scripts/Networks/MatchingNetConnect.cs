@@ -18,20 +18,7 @@ namespace Networks
 		public Text State;
 		
 		private int _reconnectime;
-		/*public Button Match;
-		public Button RoomBtn;
-		
 
-		public Text State;
-		public Text Serverping;
-		public Text CurrentInfo;
-		public Text InfoLists;
-
-		public Text PlayerNum;
-		private List<RoomInfo> _roomInfos;
-		private Player[] _playersInRoom;
-		private String _longInfo;
-		private int _reconnectime;*/
 		private LobbyUIController _lobbyUiController;
 
 
@@ -61,13 +48,15 @@ namespace Networks
 
 		public void StartMatching()
 		{
-			State.text = "随机加入房间中";
+			MessageShow("随机加入房间中");
 			PhotonNetwork.JoinRandomRoom(); //随机加入房间
 		}
 
 		public void CreateRoom()
 		{
+			_lobbyUiController.LocalSettings.SetNickName();
 			PhotonNetwork.CreateRoom(PhotonNetwork.LocalPlayer.NickName); //创建名为1的房间
+			
 		}
 
 		public void LeaveRoom()
@@ -78,19 +67,19 @@ namespace Networks
 		
 		public override void OnConnected()
 		{
-			State.text = "正在连接服务器";
+			MessageShow("正在连接服务器");
 		}
 
 		public override void OnDisconnected(DisconnectCause cause)
 		{
 			_reconnectime++;
-			State.text = "连接服务器失败,正在重新连接第"+_reconnectime+"次";
+			MessageShow("连接服务器失败,正在重新连接第"+_reconnectime+"次");
 			PhotonNetwork.Reconnect();
 		}
 		
 		public override void OnConnectedToMaster()
 		{
-			State.text = "连入服务器成功";
+			MessageShow("连入服务器成功");
 			_lobbyUiController.ConnectSucceed();
 			PhotonNetwork.JoinLobby();
 		}
@@ -103,19 +92,20 @@ namespace Networks
 
 		public override void OnJoinRandomFailed(short returnCode, string message)
 		{
-			State.text = "找不到可进入房间";
+			MessageShow("找不到可进入房间");
 			
 		}
 
 		public override void OnCreatedRoom() //创建房间时调用（只要创建一定会加入
 		{
-			State.text = "创建新房间";
+			MessageShow("创建新房间");
 			Debug.Log("Create Room");
 		}
 
 		public override void OnJoinedRoom() //加入房间时调用
 		{
-			State.text = "加入房间";
+			MessageShow("加入房间");
+			_lobbyUiController.LocalSettings.PlayerSettingInitial();
 			_lobbyUiController.JoinRoom();
 			PhotonNetwork.AutomaticallySyncScene = true; //开启场景同步
 		}
@@ -123,7 +113,13 @@ namespace Networks
 		
 		public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer) //每次有玩家进入房间时调用
 		{
-			State.text = "玩家" + newPlayer.NickName + "进入房间";
+			MessageShow("玩家" + newPlayer.NickName + "进入房间");
+			_lobbyUiController.RefreshRoom();
+		}
+
+		public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
+		{
+			MessageShow("玩家" + otherPlayer.NickName + "离开房间");
 			_lobbyUiController.RefreshRoom();
 		}
 
@@ -138,11 +134,16 @@ namespace Networks
 		IEnumerator LoadGame()
 		{
 			//PlayerPrefs.SetInt("Charactertype",(int) _lobbyUiController.Chosentype);
-			State.text = "倒计时3";
+			//photonView.RPC("MessageShow",RpcTarget.All,"倒计时3");
+			MessageShow("倒计时3");
 			yield return new WaitForSeconds(1f);
-			State.text = "倒计时2";
+			
+			//photonView.RPC("MessageShow",RpcTarget.All,"倒计时2");
+			MessageShow("倒计时2");
 			yield return new WaitForSeconds(1f);
-			State.text = "倒计时1";
+			
+			//photonView.RPC("MessageShow",RpcTarget.All,"倒计时1");
+			MessageShow("倒计时1");
 			yield return new WaitForSeconds(1f);
 			if (PhotonNetwork.IsMasterClient) //检测是否为主机（Photon会自主选择房间内最优用户作为主机
 			{
@@ -160,7 +161,11 @@ namespace Networks
 		{
 			PhotonNetwork.Disconnect();
 		}
-		
-		
+
+		[PunRPC]
+		public void MessageShow(string sentence)
+		{
+			State.text = sentence;
+		}
 	}
 }

@@ -1,16 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 
-public class AccountInfo : MonoBehaviour {
+namespace Account
+{
+	[Serializable]
+	public static class AccountInfo
+	{
+		private static string _id;
+		private static string _nickname;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		public static string Id
+		{
+			get { return _id; }
+			set { _id = value; }
+		}
+
+		public static string Nickname
+		{
+			get { return _nickname; }
+			set { _nickname = value; }
+		}
 	}
 }

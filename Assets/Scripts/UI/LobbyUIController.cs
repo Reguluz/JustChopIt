@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Account;
 using GamePlayer;
 using Networks;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.UI;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 namespace UI
 {
@@ -15,23 +17,24 @@ namespace UI
 		public static int MAXPLAYER = 5;
 
 		public MatchingNetConnect Connection;
+		public GameSettings LocalSettings;
 		
-		public GameObject CharacterList;
-		public GameObject NickNameInput;
 		public Button Match;
 		public Button RoomBtn;
-		public ToggleGroup CharacterlistToggle;
 		public Text Serverping;
 		public Text CurrentInfo;
 		public Text InfoLists;
-
-		public Text PlayerNum;
-		public CharacterType Chosentype;
+		
+		public GameObject NickNameInput;	
 		private List<RoomInfo> _roomInfos;
-		private Player[] _playersInRoom;
-		private String _longInfo;
+		private String _roomInfoText;
+		
+		public GameObject CharacterList;	//选择角色菜单
+		public ToggleGroup CharacterlistToggle;
+		public Text PlayerNum;
+		private String _playerInfoText;
 		private IEnumerable<Toggle> _characters;
-		private GameSettings _localSettings;
+
 
 
 		private void Awake()
@@ -44,7 +47,8 @@ namespace UI
 			StartCoroutine(GetPingFromServer());
 			StartCoroutine(DataRefresh());
 			_characters = CharacterlistToggle.ActiveToggles();
-			_localSettings = GameObject.Find("SystemSettings").GetComponent<GameSettings>();
+			LocalSettings = GameObject.Find("SystemSettings").GetComponent<GameSettings>();
+			NickNameInput.transform.GetChild(0).GetComponent<Text>().text = AccountInfo.Nickname ?? "输入昵称";
 		}
 	
 		// Update is called once per frame
@@ -66,11 +70,46 @@ namespace UI
 			{
 				if (PhotonNetwork.IsMasterClient)
 				{
-					Connection.StartGame();
+					if (PhotonNetwork.PlayerList.Length > 1)
+					{
+						bool allready = true;
+						foreach (Player otherinroom in PhotonNetwork.PlayerListOthers)
+						{
+							if (!(bool) otherinroom.CustomProperties["IsReady"])
+							{
+								allready = false;
+								break;
+							}
+						}
+
+						if (allready)
+						{
+							Connection.StartGame();
+						}
+						else
+						{
+							Connection.MessageShow("有玩家没有准备");
+						}
+					}
+					else
+					{
+						Connection.MessageShow("人数不足无法开始游戏");
+					}
 				}
 				else
 				{
-					//准备
+					if (LocalSettings.IsReady)
+					{
+						LocalSettings.SetReady(false); //准备
+						Match.GetComponentInChildren<Text>().text = "未准备";
+						CharacterlistToggle.allowSwitchOff = true;
+					}
+					else
+					{
+						LocalSettings.SetReady(true); //准备
+						Match.GetComponentInChildren<Text>().text = "准备";
+						CharacterlistToggle.allowSwitchOff = false;
+					}
 				}
 				
 			}
@@ -92,8 +131,7 @@ namespace UI
 			
 			CharacterList.SetActive(true);
 			NickNameInput.SetActive(false);
-			_playersInRoom = PhotonNetwork.PlayerList;
-			CurrentInfo.text = "当前房间内人数" + PhotonNetwork.CurrentRoom.PlayerCount + '\n';
+			//CurrentInfo.text = "当前房间内人数" + PhotonNetwork.CurrentRoom.PlayerCount + '\n';
 			PlayerPrefs.SetInt("Charactertype",0);
 			if (PhotonNetwork.IsMasterClient)
 			{
@@ -102,9 +140,11 @@ namespace UI
 			}
 			else
 			{
-				Match.GetComponentInChildren<Text>().text = "准备(功能还没做）";
+				Match.GetComponentInChildren<Text>().text = "未准备";
 				RoomBtn.GetComponentInChildren<Text>().text = "返回大厅";
 			}
+			RefreshRoom();
+			
 		}
 
 		public void JoinLobby()
@@ -114,16 +154,29 @@ namespace UI
 			NickNameInput.SetActive(true);
 			Match.GetComponentInChildren<Text>().text = "随机加入房间";
 			RoomBtn.GetComponentInChildren<Text>().text = "创建房间";
+			InfoLists.text = _roomInfoText;
 		}
 
 		public void RefreshRoom()
 		{
-			
+			_playerInfoText = "";
+			foreach (Player playerinroom in PhotonNetwork.PlayerList)
+			{
+				if (playerinroom.IsMasterClient)
+				{
+					_playerInfoText += playerinroom.NickName+ "   " + Enum.GetName(typeof(CharacterType), playerinroom.CustomProperties["Character"]) + "   " + "房主";
+				}
+				else
+				{
+					_playerInfoText += playerinroom.NickName+ "   " + Enum.GetName(typeof(CharacterType), playerinroom.CustomProperties["Character"]) + "   " + playerinroom.CustomProperties["IsReady"]+'\n';
+				}
+			}	
 			PlayerNum.text = PhotonNetwork.PlayerList.Length + "/" + MAXPLAYER + "位玩家";
 			if (PhotonNetwork.PlayerList.Length == MAXPLAYER)
 			{
-				//StartGame();
+				Connection.MessageShow("房间人数已满");//StartGame();
 			}
+			InfoLists.text = _playerInfoText;
 		}
 
 		public void RefreshLobby()
@@ -131,17 +184,15 @@ namespace UI
 			CurrentInfo.text = "在线人数" + PhotonNetwork.CountOfPlayers + '\n'
 			                   + "正在匹配人数" + PhotonNetwork.CountOfPlayersOnMaster + '\n'
 			                   + "房间数量" + PhotonNetwork.CountOfRooms + '\n';
-			_longInfo = "";
+			_roomInfoText = "";
 			if (_roomInfos != null)
 			{
 				foreach (RoomInfo roomInfo in _roomInfos)
 				{
-					_longInfo += "房间名:   "+roomInfo.Name+"   " + "房间信息:"+roomInfo.CustomProperties + '\n';
+					_roomInfoText +=roomInfo.Name + "的房间" +"    " + roomInfo.PlayerCount + "/" + roomInfo.MaxPlayers+"人" + '\n';
 				}
 			}
-			
-
-			InfoLists.text = _longInfo;
+			InfoLists.text = _roomInfoText;
 		}
 
 		public void RefreshRoomList(List<RoomInfo> roomList)
@@ -171,19 +222,20 @@ namespace UI
 					switch (t.name)
 					{
 						case "CircleToggle":
-							Chosentype = CharacterType.Circle;
+							
 							//PlayerPrefs.SetInt("Charactertype", 0);
-							_localSettings.ChosenType = CharacterType.Circle;
+							LocalSettings.SetCharacter(CharacterType.Circle);
 							break;
 						case "DiamondToggle":
-							Chosentype = CharacterType.Diamond;
+							
 							//PlayerPrefs.SetInt("Charactertype", 1);
-							_localSettings.ChosenType = CharacterType.Diamond;
+							LocalSettings.SetCharacter(CharacterType.Diamond);
 							break;
 					}
 					break;
 				}
 			}
+			RefreshRoom();
 		}
 		
 		IEnumerator GetPingFromServer()
