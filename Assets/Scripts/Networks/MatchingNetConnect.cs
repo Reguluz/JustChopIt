@@ -13,7 +13,7 @@ namespace Networks
 
 	public class MatchingNetConnect : MonoBehaviourPunCallbacks
 	{
-
+		public int MaxPlayer;
 		
 		public Text State;
 		
@@ -56,7 +56,7 @@ namespace Networks
 		{
 			_lobbyUiController.LocalSettings.SetNickName();
 			PhotonNetwork.CreateRoom(PhotonNetwork.LocalPlayer.NickName); //创建名为1的房间
-			
+			_lobbyUiController.RoomModeMenu.SetActive(false);
 		}
 
 		public void LeaveRoom()
@@ -147,7 +147,13 @@ namespace Networks
 			yield return new WaitForSeconds(1f);
 			if (PhotonNetwork.IsMasterClient) //检测是否为主机（Photon会自主选择房间内最优用户作为主机
 			{
-				PhotonNetwork.LoadLevel("GameScene3D");
+				switch (_lobbyUiController.LocalSettings.GetRoomSetting().MapSerial)
+				{
+					case 0: PhotonNetwork.LoadLevel("GameScene3D");break;
+					case 1: 
+						PhotonNetwork.LoadLevel("GameScene3D");
+						break;
+				}
 			}
 			else
 			{

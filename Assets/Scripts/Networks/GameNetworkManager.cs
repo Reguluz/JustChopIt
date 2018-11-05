@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Cameras;
 using GamePlayer;
@@ -16,6 +17,8 @@ namespace Networks
 		public GameObject MainCamera;
 
 		public UIController GameCanvas;
+
+		public GameBoard GameBoard;
 		//public Camera MainCamera;
 
 		private GameObject _localPlayer;
@@ -24,7 +27,7 @@ namespace Networks
 		// Use this for initialization
 		private void Awake()
 		{
-			_localSettings = GameObject.Find("SystemSettings").GetComponent<GameSettings>();
+			_localSettings = GameObject.Find("GameSettings").GetComponent<GameSettings>();
 		}
 
 		private void OnEnable()
@@ -41,10 +44,11 @@ namespace Networks
 		{
 			Debug.Log("选择序号"+PlayerPrefs.GetInt("Charactertype"));
 			_localPlayer = PhotonNetwork.Instantiate(PlayerPrefab[(int)_localSettings.Chosentype].name, new Vector3(0,1,0), Quaternion.identity, 0);
+			//_localPlayer.GetComponent<PlayerProperties>().Board = GameBoard;
 			MainCamera.GetComponent<CameraFollower>().GamerObject = _localPlayer;
 			_localPlayer.GetComponent<MoveController>().Touch = GameCanvas.EasyTouchMove;
 			GameCanvas.PlayerProperties = _localPlayer.GetComponent<PlayerProperties>();
-			_localPlayer.GetComponent<PlayerProperties>().Hurt(DamageType.Normal,0);
+			_localPlayer.GetComponent<PhotonView>().RPC("ComponentInit",RpcTarget.All);
 			//_localPlayer.GetComponent<PlayerSetup>().PlayerCamera = MainCamera.GetComponent<Camera>();
 		}
 

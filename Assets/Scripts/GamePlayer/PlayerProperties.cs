@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
 namespace GamePlayer
@@ -12,13 +13,18 @@ namespace GamePlayer
 
 		[HideInInspector]
 		public GamePlayerController Controller;
+		public Player User;
+		public GameBoard Board;
 
-		
-		public int KillTime;
-		public int DeathTime;
+		[Header("Data")]
+		public CharacterType CharacterType;
+		public int GroupSerial;
+		public int Score;
+		public int Deathtime;
 		
 		//private MeshRenderer _meshRenderer;
 		public Sprite Map;
+
 		private Vector3 _minPosition;
 		private Vector3 _maxPosition;
 		private readonly Object _locker = new Object();
@@ -36,27 +42,31 @@ namespace GamePlayer
 		// Use this for initialization
 		private void Awake()
 		{
-			ComponentInit();
 		}
 
 		void Start ()
 		{
 			FunctionInit();
 			FxInit();
+			
 		}
 	
 		// Update is called once per frame
 		void Update () {
 		
 		}
-
-		private void ComponentInit()
+		[PunRPC]
+		public void ComponentInit()
 		{
 			//_meshRenderer = GetComponent<MeshRenderer>();
 			_meshModel = transform.GetChild(0).gameObject;
 			_uiController = GameObject.Find("GameCanvas").GetComponent<UIController>();
 			_photonView = GetComponent<PhotonView>();
 			Controller = GetComponent<GamePlayerController>();
+			User = _photonView.Owner;
+			Board = GameObject.Find("ScoreBoard").GetComponent<GameBoard>();
+			Board.AddEntry(this.gameObject);
+			Hurt(DamageType.Normal,0);
 		}
 
 		private void FunctionInit()
@@ -80,7 +90,7 @@ namespace GamePlayer
 		
 		
 		[PunRPC]
-		public void Hurt(DamageType damageType,int killerViewID)
+		public void Hurt(DamageType damageType,int killerViewId)
 		{
 			lock (_locker)
 			{
@@ -88,21 +98,23 @@ namespace GamePlayer
 				
 				if (StateType == PlayerStateType.Alive)
 				{
-					Debug.Log("普通击杀");
-					PhotonView.Find(killerViewID)?.RPC("GetNewScore", RpcTarget.Others);
+					Debug.Log(killerViewId+"普通击杀");
+					PhotonView.Find(killerViewId)?.RPC("GetNewScore", RpcTarget.Others,1);
 					if (Controller.DamageFilter())
 					{
-						Dead();
+						_photonView.RPC("Dead",RpcTarget.All);
+						//Dead();
 					};
 				}else if (StateType == PlayerStateType.Strong)
 				{
 					if (damageType == DamageType.Hard)
 					{
 						Debug.Log("穿刺击杀");
-						PhotonView.Find(killerViewID)?.RPC("GetNewScore", RpcTarget.Others);
+						PhotonView.Find(killerViewId)?.RPC("GetNewScore", RpcTarget.Others,1);
 						if (Controller.DamageFilter())
 						{
-							Dead();
+							_photonView.RPC("Dead",RpcTarget.All);
+							//Dead();
 						};
 					}
 					//闪避
@@ -117,21 +129,27 @@ namespace GamePlayer
 		[PunRPC]
 		public void Dead()
 		{
+			StartCoroutine(RelievePass());
+		}
+
+		IEnumerator RelievePass()
+		{
 			StateType = PlayerStateType.Dead;
+			Deathtime++;
 			_meshModel.SetActive(true);
 			//FXrenderer.enabled = false;
 			Deadparticles.Play();
 			_meshModel.SetActive(false);
 			//屏幕特效
-			Invoke("Relieve",1f);
 			if (_photonView.IsMine)
 			{
 				_uiController.DisableSkill();
 			}
-		}
+			Board.DataRefresh(User);
+			yield return new WaitForSeconds(1f);
+			
+			
 
-		private void Relieve()
-		{
 			StateType = PlayerStateType.Relieve;
 			if (_photonView.IsMine)
 			{
@@ -144,35 +162,53 @@ namespace GamePlayer
 				transform.position = new Vector3(Random.Range(_minPosition.x,_maxPosition.x),Random.Range(_minPosition.y,_maxPosition.y));
 			}*/
 			//屏幕特效
+			Board.DataRefresh(User);
+			yield return new WaitForSeconds(1f);
 			
-			Invoke("Avatar",1f);
-		}
-		
-		private void Avatar()
-		{
+			
+			
+			
 			_meshModel.SetActive(true);
 			//FXrenderer.enabled = true;
 			//AvatarFx.enabled = true;
-			Invoke("NewLife",1f);
-		}
-		
-		private void NewLife()
-		{
+			Board.DataRefresh(User);
+			yield return new WaitForSeconds(1f);
+			
+			
+			
+			
 			if (_photonView.IsMine)
 			{
 				_uiController.AbleSkill();
 			}
 			//AvatarFx.enabled = false;
 			StateType = PlayerStateType.Alive;
+			Board.DataRefresh(User);
+		}
+	
+		private void Relieve()
+		{
+			
+		}
+		
+		private void Avatar()
+		{
+			
+		}
+		
+		private void NewLife()
+		{
+			
 		}
 
 		[PunRPC]
-		public void GetNewScore()
+		public void GetNewScore(int t)
 		{
-			KillTime++;
+			Score+=t;
 			if (gameObject.GetComponent<PhotonView>().IsMine)
 			{
 				Controller.RefreshShow();
+				Board.DataRefresh(User);
 			}
 		}
 

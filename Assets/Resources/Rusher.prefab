@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 136305931003437596}
   m_Layer: 0
   m_Name: Model
-  m_TagString: Player
+  m_TagString: PlayerModel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -311,8 +311,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StateType: 0
   Controller: {fileID: 0}
-  KillTime: 0
-  DeathTime: 0
+  Board: {fileID: 0}
+  CharacterType: 0
+  GroupSerial: 0
+  Score: 0
+  Deathtime: 0
   Map: {fileID: 0}
   Deadparticles: {fileID: 198247569893825010}
 --- !u!114 &114966177438695250

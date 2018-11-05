@@ -14,21 +14,27 @@ namespace UI
 {
 	public class LobbyUIController : MonoBehaviour
 	{
-		public static int MAXPLAYER = 5;
+		
 
+		[Header("Script")]
 		public MatchingNetConnect Connection;
 		public GameSettings LocalSettings;
 		
+		[Header("Total")]
 		public Button Match;
 		public Button RoomBtn;
 		public Text Serverping;
 		public Text CurrentInfo;
 		public Text InfoLists;
 		
+		[Header("Lobby")]
 		public GameObject NickNameInput;	
 		private List<RoomInfo> _roomInfos;
 		private String _roomInfoText;
+		public GameObject RoomModeMenu;
 		
+		
+		[Header("Room")]
 		public GameObject CharacterList;	//选择角色菜单
 		public ToggleGroup CharacterlistToggle;
 		public Text PlayerNum;
@@ -47,8 +53,9 @@ namespace UI
 			StartCoroutine(GetPingFromServer());
 			StartCoroutine(DataRefresh());
 			_characters = CharacterlistToggle.ActiveToggles();
-			LocalSettings = GameObject.Find("SystemSettings").GetComponent<GameSettings>();
+			LocalSettings = GameObject.Find("GameSettings").GetComponent<GameSettings>();
 			NickNameInput.transform.GetChild(0).GetComponent<Text>().text = AccountInfo.Nickname ?? "输入昵称";
+			RoomModeMenu.SetActive(false);
 		}
 	
 		// Update is called once per frame
@@ -70,7 +77,7 @@ namespace UI
 			{
 				if (PhotonNetwork.IsMasterClient)
 				{
-					if (PhotonNetwork.PlayerList.Length > 1)
+					if (PhotonNetwork.PlayerList.Length > -1)
 					{
 						bool allready = true;
 						foreach (Player otherinroom in PhotonNetwork.PlayerListOthers)
@@ -119,11 +126,19 @@ namespace UI
 		{
 			if (PhotonNetwork.InLobby)
 			{
-				Connection.CreateRoom();
+				RoomModeMenu.SetActive(true);
 			}else if (PhotonNetwork.InRoom)
 			{
 				Connection.LeaveRoom();
 			}
+		}
+
+		public void RoomCreate()
+		{
+			RoomModeMenu.SetActive(false);
+			//获取参数
+			Connection.MaxPlayer = LocalSettings.GetRoomSetting().MaxPlayer;
+			Connection.CreateRoom();
 		}
 
 		public void JoinRoom()
@@ -159,20 +174,21 @@ namespace UI
 
 		public void RefreshRoom()
 		{
-			_playerInfoText = "";
+			_playerInfoText = LocalSettings.MapSelector.captionText.text + "  " + LocalSettings.ModeSelector.captionText.text + "  最大人数" + LocalSettings.PlayerSelector.captionText.text + "  目标分数" + LocalSettings.TargetSelector.captionText.text+'\n';
+			_playerInfoText += "玩家姓名"+ "   " + "选择角色" + "   " + "准备状态"+'\n';
 			foreach (Player playerinroom in PhotonNetwork.PlayerList)
 			{
 				if (playerinroom.IsMasterClient)
 				{
-					_playerInfoText += playerinroom.NickName+ "   " + Enum.GetName(typeof(CharacterType), playerinroom.CustomProperties["Character"]) + "   " + "房主";
+					_playerInfoText += playerinroom.NickName+ "   " + Enum.GetName(typeof(CharacterType), playerinroom.CustomProperties["Character"]) + "   " + "房主"+'\n';
 				}
 				else
 				{
 					_playerInfoText += playerinroom.NickName+ "   " + Enum.GetName(typeof(CharacterType), playerinroom.CustomProperties["Character"]) + "   " + playerinroom.CustomProperties["IsReady"]+'\n';
 				}
 			}	
-			PlayerNum.text = PhotonNetwork.PlayerList.Length + "/" + MAXPLAYER + "位玩家";
-			if (PhotonNetwork.PlayerList.Length == MAXPLAYER)
+			PlayerNum.text = PhotonNetwork.PlayerList.Length + "/" + Connection.MaxPlayer + "位玩家";
+			if (PhotonNetwork.PlayerList.Length == Connection.MaxPlayer)
 			{
 				Connection.MessageShow("房间人数已满");//StartGame();
 			}

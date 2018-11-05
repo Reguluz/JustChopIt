@@ -55,7 +55,7 @@ public class UIController : MonoBehaviour
 
 	public void Refresh()
 	{
-		Killednum.text = "击杀了" + PlayerProperties.KillTime;
+		Killednum.text = "得分" + PlayerProperties.Score;
 	}
 
 	public void LeaveGame()

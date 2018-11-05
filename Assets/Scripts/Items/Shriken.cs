@@ -25,7 +25,7 @@ public class Shriken : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{	
-		if (other.CompareTag("Player"))
+		if (other.CompareTag("PlayerModel"))
 		{
 			Debug.Log("命中玩家");
 			GameObject enemyscript = other.transform.parent.gameObject;

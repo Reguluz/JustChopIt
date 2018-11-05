@@ -235,6 +235,7 @@
     <Compile Include="Assets\Scripts\Items\Shriken.cs" />
     <Compile Include="Assets\Scripts\Networks\GameNetworkManager.cs" />
     <Compile Include="Assets\Scripts\Networks\MatchingNetConnect.cs" />
+    <Compile Include="Assets\Scripts\System\GameBoard.cs" />
     <Compile Include="Assets\Scripts\System\GameParameters.cs" />
     <Compile Include="Assets\Scripts\System\GameSettings.cs" />
     <Compile Include="Assets\Scripts\System\SystemOption.cs" />
@@ -245,8 +246,10 @@
     <Compile Include="Assets\Scripts\UI\EasyTouchSkill.cs" />
     <Compile Include="Assets\Scripts\UI\LobbyUIController.cs" />
     <Compile Include="Assets\Scripts\UI\NickNameInput.cs" />
+    <Compile Include="Assets\Scripts\UI\PlayerEntryController.cs" />
     <Compile Include="Assets\Scripts\UI\SkillButton.cs" />
     <Compile Include="Assets\Scripts\UI\UIController.cs" />
+    <Compile Include="Assets\Scripts\UI\UIMouseFunction.cs" />
     <None Include="Assets\Photon\PhotonUnityNetworking\link.xml" />
     <None Include="Assets\Photon\PhotonUnityNetworking\Demos\DemoSlotRacer\Kenney Assets\Copyrights.txt" />
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
@@ -363,6 +366,9 @@
     </Reference>
     <Reference Include="UnityEngine.SharedInternalsModule">
       <HintPath>D:/Professional/Unity/2018.2.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTrackingModule">
+      <HintPath>D:/Professional/Unity/2018.2.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.SpatialTrackingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpriteMaskModule">
       <HintPath>D:/Professional/Unity/2018.2.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll</HintPath>
