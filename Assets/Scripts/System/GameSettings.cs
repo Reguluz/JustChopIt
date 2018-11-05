@@ -51,7 +51,7 @@ namespace System
         {
             SetReady(false);
             SetCharacter(CharacterType.Circle);
-        
+            SetNickName();
         }
 
         public void SetReady(bool isReady)

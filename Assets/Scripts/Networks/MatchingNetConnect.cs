@@ -54,7 +54,7 @@ namespace Networks
 
 		public void CreateRoom()
 		{
-			_lobbyUiController.LocalSettings.SetNickName();
+			
 			PhotonNetwork.CreateRoom(PhotonNetwork.LocalPlayer.NickName); //创建名为1的房间
 			_lobbyUiController.RoomModeMenu.SetActive(false);
 		}
