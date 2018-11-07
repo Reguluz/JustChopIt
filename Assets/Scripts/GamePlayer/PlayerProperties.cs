@@ -10,14 +10,15 @@ namespace GamePlayer
 	{
 
 		public PlayerStateType StateType;
-
 		[HideInInspector]
 		public GamePlayerController Controller;
 		public Player User;
 		public GameBoard Board;
-
-		[Header("Data")]
+		
+		
+		[HideInInspector]
 		public CharacterType CharacterType;
+		[Header("Data")]
 		public int GroupSerial;
 		public int Score;
 		public int Deathtime;
@@ -66,7 +67,7 @@ namespace GamePlayer
 			User = _photonView.Owner;
 			Board = GameObject.Find("ScoreBoard").GetComponent<GameBoard>();
 			Board.AddEntry(this.gameObject);
-			Hurt(DamageType.Normal,0);
+			Dead();
 		}
 
 		private void FunctionInit()
@@ -134,6 +135,7 @@ namespace GamePlayer
 
 		IEnumerator RelievePass()
 		{
+			
 			StateType = PlayerStateType.Dead;
 			Deathtime++;
 			_meshModel.SetActive(true);
@@ -145,7 +147,7 @@ namespace GamePlayer
 			{
 				_uiController.DisableSkill();
 			}
-			Board.DataRefresh(User);
+			Board.DataRefresh(this);
 			yield return new WaitForSeconds(1f);
 			
 			
@@ -162,7 +164,7 @@ namespace GamePlayer
 				transform.position = new Vector3(Random.Range(_minPosition.x,_maxPosition.x),Random.Range(_minPosition.y,_maxPosition.y));
 			}*/
 			//屏幕特效
-			Board.DataRefresh(User);
+			Board.DataRefresh(this);
 			yield return new WaitForSeconds(1f);
 			
 			
@@ -171,7 +173,7 @@ namespace GamePlayer
 			_meshModel.SetActive(true);
 			//FXrenderer.enabled = true;
 			//AvatarFx.enabled = true;
-			Board.DataRefresh(User);
+			Board.DataRefresh(this);
 			yield return new WaitForSeconds(1f);
 			
 			
@@ -183,7 +185,8 @@ namespace GamePlayer
 			}
 			//AvatarFx.enabled = false;
 			StateType = PlayerStateType.Alive;
-			Board.DataRefresh(User);
+			Board.DataRefresh(this);
+			
 		}
 	
 		private void Relieve()
@@ -208,7 +211,7 @@ namespace GamePlayer
 			if (gameObject.GetComponent<PhotonView>().IsMine)
 			{
 				Controller.RefreshShow();
-				Board.DataRefresh(User);
+				
 			}
 		}
 

@@ -28,6 +28,7 @@ namespace Cameras
 	
 		// Update is called once per frame
 		void LateUpdate () {
+			
 			if (_gamerproperty.StateType != PlayerStateType.Dead && _gamerproperty.StateType != PlayerStateType.Relieve)
 			{
 				transform.position = _offset + GamerObject.transform.position;

@@ -1,5 +1,6 @@
 ﻿namespace System
 {
+    [Serializable]
     public struct GameParameters
     {
         public int MapSerial;   //0.示例

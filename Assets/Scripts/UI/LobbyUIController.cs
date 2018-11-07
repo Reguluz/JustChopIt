@@ -30,7 +30,7 @@ namespace UI
 		[Header("Lobby")]
 		public GameObject NickNameInput;	
 		private List<RoomInfo> _roomInfos;
-		private String _roomInfoText;
+		private String _roomListInfoText;
 		public GameObject RoomModeMenu;
 		
 		
@@ -40,6 +40,7 @@ namespace UI
 		public Text PlayerNum;
 		private String _playerInfoText;
 		private IEnumerable<Toggle> _characters;
+		private String _roomSettingText;
 
 
 
@@ -117,6 +118,7 @@ namespace UI
 						Match.GetComponentInChildren<Text>().text = "准备";
 						CharacterlistToggle.allowSwitchOff = false;
 					}
+					RefreshRoom();
 				}
 				
 			}
@@ -137,8 +139,8 @@ namespace UI
 		{
 			RoomModeMenu.SetActive(false);
 			//获取参数
-			Connection.MaxPlayer = LocalSettings.GetRoomSetting().MaxPlayer;
 			Connection.CreateRoom();
+			Connection.MaxPlayer = (int)PhotonNetwork.CurrentRoom.CustomProperties["MaxPlayer"];
 		}
 
 		public void JoinRoom()
@@ -146,7 +148,6 @@ namespace UI
 			
 			CharacterList.SetActive(true);
 			NickNameInput.SetActive(false);
-			//CurrentInfo.text = "当前房间内人数" + PhotonNetwork.CurrentRoom.PlayerCount + '\n';
 			PlayerPrefs.SetInt("Charactertype",0);
 			if (PhotonNetwork.IsMasterClient)
 			{
@@ -169,13 +170,19 @@ namespace UI
 			NickNameInput.SetActive(true);
 			Match.GetComponentInChildren<Text>().text = "随机加入房间";
 			RoomBtn.GetComponentInChildren<Text>().text = "创建房间";
-			InfoLists.text = _roomInfoText;
+			InfoLists.text = _roomListInfoText;
 		}
 
 		public void RefreshRoom()
 		{
-			_playerInfoText = LocalSettings.MapSelector.captionText.text + "  " + LocalSettings.ModeSelector.captionText.text + "  最大人数" + LocalSettings.PlayerSelector.captionText.text + "  目标分数" + LocalSettings.TargetSelector.captionText.text+'\n';
-			_playerInfoText += "玩家姓名"+ "   " + "选择角色" + "   " + "准备状态"+'\n';
+			_roomSettingText =  "地图         "+LocalSettings.MapSelector.options[(int) PhotonNetwork.CurrentRoom.CustomProperties["MapSerial"]].text + '\n'
+			                  + "游戏模式  " 
+			                  + LocalSettings.ModeSelector.options[(int) PhotonNetwork.CurrentRoom.CustomProperties["ModeSerial"]].text + '\n'
+			                  + "最大人数  " 
+			                  + LocalSettings.PlayerSelector.options[(int) PhotonNetwork.CurrentRoom.CustomProperties["MaxPlayer"]].text + '\n'
+			                  + "目标分数  " 
+			                  + LocalSettings.TargetSelector.options[(int) PhotonNetwork.CurrentRoom.CustomProperties["TargetKilling"]].text;
+			_playerInfoText = "玩家姓名"+ "   " + "选择角色" + "   " + "准备状态"+'\n';
 			foreach (Player playerinroom in PhotonNetwork.PlayerList)
 			{
 				if (playerinroom.IsMasterClient)
@@ -184,7 +191,9 @@ namespace UI
 				}
 				else
 				{
-					_playerInfoText += playerinroom.NickName+ "   " + Enum.GetName(typeof(CharacterType), playerinroom.CustomProperties["Character"]) + "   " + playerinroom.CustomProperties["IsReady"]+'\n';
+					_playerInfoText += playerinroom.NickName+ "   " + Enum.GetName(typeof(CharacterType), playerinroom.CustomProperties["Character"]) + "   " 
+					                   + ((bool)playerinroom.CustomProperties["IsReady"]?"准备":"未准备")
+					                                                                   +'\n';
 				}
 			}	
 			PlayerNum.text = PhotonNetwork.PlayerList.Length + "/" + Connection.MaxPlayer + "位玩家";
@@ -193,22 +202,23 @@ namespace UI
 				Connection.MessageShow("房间人数已满");//StartGame();
 			}
 			InfoLists.text = _playerInfoText;
+			CurrentInfo.text = _roomSettingText;
 		}
 
 		public void RefreshLobby()
 		{
-			CurrentInfo.text = "在线人数" + PhotonNetwork.CountOfPlayers + '\n'
-			                   + "正在匹配人数" + PhotonNetwork.CountOfPlayersOnMaster + '\n'
-			                   + "房间数量" + PhotonNetwork.CountOfRooms + '\n';
-			_roomInfoText = "";
+			CurrentInfo.text =   "在线人数      " + PhotonNetwork.CountOfPlayers+"人" + '\n'
+			                   + "正在匹配      " + PhotonNetwork.CountOfPlayersOnMaster+"人" + '\n'
+			                   + "房间数量      " + PhotonNetwork.CountOfRooms+"人" + '\n';
+			_roomListInfoText = "";
 			if (_roomInfos != null)
 			{
 				foreach (RoomInfo roomInfo in _roomInfos)
 				{
-					_roomInfoText +=roomInfo.Name + "的房间" +"    " + roomInfo.PlayerCount + "/" + roomInfo.MaxPlayers+"人" + '\n';
+					_roomListInfoText +=roomInfo.Name + "的房间" +"    " + roomInfo.PlayerCount + "/" + roomInfo.MaxPlayers+"人" + '\n';
 				}
 			}
-			InfoLists.text = _roomInfoText;
+			InfoLists.text = _roomListInfoText;
 		}
 
 		public void RefreshRoomList(List<RoomInfo> roomList)
@@ -275,7 +285,7 @@ namespace UI
 				{
 					RefreshLobby();
 				}
-				yield return new WaitForSeconds(2f);
+				yield return new WaitForSeconds(1f);
 			}
 		}
 	}

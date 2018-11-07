@@ -36,9 +36,9 @@ namespace GamePlayer
 					behaviour.enabled = false;
 				}
 
-				foreach (GameObject gameObject in ObjectNeedDisable)
+				foreach (GameObject gameObjects in ObjectNeedDisable)
 				{
-					gameObject.active = false;
+					gameObjects.SetActive(false);
 				}
 			}
 		}

@@ -21,6 +21,7 @@ public class NickNameInput : MonoBehaviour
 
 	public void SetNickName()
 	{
+		
 		AccountInfo.Nickname = _inputField.text;
 	}
 }

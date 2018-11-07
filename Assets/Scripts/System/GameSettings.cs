@@ -10,7 +10,8 @@ namespace System
     public class GameSettings : MonoBehaviour
     {
 
-        public Hashtable      PlayerProperty = new Hashtable();
+        public Hashtable    PlayerProperty = new Hashtable();
+        public Hashtable    RoomProperty = new Hashtable();
         
         [Header("PlayerSetting")]
         public CharacterType  Chosentype;
@@ -18,7 +19,7 @@ namespace System
         
 
         [Header("RoomSetting")] 
-        private GameParameters _gameParameters;
+        public GameParameters _gameParameters;
         public Dropdown MapSelector;
         public Dropdown ModeSelector;
         public Dropdown PlayerSelector;
@@ -28,7 +29,6 @@ namespace System
 
         private void Awake()
         {
-            DontDestroyOnLoad(this.gameObject);
             SystemSettings();
             PlayerSettingInitial();
         }
@@ -89,16 +89,53 @@ namespace System
 
         public void SetRoomSetting()
         {
-            _gameParameters.MapSerial = MapSelector.value;
-            _gameParameters.ModeSerial = ModeSelector.value;
-            _gameParameters.MaxPlayer = PlayerSelector.value;
-            _gameParameters.TargetKilling = TargetSelector.value;
+            if (RoomProperty.ContainsKey("MapSerial"))
+            {
+                RoomProperty["MapSerial"] = MapSelector.value;
+            }
+            else
+            {
+                RoomProperty.Add("MapSerial", MapSelector.value);
+            }
+            
+            
+            
+            if (RoomProperty.ContainsKey("ModeSerial"))
+            {
+                RoomProperty["ModeSerial"] = ModeSelector.value;
+            }
+            else
+            {
+                RoomProperty.Add("ModeSerial", ModeSelector.value);
+            }
+            
+            
+            
+            if (RoomProperty.ContainsKey("MaxPlayer"))
+            {
+                RoomProperty["MaxPlayer"] = PlayerSelector.value;
+            }
+            else
+            {
+                RoomProperty.Add("MaxPlayer", PlayerSelector.value);
+            }
+            
+            if (RoomProperty.ContainsKey("TargetKilling"))
+            {
+                RoomProperty["TargetKilling"] = TargetSelector.value;
+            }
+            else
+            {
+                RoomProperty.Add("TargetKilling", TargetSelector.value);
+            }
+            
+            
+            
+            PhotonNetwork.CurrentRoom.SetCustomProperties(RoomProperty);
+           
         }
 
-        public GameParameters GetRoomSetting()
-        {
-            return _gameParameters;
-        }
+        
         
     }
 }

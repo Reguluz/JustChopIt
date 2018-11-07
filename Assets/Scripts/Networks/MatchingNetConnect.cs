@@ -54,7 +54,7 @@ namespace Networks
 
 		public void CreateRoom()
 		{
-			
+			_lobbyUiController.LocalSettings.SetNickName();
 			PhotonNetwork.CreateRoom(PhotonNetwork.LocalPlayer.NickName); //创建名为1的房间
 			_lobbyUiController.RoomModeMenu.SetActive(false);
 		}
@@ -100,6 +100,7 @@ namespace Networks
 		{
 			MessageShow("创建新房间");
 			Debug.Log("Create Room");
+			_lobbyUiController.LocalSettings.SetRoomSetting();
 		}
 
 		public override void OnJoinedRoom() //加入房间时调用
@@ -147,7 +148,9 @@ namespace Networks
 			yield return new WaitForSeconds(1f);
 			if (PhotonNetwork.IsMasterClient) //检测是否为主机（Photon会自主选择房间内最优用户作为主机
 			{
-				switch (_lobbyUiController.LocalSettings.GetRoomSetting().MapSerial)
+				
+				_lobbyUiController.LocalSettings.SetRoomSetting();
+				switch ((int)PhotonNetwork.CurrentRoom.CustomProperties["MapSerial"])
 				{
 					case 0: PhotonNetwork.LoadLevel("GameScene3D");break;
 					case 1: 
