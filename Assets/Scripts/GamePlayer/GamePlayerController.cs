@@ -92,5 +92,24 @@ namespace GamePlayer
         {
             
         }
+        
+        protected void Dodge()
+        {
+            Debug.Log("Dodge");
+            Properties.StateType = PlayerStateType.Vanity;
+            PhotonView.RPC("DodgeFx",RpcTarget.All);
+            Invoke(nameof(EndDodge),1f);
+        }
+
+        protected void EndDodge()
+        {
+            Properties.StateType = PlayerStateType.Alive;
+            PhotonView.RPC("FxRebuild",RpcTarget.All);
+        }
+
+        public virtual void Rebuild()    //状态重置
+        {
+            
+        }
     }
 }

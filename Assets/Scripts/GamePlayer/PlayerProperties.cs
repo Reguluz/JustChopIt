@@ -65,7 +65,7 @@ namespace GamePlayer
 			_photonView = GetComponent<PhotonView>();
 			Controller = GetComponent<GamePlayerController>();
 			User = _photonView.Owner;
-			Board = GameObject.Find("ScoreBoard").GetComponent<GameBoard>();
+			//Board = GameObject.Find("ScoreBoard").GetComponent<GameBoard>();
 			Board.AddEntry(this.gameObject);
 			Dead();
 		}
@@ -184,6 +184,7 @@ namespace GamePlayer
 				_uiController.AbleSkill();
 			}
 			//AvatarFx.enabled = false;
+			_photonView.RPC("Rebuild",RpcTarget.All);
 			StateType = PlayerStateType.Alive;
 			Board.DataRefresh(this);
 			
@@ -211,13 +212,9 @@ namespace GamePlayer
 			if (gameObject.GetComponent<PhotonView>().IsMine)
 			{
 				Controller.RefreshShow();
-				
 			}
+			Board.DataRefresh(this);
 		}
-
-		
-
-		
 
 
 		public void OnPhotonInstantiate(PhotonMessageInfo info)

@@ -156,6 +156,9 @@ namespace Networks
 					case 1: 
 						PhotonNetwork.LoadLevel("GameScene3D");
 						break;
+					case 2: 
+						PhotonNetwork.LoadLevel("TestMap1");
+						break;
 				}
 			}
 			else

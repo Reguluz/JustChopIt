@@ -3,28 +3,31 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
-public class DiamondFxController : MonoBehaviour {
+namespace GamePlayer.Characters
+{
+	public class DiamondFxController : CharacterFxController {
 
-	public _2dxFX_BurningFX Rushfx;
-	// Use this for initialization
-	void Awake () {
-		Rushfx.enabled = false;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	[PunRPC]
-	public void RushFx(bool isenable)
-	{
-		if (isenable)
+		public ParticleSystem RushfxParticle;
+
+			void Awake()
 		{
-			Rushfx.enabled = true;
+			RushfxParticle.Stop();
 		}
-		else
+		// Update is called once per frame
+		void Update () {
+			
+		}
+		
+		
+		[PunRPC]
+		public void RushFx(bool isenable)
 		{
-			Rushfx.enabled = false;
+			if(isenable){
+				RushfxParticle.Play();
+			}else{
+				RushfxParticle.Stop();
+			}
+			
 		}
 	}
 }

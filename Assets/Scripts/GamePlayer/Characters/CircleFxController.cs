@@ -1,30 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Photon.Pun;
+﻿using Photon.Pun;
 using UnityEngine;
 
-public class CircleFxController : MonoBehaviour {
-
-	public _2dxFX_Hologram3 Dodgefx;
-	// Use this for initialization
-	void Awake () {
-		Dodgefx.enabled = false;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	[PunRPC]
-	public void DodgeFx(bool isenable)
+namespace GamePlayer.Characters
+{
+	public class CircleFxController : CharacterFxController
 	{
-		if (isenable)
+		public ParticleSystem ShootFxParticle;
+		
+
+		/// <summary>
+		/// Awake is called when the script instance is being loaded.
+		/// </summary>
+		void Awake()
 		{
-			Dodgefx.enabled = true;
+			ShootFxParticle.Stop();
 		}
-		else
+		
+		[PunRPC]
+		public void ShootFx()
 		{
-			Dodgefx.enabled = false;
+			ShootFxParticle.Play();
 		}
+		
 	}
 }

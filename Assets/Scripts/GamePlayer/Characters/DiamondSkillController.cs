@@ -21,6 +21,13 @@ namespace GamePlayer
 			Cooldown = new CoolDownImageController[2];
 		}
 
+		[PunRPC]
+		public override void Rebuild()
+		{
+			RotateLevel = 2;
+			SpeedLevel = 1;	
+		}
+
 		// Use this for initialization
 		
 	
@@ -41,7 +48,9 @@ namespace GamePlayer
 		{
 			switch (skillnum)
 			{
-				case 0:Rush();
+				case 0:Dodge();
+					break;
+				case 1:Rush();
 					break;
 				default:break;
 			}
@@ -69,14 +78,14 @@ namespace GamePlayer
 		{
 			MoveController.SpeedLevel = 2;
 			_isRush = true;
-			//PhotonView.RPC("RushFx",RpcTarget.All,true);
-			Invoke("EndRush",1f);
+			PhotonView.RPC("RushFx",RpcTarget.All,true);
+			Invoke(nameof(EndRush),1f);
 		}
 
 		private void EndRush()
 		{
 			MoveController.SpeedLevel = 1;
-			//PhotonView.RPC("RushFx",RpcTarget.All,false);
+			PhotonView.RPC("RushFx",RpcTarget.All,false);
 			_isRush = false;
 		}
 		

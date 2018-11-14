@@ -21,7 +21,12 @@ namespace GamePlayer
 			Cooldown = new CoolDownImageController[2];
 		}
 
-		
+		[PunRPC]
+		public override void Rebuild()
+		{
+			RotateLevel = 1;
+			SpeedLevel = 1;	
+		}
 
 		private void Update()
 		{
@@ -41,9 +46,9 @@ namespace GamePlayer
 		{
 			switch (skillnum)
 			{
-				case 0:Shoot(direction);
+				case 0:Dodge();
 					break;
-				case 1:Dodge();
+				case 1:Shoot(direction);
 					break;
 				default:break;
 			}
@@ -66,24 +71,11 @@ namespace GamePlayer
 		private void Shoot(Vector3 direction)	
 		{
 			Debug.Log("Shoot direction"+direction);
+			PhotonView.RPC("ShootFx",RpcTarget.All);
 			GameObject shriken = PhotonNetwork.Instantiate(ShrikenPrefab.name, transform.position, transform.rotation, 0);		
 			PhotonView pv = shriken.GetComponent<PhotonView>();
 			pv.RPC("SetOwner", RpcTarget.All,gameObject.GetComponent<PhotonView>().ViewID);		
 			pv.RPC("SetDirection",RpcTarget.All,direction);
-		}
-
-		private void Dodge()
-		{
-			Debug.Log("Dodge");
-			Properties.StateType = PlayerStateType.Vanity;
-			//PhotonView.RPC("DodgeFx",RpcTarget.All,true);
-			Invoke(nameof(EndDodge),1f);
-		}
-
-		private void EndDodge()
-		{
-			Properties.StateType = PlayerStateType.Alive;
-			//PhotonView.RPC("DodgeFx",RpcTarget.All,false);
 		}
 
 		

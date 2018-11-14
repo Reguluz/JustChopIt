@@ -25,6 +25,7 @@ public class Shriken : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{	
+		Debug.Log("命中");
 		if (other.CompareTag("PlayerModel"))
 		{
 			Debug.Log("命中玩家");
@@ -39,11 +40,15 @@ public class Shriken : MonoBehaviour
 					pv.RPC("Hurt", RpcTarget.All, DamageType.Normal,CreatorId);
 				}
 			}
+		}if(other.CompareTag("Terrain")){
+			Debug.Log("命中地形");
+			DestroySelf();
 		}
 	}
 
 	void DestroySelf()
 	{
+		//PhotonNetwork.Destroy(GetComponent<PhotonView>());
 		Destroy(this.gameObject);
 	}
 
