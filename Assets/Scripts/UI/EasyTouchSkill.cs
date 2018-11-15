@@ -56,7 +56,7 @@ namespace UI
                 if (isLine)
                 {
                     GuideUI.GetComponentInChildren<LineRenderer>()?.SetPosition(0,Owner.transform.position+new Vector3(0,-0.75f,0));
-                    GuideUI.GetComponentInChildren<LineRenderer>()?.SetPosition(1,Owner.transform.position+new Vector3(horizontal,0.25f,vertical));
+                    GuideUI.GetComponentInChildren<LineRenderer>()?.SetPosition(1,Owner.transform.position+new Vector3(horizontal,-0.75f,vertical));
                 }
                 else
                 {

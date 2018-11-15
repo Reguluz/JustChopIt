@@ -55,7 +55,7 @@ namespace UI
 			StartCoroutine(DataRefresh());
 			_characters = CharacterlistToggle.ActiveToggles();
 			LocalSettings = GameObject.Find("GameSettings").GetComponent<GameSettings>();
-			NickNameInput.transform.GetChild(0).GetComponent<Text>().text = AccountInfo.Nickname ?? "输入昵称";
+			NickNameInput.transform.GetChild(0).GetComponent<Text>().text = AccountInfo.Nickname ?? "Nickname";
 			RoomModeMenu.SetActive(false);
 		}
 	
@@ -109,13 +109,13 @@ namespace UI
 					if (LocalSettings.IsReady)
 					{
 						LocalSettings.SetReady(false); //准备
-						Match.GetComponentInChildren<Text>().text = "未准备";
+						Match.GetComponentInChildren<Text>().text = "Unready";
 						CharacterlistToggle.allowSwitchOff = true;
 					}
 					else
 					{
 						LocalSettings.SetReady(true); //准备
-						Match.GetComponentInChildren<Text>().text = "准备";
+						Match.GetComponentInChildren<Text>().text = "Ready";
 						CharacterlistToggle.allowSwitchOff = false;
 					}
 					RefreshRoom();
@@ -151,13 +151,13 @@ namespace UI
 			PlayerPrefs.SetInt("Charactertype",0);
 			if (PhotonNetwork.IsMasterClient)
 			{
-				Match.GetComponentInChildren<Text>().text = "开始游戏";
-				RoomBtn.GetComponentInChildren<Text>().text = "返回大厅";
+				Match.GetComponentInChildren<Text>().text = "Start Game";
+				RoomBtn.GetComponentInChildren<Text>().text = "Back";
 			}
 			else
 			{
-				Match.GetComponentInChildren<Text>().text = "未准备";
-				RoomBtn.GetComponentInChildren<Text>().text = "返回大厅";
+				Match.GetComponentInChildren<Text>().text = "Unready";
+				RoomBtn.GetComponentInChildren<Text>().text = "Back";
 			}
 			RefreshRoom();
 			
@@ -165,11 +165,12 @@ namespace UI
 
 		public void JoinLobby()
 		{
+			Debug.Log("LobbyUIRefresh");
 			Match.gameObject.SetActive(true);
 			CharacterList.SetActive(false);
 			NickNameInput.SetActive(true);
-			Match.GetComponentInChildren<Text>().text = "随机加入房间";
-			RoomBtn.GetComponentInChildren<Text>().text = "创建房间";
+			Match.GetComponentInChildren<Text>().text = "Start Matching";
+			RoomBtn.GetComponentInChildren<Text>().text = "Create Room";
 			InfoLists.text = _roomListInfoText;
 		}
 
@@ -247,12 +248,12 @@ namespace UI
 				{
 					switch (t.name)
 					{
-						case "CircleToggle":
+						case "ShooterToggle":
 							
 							//PlayerPrefs.SetInt("Charactertype", 0);
 							LocalSettings.SetCharacter(CharacterType.Circle);
 							break;
-						case "DiamondToggle":
+						case "RusherToggle":
 							
 							//PlayerPrefs.SetInt("Charactertype", 1);
 							LocalSettings.SetCharacter(CharacterType.Diamond);

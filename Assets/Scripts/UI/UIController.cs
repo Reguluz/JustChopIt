@@ -60,8 +60,8 @@ public class UIController : MonoBehaviour
 
 	public void LeaveGame()
 	{
-		PhotonNetwork.LoadLevel(0);
 		PhotonNetwork.LeaveRoom();
+		PhotonNetwork.LoadLevel(0);
 	}
 
 	public void DisableSkill()

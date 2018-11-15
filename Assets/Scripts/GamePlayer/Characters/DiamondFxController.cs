@@ -9,7 +9,7 @@ namespace GamePlayer.Characters
 
 		public ParticleSystem RushfxParticle;
 
-			void Awake()
+		void Awake()
 		{
 			RushfxParticle.Stop();
 		}

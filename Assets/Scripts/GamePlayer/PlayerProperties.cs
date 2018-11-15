@@ -13,7 +13,7 @@ namespace GamePlayer
 		[HideInInspector]
 		public GamePlayerController Controller;
 		public Player User;
-		public GameBoard Board;
+		private GameBoard _board;
 		
 		
 		[HideInInspector]
@@ -24,10 +24,8 @@ namespace GamePlayer
 		public int Deathtime;
 		
 		//private MeshRenderer _meshRenderer;
-		public Sprite Map;
+		public MapController Map;
 
-		private Vector3 _minPosition;
-		private Vector3 _maxPosition;
 		private readonly Object _locker = new Object();
 		private UIController _uiController;
 		private PhotonView _photonView;
@@ -47,7 +45,6 @@ namespace GamePlayer
 
 		void Start ()
 		{
-			FunctionInit();
 			FxInit();
 			
 		}
@@ -65,24 +62,12 @@ namespace GamePlayer
 			_photonView = GetComponent<PhotonView>();
 			Controller = GetComponent<GamePlayerController>();
 			User = _photonView.Owner;
-			//Board = GameObject.Find("ScoreBoard").GetComponent<GameBoard>();
-			Board.AddEntry(this.gameObject);
+			_board = GameObject.Find("ScoreBoard").GetComponent<GameBoard>();
+			_board.AddEntry(this.gameObject);
 			Dead();
 		}
 
-		private void FunctionInit()
-		{
-			Map = GameObject.Find("Map").GetComponent<SpriteRenderer>().sprite;
-			if (Map.texture != null)                                            //当区域贴图不为空时获得贴图的最小坐标（x最小与y最小）和最大坐标（x最大与y最大）来获取生成区域
-			{
-				_minPosition = new Vector3((transform.position.x - (Map.texture.width >> 7) * gameObject.transform.localScale.x),
-					(transform.position.y - (Map.texture.height >> 7) * gameObject.transform.localScale.y),
-					SystemOption.PlayerZPosition);
-				_maxPosition = new Vector3((transform.position.x + (Map.texture.width >> 7) * gameObject.transform.localScale.x),
-					(transform.position.y + (Map.texture.height >> 7) * gameObject.transform.localScale.y),
-					SystemOption.PlayerZPosition);
-			}
-		}
+		
 
 		private void FxInit()
 		{
@@ -147,7 +132,7 @@ namespace GamePlayer
 			{
 				_uiController.DisableSkill();
 			}
-			Board.DataRefresh(this);
+			_board.DataRefresh(this);
 			yield return new WaitForSeconds(1f);
 			
 			
@@ -155,7 +140,7 @@ namespace GamePlayer
 			StateType = PlayerStateType.Relieve;
 			if (_photonView.IsMine)
 			{
-				transform.position = new Vector3(Random.Range(_minPosition.x,_maxPosition.x),1,Random.Range(_minPosition.y,_maxPosition.y));	
+				transform.position = Map.GetRelievePoint();	
 			}
 			
 			/*if (gameObject.GetComponent<PhotonView>().IsMine)
@@ -164,7 +149,7 @@ namespace GamePlayer
 				transform.position = new Vector3(Random.Range(_minPosition.x,_maxPosition.x),Random.Range(_minPosition.y,_maxPosition.y));
 			}*/
 			//屏幕特效
-			Board.DataRefresh(this);
+			_board.DataRefresh(this);
 			yield return new WaitForSeconds(1f);
 			
 			
@@ -173,7 +158,7 @@ namespace GamePlayer
 			_meshModel.SetActive(true);
 			//FXrenderer.enabled = true;
 			//AvatarFx.enabled = true;
-			Board.DataRefresh(this);
+			_board.DataRefresh(this);
 			yield return new WaitForSeconds(1f);
 			
 			
@@ -186,7 +171,7 @@ namespace GamePlayer
 			//AvatarFx.enabled = false;
 			_photonView.RPC("Rebuild",RpcTarget.All);
 			StateType = PlayerStateType.Alive;
-			Board.DataRefresh(this);
+			_board.DataRefresh(this);
 			
 		}
 	
@@ -213,7 +198,7 @@ namespace GamePlayer
 			{
 				Controller.RefreshShow();
 			}
-			Board.DataRefresh(this);
+			_board.DataRefresh(this);
 		}
 
 

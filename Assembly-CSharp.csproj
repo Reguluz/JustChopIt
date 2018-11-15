@@ -240,6 +240,7 @@
      <Compile Include="Assets\Scripts\System\GameBoard.cs" />
      <Compile Include="Assets\Scripts\System\GameParameters.cs" />
      <Compile Include="Assets\Scripts\System\GameSettings.cs" />
+     <Compile Include="Assets\Scripts\System\MapController.cs" />
      <Compile Include="Assets\Scripts\System\SystemOption.cs" />
      <Compile Include="Assets\Scripts\Test\InitTest.cs" />
      <Compile Include="Assets\Scripts\Test\NetworkTest.cs" />

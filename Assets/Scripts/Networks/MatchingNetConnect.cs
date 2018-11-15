@@ -7,6 +7,7 @@ using Photon.Realtime;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = System.Random;
 
 namespace Networks
 {
@@ -20,11 +21,14 @@ namespace Networks
 		private int _reconnectime;
 
 		private LobbyUIController _lobbyUiController;
+		public LogoController logoController;
 
 
 		// Use this for initialization
-		void Start()
+		void Awake()
 		{
+			Debug.Log(PhotonNetwork.InLobby + "  Room" + PhotonNetwork.InRoom);
+
 			PhotonNetwork.ConnectUsingSettings();
 			//PhotonNetwork.ConnectToRegion("cn");
 			_lobbyUiController = GetComponent<LobbyUIController>();
@@ -63,6 +67,7 @@ namespace Networks
 		{
 			PhotonNetwork.LeaveRoom();
 			_lobbyUiController.JoinLobby();
+			logoController.ChangeUiToMatch();
 		}
 		
 		public override void OnConnected()
@@ -80,6 +85,10 @@ namespace Networks
 		public override void OnConnectedToMaster()
 		{
 			MessageShow("连入服务器成功");
+			ConnectInit();
+		}
+
+		public void ConnectInit(){
 			_lobbyUiController.ConnectSucceed();
 			PhotonNetwork.JoinLobby();
 		}
@@ -106,6 +115,7 @@ namespace Networks
 		public override void OnJoinedRoom() //加入房间时调用
 		{
 			MessageShow("加入房间");
+			logoController.ChangeUiToRoom();
 			_lobbyUiController.LocalSettings.PlayerSettingInitial();
 			_lobbyUiController.JoinRoom();
 			PhotonNetwork.AutomaticallySyncScene = true; //开启场景同步
@@ -148,18 +158,8 @@ namespace Networks
 			yield return new WaitForSeconds(1f);
 			if (PhotonNetwork.IsMasterClient) //检测是否为主机（Photon会自主选择房间内最优用户作为主机
 			{
-				
 				_lobbyUiController.LocalSettings.SetRoomSetting();
-				switch ((int)PhotonNetwork.CurrentRoom.CustomProperties["MapSerial"])
-				{
-					case 0: PhotonNetwork.LoadLevel("GameScene3D");break;
-					case 1: 
-						PhotonNetwork.LoadLevel("GameScene3D");
-						break;
-					case 2: 
-						PhotonNetwork.LoadLevel("TestMap1");
-						break;
-				}
+				OpenMap((int)PhotonNetwork.CurrentRoom.CustomProperties["MapSerial"]);
 			}
 			else
 			{
@@ -178,6 +178,27 @@ namespace Networks
 		public void MessageShow(string sentence)
 		{
 			State.text = sentence;
+		}
+
+		private void OpenMap(int i)
+		{
+			switch (i)
+			{
+				case 0: 
+					Random r = new Random();
+					int temp = r.Next(1, 4);
+					OpenMap(temp);
+					break;
+				case 1: 
+					PhotonNetwork.LoadLevel("GameScene3D");
+					break;
+				case 2: 
+					PhotonNetwork.LoadLevel("TestMap1");
+					break;
+				case 3: 
+					PhotonNetwork.LoadLevel("TestMap2");
+					break;
+			}
 		}
 	}
 }

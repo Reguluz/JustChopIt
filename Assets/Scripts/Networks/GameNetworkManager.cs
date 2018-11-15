@@ -20,6 +20,7 @@ namespace Networks
 
 		public GameBoard GameBoard;
 		//public Camera MainCamera;
+		public MapController MapController;
 
 		private GameObject _localPlayer;
 		// Use this for initialization
@@ -41,7 +42,8 @@ namespace Networks
 		{
 			Debug.Log("选择序号"+PlayerPrefs.GetInt("Charactertype"));
 			_localPlayer = PhotonNetwork.Instantiate(PlayerPrefab[(int) PhotonNetwork.LocalPlayer.CustomProperties["Character"]].name, new Vector3(0,1,0), Quaternion.identity, 0);
-			_localPlayer.GetComponent<PlayerProperties>().Board = GameBoard;
+			_localPlayer.GetComponent<PlayerProperties>().Map = MapController;
+			//_localPlayer.GetComponent<PlayerProperties>()._board = GameBoard;
 			MainCamera.GetComponent<CameraFollower>().GamerObject = _localPlayer;
 			_localPlayer.GetComponent<MoveController>().Touch = GameCanvas.EasyTouchMove;
 			GameCanvas.PlayerProperties = _localPlayer.GetComponent<PlayerProperties>();
