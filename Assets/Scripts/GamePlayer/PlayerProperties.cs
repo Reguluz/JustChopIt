@@ -120,7 +120,7 @@ namespace GamePlayer
 
 		IEnumerator RelievePass()
 		{
-			
+			Map?.GridEffect(transform.position,1);
 			StateType = PlayerStateType.Dead;
 			Deathtime++;
 			_meshModel.SetActive(true);
@@ -142,7 +142,7 @@ namespace GamePlayer
 			{
 				transform.position = Map.GetRelievePoint();	
 			}
-			
+			Map?.GridEffect(transform.position,2);
 			/*if (gameObject.GetComponent<PhotonView>().IsMine)
 			{
 				
@@ -156,6 +156,7 @@ namespace GamePlayer
 			
 			
 			_meshModel.SetActive(true);
+			Map?.GridEffect(transform.position,0);
 			//FXrenderer.enabled = true;
 			//AvatarFx.enabled = true;
 			_board.DataRefresh(this);

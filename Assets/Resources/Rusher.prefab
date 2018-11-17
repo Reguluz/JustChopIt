@@ -79,7 +79,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114665111849130046}
   viewIdField: 0
-  InstantiationId: 1
+  InstantiationId: 3
   isRuntimeInstantiated: 0
 --- !u!114 &114665111849130046
 MonoBehaviour:
@@ -390,8 +390,8 @@ GameObject:
   - component: {fileID: 33052209484787436}
   - component: {fileID: 23238463541129692}
   - component: {fileID: 64799615228159182}
-  - component: {fileID: 64939911963122614}
   - component: {fileID: 81501345671776534}
+  - component: {fileID: 2006296466056168253}
   m_Layer: 0
   m_Name: Model
   m_TagString: PlayerModel
@@ -472,20 +472,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: ddc55a5952060984c8720b3cbce95190, type: 3}
---- !u!64 &64939911963122614
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726072855550540}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: ddc55a5952060984c8720b3cbce95190, type: 3}
 --- !u!81 &81501345671776534
 AudioListener:
   m_ObjectHideFlags: 0
@@ -494,6 +480,20 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726072855550540}
   m_Enabled: 1
+--- !u!136 &2006296466056168253
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726072855550540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.01
+  m_Height: 0.02
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &4657512510177507578 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 480188, guid: b357ce5a595b8324eb8d8741703c3f3c, type: 3}

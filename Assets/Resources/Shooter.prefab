@@ -442,6 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StateType: 0
   Controller: {fileID: 0}
+  Board: {fileID: 0}
   CharacterType: 0
   GroupSerial: 0
   Score: 0

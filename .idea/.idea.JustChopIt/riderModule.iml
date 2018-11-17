@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RIDER_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://D:/Professional/Unity/package/ScriptableRenderPipeline-4.1.0-preview/com.unity.render-pipelines.core/Editor" />
+    <content url="file://D:/Professional/Unity/package/ScriptableRenderPipeline-4.1.0-preview/com.unity.render-pipelines.core/Runtime" />
+    <content url="file://D:/Professional/Unity/package/ScriptableRenderPipeline-4.1.0-preview/com.unity.render-pipelines.core/ShaderLibrary" />
+    <content url="file://$MODULE_DIR$/../.." />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
