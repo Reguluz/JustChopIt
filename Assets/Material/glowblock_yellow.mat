@@ -84,7 +84,7 @@ Material:
     - _OcclusionStrength: 1
     - _Open: 0
     - _Parallax: 0.02
-    - _Radius: 1
+    - _Radius: 1.79
     - _SmoothnessTextureChannel: 1
     - _SpecularHighlights: 1
     - _Speed: 80
@@ -93,7 +93,7 @@ Material:
     - _ZWrite: 0
     - _tintAmount: 1
     m_Colors:
-    - _Center: {r: 0, g: 1, b: 3, a: 0}
+    - _Center: {r: 54.906662, g: 1, b: -1.7609192, a: 0}
     - _Color: {r: 0.9803922, g: 1, b: 0, a: 0}
     - _ColorA: {r: 0.02352941, g: 1, b: 0.48029876, a: 1}
     - _ColorB: {r: 0, g: 1, b: 0.122285604, a: 1}

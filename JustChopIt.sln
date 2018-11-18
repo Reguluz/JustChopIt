@@ -1,0 +1,58 @@
+﻿Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{4416850C-8724-49F3-6146-EBE9E131ABCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{BD25876C-2494-284D-9314-442F11F095C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipelines.Core.Runtime", "Unity.RenderPipelines.Core.Runtime.csproj", "{0857994C-A509-9A88-09DA-B8B8C97CC065}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipelines.Core.ShaderLibrary", "Unity.RenderPipelines.Core.ShaderLibrary.csproj", "{6557640F-7CFB-5CBD-05C5-9F3220B179FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{60986A68-227E-E16A-075A-99D098B6176E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipelines.Core.Editor", "Unity.RenderPipelines.Core.Editor.csproj", "{6FCD5B78-7CA9-5E12-0C76-2D6ACF72F03E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{140D12F9-5D7D-1140-8D43-D3F500CDB589}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4416850C-8724-49F3-6146-EBE9E131ABCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4416850C-8724-49F3-6146-EBE9E131ABCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4416850C-8724-49F3-6146-EBE9E131ABCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4416850C-8724-49F3-6146-EBE9E131ABCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD25876C-2494-284D-9314-442F11F095C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD25876C-2494-284D-9314-442F11F095C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD25876C-2494-284D-9314-442F11F095C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD25876C-2494-284D-9314-442F11F095C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0857994C-A509-9A88-09DA-B8B8C97CC065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0857994C-A509-9A88-09DA-B8B8C97CC065}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0857994C-A509-9A88-09DA-B8B8C97CC065}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0857994C-A509-9A88-09DA-B8B8C97CC065}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6557640F-7CFB-5CBD-05C5-9F3220B179FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6557640F-7CFB-5CBD-05C5-9F3220B179FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6557640F-7CFB-5CBD-05C5-9F3220B179FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6557640F-7CFB-5CBD-05C5-9F3220B179FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60986A68-227E-E16A-075A-99D098B6176E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60986A68-227E-E16A-075A-99D098B6176E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60986A68-227E-E16A-075A-99D098B6176E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60986A68-227E-E16A-075A-99D098B6176E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FCD5B78-7CA9-5E12-0C76-2D6ACF72F03E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FCD5B78-7CA9-5E12-0C76-2D6ACF72F03E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FCD5B78-7CA9-5E12-0C76-2D6ACF72F03E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FCD5B78-7CA9-5E12-0C76-2D6ACF72F03E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{140D12F9-5D7D-1140-8D43-D3F500CDB589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{140D12F9-5D7D-1140-8D43-D3F500CDB589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{140D12F9-5D7D-1140-8D43-D3F500CDB589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{140D12F9-5D7D-1140-8D43-D3F500CDB589}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

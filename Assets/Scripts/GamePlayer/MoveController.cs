@@ -7,15 +7,15 @@ namespace GamePlayer
 
 	public class MoveController : MonoBehaviour
 	{
-		private float _local = 5f;
 
-
+		
 		public EasyTouchMove Touch;
 		[HideInInspector]
 		public float SpeedLevel;
 		[HideInInspector]
 		public float RotateLevel;
 
+		private Rigidbody _body;
 		//private Vector3 _forwardposition;
 
 		//private Quaternion _rawRotation;
@@ -25,12 +25,13 @@ namespace GamePlayer
 		//float _lerpTm = 0.0f;
 
 		// Use this for initialization
-		void Start()
+		void Awake()
 		{
+			_body = GetComponent<Rigidbody>();
 		}
 
 		// Update is called once per frame
-		void Update()
+		void FixedUpdate()
 		{
 			MoveByVector3Lerp();
 		}
@@ -49,7 +50,9 @@ namespace GamePlayer
 				Debug.DrawLine(transform.position, transform.position + direction,    Color.cyan);
 				Debug.DrawLine(transform.position, transform.position + transform.forward, Color.red);
 				//向前移动
-				transform.Translate(transform.forward * Time.deltaTime * 3 * SpeedLevel, Space.World);
+				//_body.velocity = transform.position+transform.forward * Time.deltaTime * 30 * SpeedLevel;
+				_body.MovePosition(transform.position+transform.forward * Time.deltaTime * 30 * SpeedLevel);
+				//transform.Translate(transform.forward * Time.deltaTime * 3 * SpeedLevel, Space.World);
 			}
 		}
 

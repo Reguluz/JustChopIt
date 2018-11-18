@@ -13,9 +13,9 @@ public class MapController : MonoBehaviour
     void Awake()
     {
         if(Mapsize.Equals(MapSize.S)){
-            _maxpointdata = 25;
+            _maxpointdata = 250;
         }else{
-            _maxpointdata = 50;
+            _maxpointdata = 500;
         }
     }
 

@@ -89,12 +89,12 @@ namespace GamePlayer
 			_isRush = false;
 		}
 		
-		private void OnTriggerEnter(Collider other)
+		private void OnCollisionEnter(Collision other)
 		{
-			Debug.Log("是否在冲刺:" + _isRush);
-			if (_isRush && other.CompareTag("PlayerModel"))
+			Debug.Log("是否在冲刺:" + _isRush + "对方类型" + other.gameObject.tag);
+			if (_isRush && other.gameObject.CompareTag("Player"))
 			{
-				GameObject enemyscript = other.transform.parent.gameObject;
+				GameObject enemyscript = other.gameObject;
 				Debug.Log(GetComponent<PhotonView>().ViewID + "冲刺碰到了" + enemyscript.GetComponent<PhotonView>().ViewID);
 				if (enemyscript.GetComponent<PhotonView>().ViewID != GetComponent<PhotonView>().ViewID)
 				{

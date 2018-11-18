@@ -1,0 +1,1180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LangVersion>7.2</LangVersion>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{70912AAB-801D-0C4F-4627-1181E224DFA5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Unity.VisualEffectGraph.Editor</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>.</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_3_0;UNITY_2018_3;UNITY_2018;UNITY_INCLUDE_TESTS;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_EVENT_QUEUE;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;UNITY_POST_PROCESSING_STACK_V2;PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;CROSS_PLATFORM_INPUT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoConfig>true</NoConfig>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
+    <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>D:\Professional\Unity\2018.3.0b2\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>D:\Professional\Unity\2018.3.0b2\Editor\Data\Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Compiler\VFXCodeGenerator.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Compiler\VFXExpressionGraph.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Compiler\VFXExpressionMapper.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Compiler\VFXGraphCompiledData.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Compiler\VFXShaderWriter.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Compiler\VFXUniformMapper.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Controls\Element3D.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Controls\VFXColorField.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Controls\VFXControl.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Controls\VFXEnumField.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Controls\VFXFlipBookField.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Controls\VFXLabeledField.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Controls\VFXMatrix4x4Field.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Controls\VFXObjectField.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Controls\VFXReorderableList.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Controls\VFXSliderField.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Controls\VFXStringField.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Controls\VFXStringFieldProvider.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Controls\VFXStringFieldPushButton.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Controls\VFXVector2Field.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Controls\VFXVector3Field.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Controls\VFXVector4Field.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Core\VFXConverter.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Core\VFXLibrary.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Core\VFXSerializer.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Core\VFXSettingAttribute.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Data\VFXData.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Data\VFXDataMesh.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Data\VFXDataParticle.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Debug\DotGraphOutput.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXAttributeExpression.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXBuiltInExpression.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionAbstract.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionAbstractBoolOperation.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionAbstractFloatOperation.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionAbstractNumericOperation.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionAbstractUintOperation.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionAbstractValues.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionBakeCurve.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionBakeGradient.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionCamera.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionCast.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionColor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionCombine.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionContext.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionExtractComponent.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionFlow.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionMath.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionNoise.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionRandom.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionSampleCurve.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionSampleGradient.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionSampleTexture2D.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionSampleTexture2DArray.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionSampleTexture3D.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionSampleTextureCube.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionSampleTextureCubeArray.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionTextureValues.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Expressions\VFXExpressionTransform.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\FilterPopup\VFXBlockProvider.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\FilterPopup\VFXFilterWindow.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Gizmo\VFXGizmo.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Gizmo\VFXGizmoUtility.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Blackboard\VFXBlackboard.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Blackboard\VFXBlackboardCategory.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Blackboard\VFXBlackboardField.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Blackboard\VFXBlackboardPropertyView.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Blackboard\VFXBlackboardRow.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Controllers\Controller.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Controllers\IControlledElement.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\3D\Preview3D.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\3D\Rotate3DManipulator.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\Controllers\VFXBlockController.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\Controllers\VFXContextController.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\Controllers\VFXContextDataAnchorController.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\Controllers\VFXDataAnchorController.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\Controllers\VFXDataEdgeController.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\Controllers\VFXFlowAnchorController.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\Controllers\VFXFlowEdgeController.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\Controllers\VFXGroupNodeController.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\Controllers\VFXNodeController.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\Controllers\VFXOperatorAnchorController.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\Controllers\VFXOperatorController.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\Controllers\VFXParameterController.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\Controllers\VFXParameterNodeController.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\Controllers\VFXSettingController.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\Controllers\VFXSlotContainerController.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\StickyNote.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\VFXBlockDataAnchor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\VFXBlockUI.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\VFXContextUI.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\VFXDataAnchor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\VFXDataAnchorExposedProperties.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\VFXDataEdge.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\VFXEditableDataAnchor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\VFXElement.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\VFXFlowAnchor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\VFXFlowEdge.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\VFXGroupNode.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\VFXMultiOperatorEdit.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\VFXNodeUI.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\VFXOperatorUI.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\VFXOutputDataAnchor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\VFXParameterUI.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Elements\VFXStickyNote.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\VFXComponentBoard.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\VFXTypeDefinition.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\VFXViewPreference.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\VFXViewWindow.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\Controller\VFXGraphUndoCursor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\Controller\VFXGraphValidation.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\Controller\VFXViewController.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\Controller\VFXViewControllerExpressions.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\Controller\VFXViewControllerUndo.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\Properties\BoolPropertyRM.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\Properties\ColorPropertyRM.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\Properties\CurvePropertyRM.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\Properties\GradientPropertyRM.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\Properties\NumericPropertiesRM.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\Properties\ObjectPropertyRM.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\Properties\PropertyRM.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\Properties\SimplePropertiesRM.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\Properties\SpaceablePropertiesRM.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\Properties\StringPropertyRM.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\Properties\Vector3PropertyRM.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\VFXCopy.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\VFXCopyPaste.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\VFXCopyPasteCommon.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\VFXNodeProvider.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\VFXPaste.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\GraphView\Views\VFXView.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Inspector\AdvancedVisualEffectEditor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Inspector\GizmoController.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Inspector\VFXAssetEditor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Inspector\VFXBlockEditor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Inspector\VFXContextEditor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Inspector\VFXManagerEditor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Inspector\VFXParameterEditor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Inspector\VFXSlotContainerEditor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Inspector\VisualEffectEditor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Manipulators\DownClickable.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Manipulators\SuperCollapser.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Attribute\AttributeFromCurve.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Attribute\AttributeFromMap.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Attribute\AttributeMassFromVolume.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Collision\CollisionAABox.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Collision\CollisionBase.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Collision\CollisionCylinder.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Collision\CollisionDepth.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Collision\CollisionPlane.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Collision\CollisionSDF.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Collision\CollisionSphere.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Color\ColorOverLife.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Deprecated\AttributeOverLife.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Deprecated\FlipbookSetTexIndex.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Deprecated\SetLifetime.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Deprecated\SetSizeVariadic.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Deprecated\SizeOverLife.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\FlipBook\FlipbookPlay.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Forces\ConformToSDF.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Forces\ConformToSphere.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Forces\Drag.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Forces\Force.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Forces\Gravity.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Forces\Turbulence.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Forces\VectorFieldForce.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\GPUEvent\GPUEventAlways.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\GPUEvent\GPUEventOnDie.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Kill\KillAABox.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Kill\KillSphere.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Orientation\ConnectTarget.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Orientation\Orient.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Output\CameraFade.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Output\SubpixelAA.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Position\PositionAABox.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Position\PositionBase.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Position\PositionCircle.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Position\PositionCone.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Position\PositionLine.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Position\PositionSequential.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Position\PositionSphere.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Position\PositionTorus.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Position\ProjectOnDepth.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Position\TileWarp.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\SetAttribute.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Size\ScreenSpaceSize.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Spawn\VFXAbstractSpawner.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Spawn\VFXSpawnerBurst.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Spawn\VFXSpawnerBurstOld.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Spawn\VFXSpawnerConstantRate.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Spawn\VFXSpawnerCustomWrapper.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Spawn\VFXSpawnerPeriodicBurst.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Spawn\VFXSpawnerSetAttribute.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Spawn\VFXSpawnerVariableRate.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Test\AllType.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Test\ColorBlockTest.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Test\IncreaseLife.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Test\InitAndUpdateTest.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Test\InitBlockTest.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Test\OutputBlockTest.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Test\RotateTest.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Test\UpdateBlockTest.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Update\Age.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Update\EulerIntegration.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Update\Reap.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Velocity\VelocityBase.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Velocity\VelocityDirection.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Velocity\VelocityRandomize.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Velocity\VelocitySpeed.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Velocity\VelocitySpherical.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\Velocity\VelocityTangent.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\Implementations\VFXBlockUtility.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Blocks\VFXBlock.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\HDRP\VFXAbstractParticleHDRPLitOutput.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\HDRP\VFXLitCubeOutput.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\HDRP\VFXLitMeshOutput.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\HDRP\VFXLitQuadOutput.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\HDRP\VFXLitSphereOutput.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\VFXAbstractParticleOutput.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\VFXBasicCubeOutput.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\VFXBasicEvent.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\VFXBasicGPUEvent.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\VFXBasicInitialize.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\VFXBasicSpawner.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\VFXBasicUpdate.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\VFXCubeTestOutput.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\VFXDecalOutput.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\VFXLineOutput.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\VFXMeshOutput.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\VFXPointOutput.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\VFXQuadOutput.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\Implementations\VFXStaticMeshOutput.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\IVFXSubRenderer.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\VFXCameraSort.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Contexts\VFXContext.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\AABoxVolume.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Absolute.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Add.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\AgeOverLifetime.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\AppendVector.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\BitwiseAnd.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\BitwiseComplement.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\BitwiseLeftShift.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\BitwiseOr.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\BitwiseRightShift.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\BitwiseXor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Branch.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Ceiling.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\ChangeSpace.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\CircleArea.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Clamp.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\ColorLuma.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Condition.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\ConeVolume.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Cosine.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\CrossProduct.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\CylinderVolume.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\AbsoluteDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\AddDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\AppendVectorDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\BranchDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\CeilingDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\ClampDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\ComponentMask.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\CosineDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\DiscretizeDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\DistanceDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\DivideDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\DotProductDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\FitClamped.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\FloorDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\FractionDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\LengthDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\LerpDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\MaximumDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\MinimumDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\ModuloDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\MultiplyDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\NormalizeDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\OneMinusDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\PowerDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\ReciprocalDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\RemapDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\RemapToNegOnePosOneDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\RemapToZeroOneDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\RoundDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\SaturateDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\SawtoothWaveDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\SignDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\SineDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\SineWaveDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\SmoothstepDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\SquaredDistanceDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\SquaredLengthDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\SquareRootDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\SquareWaveDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\StepDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\SubtractDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\SwizzleDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\TangentDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Deprecated\TriangleWaveDeprecated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Discretize.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Distance.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\DistanceToLine.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\DistanceToPlane.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\DistanceToSphere.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Divide.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\DotProduct.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Epsilon.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Floor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Fractional.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\HSVtoRGB.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Length.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Lerp.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\LogicalAnd.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\LogicalNand.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\LogicalNor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\LogicalNot.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\LogicalOr.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\LookAt.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\MainCamera.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Maximum.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Minimum.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Modulo.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Multiply.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Negate.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\NoiseBase.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Normalize.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\OneMinus.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\OrientedBoxVolume.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\PeriodicTotalTime.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\PerlinNoise.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\PerParticleTotalTime.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Pi.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\PolarToRectangular.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Power.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Random.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Reciprocal.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\RectangularToPolar.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\RectangularToSpherical.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Remap.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\RemapToNegOnePosOne.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\RemapToZeroOne.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\RGBtoHSV.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Rotate2D.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Rotate3D.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Round.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SampleBezier.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SampleCurve.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SampleGradient.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SampleTexture2D.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SampleTexture2DArray.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SampleTexture3D.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SampleTextureCube.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SampleTextureCubeArray.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Saturate.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SawtoothWave.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Sequential3D.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SequentialCircle.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SequentialLine.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Sign.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SimplexNoise.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Sine.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SineWave.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Smoothstep.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SphereVolume.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SphericalToRectangular.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SquaredDistance.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SquaredLength.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SquareRoot.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\SquareWave.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Step.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Subtract.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Swizzle.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Tangent.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\Temp\VFXOperatorTest.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\TorusVolume.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\TransformDirection.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\TransformMatrix.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\TransformPosition.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\TransformVector.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\TriangleWave.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\ValueNoise.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\Implementations\VoroNoise2D.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\VFXAbstractOperator.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\VFXAbstractOperatorNew.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\VFXOperator.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\VFXOperatorUtility.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Operators\VFXSanitizeHelper.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Parameters\VFXAttributeParameter.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Parameters\VFXBuiltInParameter.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Parameters\VFXCurrentAttributeParameter.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Parameters\VFXInlineOperator.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Parameters\VFXParameter.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Parameters\VFXSourceAttributeParameter.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotAnimationCurve.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotBool.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotColor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotDirection.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotEncapsulated.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotFlipBook.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotFloat.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotFloat2.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotFloat3.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotFloat4.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotFloatN.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotGradient.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotInt.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotMatrix4x4.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotMesh.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotOrientedBox.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotPosition.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotTexture2D.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotTexture2DArray.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotTexture3D.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotTextureCube.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotTextureCubeArray.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotTransform.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotUint.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\Implementations\VFXSlotVector.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\Slots\VFXSlot.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\VFXGraph.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\VFXModel.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\VFXParameterInfo.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\VFXSlotContainerModel.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Models\VFXUI.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\PackageInfo.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Types\VFXBoxGizmos.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Types\VFXCircleGizmos.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Types\VFXConeGizmos.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Types\VFXCylinderGizmo.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Types\VFXLineGizmos.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Types\VFXPlaneGizmos.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Types\VFXProperty.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Types\VFXPropertyAttribute.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Types\VFXSphereGizmos.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Types\VFXTorusGizmos.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Types\VFXTransformGizmos.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Types\VFXTypeExtension.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Types\VFXTypes.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Types\VFXTypesGizmos.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Types\VFXTypeUtility.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utilities\DotGraph\DotAttribute.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utilities\DotGraph\DotElement.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utilities\DotGraph\DotGraph.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utilities\ParameterBinding\VFXParameterBinderEditor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utilities\pCache\BakeTool\PointCacheBakeTool.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utilities\pCache\BakeTool\PointCacheBakeTool.Mesh.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utilities\pCache\BakeTool\PointCacheBakeTool.Texture.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utilities\pCache\Importer\PointCacheImporter.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utilities\pCache\Operator\VFXOperatorPointCache.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utilities\pCache\PCache.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utilities\pCache\PointCache.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utilities\pCache\PointCacheAsset.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utilities\VectorFieldGenerator.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utilities\VectorFieldImporter\Editor\VectorFieldImporter.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utilities\VectorFieldImporter\Editor\VectorFieldImporterEditor.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utilities\VisualEffectActivationBehaviourInspector.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utils\ProjectUtils.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utils\VFXContextBorder.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utils\VFXDebugWindow.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utils\VFXResources.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\VFXAssetEditorUtility.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\VFXMigration.cs" />
+    <Compile Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\VisualElementExtensions.cs" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXFlow.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXFlowEdge.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXNodeUI.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\uxml\VFXBlackboardSection.uxml" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\uxml\VFXComponentBoard-event.uxml" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\PropertyRMLight.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXParameter.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXReorderableListDark.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXNode.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\uxml\StickyNote.uxml" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXDataAnchor.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Utils\Templates\VFXBlock.template" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\uxml\VFXNode.uxml" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXControlsLight.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXTypeColor.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXView.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXBlock.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXBlackboard.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\GradientBorder.shader" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXContext.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXReorderableList.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\uxml\Resizable.uxml" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\Resizable.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\Selectable.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\PropertyRM.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\StickyNote.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXOperator.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\Element3DGridShader.shader" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXComponentBoard.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\uxml\VFXComponentBoard.uxml" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXControlsDark.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXReorderableListLight.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\VFXControls.uss" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Unity.VisualEffectGraph.Editor.asmdef" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\uxml\VFXParameter.uxml" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\uxml\VFXContext.uxml" />
+    <None Include="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.visualeffectgraph\Editor\Resources\PropertyRMDark.uss" />
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.BaselibModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.BaselibModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.FileSystemHttpModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.FileSystemHttpModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.LocalizationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.ProfilerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTrackingModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.SpatialTrackingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.StreamingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StyleSheetsModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.StyleSheetsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TimelineModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.TimelineModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.UNETModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.UmbraModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.UnityTestProtocolModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.VFXModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Locator">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/Unity.Locator.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Timeline">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Timeline">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/UnityExtensions/Unity/Timeline/Editor/UnityEditor.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Networking">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.GoogleAudioSpatializer">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/Editor/UnityEditor.GoogleAudioSpatializer.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GoogleAudioSpatializer">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.SpatialTracking">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/Editor/UnityEditor.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.VR">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Photon3Unity3D">
+      <HintPath>D:/Project/Unity/JustChopIt/JustChopIt/Assets/Photon/PhotonLibs/Photon3Unity3D.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>D:/Project/Unity/JustChopIt/JustChopIt/Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>D:/Project/Unity/JustChopIt/JustChopIt/Assets/Photon/PhotonUnityNetworking/Code/Editor/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Rider.Unity.Editor.Plugin.Repacked">
+      <HintPath>D:/Project/Unity/JustChopIt/JustChopIt/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Advertisements">
+      <HintPath>D:/Project/Unity/JustChopIt/JustChopIt/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Editor">
+      <HintPath>D:/Project/Unity/JustChopIt/JustChopIt/Library/PackageCache/com.unity.analytics@3.0.9/Unity.Analytics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>D:/Project/Unity/JustChopIt/JustChopIt/Library/PackageCache/com.unity.analytics@3.0.9/Unity.Analytics.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Tracker">
+      <HintPath>D:/Project/Unity/JustChopIt/JustChopIt/Library/PackageCache/com.unity.analytics@3.0.9/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics">
+      <HintPath>D:/Project/Unity/JustChopIt/JustChopIt/Library/PackageCache/com.unity.analytics@3.0.9/Android/Unity.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>D:/Project/Unity/JustChopIt/JustChopIt/Library/PackageCache/com.unity.purchasing@2.0.1/UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Purchasing">
+      <HintPath>D:/Project/Unity/JustChopIt/JustChopIt/Library/PackageCache/com.unity.purchasing@2.0.1/Editor/UnityEditor.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="ChannelPurchase">
+      <HintPath>D:/Project/Unity/JustChopIt/JustChopIt/Library/PackageCache/com.unity.xiaomi@1.0.3/ChannelPurchase.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityStore">
+      <HintPath>D:/Project/Unity/JustChopIt/JustChopIt/Library/PackageCache/com.unity.xiaomi@1.0.3/UnityStore.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/Microsoft.Win32.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/netstandard.dll</HintPath>
+    </Reference>
+    <Reference Include="System.AppContext">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.AppContext.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Concurrent">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Concurrent.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.NonGeneric">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.NonGeneric.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Specialized">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Specialized.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.EventBasedAsync">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.EventBasedAsync.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Primitives">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.TypeConverter">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.TypeConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Console">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Common">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Contracts">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Debug">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.FileVersionInfo">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.FileVersionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Process">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Process.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.StackTrace.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.TextWriterTraceListener">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TextWriterTraceListener.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tools">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.TraceSource">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TraceSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Primitives">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Drawing.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Dynamic.Runtime">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Dynamic.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Extensions">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.ZipFile">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.DriveInfo">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.DriveInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Watcher">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Watcher.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.IsolatedStorage">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.IsolatedStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.MemoryMappedFiles">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.MemoryMappedFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipes">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Pipes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.UnmanagedMemoryStream">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.UnmanagedMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Expressions">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Expressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Parallel">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Parallel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Linq.Queryable">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Queryable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Rtc">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Http.Rtc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.NameResolution">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NameResolution.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.NetworkInformation">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NetworkInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Ping">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Ping.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Primitives">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Requests">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Requests.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Security">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebHeaderCollection">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebHeaderCollection.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebSockets.Client">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebSockets">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ObjectModel">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Emit">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Emit.ILGeneration">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.ILGeneration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Emit.Lightweight">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.Lightweight.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Extensions">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Primitives">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.Reader">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Reader.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.ResourceManager">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Resources.Writer">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Writer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.VisualC">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.CompilerServices.VisualC.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Handles">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Handles.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Numerics">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Formatters.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Json">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Primitives">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Xml">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Claims">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Claims.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Csp">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Csp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Principal.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.SecureString">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.SecureString.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Duplex">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Duplex.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Http">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.NetTcp">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.NetTcp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Primitives">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Security">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.Extensions">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.RegularExpressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Overlapped">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Overlapped.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Parallel">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.Parallel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Thread">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Thread.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.ThreadPool">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.ThreadPool.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Timer">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Timer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.ReaderWriter">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XDocument">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlSerializer">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XDocument">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityScript">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/UnityScript.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityScript.Lang">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/UnityScript.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang">
+      <HintPath>D:/Professional/Unity/2018.3.0b2/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Unity.VisualEffectGraph.Runtime.csproj">
+      <Project>{7EA37377-7CA5-3389-A611-09800A1075DA}</Project>
+      <Name>Unity.VisualEffectGraph.Runtime</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
