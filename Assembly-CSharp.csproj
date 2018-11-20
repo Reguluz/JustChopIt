@@ -228,6 +228,7 @@
     <Compile Include="Assets\Scripts\GamePlayer\Characters\DiamondSkillController.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\Characters\SkillType.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\DamageType.cs" />
+    <Compile Include="Assets\Scripts\GamePlayer\Derivative\Shriken.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\GamePlayerController.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\IGamePlayerControl.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\MoveController.cs" />
@@ -235,7 +236,7 @@
     <Compile Include="Assets\Scripts\GamePlayer\PlayerSetup.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\PlayerStateType.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\SkillBaseInfo.cs" />
-    <Compile Include="Assets\Scripts\Items\Shriken.cs" />
+    <Compile Include="Assets\Scripts\Items\SpeedUp.cs" />
     <Compile Include="Assets\Scripts\Networks\GameNetworkManager.cs" />
     <Compile Include="Assets\Scripts\Networks\MatchingNetConnect.cs" />
     <Compile Include="Assets\Scripts\System\GameBoard.cs" />

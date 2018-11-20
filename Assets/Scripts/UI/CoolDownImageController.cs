@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using GamePlayer;
+using Photon.Pun;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +9,7 @@ using UnityEngine.UI;
 public class CoolDownImageController : MonoBehaviour,SkillButton
 {
 	public GamePlayerController Owner;
-	
+	public PhotonView OwnerPhotonView;
 	public Image DefaultImage;
 	public Image EffectImage;
 
@@ -89,6 +90,7 @@ public class CoolDownImageController : MonoBehaviour,SkillButton
 	public void RegisterOwner(GamePlayerController controller)
 	{
 		Owner = controller;
+		OwnerPhotonView = Owner.gameObject.GetComponent<PhotonView>();
 	}
 
 	public void SkillButtonPressed()
@@ -97,7 +99,8 @@ public class CoolDownImageController : MonoBehaviour,SkillButton
 		if (SkillActived && PlayerActived)
 		{
 			Debug.Log("技能释放了");
-			Owner.SkillRelease(Serial,Vector3.zero);
+			OwnerPhotonView.RPC("SkillRelease",RpcTarget.All,Serial,Vector3.zero);
+			//Owner.SkillRelease(Serial,Vector3.zero);
 			IntervalTime = MaxCoolDown;
 			SkillActived = false;
 			Click.enabled = false;
@@ -110,7 +113,8 @@ public class CoolDownImageController : MonoBehaviour,SkillButton
 		if (SkillActived && PlayerActived)
 		{
 			Debug.Log("技能释放了"+Drag.EndVector);
-			Owner.SkillRelease(Serial,Drag.EndVector);
+			OwnerPhotonView.RPC("SkillRelease",RpcTarget.All,Serial,Drag.EndVector);
+			//Owner.SkillRelease(Serial,Drag.EndVector);
 			IntervalTime = MaxCoolDown;
 			SkillActived = false;
 			Drag.enabled = false;

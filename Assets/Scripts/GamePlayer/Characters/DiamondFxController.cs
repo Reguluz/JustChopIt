@@ -19,9 +19,10 @@ namespace GamePlayer.Characters
 		}
 		
 		
-		[PunRPC]
+		//[PunRPC]
 		public void RushFx(bool isenable)
 		{
+			Debug.Log("Rush is "+isenable);
 			if(isenable){
 				RushfxParticle.Play();
 			}else{

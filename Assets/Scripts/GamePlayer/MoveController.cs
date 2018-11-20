@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 namespace GamePlayer
@@ -12,6 +13,8 @@ namespace GamePlayer
 		public EasyTouchMove Touch;
 		[HideInInspector]
 		public float SpeedLevel;
+		[HideInInspector]
+		public float ISpeedLevel;
 		[HideInInspector]
 		public float RotateLevel;
 
@@ -51,9 +54,21 @@ namespace GamePlayer
 				Debug.DrawLine(transform.position, transform.position + transform.forward, Color.red);
 				//向前移动
 				//_body.velocity = transform.position+transform.forward * Time.deltaTime * 30 * SpeedLevel;
-				_body.MovePosition(transform.position+transform.forward * Time.deltaTime * 30 * SpeedLevel);
+				_body.MovePosition(transform.position+transform.forward * Time.deltaTime * 30 * SpeedLevel * (1+ISpeedLevel));
 				//transform.Translate(transform.forward * Time.deltaTime * 3 * SpeedLevel, Space.World);
 			}
+		}
+
+		[PunRPC]
+		public void GetBuff(float coefficient, float effecttime)
+		{
+			ISpeedLevel += coefficient;
+			Invoke(nameof(RebuildBuff),effecttime);
+		}
+
+		public void RebuildBuff()
+		{
+			ISpeedLevel = 1;
 		}
 
 

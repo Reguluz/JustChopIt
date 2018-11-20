@@ -16,8 +16,16 @@ public class UIController : MonoBehaviour
 	public GameObject Menu;
 
 	public Text Pingshow;
+	public Text Fps;
 	public Text Killednum;
 
+	
+	//fps
+	public float fpsMeasuringDelta = 2.0f;
+
+	private float timePassed;
+	private int m_FrameCount = 0;
+	private float m_FPS = 0.0f;
 
 	//public static UIController UiCanvas;
 
@@ -26,13 +34,30 @@ public class UIController : MonoBehaviour
 	{
 		StartCoroutine(GetPingFromServer());
 
+		/***FPS*****************************/
+		timePassed = 0.0f;
+		/***FPS*****************************/
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		
+		
+		/*******fps*****************************************************/
+		m_FrameCount = m_FrameCount + 1;
+		timePassed = timePassed + Time.deltaTime;
+		if (timePassed > fpsMeasuringDelta)
+		{
+			m_FPS = m_FrameCount / timePassed;
 
+			timePassed = 0.0f;
+			m_FrameCount = 0;
+		}
+		Fps.text = m_FPS.ToString();
+		/*******fps******************************************************/
 	}
 
+	//隐藏未使用的技能槽位
 	public void RejectorBlank()
 	{
 		foreach (GameObject obj in Skill)
@@ -44,6 +69,7 @@ public class UIController : MonoBehaviour
 		}
 	}
 	
+	//定时获取PING
 	IEnumerator GetPingFromServer()
 	{
 		while (true)
@@ -53,6 +79,7 @@ public class UIController : MonoBehaviour
 		}
 	}
 
+	
 	public void Refresh()
 	{
 		Killednum.text = "得分" + PlayerProperties.Score;

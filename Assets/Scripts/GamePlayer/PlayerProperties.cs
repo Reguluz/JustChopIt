@@ -88,8 +88,8 @@ namespace GamePlayer
 					PhotonView.Find(killerViewId)?.RPC("GetNewScore", RpcTarget.Others,1);
 					if (Controller.DamageFilter())
 					{
-						_photonView.RPC("Dead",RpcTarget.All);
-						//Dead();
+						//_photonView.RPC("Dead",RpcTarget.All);
+						Dead();
 					};
 				}else if (StateType == PlayerStateType.Strong)
 				{
@@ -99,8 +99,8 @@ namespace GamePlayer
 						PhotonView.Find(killerViewId)?.RPC("GetNewScore", RpcTarget.Others,1);
 						if (Controller.DamageFilter())
 						{
-							_photonView.RPC("Dead",RpcTarget.All);
-							//Dead();
+							//_photonView.RPC("Dead",RpcTarget.All);
+							Dead();
 						};
 					}
 					//闪避
@@ -112,7 +112,7 @@ namespace GamePlayer
 			}
 		}
 
-		[PunRPC]
+		//[PunRPC]
 		public void Dead()
 		{
 			StartCoroutine(RelievePass());
@@ -120,7 +120,7 @@ namespace GamePlayer
 
 		IEnumerator RelievePass()
 		{
-			Map?.GridEffect(transform.position,1);
+			
 			StateType = PlayerStateType.Dead;
 			Deathtime++;
 			_meshModel.SetActive(true);
@@ -131,6 +131,7 @@ namespace GamePlayer
 			if (_photonView.IsMine)
 			{
 				_uiController.DisableSkill();
+				Map.GridEffect(transform.position,1);
 			}
 			_board.DataRefresh(this);
 			yield return new WaitForSeconds(1f);
@@ -140,9 +141,9 @@ namespace GamePlayer
 			StateType = PlayerStateType.Relieve;
 			if (_photonView.IsMine)
 			{
-				transform.position = Map.GetRelievePoint();	
+				transform.position = Map.GetRelievePoint();
+				Map.GridEffect(transform.position, 2);
 			}
-			Map?.GridEffect(transform.position,2);
 			/*if (gameObject.GetComponent<PhotonView>().IsMine)
 			{
 				
@@ -156,7 +157,7 @@ namespace GamePlayer
 			
 			
 			_meshModel.SetActive(true);
-			Map?.GridEffect(transform.position,0);
+			
 			//FXrenderer.enabled = true;
 			//AvatarFx.enabled = true;
 			_board.DataRefresh(this);
@@ -168,9 +169,11 @@ namespace GamePlayer
 			if (_photonView.IsMine)
 			{
 				_uiController.AbleSkill();
+				Map.GridEffect(transform.position,0);
 			}
 			//AvatarFx.enabled = false;
-			_photonView.RPC("Rebuild",RpcTarget.All);
+			Controller.Rebuild();
+			//_photonView.RPC("Rebuild",RpcTarget.All);
 			StateType = PlayerStateType.Alive;
 			_board.DataRefresh(this);
 			

@@ -1,31 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Photon.Pun;
-using UnityEditor;
+﻿using Photon.Pun;
 using UnityEngine;
 
-namespace GamePlayer
+namespace GamePlayer.Characters
 {
 	public class DiamondSkillController : GamePlayerController
 	{
 		//私有技能参数
 		private bool _isRush = false;
-		
+		private DiamondFxController _fxController;
 		
 		
 		private void Awake()
 		{
 			//初始化基础参数（转向速度等级、移动速度等级、按技能数量新建控制器
 			RotateLevel = 2;
-			SpeedLevel = 1;
+			SpeedLevel = 1.25f;
 			Cooldown = new CoolDownImageController[2];
+			_fxController = gameObject.GetComponent<DiamondFxController>();
 		}
 
 		[PunRPC]
 		public override void Rebuild()
 		{
 			RotateLevel = 2;
-			SpeedLevel = 1;	
+			SpeedLevel = 1.25f;	
 		}
 
 		// Use this for initialization
@@ -44,6 +42,7 @@ namespace GamePlayer
 			
 
 		//技能释放选择（操作来源于UI）
+		[PunRPC]
 		public override void SkillRelease(int skillnum,Vector3 direction)
 		{
 			switch (skillnum)
@@ -71,21 +70,42 @@ namespace GamePlayer
 				return true;
 			}
 		}
-		
 
+		protected override void Dodge()
+		{
+			Debug.Log("Dodge");
+			Properties.StateType = PlayerStateType.Vanity;
+			_fxController.DodgeFx();
+			//PhotonView.RPC("DodgeFx",RpcTarget.All);
+			Invoke(nameof(EndDodge),1f);
+		}
 
+		protected override void EndDodge()
+		{
+			Properties.StateType = PlayerStateType.Alive;
+			_fxController.FxRebuild();
+			//PhotonView.RPC("FxRebuild",RpcTarget.All);
+		}
 		private void Rush()
 		{
-			MoveController.SpeedLevel = 2;
+			if (PhotonView.IsMine)
+			{
+				MoveController.SpeedLevel = 1.5f;
+			}
 			_isRush = true;
-			PhotonView.RPC("RushFx",RpcTarget.All,true);
+			_fxController.RushFx(true);
+			//PhotonView.RPC("RushFx",RpcTarget.All,true);
 			Invoke(nameof(EndRush),1f);
 		}
 
 		private void EndRush()
 		{
-			MoveController.SpeedLevel = 1;
-			PhotonView.RPC("RushFx",RpcTarget.All,false);
+			if (PhotonView.IsMine)
+			{
+				MoveController.SpeedLevel = 1.25f;
+			}
+			_fxController.RushFx(false);
+			//PhotonView.RPC("RushFx",RpcTarget.All,false);
 			_isRush = false;
 		}
 		

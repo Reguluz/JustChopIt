@@ -52,12 +52,12 @@ Rigidbody:
   m_GameObject: {fileID: 1135906766852410}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 99
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 2
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &114360069063754226
 MonoBehaviour:
@@ -78,7 +78,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 114665111849130046}
-  viewIdField: 0
+  viewIdField: 1
   InstantiationId: 1
   isRuntimeInstantiated: 0
 --- !u!114 &114665111849130046
@@ -111,7 +111,6 @@ MonoBehaviour:
   StuffNeedDisable:
   - {fileID: 81773808463492314}
   - {fileID: 114019581301611844}
-  - {fileID: 114087259339435582}
   ObjectNeedDisable:
   - {fileID: 1306789230311652}
 --- !u!81 &81773808463492314
@@ -136,6 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Touch: {fileID: 0}
   SpeedLevel: 1
+  ISpeedLevel: 0
   RotateLevel: 1
 --- !u!114 &114923855956842564
 MonoBehaviour:
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Default: {fileID: 2100000, guid: ce11e7a0ef700b643b009fda12a2c772, type: 2}
-  Dodgefx: {fileID: 2100000, guid: acb549eec8ae07e4ba187d87f0c31567, type: 2}
+  Dodge: {fileID: 0}
   Vanish: {fileID: 0}
   Relieve: {fileID: 0}
   Mesh: {fileID: 23238463541129692}
@@ -389,7 +389,6 @@ GameObject:
   - component: {fileID: 4448340820717232}
   - component: {fileID: 33052209484787436}
   - component: {fileID: 23238463541129692}
-  - component: {fileID: 64799615228159182}
   - component: {fileID: 64939911963122614}
   - component: {fileID: 81501345671776534}
   m_Layer: 0
@@ -458,20 +457,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &64799615228159182
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726072855550540}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: ddc55a5952060984c8720b3cbce95190, type: 3}
 --- !u!64 &64939911963122614
 MeshCollider:
   m_ObjectHideFlags: 0

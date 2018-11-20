@@ -6,31 +6,32 @@ namespace GamePlayer.Characters
     public class CharacterFxController:MonoBehaviour
     {
         public Material Default;
-        public Material Dodgefx;
+        public Material Dodge;
         public Material Vanish;
         public Material Relieve;
         
         public MeshRenderer Mesh;
 
-        [PunRPC]
+        
+        //[PunRPC]
         public void DeadFx()
         {		
             Mesh.material = Vanish;
         }
 
-        [PunRPC]
+        //[PunRPC]
         public void RelieveFx()
         {
             Mesh.material = Relieve;
         }
         
-        [PunRPC]
+        //[PunRPC]
         public void DodgeFx()
         {		
-            Mesh.material = Dodgefx;
+            Mesh.material = Dodge;
         }
 
-        [PunRPC]
+        //[PunRPC]
         public void FxRebuild()
         {
             Mesh.material = Default;

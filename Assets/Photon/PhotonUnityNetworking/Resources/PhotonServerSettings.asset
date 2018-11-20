@@ -16,7 +16,7 @@ MonoBehaviour:
     AppIdRealtime: 21134bd9-2044-452d-af98-e34e1390f63d
     AppIdChat: 
     AppIdVoice: 
-    AppVersion: 0.2.7
+    AppVersion: 0.2.9
     UseNameServer: 1
     FixedRegion: cn
     Server: 
@@ -30,28 +30,18 @@ MonoBehaviour:
   RunInBackground: 1
   RpcList:
   - ClickRpc
+  - ComponentInit
+  - DamageFilter
   - DestroyRpc
   - DestroySpaceship
   - Fire
-  - RespawnSpaceship
-  - Hurt
-  - Dead
+  - GetBuff
   - GetNewScore
-  - SetOwner
-  - DamageFilter
-  - DodgeFx
-  - RushFx
-  - SetDirction
-  - SetDirection
+  - Hurt
   - MessageShow
-  - ComponentInit
-  - Init
-  - RebuildFx
   - Rebuild
-  - DeadFx
-  - RebornFx
-  - RelieveFx
-  - S1Fx
-  - FxRebuild
-  - ShootFx
+  - RespawnSpaceship
+  - SetDirection
+  - SetOwner
+  - SkillRelease
   DisableAutoOpenWizard: 1

@@ -16,7 +16,7 @@ namespace GamePlayer.Characters
 			ShootFxParticle.Stop();
 		}
 		
-		[PunRPC]
+		//[PunRPC]
 		public void ShootFx()
 		{
 			ShootFxParticle.Play();

@@ -1,4 +1,5 @@
-﻿using Photon.Pun;
+﻿using GamePlayer.Characters;
+using Photon.Pun;
 using UnityEngine;
 
 namespace GamePlayer
@@ -10,8 +11,8 @@ namespace GamePlayer
     {
         public  UIController              UiController;
         protected CoolDownImageController[] Cooldown;
-        public  int                       SpeedLevel;
-        public  int                       RotateLevel;
+        public  float                       SpeedLevel;
+        public  float                       RotateLevel;
         
         public SkillBaseInfo[] ActiveSkillInfo;    //技能信息
         
@@ -24,14 +25,15 @@ namespace GamePlayer
             //获取自身组件
             PhotonView = GetComponent<PhotonView>();
             Properties     =gameObject.GetComponent<PlayerProperties>();
-            MoveController = gameObject.GetComponent<MoveController>();
-			
-            //获取UI总控组件
-            UiController = GameObject.Find("GameCanvas").GetComponent<UIController>();
+            
+            
+          
 			
             //控制器绑定
             if (PhotonView.IsMine)
             {
+                MoveController = gameObject.GetComponent<MoveController>();
+                UiController = GameObject.Find("GameCanvas").GetComponent<UIController>();
                 //UI绑定数据
                 UiController.PlayerProperties = Properties;
                 //技能设置
@@ -51,6 +53,7 @@ namespace GamePlayer
         }    
 
         //技能释放控制(在子类设置）
+        [PunRPC]
         public virtual void SkillRelease(int skillnum,Vector3 direction)
         {
             
@@ -93,18 +96,14 @@ namespace GamePlayer
             
         }
         
-        protected void Dodge()
+        protected virtual void Dodge()
         {
-            Debug.Log("Dodge");
-            Properties.StateType = PlayerStateType.Vanity;
-            PhotonView.RPC("DodgeFx",RpcTarget.All);
-            Invoke(nameof(EndDodge),1f);
+            
         }
 
-        protected void EndDodge()
+        protected virtual void EndDodge()
         {
-            Properties.StateType = PlayerStateType.Alive;
-            PhotonView.RPC("FxRebuild",RpcTarget.All);
+           
         }
 
         public virtual void Rebuild()    //状态重置

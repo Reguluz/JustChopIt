@@ -565,6 +565,9 @@
               <e p="SkillType.cs" t="Include" />
             </e>
             <e p="DamageType.cs" t="Include" />
+            <e p="Derivative" t="Include">
+              <e p="Shriken.cs" t="Include" />
+            </e>
             <e p="GamePlayerController.cs" t="Include" />
             <e p="IGamePlayerControl.cs" t="Include" />
             <e p="MoveController.cs" t="Include" />
@@ -574,7 +577,7 @@
             <e p="SkillBaseInfo.cs" t="Include" />
           </e>
           <e p="Items" t="Include">
-            <e p="Shriken.cs" t="Include" />
+            <e p="SpeedUp.cs" t="Include" />
           </e>
           <e p="Networks" t="Include">
             <e p="GameNetworkManager.cs" t="Include" />
