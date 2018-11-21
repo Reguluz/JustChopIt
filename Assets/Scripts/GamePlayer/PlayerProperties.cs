@@ -85,22 +85,22 @@ namespace GamePlayer
 				if (StateType == PlayerStateType.Alive)
 				{
 					Debug.Log(killerViewId+"普通击杀");
-					PhotonView.Find(killerViewId)?.RPC("GetNewScore", RpcTarget.Others,1);
 					if (Controller.DamageFilter())
 					{
 						//_photonView.RPC("Dead",RpcTarget.All);
 						Dead();
+						PhotonView.Find(killerViewId)?.RPC("GetNewScore", RpcTarget.Others,1);
 					};
 				}else if (StateType == PlayerStateType.Strong)
 				{
 					if (damageType == DamageType.Hard)
 					{
 						Debug.Log("穿刺击杀");
-						PhotonView.Find(killerViewId)?.RPC("GetNewScore", RpcTarget.Others,1);
 						if (Controller.DamageFilter())
 						{
 							//_photonView.RPC("Dead",RpcTarget.All);
 							Dead();
+							PhotonView.Find(killerViewId)?.RPC("GetNewScore", RpcTarget.Others,1);
 						};
 					}
 					//闪避

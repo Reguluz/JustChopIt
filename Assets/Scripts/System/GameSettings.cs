@@ -33,6 +33,7 @@ namespace System
             PlayerSettingInitial();
         }
 
+        
         private void SystemSettings()
         {
             //设置屏幕正方向在Home键右边
@@ -44,6 +45,8 @@ namespace System
             Screen.autorotateToLandscapeRight     = true;                
             Screen.autorotateToPortrait           = false;
             Screen.autorotateToPortraitUpsideDown = false;
+            //锁帧
+            Application.targetFrameRate = 30;
 
         }
 

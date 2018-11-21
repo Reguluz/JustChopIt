@@ -577,6 +577,8 @@
             <e p="SkillBaseInfo.cs" t="Include" />
           </e>
           <e p="Items" t="Include">
+            <e p="ItemCreator.cs" t="Include" />
+            <e p="Items.cs" t="Include" />
             <e p="SpeedUp.cs" t="Include" />
           </e>
           <e p="Networks" t="Include">
@@ -587,6 +589,7 @@
             <e p="GameBoard.cs" t="Include" />
             <e p="GameParameters.cs" t="Include" />
             <e p="GameSettings.cs" t="Include" />
+            <e p="ItemFactory.cs" t="Include" />
             <e p="MapController.cs" t="Include" />
             <e p="SystemOption.cs" t="Include" />
           </e>

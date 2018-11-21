@@ -236,12 +236,15 @@
     <Compile Include="Assets\Scripts\GamePlayer\PlayerSetup.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\PlayerStateType.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\SkillBaseInfo.cs" />
+    <Compile Include="Assets\Scripts\Items\ItemCreator.cs" />
+    <Compile Include="Assets\Scripts\Items\Items.cs" />
     <Compile Include="Assets\Scripts\Items\SpeedUp.cs" />
     <Compile Include="Assets\Scripts\Networks\GameNetworkManager.cs" />
     <Compile Include="Assets\Scripts\Networks\MatchingNetConnect.cs" />
     <Compile Include="Assets\Scripts\System\GameBoard.cs" />
     <Compile Include="Assets\Scripts\System\GameParameters.cs" />
     <Compile Include="Assets\Scripts\System\GameSettings.cs" />
+    <Compile Include="Assets\Scripts\System\ItemFactory.cs" />
     <Compile Include="Assets\Scripts\System\MapController.cs" />
     <Compile Include="Assets\Scripts\System\SystemOption.cs" />
     <Compile Include="Assets\Scripts\Test\InitTest.cs" />

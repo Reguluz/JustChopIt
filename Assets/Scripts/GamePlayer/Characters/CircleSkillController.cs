@@ -94,7 +94,7 @@ namespace GamePlayer.Characters
 			//PhotonView.RPC("ShootFx",RpcTarget.All);
 			if (PhotonView.IsMine)
 			{
-				GameObject shriken = PhotonNetwork.Instantiate(ShrikenPrefab.name, transform.position, transform.rotation, 0);		
+				GameObject shriken = PhotonNetwork.Instantiate("Player/Derivative/"+ShrikenPrefab.name, transform.position, transform.rotation, 0);		
 				PhotonView pv = shriken.GetComponent<PhotonView>();
 				pv.RPC("SetOwner", RpcTarget.All,gameObject.GetComponent<PhotonView>().ViewID);		
 				pv.RPC("SetDirection",RpcTarget.All,direction);

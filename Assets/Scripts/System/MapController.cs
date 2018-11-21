@@ -25,7 +25,7 @@ public class MapController : MonoBehaviour
         
     }
 
-    public Vector3 GetRelievePoint(){
+    public Vector3 GetRelievePoint(int radius = 1){
         //新建复活点
         Vector3 relievepoint;
         //新建碰撞检测数组
@@ -33,9 +33,8 @@ public class MapController : MonoBehaviour
         
         //检测复活点及周围有没有碰撞盒，要求复活点只和复活区域RelieveArea这一个碰撞盒接触（也就是不接触任何碰撞盒而且在复活区域内）
         do{
-            relievepoint  = new Vector3(Random.Range(-_maxpointdata,_maxpointdata),1,Random.Range(-_maxpointdata,_maxpointdata));
-            results = Physics.OverlapSphere(relievepoint,1);
-            Debug.Log(results);
+            relievepoint  = new Vector3(Random.Range(-_maxpointdata,_maxpointdata),0,Random.Range(-_maxpointdata,_maxpointdata));
+            results = Physics.OverlapSphere(relievepoint,radius);
         }while(!CheckArray(results));
         
         return relievepoint;
@@ -45,7 +44,6 @@ public class MapController : MonoBehaviour
     //检测是否在出生区域
     private bool CheckArray(Collider[] colliderarray){
         if(colliderarray.Length==1){
-            print("1");
             if(colliderarray[0].name.Equals(RelieveArea.name)){
                 return true;
             }else{
