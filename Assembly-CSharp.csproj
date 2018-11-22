@@ -220,6 +220,9 @@
     <Compile Include="Assets\Photon\PhotonUnityNetworking\UtilityScripts\UI\TextToggleIsOnTransition.cs" />
     <Compile Include="Assets\Scripts\Account\AccountInfo.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraFollower.cs" />
+    <Compile Include="Assets\Scripts\GamePlayer\BuffChecker.cs" />
+    <Compile Include="Assets\Scripts\GamePlayer\Bufftype.cs" />
+    <Compile Include="Assets\Scripts\GamePlayer\CharacterData.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\Characters\CharacterFxController.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\Characters\CharacterType.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\Characters\CircleFxController.cs" />
@@ -236,6 +239,9 @@
     <Compile Include="Assets\Scripts\GamePlayer\PlayerSetup.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\PlayerStateType.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\SkillBaseInfo.cs" />
+    <Compile Include="Assets\Scripts\Items\Buff\PlayerBuff.cs" />
+    <Compile Include="Assets\Scripts\Items\Buff\ShieldBuff.cs" />
+    <Compile Include="Assets\Scripts\Items\Buff\SpeedupBuff.cs" />
     <Compile Include="Assets\Scripts\Items\ItemCreator.cs" />
     <Compile Include="Assets\Scripts\Items\Items.cs" />
     <Compile Include="Assets\Scripts\Items\SpeedUp.cs" />
@@ -246,6 +252,7 @@
     <Compile Include="Assets\Scripts\System\GameSettings.cs" />
     <Compile Include="Assets\Scripts\System\ItemFactory.cs" />
     <Compile Include="Assets\Scripts\System\MapController.cs" />
+    <Compile Include="Assets\Scripts\System\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\System\SystemOption.cs" />
     <Compile Include="Assets\Scripts\Test\InitTest.cs" />
     <Compile Include="Assets\Scripts\Test\NetworkTest.cs" />
