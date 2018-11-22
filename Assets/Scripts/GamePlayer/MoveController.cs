@@ -13,8 +13,7 @@ namespace GamePlayer
 		public EasyTouchMove Touch;
 		[HideInInspector]
 		public float SpeedLevel;
-		[HideInInspector]
-		public float ISpeedLevel;
+
 		[HideInInspector]
 		public float RotateLevel;
 
@@ -43,7 +42,10 @@ namespace GamePlayer
 		{
 			float hor = Touch.Horizontal;
 			float ver = Touch.Vertical;
-
+			if (SpeedLevel > 2)
+			{
+				SpeedLevel = 2;
+			}
 			Vector3 direction = new Vector3(hor, 0, ver);
 			if (direction != Vector3.zero)
 			{
@@ -54,12 +56,12 @@ namespace GamePlayer
 				Debug.DrawLine(transform.position, transform.position + transform.forward, Color.red);
 				//向前移动
 				//_body.velocity = transform.position+transform.forward * Time.deltaTime * 30 * SpeedLevel;
-				_body.MovePosition(transform.position+transform.forward * Time.deltaTime * 30 * SpeedLevel * (1+ISpeedLevel));
+				_body.MovePosition(transform.position+transform.forward * Time.deltaTime * 30 * SpeedLevel);
 				//transform.Translate(transform.forward * Time.deltaTime * 3 * SpeedLevel, Space.World);
 			}
 		}
 
-		[PunRPC]
+		/*[PunRPC]
 		public void GetBuff(float coefficient, float effecttime)
 		{
 			ISpeedLevel += coefficient;
@@ -69,7 +71,7 @@ namespace GamePlayer
 		public void RebuildBuff()
 		{
 			ISpeedLevel = 1;
-		}
+		}*/
 
 
 	}

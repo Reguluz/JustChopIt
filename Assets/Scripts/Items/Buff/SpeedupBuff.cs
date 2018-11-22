@@ -1,0 +1,27 @@
+using GamePlayer;
+
+namespace Items.Buff
+{
+    public class SpeedupBuff:PlayerBuff
+    {
+        public SpeedupBuff()
+        {
+            Bufftype = Bufftype.Speedup;
+            Coefficient.MoveSpeed = 0.5f;
+            Coefficient.RotateSpeed = 0.5f;
+            Maxtime = 10;
+            Interval = 0;
+        }
+
+        public override void GetBuff(GamePlayerController player)
+        {
+            player.BuffCo.Add(Coefficient);
+            
+        }
+
+        public override void RemoveBuff(GamePlayerController player)
+        {
+            player.BuffCo?.Sub(Coefficient);
+        }
+    }
+}

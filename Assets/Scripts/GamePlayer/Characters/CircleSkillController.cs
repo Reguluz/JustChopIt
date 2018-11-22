@@ -15,8 +15,8 @@ namespace GamePlayer.Characters
 		private void Awake()
 		{
 			//初始化基础参数（转向速度等级、移动速度等级、按技能数量新建控制器
-			RotateLevel = 1;
-			SpeedLevel = 1;
+			StaticData.RotateSpeed = 1;
+			StaticData.MoveSpeed = 1;
 			Cooldown = new CoolDownImageController[2];
 			_fxController = gameObject.GetComponent<CircleFxController>();
 		}
@@ -24,8 +24,8 @@ namespace GamePlayer.Characters
 		[PunRPC]
 		public override void Rebuild()
 		{
-			RotateLevel = 1;
-			SpeedLevel = 1;	
+			StaticData.RotateSpeed  = 1;
+			StaticData.MoveSpeed = 1;	
 		}
 
 		private void Update()
@@ -39,6 +39,8 @@ namespace GamePlayer.Characters
 			}
 #endif
 		}
+		
+	
 
 		
 		//技能释放选择（操作来源于UI）
@@ -94,6 +96,7 @@ namespace GamePlayer.Characters
 			//PhotonView.RPC("ShootFx",RpcTarget.All);
 			if (PhotonView.IsMine)
 			{
+				//GameObject shriken = PhotonNetwork.PrefabPool.Instantiate("Player/Derivative/" + ShrikenPrefab.name, transform.position,transform.rotation);
 				GameObject shriken = PhotonNetwork.Instantiate("Player/Derivative/"+ShrikenPrefab.name, transform.position, transform.rotation, 0);		
 				PhotonView pv = shriken.GetComponent<PhotonView>();
 				pv.RPC("SetOwner", RpcTarget.All,gameObject.GetComponent<PhotonView>().ViewID);		

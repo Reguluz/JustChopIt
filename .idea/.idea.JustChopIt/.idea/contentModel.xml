@@ -555,6 +555,9 @@
             <e p="CameraFollower.cs" t="Include" />
           </e>
           <e p="GamePlayer" t="Include">
+            <e p="BuffChecker.cs" t="Include" />
+            <e p="Bufftype.cs" t="Include" />
+            <e p="CharacterData.cs" t="Include" />
             <e p="Characters" t="Include">
               <e p="CharacterFxController.cs" t="Include" />
               <e p="CharacterType.cs" t="Include" />
@@ -577,6 +580,11 @@
             <e p="SkillBaseInfo.cs" t="Include" />
           </e>
           <e p="Items" t="Include">
+            <e p="Buff" t="Include">
+              <e p="PlayerBuff.cs" t="Include" />
+              <e p="ShieldBuff.cs" t="Include" />
+              <e p="SpeedupBuff.cs" t="Include" />
+            </e>
             <e p="ItemCreator.cs" t="Include" />
             <e p="Items.cs" t="Include" />
             <e p="SpeedUp.cs" t="Include" />
@@ -591,6 +599,7 @@
             <e p="GameSettings.cs" t="Include" />
             <e p="ItemFactory.cs" t="Include" />
             <e p="MapController.cs" t="Include" />
+            <e p="ObjectPool.cs" t="Include" />
             <e p="SystemOption.cs" t="Include" />
           </e>
           <e p="Test" t="Include">

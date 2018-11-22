@@ -1,4 +1,6 @@
-﻿using GamePlayer.Characters;
+﻿using System.Collections.Generic;
+using GamePlayer.Characters;
+using Items.Buff;
 using Photon.Pun;
 using UnityEngine;
 
@@ -11,14 +13,17 @@ namespace GamePlayer
     {
         public  UIController              UiController;
         protected CoolDownImageController[] Cooldown;
-        public  float                       SpeedLevel;
-        public  float                       RotateLevel;
+        public CharacterData StaticData = new CharacterData(1,1,1) ;
+        public CharacterData SkillCo = new CharacterData(0,0,0);
+        public CharacterData BuffCo = new CharacterData(0,0,0);
+        public List<PlayerBuff> Buffs = new List<PlayerBuff>();
         
         public SkillBaseInfo[] ActiveSkillInfo;    //技能信息
         
         protected PlayerProperties Properties;
         protected PhotonView PhotonView;
-        protected MoveController MoveController;
+        private MoveController _moveController;
+        protected List<ParticleSystem> BuffParticles;
 
         public void Start()
         {
@@ -32,18 +37,42 @@ namespace GamePlayer
             //控制器绑定
             if (PhotonView.IsMine)
             {
-                MoveController = gameObject.GetComponent<MoveController>();
+                _moveController = gameObject.GetComponent<MoveController>();
                 UiController = GameObject.Find("GameCanvas").GetComponent<UIController>();
                 //UI绑定数据
                 UiController.PlayerProperties = Properties;
                 //技能设置
                 SetSkillButton();
                 //移动控制设置
-                MoveController.RotateLevel = RotateLevel;
-                MoveController.SpeedLevel = SpeedLevel;
+                _moveController.RotateLevel = StaticData.RotateSpeed * SkillCo.RotateSpeed * BuffCo.RotateSpeed;
+                _moveController.SpeedLevel = StaticData.MoveSpeed * SkillCo.MoveSpeed * BuffCo.MoveSpeed;
                 //向属性控制注册
                 PropControllerRegister();
             }
+        }
+        
+        void FixedUpdate()
+        {
+            _moveController.SpeedLevel = StaticData.MoveSpeed + SkillCo.MoveSpeed + BuffCo.MoveSpeed;
+            _moveController.RotateLevel = StaticData.RotateSpeed + SkillCo.RotateSpeed + BuffCo.MoveSpeed;
+            for (int i = 0; i < Buffs.Count; i++)
+            {
+                Buffs[i].Interval += Time.deltaTime;
+                if (Buffs[i].CheckOvertime())
+                {
+                    Buffs[i].RemoveBuff(this);
+                    Buffs.Remove(Buffs[i]);
+                }
+            }
+        }
+
+        [PunRPC]
+        public void AddBuff(Bufftype buff)
+        {
+            var temp = BuffChecker.Check(buff);
+            Buffs.Add(temp);
+            temp.GetBuff(this);
+            Debug.Log("Buffco"+BuffCo.MoveSpeed);
         }
         
         //属性控制器注册
@@ -83,6 +112,15 @@ namespace GamePlayer
         //被动伤害过滤
         public virtual bool DamageFilter()
         {
+            for (int i = 0; i < Buffs.Count; i++)
+            {
+                if (Buffs[i].Bufftype.Equals(Bufftype.Shield))
+                {
+                    Buffs[i].RemoveBuff(this);
+                    Buffs.Remove(Buffs[i]);
+                    return false;
+                }
+            }
             return true;
         }    
 

@@ -44,4 +44,5 @@ MonoBehaviour:
   - SetDirection
   - SetOwner
   - SkillRelease
+  - AddBuff
   DisableAutoOpenWizard: 1

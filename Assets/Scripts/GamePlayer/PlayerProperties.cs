@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace GamePlayer
 {
-	public class PlayerProperties : MonoBehaviour,IPunInstantiateMagicCallback
+	public class PlayerProperties : MonoBehaviour
 	{
 
 		public PlayerStateType StateType;

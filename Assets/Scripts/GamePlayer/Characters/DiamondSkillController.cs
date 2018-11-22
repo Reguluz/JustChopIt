@@ -13,8 +13,8 @@ namespace GamePlayer.Characters
 		private void Awake()
 		{
 			//初始化基础参数（转向速度等级、移动速度等级、按技能数量新建控制器
-			RotateLevel = 2;
-			SpeedLevel = 1.25f;
+			StaticData.RotateSpeed = 2;
+			StaticData.MoveSpeed = 1.25f;
 			Cooldown = new CoolDownImageController[2];
 			_fxController = gameObject.GetComponent<DiamondFxController>();
 		}
@@ -22,8 +22,9 @@ namespace GamePlayer.Characters
 		[PunRPC]
 		public override void Rebuild()
 		{
-			RotateLevel = 2;
-			SpeedLevel = 1.25f;	
+			StaticData.RotateSpeed = 2;
+			StaticData.MoveSpeed = 1.25f;
+			StaticData.Scale = 1;
 		}
 
 		// Use this for initialization
@@ -39,7 +40,8 @@ namespace GamePlayer.Characters
 #endif
 		}
 
-			
+		
+
 
 		//技能释放选择（操作来源于UI）
 		[PunRPC]
@@ -90,7 +92,7 @@ namespace GamePlayer.Characters
 		{
 			if (PhotonView.IsMine)
 			{
-				MoveController.SpeedLevel = 1.5f;
+				SkillCo.MoveSpeed = 0.75f;
 			}
 			_isRush = true;
 			_fxController.RushFx(true);
@@ -102,7 +104,7 @@ namespace GamePlayer.Characters
 		{
 			if (PhotonView.IsMine)
 			{
-				MoveController.SpeedLevel = 1.25f;
+				SkillCo.MoveSpeed = 0;
 			}
 			_fxController.RushFx(false);
 			//PhotonView.RPC("RushFx",RpcTarget.All,false);
