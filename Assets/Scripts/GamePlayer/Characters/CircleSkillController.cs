@@ -12,7 +12,7 @@ namespace GamePlayer.Characters
 		// Use this for initialization
 		
 		
-		private void Awake()
+		private void OnEnable()
 		{
 			//初始化基础参数（转向速度等级、移动速度等级、按技能数量新建控制器
 			StaticData.RotateSpeed = 1;
@@ -65,6 +65,16 @@ namespace GamePlayer.Characters
 		[PunRPC]
 		public override bool DamageFilter()	
 		{
+			for (int i = 0; i < Buffs.Count; i++)
+			{
+				if (Buffs[i].Bufftype.Equals(Bufftype.Shield))
+				{
+					Debug.Log("FindShieldBuff");
+					Buffs[i].RemoveBuff(this);
+					Buffs.Remove(Buffs[i]);
+					return false;
+				}
+			}
 			return true;
 		}
 
@@ -92,16 +102,17 @@ namespace GamePlayer.Characters
 		private void Shoot(Vector3 direction)	
 		{
 			Debug.Log("Shoot direction"+direction);
-			_fxController.ShootFx();
+			
 			//PhotonView.RPC("ShootFx",RpcTarget.All);
 			if (PhotonView.IsMine)
 			{
 				//GameObject shriken = PhotonNetwork.PrefabPool.Instantiate("Player/Derivative/" + ShrikenPrefab.name, transform.position,transform.rotation);
-				GameObject shriken = PhotonNetwork.Instantiate("Player/Derivative/"+ShrikenPrefab.name, transform.position, transform.rotation, 0);		
+				GameObject shriken = PhotonNetwork.Instantiate(ShrikenPrefab.name, transform.position, transform.rotation, 0);		
 				PhotonView pv = shriken.GetComponent<PhotonView>();
 				pv.RPC("SetOwner", RpcTarget.All,gameObject.GetComponent<PhotonView>().ViewID);		
 				pv.RPC("SetDirection",RpcTarget.All,direction);
 			}
+			_fxController.ShootFx();
 		}
 		
 		

@@ -9,7 +9,7 @@ namespace GamePlayer
     [RequireComponent(typeof(PhotonView))]
     [RequireComponent(typeof(PlayerProperties))]
     [RequireComponent(typeof(MoveController))]
-    public  class GamePlayerController:MonoBehaviour,IGamePlayerControl
+    public  class GamePlayerController:MonoBehaviour,IGamePlayerControl,IPunObservable
     {
         public  UIController              UiController;
         protected CoolDownImageController[] Cooldown;
@@ -25,6 +25,13 @@ namespace GamePlayer
         private MoveController _moveController;
         protected List<ParticleSystem> BuffParticles;
 
+        
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            throw new System.NotImplementedException();
+        }
+        
+        
         public void Start()
         {
             //获取自身组件
@@ -53,8 +60,11 @@ namespace GamePlayer
         
         void FixedUpdate()
         {
-            _moveController.SpeedLevel = StaticData.MoveSpeed + SkillCo.MoveSpeed + BuffCo.MoveSpeed;
-            _moveController.RotateLevel = StaticData.RotateSpeed + SkillCo.RotateSpeed + BuffCo.MoveSpeed;
+            if (PhotonView.IsMine)
+            {
+                _moveController.SpeedLevel = StaticData.MoveSpeed + SkillCo.MoveSpeed + BuffCo.MoveSpeed;
+                _moveController.RotateLevel = StaticData.RotateSpeed + SkillCo.RotateSpeed + BuffCo.MoveSpeed;
+            }
             for (int i = 0; i < Buffs.Count; i++)
             {
                 Buffs[i].Interval += Time.deltaTime;
@@ -74,7 +84,16 @@ namespace GamePlayer
             temp.GetBuff(this);
             Debug.Log("Buffco"+BuffCo.MoveSpeed);
         }
-        
+
+        [PunRPC]
+        public void RemoveAllBuff()
+        {
+            foreach (PlayerBuff playerBuff in Buffs)
+            {
+                playerBuff.RemoveBuff(this);
+            }
+            Buffs.Clear();
+        }
         //属性控制器注册
         public void PropControllerRegister()
         {
@@ -148,5 +167,7 @@ namespace GamePlayer
         {
             
         }
+
+       
     }
 }

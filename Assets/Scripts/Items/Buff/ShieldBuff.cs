@@ -1,9 +1,12 @@
 using GamePlayer;
+using Photon.Pun;
+using UnityEngine;
 
 namespace Items.Buff
 {
     public class ShieldBuff:PlayerBuff
     {
+        
         public ShieldBuff()
         {
             Bufftype = Bufftype.Shield;
@@ -15,12 +18,18 @@ namespace Items.Buff
 
         public override void GetBuff(GamePlayerController player)
         {
+            Owner = player.gameObject;
             player.BuffCo.Add(Coefficient);
+            if (Owner.GetPhotonView().IsMine)
+            {
+                Effect = PhotonNetwork.Instantiate("ShieldEffect", Vector3.zero, Quaternion.identity);
+            }
+            
+            //tempeffect.GetComponentInChildren<ParticleSystem>().Play();
         }
 
-        public override void RemoveBuff(GamePlayerController player)
-        {
-            player.BuffCo?.Sub(Coefficient);
-        }
+        
+
+        
     }
 }

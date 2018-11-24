@@ -934,7 +934,7 @@ namespace Photon.Pun
             bool wasActive = res.activeSelf;
             if (wasActive) res.SetActive(false);
 
-            GameObject instance =GameObject.Instantiate(res, position, rotation) as GameObject;
+            GameObject instance = GameObject.Instantiate(res, position, rotation) as GameObject;
 
             if (wasActive) res.SetActive(true);
             return instance;

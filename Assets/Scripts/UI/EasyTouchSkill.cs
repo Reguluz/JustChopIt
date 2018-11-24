@@ -55,12 +55,12 @@ namespace UI
             {
                 if (isLine)
                 {
-                    GuideUI.GetComponentInChildren<LineRenderer>()?.SetPosition(0,Owner.transform.position+new Vector3(0,-0.75f,0));
-                    GuideUI.GetComponentInChildren<LineRenderer>()?.SetPosition(1,Owner.transform.position+new Vector3(horizontal,-0.75f,vertical));
+                    GuideUI.GetComponentInChildren<LineRenderer>()?.SetPosition(0,Owner.transform.position+new Vector3(0,-0.5f,0));
+                    GuideUI.GetComponentInChildren<LineRenderer>()?.SetPosition(1,Owner.transform.position+new Vector3(horizontal,-0.5f,vertical));
                 }
                 else
                 {
-                    GuideUI.transform.position = Owner.transform.position + new Vector3(horizontal, 0.25f-1, vertical);
+                    GuideUI.transform.position = Owner.transform.position + new Vector3(horizontal, 0.5f-1, vertical);
                 }
             }
             moveBackPos = transform.parent.transform.position;
@@ -74,7 +74,7 @@ namespace UI
             //获取向量的长度    
             Vector2 oppsitionVec = eventData.position - moveBackPos;
             Debug.DrawLine(Vector3.zero, eventData.position,Color.green);
-            Debug.DrawLine(Owner.transform.position, Owner.transform.position + new Vector3(horizontal,0.25f,vertical),Color.white);
+            Debug.DrawLine(Owner.transform.position, Owner.transform.position + new Vector3(horizontal,0.5f,vertical),Color.white);
            
             //最小值与最大值之间取半径
             float distance = Vector3.Magnitude(oppsitionVec);

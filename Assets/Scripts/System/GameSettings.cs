@@ -46,7 +46,7 @@ namespace System
             Screen.autorotateToPortrait           = false;
             Screen.autorotateToPortraitUpsideDown = false;
             //锁帧
-            Application.targetFrameRate = 30;
+            Application.targetFrameRate = 60;
 
         }
 

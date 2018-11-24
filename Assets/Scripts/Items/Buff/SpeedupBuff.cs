@@ -1,9 +1,12 @@
 using GamePlayer;
+using Photon.Pun;
+using UnityEngine;
 
 namespace Items.Buff
 {
     public class SpeedupBuff:PlayerBuff
     {
+        
         public SpeedupBuff()
         {
             Bufftype = Bufftype.Speedup;
@@ -15,13 +18,15 @@ namespace Items.Buff
 
         public override void GetBuff(GamePlayerController player)
         {
+            Owner = player.gameObject;
             player.BuffCo.Add(Coefficient);
+            if (Owner.GetPhotonView().IsMine)
+            {
+                Effect = PhotonNetwork.Instantiate("SpeedUpEffect", Vector3.zero, Quaternion.identity);
+            }
             
         }
 
-        public override void RemoveBuff(GamePlayerController player)
-        {
-            player.BuffCo?.Sub(Coefficient);
-        }
+        
     }
 }

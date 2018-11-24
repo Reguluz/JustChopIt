@@ -10,7 +10,7 @@ namespace GamePlayer.Characters
 		private DiamondFxController _fxController;
 		
 		
-		private void Awake()
+		private void OnEnable()
 		{
 			//初始化基础参数（转向速度等级、移动速度等级、按技能数量新建控制器
 			StaticData.RotateSpeed = 2;
@@ -66,9 +66,17 @@ namespace GamePlayer.Characters
 			if (_isRush)
 			{
 				return false;
-			}
-			else
+			}else
 			{
+				for (int i = 0; i < Buffs.Count; i++)
+				{
+					if (Buffs[i].Bufftype.Equals(Bufftype.Shield))
+					{
+						Buffs[i].RemoveBuff(this);
+						Buffs.Remove(Buffs[i]);
+						return false;
+					}
+				}
 				return true;
 			}
 		}
@@ -90,10 +98,8 @@ namespace GamePlayer.Characters
 		}
 		private void Rush()
 		{
-			if (PhotonView.IsMine)
-			{
-				SkillCo.MoveSpeed = 0.75f;
-			}
+			
+			SkillCo.MoveSpeed = 0.75f;
 			_isRush = true;
 			_fxController.RushFx(true);
 			//PhotonView.RPC("RushFx",RpcTarget.All,true);
@@ -102,10 +108,7 @@ namespace GamePlayer.Characters
 
 		private void EndRush()
 		{
-			if (PhotonView.IsMine)
-			{
-				SkillCo.MoveSpeed = 0;
-			}
+			SkillCo.MoveSpeed = 0;
 			_fxController.RushFx(false);
 			//PhotonView.RPC("RushFx",RpcTarget.All,false);
 			_isRush = false;
@@ -116,19 +119,23 @@ namespace GamePlayer.Characters
 			Debug.Log("是否在冲刺:" + _isRush + "对方类型" + other.gameObject.tag);
 			if (_isRush && other.gameObject.CompareTag("Player"))
 			{
-				GameObject enemyscript = other.gameObject;
-				Debug.Log(GetComponent<PhotonView>().ViewID + "冲刺碰到了" + enemyscript.GetComponent<PhotonView>().ViewID);
-				if (enemyscript.GetComponent<PhotonView>().ViewID != GetComponent<PhotonView>().ViewID)
+				if (PhotonView.IsMine)
 				{
-					if (enemyscript.GetComponent<PlayerProperties>().StateType != PlayerStateType.Dead &&
-					    enemyscript.GetComponent<PlayerProperties>().StateType != PlayerStateType.Relieve)
+					GameObject enemyscript = other.gameObject;
+					Debug.Log(GetComponent<PhotonView>().ViewID + "冲刺碰到了" + enemyscript.GetComponent<PhotonView>().ViewID);
+					if (enemyscript.GetComponent<PhotonView>().ViewID != GetComponent<PhotonView>().ViewID)
 					{
-						Debug.Log(gameObject.GetComponent<PhotonView>().ViewID+"冲刺攻击到"+enemyscript.GetComponent<PhotonView>().ViewID);
-						PhotonView pv = enemyscript.GetComponent<PhotonView>();
-						pv.RPC("Hurt", RpcTarget.All, DamageType.Normal,PhotonView.ViewID);
-					}
+						if (enemyscript.GetComponent<PlayerProperties>().StateType != PlayerStateType.Dead &&
+						    enemyscript.GetComponent<PlayerProperties>().StateType != PlayerStateType.Relieve)
+						{
+							Debug.Log(gameObject.GetComponent<PhotonView>().ViewID+"冲刺攻击到"+enemyscript.GetComponent<PhotonView>().ViewID);
+							PhotonView pv = enemyscript.GetComponent<PhotonView>();
+							pv.RPC("Hurt", RpcTarget.All, DamageType.Normal,PhotonView.ViewID);
+						}
 			
+					}
 				}
+				
 			}
 		}
 		

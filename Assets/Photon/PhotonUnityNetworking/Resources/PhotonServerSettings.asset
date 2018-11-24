@@ -16,16 +16,16 @@ MonoBehaviour:
     AppIdRealtime: 21134bd9-2044-452d-af98-e34e1390f63d
     AppIdChat: 
     AppIdVoice: 
-    AppVersion: 0.2.9
+    AppVersion: 0.3.0
     UseNameServer: 1
     FixedRegion: cn
     Server: 
     Port: 0
     Protocol: 0
     EnableLobbyStatistics: 0
-    NetworkLogging: 5
+    NetworkLogging: 0
   StartInOfflineMode: 0
-  PunLogging: 2
+  PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
   RpcList:
@@ -45,4 +45,5 @@ MonoBehaviour:
   - SetOwner
   - SkillRelease
   - AddBuff
+  - RemoveAllBuff
   DisableAutoOpenWizard: 1

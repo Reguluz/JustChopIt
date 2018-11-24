@@ -115,6 +115,7 @@ namespace GamePlayer
 		//[PunRPC]
 		public void Dead()
 		{
+			Debug.Log("玩家"+_photonView.Owner+"已经死亡");
 			StartCoroutine(RelievePass());
 		}
 
@@ -127,6 +128,8 @@ namespace GamePlayer
 			//FXrenderer.enabled = false;
 			Deadparticles.Play();
 			_meshModel.SetActive(false);
+			_photonView.RPC("RemoveAllBuff",RpcTarget.All);
+			
 			//屏幕特效
 			if (_photonView.IsMine)
 			{

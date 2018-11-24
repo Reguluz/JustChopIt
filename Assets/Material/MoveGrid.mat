@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MoveGrid
-  m_Shader: {fileID: 4800000, guid: 5284443f6cbadc84d85ebf1c3c580c4c, type: 3}
+  m_Shader: {fileID: 4800000, guid: 4c3a6e1fd83c496438b29db53d336823, type: 3}
   m_ShaderKeywords: _SUNENABLED_ON _USESPECULAR_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0

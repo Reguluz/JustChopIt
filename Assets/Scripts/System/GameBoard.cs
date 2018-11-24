@@ -53,7 +53,7 @@ public class GameBoard : MonoBehaviour
 			if (controller.GetComponent<PlayerEntryController>().Entry.User.Equals(source.User))
 			{
 				controller.GetComponent<PlayerEntryController>()?.SetData();
-				Debug.Log(source.Score);
+				Debug.Log("玩家"+source.User.NickName+"分数"+source.Score);
 				if (source.Score == _target)
 				{
 					Debug.Log(source.User+"wins");

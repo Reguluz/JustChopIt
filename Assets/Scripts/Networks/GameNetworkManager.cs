@@ -24,6 +24,9 @@ namespace Networks
 
 		private GameObject _localPlayer;
 
+		public GameObject ItemFactory;
+
+		public ObjectPool ObjectpoolController;
 		// Use this for initialization
 		private void Awake()
 		{
@@ -43,10 +46,11 @@ namespace Networks
 		{
 			Debug.Log("选择序号"+PlayerPrefs.GetInt("Charactertype"));
 
-
+			
+			
 			
 			//生成玩家角色
-			_localPlayer = PhotonNetwork.Instantiate("Player/"+PlayerPrefab[(int) PhotonNetwork.LocalPlayer.CustomProperties["Character"]].name, new Vector3(0,1,0), Quaternion.identity, 0);
+			_localPlayer = PhotonNetwork.Instantiate(PlayerPrefab[(int) PhotonNetwork.LocalPlayer.CustomProperties["Character"]].name, new Vector3(0,1,0), Quaternion.identity, 0);
 			//给玩家角色	绑定	Map
 			_localPlayer.GetComponent<PlayerProperties>().Map = MapController;
 			//给玩家角色	绑定	UI
@@ -59,7 +63,7 @@ namespace Networks
 			//角色信息组件初始化
 			_localPlayer.GetComponent<PhotonView>().RPC("ComponentInit",RpcTarget.All);
 			
-			//打开遮罩
+			
 			Invoke(nameof(OpenBlank),1f);
 			//_localPlayer.GetComponent<PlayerSetup>().PlayerCamera = MainCamera.GetComponent<Camera>();
 		}

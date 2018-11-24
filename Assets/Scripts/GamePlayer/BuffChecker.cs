@@ -13,6 +13,8 @@ namespace GamePlayer
             {
                 case    Bufftype.Speedup:
                     return new SpeedupBuff();
+                case    Bufftype.Shield:
+                    return new ShieldBuff();
             }
             return new PlayerBuff();
         }
