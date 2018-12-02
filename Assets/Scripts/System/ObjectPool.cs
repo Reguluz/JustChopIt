@@ -133,6 +133,7 @@ namespace System
 						//...remove its parent...
 						pooledObject.transform.parent = null;
 						//...and return it
+						Debug.Log("Succeed get" + prefabId + "from pool.");
 						return pooledObject;
 						
 					}

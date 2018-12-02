@@ -195,8 +195,8 @@ namespace Networks
 				case 2: 
 					PhotonNetwork.LoadLevel("TestMap1");
 					break;
-				case 3: 
-					PhotonNetwork.LoadLevel("TestMap2");
+				case 3:  
+					PhotonNetwork.LoadLevel("TestMap3");
 					break;
 			}
 		}

@@ -80,7 +80,7 @@ namespace GamePlayer.Characters
 
 		public override void SetCharacterType()
 		{
-			Properties.CharacterType = CharacterType.Circle;
+			Properties.CharacterType = CharacterType.Shooter;
 		}
 
 		protected override void Dodge()

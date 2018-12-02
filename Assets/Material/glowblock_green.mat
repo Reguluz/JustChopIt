@@ -77,7 +77,7 @@ Material:
     - _Metallic: 0.5
     - _Mode: 3
     - _OcclusionStrength: 1
-    - _Open: 2
+    - _Open: 0
     - _Parallax: 0.02
     - _Radius: 5
     - _SmoothnessTextureChannel: 0

@@ -79,7 +79,27 @@ namespace GamePlayer
         [PunRPC]
         public void AddBuff(Bufftype buff)
         {
+            int count = 0;
+            int firstserial=0;
             var temp = BuffChecker.Check(buff);
+            for (int i = 0; i < Buffs.Count; i++)
+            {
+                if (Buffs[i].Bufftype.Equals(buff))
+                {
+                    count++;
+                    if (count == 1)
+                    {
+                        firstserial = i;
+                    }
+                    if (count == 2)
+                    {
+                        Buffs[firstserial].RemoveBuff(this);
+                        Buffs.RemoveAt(firstserial);
+                        firstserial = 0;
+                        count = 0;
+                    }
+                }
+            }
             Buffs.Add(temp);
             temp.GetBuff(this);
             Debug.Log("Buffco"+BuffCo.MoveSpeed);

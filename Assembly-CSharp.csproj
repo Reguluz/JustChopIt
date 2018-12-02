@@ -138,6 +138,7 @@
     <Compile Include="Assets\Scripts\GamePlayer\Derivative\Shriken.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\GamePlayerController.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\IGamePlayerControl.cs" />
+    <Compile Include="Assets\Scripts\GamePlayer\Monster.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\MoveController.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\PlayerProperties.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\PlayerSetup.cs" />
@@ -158,6 +159,7 @@
     <Compile Include="Assets\Scripts\System\GameSettings.cs" />
     <Compile Include="Assets\Scripts\System\ItemFactory.cs" />
     <Compile Include="Assets\Scripts\System\MapController.cs" />
+    <Compile Include="Assets\Scripts\System\MonsterSystem.cs" />
     <Compile Include="Assets\Scripts\System\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\System\SystemOption.cs" />
     <Compile Include="Assets\Scripts\Test\InitTest.cs" />
@@ -165,6 +167,7 @@
     <Compile Include="Assets\Scripts\UI\CoolDownImageController.cs" />
     <Compile Include="Assets\Scripts\UI\EasyTouchMove.cs" />
     <Compile Include="Assets\Scripts\UI\EasyTouchSkill.cs" />
+    <Compile Include="Assets\Scripts\UI\EntryCompare.cs" />
     <Compile Include="Assets\Scripts\UI\LobbyUIController.cs" />
     <Compile Include="Assets\Scripts\UI\LogoController.cs" />
     <Compile Include="Assets\Scripts\UI\NickNameInput.cs" />
@@ -172,6 +175,7 @@
     <Compile Include="Assets\Scripts\UI\SkillButton.cs" />
     <Compile Include="Assets\Scripts\UI\UIController.cs" />
     <Compile Include="Assets\Scripts\UI\UIMouseFunction.cs" />
+    <Compile Include="Assets\Scripts\UI\VersionShow.cs" />
     <None Include="Assets\Photon\PhotonUnityNetworking\link.xml" />
     <None Include="Assets\Material\Shader\TerrainGrid.shader" />
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
@@ -803,6 +807,16 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp">
       <HintPath>D:\Professional\Unity\2018.3.0b2\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>D:\Professional\Unity\2018.3.0b2\Editor\Data\PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>D:\Professional\Unity\2018.3.0b2\Editor\Data\PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

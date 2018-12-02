@@ -6,7 +6,7 @@ namespace GamePlayer
     public enum CharacterType
     {
         //角色类型
-        Circle=0,
-        Diamond=1
+        Shooter=0,
+        Rusher=1
     }
 }
