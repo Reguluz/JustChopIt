@@ -53,7 +53,7 @@ namespace System
         public void PlayerSettingInitial()
         {
             SetReady(false);
-            SetCharacter(CharacterType.Circle);
+            SetCharacter(CharacterType.Shooter);
             SetNickName();
         }
 

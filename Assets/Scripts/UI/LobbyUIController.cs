@@ -253,12 +253,12 @@ namespace UI
 						case "ShooterToggle":
 							
 							//PlayerPrefs.SetInt("Charactertype", 0);
-							LocalSettings.SetCharacter(CharacterType.Circle);
+							LocalSettings.SetCharacter(CharacterType.Shooter);
 							break;
 						case "RusherToggle":
 							
 							//PlayerPrefs.SetInt("Charactertype", 1);
-							LocalSettings.SetCharacter(CharacterType.Diamond);
+							LocalSettings.SetCharacter(CharacterType.Rusher);
 							break;
 					}
 					break;

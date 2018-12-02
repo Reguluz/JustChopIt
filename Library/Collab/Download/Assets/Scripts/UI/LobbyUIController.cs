@@ -55,7 +55,7 @@ namespace UI
 			StartCoroutine(DataRefresh());
 			_characters = CharacterlistToggle.ActiveToggles();
 			LocalSettings = GameObject.Find("GameSettings").GetComponent<GameSettings>();
-			NickNameInput.transform.GetChild(0).GetComponent<Text>().text = AccountInfo.Nickname ?? "Nickname";
+			NickNameInput.transform.GetChild(0).GetComponent<Text>().text = AccountInfo.Nickname ?? "昵称";
 			RoomModeMenu.SetActive(false);
 		}
 	
@@ -109,13 +109,15 @@ namespace UI
 					if (LocalSettings.IsReady)
 					{
 						LocalSettings.SetReady(false); //准备
-						Match.GetComponentInChildren<Text>().text = "Unready";
+						Match.GetComponentInChildren<Text>().text = "未准备";
+						Match.GetComponent<Image>().color = new Color(255,255,255);
 						CharacterlistToggle.allowSwitchOff = true;
 					}
 					else
 					{
 						LocalSettings.SetReady(true); //准备
-						Match.GetComponentInChildren<Text>().text = "Ready";
+						Match.GetComponentInChildren<Text>().text = "已准备";
+						Match.GetComponent<Image>().color = new Color(200,200,200);
 						CharacterlistToggle.allowSwitchOff = false;
 					}
 					RefreshRoom();
@@ -151,13 +153,13 @@ namespace UI
 			PlayerPrefs.SetInt("Charactertype",0);
 			if (PhotonNetwork.IsMasterClient)
 			{
-				Match.GetComponentInChildren<Text>().text = "Start Game";
-				RoomBtn.GetComponentInChildren<Text>().text = "Back";
+				Match.GetComponentInChildren<Text>().text = "开始游戏";
+				RoomBtn.GetComponentInChildren<Text>().text = "返回大厅";
 			}
 			else
 			{
-				Match.GetComponentInChildren<Text>().text = "Unready";
-				RoomBtn.GetComponentInChildren<Text>().text = "Back";
+				Match.GetComponentInChildren<Text>().text = "未准备";
+				RoomBtn.GetComponentInChildren<Text>().text = "返回大厅";
 			}
 			RefreshRoom();
 			
@@ -169,8 +171,8 @@ namespace UI
 			Match.gameObject.SetActive(true);
 			CharacterList.SetActive(false);
 			NickNameInput.SetActive(true);
-			Match.GetComponentInChildren<Text>().text = "Start Matching";
-			RoomBtn.GetComponentInChildren<Text>().text = "Create Room";
+			Match.GetComponentInChildren<Text>().text = "开始匹配";
+			RoomBtn.GetComponentInChildren<Text>().text = "新建房间";
 			InfoLists.text = _roomListInfoText;
 		}
 

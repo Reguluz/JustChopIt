@@ -9,6 +9,9 @@ public class MapController : MonoBehaviour
     public Collider RelieveArea;
     public Material GridMaterial;
     private  int _maxpointdata;
+
+    public GameObject _effectCenter;
+    private bool _effectOpen = false;
     // Start is called before the first frame update
     void Awake()
     {
@@ -17,12 +20,17 @@ public class MapController : MonoBehaviour
         }else{
             _maxpointdata = 500;
         }
+
+        EffectSwitch(false);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (_effectOpen)
+        {
+            GridMaterial.SetVector("_Center",_effectCenter.transform.position);
+        }
     }
 
     public Vector3 GetRelievePoint(int radius = 1){
@@ -55,10 +63,15 @@ public class MapController : MonoBehaviour
         }
     }
 
-    public void GridEffect(Vector3 position, int type)
+    public void SetEffectCenter(GameObject obj)
     {
-        GridMaterial.SetVector("_Center",position);
-        GridMaterial.SetFloat("_Open",type);
+        _effectCenter = obj;
+    }
+
+    public void EffectSwitch(bool isOpen)
+    {
+        GridMaterial.SetFloat("_Open",isOpen?1:0);
+        _effectOpen = isOpen;
     }
     
     

@@ -13,8 +13,8 @@ namespace GamePlayer.Characters
 		private void OnEnable()
 		{
 			//初始化基础参数（转向速度等级、移动速度等级、按技能数量新建控制器
-			StaticData.RotateSpeed = 2;
-			StaticData.MoveSpeed = 1.25f;
+			StaticData.RotateSpeed = 3;
+			StaticData.MoveSpeed = 1f;
 			Cooldown = new CoolDownImageController[2];
 			_fxController = gameObject.GetComponent<DiamondFxController>();
 		}
@@ -22,8 +22,8 @@ namespace GamePlayer.Characters
 		[PunRPC]
 		public override void Rebuild()
 		{
-			StaticData.RotateSpeed = 2;
-			StaticData.MoveSpeed = 1.25f;
+			StaticData.RotateSpeed = 3;
+			StaticData.MoveSpeed = 1f;
 			StaticData.Scale = 1;
 		}
 
@@ -39,7 +39,10 @@ namespace GamePlayer.Characters
 			}
 #endif
 		}
-
+		public override void SetCharacterType()
+		{
+			Properties.CharacterType = CharacterType.Rusher;
+		}
 		
 
 
@@ -99,7 +102,7 @@ namespace GamePlayer.Characters
 		private void Rush()
 		{
 			
-			SkillCo.MoveSpeed = 0.75f;
+			SkillCo.MoveSpeed = 0.5f;
 			_isRush = true;
 			_fxController.RushFx(true);
 			//PhotonView.RPC("RushFx",RpcTarget.All,true);

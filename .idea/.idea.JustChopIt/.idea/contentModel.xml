@@ -411,6 +411,7 @@
             </e>
             <e p="GamePlayerController.cs" t="Include" />
             <e p="IGamePlayerControl.cs" t="Include" />
+            <e p="Monster.cs" t="Include" />
             <e p="MoveController.cs" t="Include" />
             <e p="PlayerProperties.cs" t="Include" />
             <e p="PlayerSetup.cs" t="Include" />
@@ -439,6 +440,7 @@
             <e p="GameSettings.cs" t="Include" />
             <e p="ItemFactory.cs" t="Include" />
             <e p="MapController.cs" t="Include" />
+            <e p="MonsterSystem.cs" t="Include" />
             <e p="ObjectPool.cs" t="Include" />
             <e p="SystemOption.cs" t="Include" />
           </e>
@@ -450,6 +452,7 @@
             <e p="CoolDownImageController.cs" t="Include" />
             <e p="EasyTouchMove.cs" t="Include" />
             <e p="EasyTouchSkill.cs" t="Include" />
+            <e p="EntryCompare.cs" t="Include" />
             <e p="LobbyUIController.cs" t="Include" />
             <e p="LogoController.cs" t="Include" />
             <e p="NickNameInput.cs" t="Include" />
@@ -457,6 +460,7 @@
             <e p="SkillButton.cs" t="Include" />
             <e p="UIController.cs" t="Include" />
             <e p="UIMouseFunction.cs" t="Include" />
+            <e p="VersionShow.cs" t="Include" />
           </e>
         </e>
         <e p="Standard Assets" t="Include">

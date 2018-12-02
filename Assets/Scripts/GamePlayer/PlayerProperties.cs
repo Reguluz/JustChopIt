@@ -1,12 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace GamePlayer
 {
-	public class PlayerProperties : MonoBehaviour
+	public class PlayerProperties : MonoBehaviour,IPunObservable,IComparable<PlayerProperties>
 	{
 
 		public PlayerStateType StateType;
@@ -134,7 +136,6 @@ namespace GamePlayer
 			if (_photonView.IsMine)
 			{
 				_uiController.DisableSkill();
-				Map.GridEffect(transform.position,1);
 			}
 			_board.DataRefresh(this);
 			yield return new WaitForSeconds(1f);
@@ -145,7 +146,6 @@ namespace GamePlayer
 			if (_photonView.IsMine)
 			{
 				transform.position = Map.GetRelievePoint();
-				Map.GridEffect(transform.position, 2);
 			}
 			/*if (gameObject.GetComponent<PhotonView>().IsMine)
 			{
@@ -172,7 +172,6 @@ namespace GamePlayer
 			if (_photonView.IsMine)
 			{
 				_uiController.AbleSkill();
-				Map.GridEffect(transform.position,0);
 			}
 			//AvatarFx.enabled = false;
 			Controller.Rebuild();
@@ -208,11 +207,34 @@ namespace GamePlayer
 			_board.DataRefresh(this);
 		}
 
-
+		//忘了干啥的
 		public void OnPhotonInstantiate(PhotonMessageInfo info)
 		{
 			Debug.Log("创建者passId");
 			info.photonView.ViewID = gameObject.GetComponent<PhotonView>().ViewID;
+		}
+
+		//同步积分/死亡数量/死亡状态
+		public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+		{
+			if (stream.IsWriting)
+			{
+				stream.SendNext(this.Score);
+				stream.SendNext(this.Deathtime);
+				stream.SendNext(this.StateType);
+			}else if(stream.IsReading){
+				this.Score = (int) stream.ReceiveNext();
+				this.Deathtime = (int) stream.ReceiveNext();
+				this.StateType = (PlayerStateType) stream.ReceiveNext();
+			}
+		}
+
+		//用于记分板排名
+		public int CompareTo(PlayerProperties other)
+		{
+			if (ReferenceEquals(this, other)) return 1;
+			if (ReferenceEquals(null, other)) return 0;
+			return other.Score.CompareTo(Score);
 		}
 	}
 
