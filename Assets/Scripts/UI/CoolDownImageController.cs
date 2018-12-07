@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using GamePlayer;
+using GamePlayer.Characters;
 using Photon.Pun;
 using UI;
 using UnityEngine;

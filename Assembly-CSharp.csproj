@@ -133,11 +133,15 @@
     <Compile Include="Assets\Scripts\GamePlayer\Characters\CircleSkillController.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\Characters\DiamondFxController.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\Characters\DiamondSkillController.cs" />
+    <Compile Include="Assets\Scripts\GamePlayer\Characters\GamePlayerController.cs" />
+    <Compile Include="Assets\Scripts\GamePlayer\Characters\IGamePlayerControl.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\Characters\SkillType.cs" />
+    <Compile Include="Assets\Scripts\GamePlayer\Characters\TrapperFxController.cs" />
+    <Compile Include="Assets\Scripts\GamePlayer\Characters\TrapperSkillController.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\DamageType.cs" />
+    <Compile Include="Assets\Scripts\GamePlayer\Derivative\Derivative.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\Derivative\Shriken.cs" />
-    <Compile Include="Assets\Scripts\GamePlayer\GamePlayerController.cs" />
-    <Compile Include="Assets\Scripts\GamePlayer\IGamePlayerControl.cs" />
+    <Compile Include="Assets\Scripts\GamePlayer\Derivative\Trap.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\Monster.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\MoveController.cs" />
     <Compile Include="Assets\Scripts\GamePlayer\PlayerProperties.cs" />
@@ -149,8 +153,6 @@
     <Compile Include="Assets\Scripts\Items\Buff\SpeedupBuff.cs" />
     <Compile Include="Assets\Scripts\Items\ItemCreator.cs" />
     <Compile Include="Assets\Scripts\Items\Items.cs" />
-    <Compile Include="Assets\Scripts\Items\Shield.cs" />
-    <Compile Include="Assets\Scripts\Items\SpeedUp.cs" />
     <Compile Include="Assets\Scripts\Networks\GameNetworkManager.cs" />
     <Compile Include="Assets\Scripts\Networks\MatchingNetConnect.cs" />
     <Compile Include="Assets\Scripts\Networks\NetOwnerFinder.cs" />

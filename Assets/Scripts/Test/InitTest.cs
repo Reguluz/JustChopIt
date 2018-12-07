@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Cameras;
 using GamePlayer;
+using GamePlayer.Characters;
 using UnityEngine;
 
 public class InitTest : MonoBehaviour {

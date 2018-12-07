@@ -1,12 +1,15 @@
 ﻿using System.Collections.Generic;
-using GamePlayer.Characters;
 using Items.Buff;
 using Photon.Pun;
 using UnityEngine;
 
-namespace GamePlayer
+namespace GamePlayer.Characters
 {
+    [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(PhotonView))]
+    [RequireComponent(typeof(PhotonTransformView))]
+    [RequireComponent(typeof(PhotonRigidbodyView))]
+    [RequireComponent(typeof(PlayerSetup))]
     [RequireComponent(typeof(PlayerProperties))]
     [RequireComponent(typeof(MoveController))]
     public  class GamePlayerController:MonoBehaviour,IGamePlayerControl,IPunObservable

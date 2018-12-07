@@ -115,6 +115,17 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Editor" t="Include">
+          <e p="Tools" t="Include">
+            <e p="Level Generator Tool" t="Include">
+              <e p="About.txt" t="Include" />
+              <e p="Scripts" t="Include">
+                <e p="About.cs" t="Include" />
+                <e p="LevelGenerator.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="Material" t="Include">
           <e p="Shader" t="Include">
             <e p="Gloss.shader" t="Include" />
@@ -384,6 +395,40 @@
               <e p="UnlitTextureColor.shader" t="Include" />
             </e>
           </e>
+          <e p="SciFiArsenal" t="Include">
+            <e p="InteractiveDemo" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="ButtonScript.cs" t="Include" />
+                <e p="DragMouseOrbit.cs" t="Include" />
+                <e p="FireProjectile.cs" t="Include" />
+                <e p="LoadSceneOnClick.cs" t="Include" />
+                <e p="loopScript.cs" t="Include" />
+                <e p="Projectile.cs" t="Include" />
+                <e p="ProjectileScript.cs" t="Include" />
+              </e>
+              <e p="Standard Assets" t="Include">
+                <e p="Character Controllers" t="Include">
+                  <e p="Sources" t="Include">
+                    <e p="Scripts" t="Include">
+                      <e p="MouseLook.cs" t="Include" />
+                    </e>
+                  </e>
+                </e>
+              </e>
+            </e>
+            <e p="KunaiEditor" t="Include">
+              <e p="Editor" t="Include">
+                <e p="KunaiEditor.cs" t="Include" />
+                <e p="readme.txt" t="Include" />
+              </e>
+              <e p="KunaiRotation.cs" t="Include" />
+            </e>
+            <e p="Sci-Fi Arsenal - ReadMe.txt" t="Include" />
+            <e p="Scripts" t="Include">
+              <e p="lightScript.cs" t="Include" />
+              <e p="lightScriptLong.cs" t="Include" />
+            </e>
+          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="Account" t="Include">
@@ -403,14 +448,18 @@
               <e p="CircleSkillController.cs" t="Include" />
               <e p="DiamondFxController.cs" t="Include" />
               <e p="DiamondSkillController.cs" t="Include" />
+              <e p="GamePlayerController.cs" t="Include" />
+              <e p="IGamePlayerControl.cs" t="Include" />
               <e p="SkillType.cs" t="Include" />
+              <e p="TrapperFxController.cs" t="Include" />
+              <e p="TrapperSkillController.cs" t="Include" />
             </e>
             <e p="DamageType.cs" t="Include" />
             <e p="Derivative" t="Include">
+              <e p="Derivative.cs" t="Include" />
               <e p="Shriken.cs" t="Include" />
+              <e p="Trap.cs" t="Include" />
             </e>
-            <e p="GamePlayerController.cs" t="Include" />
-            <e p="IGamePlayerControl.cs" t="Include" />
             <e p="Monster.cs" t="Include" />
             <e p="MoveController.cs" t="Include" />
             <e p="PlayerProperties.cs" t="Include" />
@@ -426,8 +475,6 @@
             </e>
             <e p="ItemCreator.cs" t="Include" />
             <e p="Items.cs" t="Include" />
-            <e p="Shield.cs" t="Include" />
-            <e p="SpeedUp.cs" t="Include" />
           </e>
           <e p="Networks" t="Include">
             <e p="GameNetworkManager.cs" t="Include" />

@@ -8,6 +8,7 @@ Shader "User/TerrainTransparent"
         _Center("OwnerPos",Vector) = (0,0,0,0)
         _Radius("Radius",Float) = 5
         _Amplitude("_Amplitude",Range(-5,5))=1
+        _Offset("Offset",Range(-5,5))=0
         [PowerSlider(3)]_Frequency("_Frequency",Range(0,2))=0.25
 
         _Color ("Color", Color) = (1,1,1,1)
@@ -50,6 +51,7 @@ Shader "User/TerrainTransparent"
             float _Radius;
             float _Amplitude;
             float _Frequency;
+            float _Offset;
 
             fixed4 _Color;
             float _Metallic;
@@ -72,7 +74,7 @@ Shader "User/TerrainTransparent"
                 if(_Open == 1){
                     float4 worldSpaceVertex = mul(unity_ObjectToWorld,(v.vertex));
                     float d = distance(_Center,worldSpaceVertex);
-                    float waveValueA = cos(d*_Frequency)*_Amplitude;
+                    float waveValueA = cos(d*_Frequency)*_Amplitude+_Offset;
                     if(d<_Radius){
                         v.vertex.xyz = float3(v.vertex.x,v.vertex.y + waveValueA,v.vertex.z);
                         v.normal = normalize(float3(v.normal.x + waveValueA,v.normal.y,v.normal.z));

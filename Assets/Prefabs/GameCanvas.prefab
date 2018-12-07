@@ -761,6 +761,7 @@ MonoBehaviour:
   PlayerObjList: []
   Entries: []
   Untouchblank: {fileID: 1638111894281104}
+  MonsterSystem: {fileID: 0}
   Players: []
   _target: 0
 --- !u!114 &114384893967953908
@@ -940,7 +941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 296c9ad74b2c4c8b835814e69864ea54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DistanceRatio: 1
+  DistanceRatio: 2
   Hold:
     m_PersistentCalls:
       m_Calls: []
@@ -2537,7 +2538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 296c9ad74b2c4c8b835814e69864ea54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DistanceRatio: 1
+  DistanceRatio: 2
   Hold:
     m_PersistentCalls:
       m_Calls: []

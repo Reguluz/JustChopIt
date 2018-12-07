@@ -54,6 +54,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Editor\Tools\Level Generator Tool\Scripts\About.cs" />
+    <Compile Include="Assets\Editor\Tools\Level Generator Tool\Scripts\LevelGenerator.cs" />
     <Compile Include="Assets\Photon\PhotonUnityNetworking\Code\Editor\AccountService.cs" />
     <Compile Include="Assets\Photon\PhotonUnityNetworking\Code\Editor\PhotonEditor.cs" />
     <Compile Include="Assets\Photon\PhotonUnityNetworking\Code\Editor\PhotonEditorUtils.cs" />
@@ -70,6 +72,7 @@
     <Compile Include="Assets\Photon\PhotonUnityNetworking\UtilityScripts\Culling\Editor\CullAreaEditor.cs" />
     <Compile Include="Assets\Photon\PhotonUnityNetworking\UtilityScripts\PhotonPlayer\Editor\PlayerNumberingInspector.cs" />
     <Compile Include="Assets\Photon\PhotonUnityNetworking\UtilityScripts\PhotonPlayer\Editor\PunTeamsInspector.cs" />
+    <None Include="Assets\Editor\Tools\Level Generator Tool\About.txt" />
     <Reference Include="Assembly-UnityScript-firstpass">
       <HintPath>D:/Project/Unity/JustChopIt/JustChopIt/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
     </Reference>

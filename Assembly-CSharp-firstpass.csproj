@@ -70,6 +70,17 @@
     <Compile Include="Assets\Plugins\RetroAesthetics\Scripts\SceneField.cs" />
     <Compile Include="Assets\Plugins\RetroAesthetics\Scripts\UVScroller.cs" />
     <Compile Include="Assets\Plugins\RetroAesthetics\Shaders\Post-processing\RetroCameraEffect.cs" />
+    <Compile Include="Assets\Plugins\SciFiArsenal\InteractiveDemo\Scripts\ButtonScript.cs" />
+    <Compile Include="Assets\Plugins\SciFiArsenal\InteractiveDemo\Scripts\DragMouseOrbit.cs" />
+    <Compile Include="Assets\Plugins\SciFiArsenal\InteractiveDemo\Scripts\FireProjectile.cs" />
+    <Compile Include="Assets\Plugins\SciFiArsenal\InteractiveDemo\Scripts\LoadSceneOnClick.cs" />
+    <Compile Include="Assets\Plugins\SciFiArsenal\InteractiveDemo\Scripts\loopScript.cs" />
+    <Compile Include="Assets\Plugins\SciFiArsenal\InteractiveDemo\Scripts\Projectile.cs" />
+    <Compile Include="Assets\Plugins\SciFiArsenal\InteractiveDemo\Scripts\ProjectileScript.cs" />
+    <Compile Include="Assets\Plugins\SciFiArsenal\InteractiveDemo\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\Plugins\SciFiArsenal\KunaiEditor\KunaiRotation.cs" />
+    <Compile Include="Assets\Plugins\SciFiArsenal\Scripts\lightScript.cs" />
+    <Compile Include="Assets\Plugins\SciFiArsenal\Scripts\lightScriptLong.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Standard Assets\2D\Scripts\Platformer2DUserControl.cs" />
@@ -177,6 +188,7 @@
     <None Include="Assets\Plugins\RetroAesthetics\Fonts\Bitmap\monotron_white\Monotron_white.fnt" />
     <None Include="Assets\Plugins\RetroAesthetics\Shaders\UnlitTextureColor.shader" />
     <None Include="Assets\Plugins\RetroAesthetics\Fonts\Bitmap\yellowtail_white\Yellowtail_white.fnt" />
+    <None Include="Assets\Plugins\SciFiArsenal\Sci-Fi Arsenal - ReadMe.txt" />
     <None Include="Assets\Plugins\RetroAesthetics\Fonts\Bitmap\sixcaps1\SixCaps1.fnt" />
     <None Include="Assets\Plugins\RetroAesthetics\Fonts\Bitmap\misterpixel_white\MisterPixel_white.fnt" />
     <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />

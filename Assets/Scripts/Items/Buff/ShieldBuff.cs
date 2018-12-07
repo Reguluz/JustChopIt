@@ -1,4 +1,5 @@
 using GamePlayer;
+using GamePlayer.Characters;
 using Photon.Pun;
 using UnityEngine;
 

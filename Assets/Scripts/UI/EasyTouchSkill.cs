@@ -1,4 +1,5 @@
 ﻿using GamePlayer;
+using GamePlayer.Characters;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -7,7 +8,7 @@ namespace UI
 {
     public class EasyTouchSkill : MonoBehaviour, IDragHandler, IEndDragHandler
     {
-        public float DistanceRatio=1;
+        public float DistanceRatio=2;
         
         //长按事件
         public UnityEvent Hold;
@@ -55,12 +56,12 @@ namespace UI
             {
                 if (isLine)
                 {
-                    GuideUI.GetComponentInChildren<LineRenderer>()?.SetPosition(0,Owner.transform.position+new Vector3(0,-0.5f,0));
-                    GuideUI.GetComponentInChildren<LineRenderer>()?.SetPosition(1,Owner.transform.position+new Vector3(horizontal,-0.5f,vertical));
+                    GuideUI.GetComponentInChildren<LineRenderer>()?.SetPosition(0,Owner.transform.position+new Vector3(0,0.5f,0));
+                    GuideUI.GetComponentInChildren<LineRenderer>()?.SetPosition(1,Owner.transform.position+new Vector3(horizontal,0.5f,vertical));
                 }
                 else
                 {
-                    GuideUI.transform.position = Owner.transform.position + new Vector3(horizontal, 0.5f-1, vertical);
+                    GuideUI.transform.position = Owner.transform.position + new Vector3(horizontal, 0.5f, vertical);
                 }
             }
             moveBackPos = transform.parent.transform.position;

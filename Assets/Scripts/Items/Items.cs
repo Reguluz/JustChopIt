@@ -16,12 +16,7 @@ namespace Items
             transform.localPosition = Vector3.zero;
         }
 
-        public void SetEmpty()
-        {
-            
-            Owner.IsEmpty = true;
-            
-        }
+        
         
         // Start is called before the first frame update
         void Start()
@@ -51,7 +46,7 @@ namespace Items
                     //other.GetComponent<MoveController>().GetBuff(0.2f,10);
                     if (PhotonNetwork.IsMasterClient)
                     {
-                    SetEmpty();
+                    Owner.SetEmpty();
                     PhotonNetwork.Destroy(this.gameObject);
                 }
             }

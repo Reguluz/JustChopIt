@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace GamePlayer.Characters
 {
+    [RequireComponent(typeof(AudioListener))]
     public class CharacterFxController:MonoBehaviour
     {
         public Material Default;

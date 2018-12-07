@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using GamePlayer.Characters;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
@@ -91,7 +92,11 @@ namespace GamePlayer
 					{
 						//_photonView.RPC("Dead",RpcTarget.All);
 						Dead();
-						PhotonView.Find(killerViewId)?.RPC("GetNewScore", RpcTarget.Others,1);
+						PhotonView pv = PhotonView.Find(killerViewId);
+						if (!pv.IsSceneView)
+						{
+							pv.RPC("GetNewScore", RpcTarget.Others,1);
+						}
 					};
 				}else if (StateType == PlayerStateType.Strong)
 				{
@@ -102,7 +107,11 @@ namespace GamePlayer
 						{
 							//_photonView.RPC("Dead",RpcTarget.All);
 							Dead();
-							PhotonView.Find(killerViewId)?.RPC("GetNewScore", RpcTarget.Others,1);
+							PhotonView pv = PhotonView.Find(killerViewId);
+							if (!pv.IsSceneView)
+							{
+								pv.RPC("GetNewScore", RpcTarget.Others,1);
+							}
 						};
 					}
 					//闪避

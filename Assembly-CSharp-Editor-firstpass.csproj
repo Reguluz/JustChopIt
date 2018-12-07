@@ -55,12 +55,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Plugins\RetroAesthetics\Shaders\Editor\RetroSkyboxEditor.cs" />
+    <Compile Include="Assets\Plugins\SciFiArsenal\KunaiEditor\Editor\KunaiEditor.cs" />
     <Compile Include="Assets\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
     <Compile Include="Assets\Standard Assets\Editor\Water\Water4\GerstnerDisplaceEditor.cs" />
     <Compile Include="Assets\Standard Assets\Editor\Water\Water4\PlanarReflectionEditor.cs" />
     <Compile Include="Assets\Standard Assets\Editor\Water\Water4\SpecularLightingEditor.cs" />
     <Compile Include="Assets\Standard Assets\Editor\Water\Water4\WaterBaseEditor.cs" />
     <Compile Include="Assets\Standard Assets\Editor\Water\Water4\WaterEditorUtility.cs" />
+    <None Include="Assets\Plugins\SciFiArsenal\KunaiEditor\Editor\Readme.txt" />
     <Reference Include="Assembly-UnityScript-firstpass">
       <HintPath>D:/Project/Unity/JustChopIt/JustChopIt/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
     </Reference>

@@ -1,4 +1,5 @@
 using GamePlayer;
+using GamePlayer.Characters;
 using Photon.Pun;
 using UnityEngine;
 
@@ -10,8 +11,8 @@ namespace Items.Buff
         public SpeedupBuff()
         {
             Bufftype = Bufftype.Speedup;
-            Coefficient.MoveSpeed = 0.5f;
-            Coefficient.RotateSpeed = 0.5f;
+            Coefficient.MoveSpeed = 0.3f;
+            Coefficient.RotateSpeed = 0.3f;
             Maxtime = 10;
             Interval = 0;
         }

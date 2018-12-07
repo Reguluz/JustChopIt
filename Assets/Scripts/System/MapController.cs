@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class MapController : MonoBehaviour
 {
@@ -9,10 +11,27 @@ public class MapController : MonoBehaviour
     public Collider RelieveArea;
     public Material GridMaterial;
     private  int _maxpointdata;
+    
+    public GameObject TerrainAssemble;
 
     public GameObject _effectCenter;
     private bool _effectOpen = false;
+    
+    private GameObject[] _blockStatuses;
+    
+
     // Start is called before the first frame update
+    private void Start()
+    {
+        /*Transform[] _blocks = TerrainAssemble.transform.GetComponentsInChildren<Transform>();
+        _blockStatuses = new BlockInfo[_blocks.Length];
+        for (int i = 0; i < _blocks.Length; i++)
+        {
+            _blockStatuses[i].Block = _blocks[i].gameObject;
+            _blockStatuses[i].isEmpty = true;
+        }*/
+    }
+
     void Awake()
     {
         if(Mapsize.Equals(MapSize.S)){
@@ -33,7 +52,7 @@ public class MapController : MonoBehaviour
         }
     }
 
-    public Vector3 GetRelievePoint(int radius = 1){
+    public Vector3 GetRelievePoint(int radius = 5){
         //新建复活点
         Vector3 relievepoint;
         //新建碰撞检测数组
@@ -47,6 +66,16 @@ public class MapController : MonoBehaviour
         
         return relievepoint;
      
+    }
+
+    public GameObject GetEmptyBlock()
+    {
+        int next;
+        do
+        {
+            next = Random.Range(0, _blockStatuses.Length);
+        } while (_blockStatuses[next].transform.childCount!=0);
+        return _blockStatuses[next];
     }
 
     //检测是否在出生区域
