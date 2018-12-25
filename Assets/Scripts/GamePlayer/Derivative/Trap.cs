@@ -7,13 +7,16 @@ namespace GamePlayer.Derivative
     public class Trap:Derivative
     {
         public ParticleSystem TrapParticle;
-        private readonly float _lifeTime = 2;
-        private float _effectRadius = 10;
+        public  float Delaytime = 1.5f;
+	    [Tooltip("半径和粒子StartSize的比例为2.5:1")]
+        public float EffectRadius = 10;
 	    private MeshRenderer _mesh;
 
 	    private void Awake()
 	    {
 		    _mesh = GetComponent<MeshRenderer>();
+		    var trapParticleMain = TrapParticle.main;
+		    trapParticleMain.startSize = EffectRadius / 2.5f;
 	    }
 
 	    private void OnEnable()
@@ -21,7 +24,7 @@ namespace GamePlayer.Derivative
             //延迟销毁
 	        TrapParticle.Stop();
 	        _mesh.enabled = true;
-            Invoke(nameof(Boom),_lifeTime);
+            Invoke(nameof(Boom),Delaytime);
         }
 
 	    public void Boom()
@@ -42,7 +45,7 @@ namespace GamePlayer.Derivative
 				Debug.Log("陷阱生效");
 				//命中检测
 				Collider[] players =
-					Physics.OverlapSphere(transform.position, _effectRadius, 1 << LayerMask.NameToLayer("Player"));
+					Physics.OverlapSphere(transform.position, EffectRadius, 1 << LayerMask.NameToLayer("Player"));
 
 				foreach (Collider collider in players)
 				{
@@ -63,20 +66,21 @@ namespace GamePlayer.Derivative
 				}
 			}
 	        yield return new WaitForSeconds(0.6f);
-	        PhotonNetwork.Destroy(this.gameObject);
+	        if (photonView.IsMine)
+	        {
+		        PhotonNetwork.Destroy(this.gameObject);
+	        }
             
         }
 
 	    private void OnDisable()
 	    {
 		    TrapParticle.Stop();
+		    CancelInvoke(nameof(Boom));
 		    StopCoroutine(BoomEffect());
 	    }
 
-	    public override void DestroySelf()
-	    {
-		    PhotonNetwork.Destroy(this.gameObject);
-	    }
+	   
         
     }
 }

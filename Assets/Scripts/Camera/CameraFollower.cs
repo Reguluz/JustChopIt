@@ -21,7 +21,7 @@ namespace Cameras
 		// Use this for initialization
 		void Start () {
 			//手机不息屏
-			Screen.sleepTimeout = SleepTimeout.NeverSleep;
+			ScreenUnSleep();
 			_gamerproperty = GamerObject.GetComponent<PlayerProperties>();
 		}
 	
@@ -30,16 +30,33 @@ namespace Cameras
 			
 			if (_gamerproperty.StateType != PlayerStateType.Dead && _gamerproperty.StateType != PlayerStateType.Relieve)
 			{
-				transform.position = _offset + GamerObject.transform.position;
-			}else if (_gamerproperty.StateType == PlayerStateType.Dead)
-			{
-				//死亡时摄像机不移动
+				//摄像机跟随
+				Follow();
 			}else if (_gamerproperty.StateType == PlayerStateType.Relieve)
 			{
 				//复活后摄像机缓动至复活位置
-				transform.position = Vector3.SmoothDamp(transform.position,GamerObject.transform.position + _offset,ref _velocity,_smoothTime);
+				ReliveMove();
 			}
 		}
+
+		private void ReliveMove()
+		{
+			transform.position = Vector3.SmoothDamp(transform.position, GamerObject.transform.position + _offset, ref _velocity,
+				_smoothTime);
+		}
+
+		
+		private void Follow()
+		{
+			transform.position = _offset + GamerObject.transform.position;
+		}
+
+		private void ScreenUnSleep()
+		{
+			Screen.sleepTimeout = SleepTimeout.NeverSleep;
+		}
+
+
 	}
 
 

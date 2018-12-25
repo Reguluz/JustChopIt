@@ -7,6 +7,7 @@ namespace GamePlayer
     {
         //角色类型
         Shooter=0,
-        Rusher=1
+        Rusher=1,
+        Trapper=2
     }
 }

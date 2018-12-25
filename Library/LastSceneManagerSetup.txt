@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/MatchingScene.unity
+- path: Assets/Scenes/Map/TestMap3.unity
   isLoaded: 1
   isActive: 1

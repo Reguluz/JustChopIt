@@ -7,6 +7,7 @@ using Photon.Realtime;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 using Random = System.Random;
 
 namespace Networks
@@ -33,6 +34,7 @@ namespace Networks
 			//PhotonNetwork.ConnectToRegion("cn");
 			_lobbyUiController = GetComponent<LobbyUIController>();
 			_lobbyUiController.LobbyInit();
+
 		}
 
 		// Update is called once per frame
@@ -133,7 +135,21 @@ namespace Networks
 			MessageShow("玩家" + otherPlayer.NickName + "离开房间");
 			_lobbyUiController.RefreshRoom();
 		}
-
+		/*
+		public override void OnRoomPropertiesUpdate(Hashtable hashtable)
+		{
+			if (PhotonNetwork.IsMasterClient)
+			{
+				_lobbyUiController.JoinRoom();
+				_lobbyUiController.RefreshRoom();
+			}
+		}
+		
+		public override void OnPlayerPropertiesUpdate(Player target, Hashtable changedProps)
+		{
+			_lobbyUiController.RefreshRoom();
+		}
+*/
 		
 		public void StartGame()
 		{
@@ -141,7 +157,9 @@ namespace Networks
 			StartCoroutine(LoadGame());
 		}
 
+		
 
+		
 		IEnumerator LoadGame()
 		{
 			//PlayerPrefs.SetInt("Charactertype",(int) _lobbyUiController.Chosentype);

@@ -7,7 +7,7 @@ namespace GamePlayer.Characters
 	public class CircleSkillController : GamePlayerController
 	{
 		//技能所需道具
-		private CircleFxController _fxController;
+		//private CircleFxController _fxController;
 		public GameObject ShrikenPrefab;
 		// Use this for initialization
 		
@@ -17,7 +17,7 @@ namespace GamePlayer.Characters
 			//初始化基础参数（转向速度等级、移动速度等级、按技能数量新建控制器
 			StaticData.RotateSpeed = 1;
 			StaticData.MoveSpeed = 1;
-			Cooldown = new CoolDownImageController[2];
+			Cooldown = new CoolDownImageController[ActiveSkillInfo.Length];
 			_fxController = gameObject.GetComponent<CircleFxController>();
 		}
 
@@ -50,10 +50,13 @@ namespace GamePlayer.Characters
 			switch (skillnum)
 			{
 				case 0:
-					Dodge();
+					BulletShoot();
 					break;
 				case 1:
 					Shoot(direction);
+					break;
+				case 2:
+					Dodge();
 					break;
 				default:break;
 			}
@@ -83,26 +86,25 @@ namespace GamePlayer.Characters
 			Properties.CharacterType = CharacterType.Shooter;
 		}
 
-		protected override void Dodge()
+		private  void Dodge()
 		{
 			Debug.Log("Dodge");
 			Properties.StateType = PlayerStateType.Vanity;
-			_fxController.DodgeFx();
+			_fxController.PlayFx("Dodge");
 			//PhotonView.RPC("DodgeFx",RpcTarget.All);
 			Invoke(nameof(EndDodge),1f);
 		}
 
-		protected override void EndDodge()
+		private  void EndDodge()
 		{
 			Properties.StateType = PlayerStateType.Alive;
-			_fxController.FxRebuild();
+			_fxController.PlayFx("Rebuild");
 			//PhotonView.RPC("FxRebuild",RpcTarget.All);
 		}
 
 		private void Shoot(Vector3 direction)	
 		{
 			Debug.Log("Shoot direction"+direction);
-			
 			//PhotonView.RPC("ShootFx",RpcTarget.All);
 			if (PhotonView.IsMine)
 			{
@@ -112,7 +114,7 @@ namespace GamePlayer.Characters
 				pv.RPC("SetOwner", RpcTarget.All,gameObject.GetComponent<PhotonView>().ViewID);		
 				pv.RPC("SetDirection",RpcTarget.All,direction);
 			}
-			_fxController.ShootFx();
+			_fxController.PlayFx("SkillRelease");
 		}
 		
 		

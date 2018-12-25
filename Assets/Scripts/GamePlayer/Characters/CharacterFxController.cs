@@ -1,4 +1,5 @@
-﻿using Photon.Pun;
+﻿using System;
+using Photon.Pun;
 using UnityEngine;
 
 namespace GamePlayer.Characters
@@ -12,7 +13,29 @@ namespace GamePlayer.Characters
         public Material Relieve;
         
         public MeshRenderer Mesh;
+        public ParticleSystem SkillReleaseParticle;
 
+        public virtual void PlayFx(string fxname)
+        {
+            switch (fxname)
+            {
+                case "Dead": DeadFx();
+                    break;
+                case "Relieve":RelieveFx();
+                    break;
+                case "Dodge": DodgeFx();
+                    break;
+                case "Rebuild":RebuildFx();
+                    break;
+                case "SkillRelease":SkillRelease();
+                    break;
+            }
+        }
+
+        public virtual void StopFx(string fxname)
+        {
+            
+        }
         
         //[PunRPC]
         public void DeadFx()
@@ -33,9 +56,17 @@ namespace GamePlayer.Characters
         }
 
         //[PunRPC]
-        public void FxRebuild()
+        public void RebuildFx()
         {
             Mesh.material = Default;
+        }
+        void OnEnable()
+        {
+            SkillReleaseParticle.Stop();
+        }
+        public void SkillRelease()
+        {
+            SkillReleaseParticle.Play();
         }
     }
 }

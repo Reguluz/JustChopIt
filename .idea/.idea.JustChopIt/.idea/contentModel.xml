@@ -3,112 +3,6 @@
   <component name="ContentModelStore">
     <e p="C:\Users\Reguluz\.Rider2018.2\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Reguluz\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_JustChopIt.-416942399.00" t="ExcludeRecursive" />
-    <e p="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.render-pipelines.core\Editor" t="Include">
-      <e p="CoreEditorDrawers.cs" t="Include" />
-      <e p="CoreEditorStyles.cs" t="Include" />
-      <e p="CoreEditorUtils.cs" t="Include" />
-      <e p="FilterWindow.cs" t="Include" />
-      <e p="MaterialUpgrader.cs" t="Include" />
-      <e p="PropertyFetcher.cs" t="Include" />
-      <e p="SettingsDisableScope.cs" t="Include" />
-      <e p="Shadow" t="Include">
-        <e p="ShadowCascadeSplitGUI.cs" t="Include" />
-      </e>
-      <e p="Unity.RenderPipelines.Core.Editor.asmdef" t="Include" />
-      <e p="Volume" t="Include">
-        <e p="Drawers" t="Include">
-          <e p="ColorParameterDrawer.cs" t="Include" />
-          <e p="FloatParameterDrawer.cs" t="Include" />
-          <e p="IntParameterDrawer.cs" t="Include" />
-          <e p="Vector4ParameterDrawer.cs" t="Include" />
-        </e>
-        <e p="SerializedDataParameter.cs" t="Include" />
-        <e p="VolumeComponentEditor.cs" t="Include" />
-        <e p="VolumeComponentListEditor.cs" t="Include" />
-        <e p="VolumeComponentProvider.cs" t="Include" />
-        <e p="VolumeEditor.cs" t="Include" />
-        <e p="VolumeParameterDrawer.cs" t="Include" />
-        <e p="VolumeProfileEditor.cs" t="Include" />
-        <e p="VolumeProfileFactory.cs" t="Include" />
-      </e>
-    </e>
-    <e p="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.render-pipelines.core\Runtime" t="Include">
-      <e p="Common" t="Include">
-        <e p="CommandBufferPool.cs" t="Include" />
-        <e p="CommonStructs.cs" t="Include" />
-        <e p="XRGraphics.cs" t="Include" />
-      </e>
-      <e p="Debugging" t="Include">
-        <e p="ProfilingSample.cs" t="Include" />
-      </e>
-      <e p="Textures" t="Include">
-        <e p="MSAASamples.cs" t="Include" />
-      </e>
-      <e p="Unity.RenderPipelines.Core.Runtime.asmdef" t="Include" />
-      <e p="Utilities" t="Include">
-        <e p="CoreUtils.cs" t="Include" />
-        <e p="XRUtils.cs" t="Include" />
-      </e>
-      <e p="Volume" t="Include">
-        <e p="Volume.cs" t="Include" />
-        <e p="VolumeComponent.cs" t="Include" />
-        <e p="VolumeManager.cs" t="Include" />
-        <e p="VolumeParameter.cs" t="Include" />
-        <e p="VolumeProfile.cs" t="Include" />
-        <e p="VolumeStack.cs" t="Include" />
-      </e>
-    </e>
-    <e p="D:\Professional\Unity\package\ScriptableRenderPipeline-4.1.0-preview\com.unity.render-pipelines.core\ShaderLibrary" t="Include">
-      <e p="API" t="Include">
-        <e p="D3D11.hlsl" t="Include" />
-        <e p="GLCore.hlsl" t="Include" />
-        <e p="GLES2.hlsl" t="Include" />
-        <e p="GLES3.hlsl" t="Include" />
-        <e p="PSSL.hlsl" t="Include" />
-        <e p="Switch.hlsl" t="Include" />
-        <e p="Validate.hlsl" t="Include" />
-        <e p="Vulkan.hlsl" t="Include" />
-        <e p="XBoxOne.hlsl" t="Include" />
-      </e>
-      <e p="AreaLighting.hlsl" t="Include" />
-      <e p="BC6H.hlsl" t="Include" />
-      <e p="BSDF.hlsl" t="Include" />
-      <e p="Color.hlsl" t="Include" />
-      <e p="Common.hlsl" t="Include" />
-      <e p="CommonLighting.hlsl" t="Include" />
-      <e p="CommonMaterial.hlsl" t="Include" />
-      <e p="CommonShadow.hlsl" t="Include" />
-      <e p="Debug.hlsl" t="Include" />
-      <e p="DummyShaderLibrary.cs" t="Include" />
-      <e p="EntityLighting.hlsl" t="Include" />
-      <e p="Filtering.hlsl" t="Include" />
-      <e p="GeometricTools.hlsl" t="Include" />
-      <e p="ImageBasedLighting.hlsl" t="Include" />
-      <e p="Macros.hlsl" t="Include" />
-      <e p="NormalSurfaceGradient.hlsl" t="Include" />
-      <e p="Packing.hlsl" t="Include" />
-      <e p="PerPixelDisplacement.hlsl" t="Include" />
-      <e p="Random.hlsl" t="Include" />
-      <e p="Refraction.hlsl" t="Include" />
-      <e p="Sampling" t="Include">
-        <e p="Fibonacci.hlsl" t="Include" />
-        <e p="Hammersley.hlsl" t="Include" />
-        <e p="SampleUVMapping.hlsl" t="Include" />
-        <e p="SampleUVMappingInternal.hlsl" t="Include" />
-        <e p="SampleUVMappingNormalInternal.hlsl" t="Include" />
-        <e p="Sampling.hlsl" t="Include" />
-      </e>
-      <e p="Shadow" t="Include">
-        <e p="ShadowSamplingTent.hlsl" t="Include" />
-      </e>
-      <e p="SpaceFillingCurves.hlsl" t="Include" />
-      <e p="SpaceTransforms.hlsl" t="Include" />
-      <e p="Tessellation.hlsl" t="Include" />
-      <e p="Unity.RenderPipelines.Core.ShaderLibrary.asmdef" t="Include" />
-      <e p="UnityInstancing.hlsl" t="Include" />
-      <e p="VolumeRendering.hlsl" t="Include" />
-      <e p="Wind.hlsl" t="Include" />
-    </e>
     <e p="D:\Project\Unity\JustChopIt\JustChopIt" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
@@ -130,6 +24,9 @@
           <e p="Shader" t="Include">
             <e p="Gloss.shader" t="Include" />
             <e p="GridsTransparent.shader" t="Include" />
+            <e p="LWMoveGridTransparent.shader" t="Include" />
+            <e p="LWTerrain.shader" t="Include" />
+            <e p="LWTerrainDyn.shader" t="Include" />
             <e p="RetroGridsTransparent.shader" t="Include" />
             <e p="Silhouette.shader" t="Include" />
             <e p="TerrainGrid.shader" t="Include" />
@@ -289,7 +186,6 @@
                 <e p="HyperbitProjectileScript.cs" t="Include" />
               </e>
             </e>
-            <e p="Hyperbit Arsenal Readme.txt" t="Include" />
             <e p="Scripts" t="Include">
               <e p="HyperbitBeamScript.cs" t="Include" />
               <e p="HyperbitLightFade.cs" t="Include" />
@@ -300,18 +196,6 @@
             </e>
           </e>
           <e p="RetroAesthetics" t="Include">
-            <e p="Demos" t="Include">
-              <e p="Game" t="Include">
-                <e p="Scripts" t="Include">
-                  <e p="SpeedTilt.cs" t="Include" />
-                </e>
-              </e>
-              <e p="Menu" t="Include">
-                <e p="Scripts" t="Include">
-                  <e p="MenuScripts.cs" t="Include" />
-                </e>
-              </e>
-            </e>
             <e p="Fonts" t="Include">
               <e p="Bitmap" t="Include">
                 <e p="misterpixel_white" t="Include">
@@ -456,6 +340,7 @@
             </e>
             <e p="DamageType.cs" t="Include" />
             <e p="Derivative" t="Include">
+              <e p="Bullet.cs" t="Include" />
               <e p="Derivative.cs" t="Include" />
               <e p="Shriken.cs" t="Include" />
               <e p="Trap.cs" t="Include" />
@@ -728,9 +613,6 @@
       <e p="Temp" t="ExcludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
       </e>
-      <e p="Unity.RenderPipelines.Core.Editor.csproj" t="IncludeRecursive" />
-      <e p="Unity.RenderPipelines.Core.Runtime.csproj" t="IncludeRecursive" />
-      <e p="Unity.RenderPipelines.Core.ShaderLibrary.csproj" t="IncludeRecursive" />
     </e>
   </component>
 </project>

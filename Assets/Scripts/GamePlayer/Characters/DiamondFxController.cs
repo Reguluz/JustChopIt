@@ -8,14 +8,40 @@ namespace GamePlayer.Characters
 	public class DiamondFxController : CharacterFxController {
 
 		public ParticleSystem RushfxParticle;
+		public TrailRenderer RushTrail;
 
 		void OnEnable()
 		{
 			RushfxParticle.Stop();
+			RushTrail.enabled = false;
 		}
-		// Update is called once per frame
-		void Update () {
-			
+		public override void PlayFx(string fxname)
+		{
+			switch (fxname)
+			{
+				case "Dead": DeadFx();
+					break;
+				case "Relieve":RelieveFx();
+					break;
+				case "Dodge": DodgeFx();
+					break;
+				case "Rebuild":RebuildFx();
+					break;
+				case "SkillRelease":SkillRelease();
+					break;
+				
+				case "Rush": RushFx(true);
+					break;
+			}
+		}
+
+		public override void StopFx(string fxname)
+		{
+			switch (fxname)
+			{
+				case "Rush": RushFx(false);
+					break;
+			}
 		}
 		
 		
@@ -25,8 +51,10 @@ namespace GamePlayer.Characters
 			Debug.Log("Rush is "+isenable);
 			if(isenable){
 				RushfxParticle.Play();
+				RushTrail.enabled = true;
 			}else{
 				RushfxParticle.Stop();
+				RushTrail.enabled = false;
 			}
 			
 		}

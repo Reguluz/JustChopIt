@@ -22,11 +22,15 @@ namespace GamePlayer.Characters
         public List<PlayerBuff> Buffs = new List<PlayerBuff>();
         
         public SkillBaseInfo[] ActiveSkillInfo;    //技能信息
-        
+
+        protected CharacterFxController _fxController;
         protected PlayerProperties Properties;
         protected PhotonView PhotonView;
         private MoveController _moveController;
         protected List<ParticleSystem> BuffParticles;
+
+        public delegate bool DamageCalculate(GamePlayerController controller,bool isHurt);
+        public DamageCalculate DamageCalculator;
 
         
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -39,35 +43,50 @@ namespace GamePlayer.Characters
         {
             //获取自身组件
             PhotonView = GetComponent<PhotonView>();
-            Properties     =gameObject.GetComponent<PlayerProperties>();
-            
-            
-          
-			
+            Properties     =gameObject.GetComponent<PlayerProperties>();			
             //控制器绑定
             if (PhotonView.IsMine)
             {
-                _moveController = gameObject.GetComponent<MoveController>();
-                UiController = GameObject.Find("GameCanvas").GetComponent<UIController>();
-                //UI绑定数据
-                UiController.PlayerProperties = Properties;
-                //技能设置
-                SetSkillButton();
-                //移动控制设置
-                _moveController.RotateLevel = StaticData.RotateSpeed * SkillCo.RotateSpeed * BuffCo.RotateSpeed;
-                _moveController.SpeedLevel = StaticData.MoveSpeed * SkillCo.MoveSpeed * BuffCo.MoveSpeed;
-                //向属性控制注册
-                PropControllerRegister();
+                ControllerRegister();
             }
         }
-        
+
+        private void ControllerRegister()
+        {
+            _moveController = gameObject.GetComponent<MoveController>();
+            UiController = GameObject.Find("GameCanvas").GetComponent<UIController>();
+            //UI绑定数据
+            UiDataLink();
+            //技能设置
+            SetSkillButton();
+            //移动控制设置
+            SetMoveData();
+            //向属性控制注册
+            PropControllerRegister();
+        }
+
+        private void SetMoveData()
+        {
+            _moveController.RotateLevel = StaticData.RotateSpeed * SkillCo.RotateSpeed * BuffCo.RotateSpeed;
+            _moveController.SpeedLevel = StaticData.MoveSpeed * SkillCo.MoveSpeed * BuffCo.MoveSpeed;
+        }
+
+        private void UiDataLink()
+        {
+            UiController.PlayerProperties = Properties;
+        }
+
         void FixedUpdate()
         {
             if (PhotonView.IsMine)
             {
-                _moveController.SpeedLevel = StaticData.MoveSpeed + SkillCo.MoveSpeed + BuffCo.MoveSpeed;
-                _moveController.RotateLevel = StaticData.RotateSpeed + SkillCo.RotateSpeed + BuffCo.MoveSpeed;
+                SetMoveData();
             }
+            RuntimeBuff();
+        }
+
+        private void RuntimeBuff()
+        {
             for (int i = 0; i < Buffs.Count; i++)
             {
                 Buffs[i].Interval += Time.deltaTime;
@@ -138,6 +157,7 @@ namespace GamePlayer.Characters
                 //设置技能序号
                 int serial = ActiveSkillInfo[i].Pos;
                 //获取技能按钮
+                Debug.Log(serial+"  "+UiController.Skill.Length);
                 Cooldown[serial] = UiController.Skill[serial].GetComponent<CoolDownImageController>();
                 //控制器注册到技能按钮
                 Cooldown[serial].RegisterOwner(this);
@@ -152,9 +172,13 @@ namespace GamePlayer.Characters
         }    
 
         //被动伤害过滤
+
+        
         public virtual bool DamageFilter()
         {
-            for (int i = 0; i < Buffs.Count; i++)
+
+            return DamageCalculator(this, false);
+            /*for (int i = 0; i < Buffs.Count; i++)
             {
                 if (Buffs[i].Bufftype.Equals(Bufftype.Shield))
                 {
@@ -163,7 +187,7 @@ namespace GamePlayer.Characters
                     return false;
                 }
             }
-            return true;
+            return true;*/
         }    
 
         public void RefreshShow()
@@ -176,14 +200,21 @@ namespace GamePlayer.Characters
             
         }
         
-        protected virtual void Dodge()
-        {
-            
-        }
+        
 
-        protected virtual void EndDodge()
+        public void BulletShoot()
         {
-           
+            //PhotonView.RPC("ShootFx",RpcTarget.All);
+            if (PhotonView.IsMine)
+            {
+                Debug.Log("Shoot");
+                //GameObject shriken = PhotonNetwork.PrefabPool.Instantiate("Player/Derivative/" + ShrikenPrefab.name, transform.position,transform.rotation);
+                GameObject bullet = PhotonNetwork.Instantiate("Bullet", transform.position, transform.rotation, 0);		
+                PhotonView pv = bullet.GetComponent<PhotonView>();
+                pv.RPC("SetOwner", RpcTarget.All,gameObject.GetComponent<PhotonView>().ViewID);		
+                pv.RPC("SetDirection",RpcTarget.All,transform.forward);
+            }
+            _fxController.PlayFx("SkillRelease");
         }
 
         public virtual void Rebuild()    //状态重置

@@ -21,7 +21,7 @@ namespace Items.Buff
             
         }
 
-        public  void RemoveBuff(GamePlayerController player)
+        public virtual void RemoveBuff(GamePlayerController player)
         {
             player.BuffCo?.Sub(Coefficient);
             if (Owner.GetPhotonView().IsMine)
@@ -35,6 +35,8 @@ namespace Items.Buff
         {
             return (!(Interval < Maxtime));
         }
+
+
 
     }
 }

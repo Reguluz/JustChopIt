@@ -5,22 +5,23 @@ namespace GamePlayer.Characters
 {
 	public class CircleFxController : CharacterFxController
 	{
-		public ParticleSystem ShootFxParticle;
-		
-
-		/// <summary>
-		/// Awake is called when the script instance is being loaded.
-		/// </summary>
-		void OnEnable()
+		public override void PlayFx(string fxname)
 		{
-			ShootFxParticle.Stop();
+			switch (fxname)
+			{
+				case "Dead": DeadFx();
+					break;
+				case "Relieve":RelieveFx();
+					break;
+				case "Dodge": DodgeFx();
+					break;
+				case "Rebuild":RebuildFx();
+					break;
+				case "SkillRelease":SkillRelease();
+					break;
+			}
 		}
 		
-		//[PunRPC]
-		public void ShootFx()
-		{
-			ShootFxParticle.Play();
-		}
 		
 	}
 }

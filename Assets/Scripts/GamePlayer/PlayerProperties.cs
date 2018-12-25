@@ -49,7 +49,6 @@ namespace GamePlayer
 		void Start ()
 		{
 			FxInit();
-			
 		}
 	
 		// Update is called once per frame
@@ -91,6 +90,7 @@ namespace GamePlayer
 					if (Controller.DamageFilter())
 					{
 						//_photonView.RPC("Dead",RpcTarget.All);
+						Deathtime++;
 						Dead();
 						PhotonView pv = PhotonView.Find(killerViewId);
 						if (!pv.IsSceneView)
@@ -105,6 +105,7 @@ namespace GamePlayer
 						Debug.Log("穿刺击杀");
 						if (Controller.DamageFilter())
 						{
+							Deathtime++;
 							//_photonView.RPC("Dead",RpcTarget.All);
 							Dead();
 							PhotonView pv = PhotonView.Find(killerViewId);
@@ -134,7 +135,7 @@ namespace GamePlayer
 		{
 			
 			StateType = PlayerStateType.Dead;
-			Deathtime++;
+			
 			_meshModel.SetActive(true);
 			//FXrenderer.enabled = false;
 			Deadparticles.Play();

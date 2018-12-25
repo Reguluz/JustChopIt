@@ -101,19 +101,6 @@ namespace System
                 RoomProperty.Add("MapSerial", MapSelector.value);
             }
             
-            
-            
-            if (RoomProperty.ContainsKey("ModeSerial"))
-            {
-                RoomProperty["ModeSerial"] = ModeSelector.value;
-            }
-            else
-            {
-                RoomProperty.Add("ModeSerial", ModeSelector.value);
-            }
-            
-            
-            
             if (RoomProperty.ContainsKey("MaxPlayer"))
             {
                 RoomProperty["MaxPlayer"] = PlayerSelector.value;

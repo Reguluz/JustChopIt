@@ -4,17 +4,15 @@ using UnityEngine;
 namespace GamePlayer.Derivative
 {
     [RequireComponent(typeof(PhotonView))]
+    [RequireComponent(typeof(PhotonTransformView))]
     public class Derivative:MonoBehaviour
     {
         //绑定创建者
         public int CreatorId;
-        protected PhotonView photonView;
+        public PhotonView photonView;
 
         // Use this for initialization
-        private void Awake()
-        {
-            photonView = GetComponent<PhotonView>();
-        }
+
         
         [PunRPC]
         public void SetOwner(int serial)

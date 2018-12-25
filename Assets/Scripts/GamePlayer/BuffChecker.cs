@@ -5,8 +5,6 @@ namespace GamePlayer
 {
     public class BuffChecker
     {
-        
-
         public static PlayerBuff Check(Bufftype bufftype)
         {
             switch (bufftype)

@@ -127,6 +127,8 @@ namespace RetroAesthetics {
 
         public void OnRenderImage(RenderTexture source, RenderTexture destination)
         {
+            
+            Debug.Log("RenderFilter");
             if (_material == null) {
                 Awake();
             }

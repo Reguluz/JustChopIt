@@ -21,6 +21,7 @@ namespace Items.Buff
         {
             Owner = player.gameObject;
             player.BuffCo.Add(Coefficient);
+            player.DamageCalculator += ShieldChecker;
             if (Owner.GetPhotonView().IsMine)
             {
                 Effect = PhotonNetwork.Instantiate("ShieldEffect", Vector3.zero, Quaternion.identity);
@@ -29,7 +30,29 @@ namespace Items.Buff
             //tempeffect.GetComponentInChildren<ParticleSystem>().Play();
         }
 
-        
+        public override void RemoveBuff(GamePlayerController player)
+        {
+            player.DamageCalculator -= ShieldChecker;
+            player.BuffCo?.Sub(Coefficient);
+            if (Owner.GetPhotonView().IsMine)
+            {
+                PhotonNetwork.Destroy(Effect); 
+            }
+                
+        }
+        public bool ShieldChecker(GamePlayerController player, bool iseffected)
+        {
+            if (iseffected)
+            {
+                return iseffected;
+            }
+            else
+            {
+                player.Buffs.Remove(this);
+                RemoveBuff(player);
+                return true;
+            }
+        }
 
         
     }

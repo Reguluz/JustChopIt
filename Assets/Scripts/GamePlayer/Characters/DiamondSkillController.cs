@@ -7,7 +7,7 @@ namespace GamePlayer.Characters
 	{
 		//私有技能参数
 		private bool _isRush = false;
-		private DiamondFxController _fxController;
+		//private DiamondFxController _fxController;
 		
 		
 		private void OnEnable()
@@ -52,7 +52,7 @@ namespace GamePlayer.Characters
 		{
 			switch (skillnum)
 			{
-				case 0:Dodge();
+				case 0:BulletShoot();
 					break;
 				case 1:Rush();
 					break;
@@ -84,27 +84,14 @@ namespace GamePlayer.Characters
 			}
 		}
 
-		protected override void Dodge()
-		{
-			Debug.Log("Dodge");
-			Properties.StateType = PlayerStateType.Vanity;
-			_fxController.DodgeFx();
-			//PhotonView.RPC("DodgeFx",RpcTarget.All);
-			Invoke(nameof(EndDodge),1f);
-		}
-
-		protected override void EndDodge()
-		{
-			Properties.StateType = PlayerStateType.Alive;
-			_fxController.FxRebuild();
-			//PhotonView.RPC("FxRebuild",RpcTarget.All);
-		}
 		private void Rush()
 		{
 			
 			SkillCo.MoveSpeed = 0.5f;
+			SkillCo.RotateSpeed = 5f;
 			_isRush = true;
-			_fxController.RushFx(true);
+			_fxController.PlayFx("Rush");
+			_fxController.SkillRelease();
 			//PhotonView.RPC("RushFx",RpcTarget.All,true);
 			Invoke(nameof(EndRush),1f);
 		}
@@ -112,7 +99,8 @@ namespace GamePlayer.Characters
 		private void EndRush()
 		{
 			SkillCo.MoveSpeed = 0;
-			_fxController.RushFx(false);
+			SkillCo.RotateSpeed = 0;
+			_fxController.StopFx("Rush");
 			//PhotonView.RPC("RushFx",RpcTarget.All,false);
 			_isRush = false;
 		}

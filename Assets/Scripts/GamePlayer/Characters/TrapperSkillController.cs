@@ -6,7 +6,7 @@ namespace GamePlayer.Characters
     public class TrapperSkillController : GamePlayerController
     {
         //技能所需道具
-		private TrapperFxController _fxController;
+		//private TrapperFxController _fxController;
 		public GameObject TrapPrefab;
 		// Use this for initialization
 		
@@ -15,7 +15,7 @@ namespace GamePlayer.Characters
 		{
 			//初始化基础参数（转向速度等级、移动速度等级、按技能数量新建控制器
 			StaticData.RotateSpeed = 1;
-			StaticData.MoveSpeed = 1;
+			StaticData.MoveSpeed = 0.8f;
 			Cooldown = new CoolDownImageController[2];
 			_fxController = gameObject.GetComponent<TrapperFxController>();
 		}
@@ -24,7 +24,7 @@ namespace GamePlayer.Characters
 		public override void Rebuild()
 		{
 			StaticData.RotateSpeed  = 1;
-			StaticData.MoveSpeed = 1;	
+			StaticData.MoveSpeed = 0.8f;	
 		}
 
 		private void Update()
@@ -49,7 +49,7 @@ namespace GamePlayer.Characters
 			switch (skillnum)
 			{
 				case 0:
-					Dodge();
+					BulletShoot();
 					break;
 				case 1:
 					Trap();
@@ -82,21 +82,6 @@ namespace GamePlayer.Characters
 			Properties.CharacterType = CharacterType.Shooter;
 		}
 
-		protected override void Dodge()
-		{
-			Debug.Log("Dodge");
-			Properties.StateType = PlayerStateType.Vanity;
-			_fxController.DodgeFx();
-			//PhotonView.RPC("DodgeFx",RpcTarget.All);
-			Invoke(nameof(EndDodge),1f);
-		}
-
-		protected override void EndDodge()
-		{
-			Properties.StateType = PlayerStateType.Alive;
-			_fxController.FxRebuild();
-			//PhotonView.RPC("FxRebuild",RpcTarget.All);
-		}
 
 		private void Trap()	
 		{
@@ -107,7 +92,7 @@ namespace GamePlayer.Characters
 				PhotonView pv = trap.GetComponent<PhotonView>();
 				pv.RPC("SetOwner", RpcTarget.All,gameObject.GetComponent<PhotonView>().ViewID);
 			}
-			_fxController.TrapFx();
+			_fxController.PlayFx("SkillRelease");
 		}
     }
 }

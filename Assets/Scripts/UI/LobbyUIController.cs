@@ -158,6 +158,7 @@ namespace UI
 			}
 			else
 			{
+				LocalSettings.IsReady = false;
 				Match.GetComponentInChildren<Text>().text = "未准备";
 				RoomBtn.GetComponentInChildren<Text>().text = "返回大厅";
 			}
@@ -179,12 +180,11 @@ namespace UI
 		public void RefreshRoom()
 		{
 			_roomSettingText =  "地图         "+LocalSettings.MapSelector.options[(int) PhotonNetwork.CurrentRoom.CustomProperties["MapSerial"]].text + '\n'
-			                  + "游戏模式  " 
-			                  + LocalSettings.ModeSelector.options[(int) PhotonNetwork.CurrentRoom.CustomProperties["ModeSerial"]].text + '\n'
 			                  + "最大人数  " 
 			                  + LocalSettings.PlayerSelector.options[(int) PhotonNetwork.CurrentRoom.CustomProperties["MaxPlayer"]].text + '\n'
 			                  + "目标分数  " 
 			                  + LocalSettings.TargetSelector.options[(int) PhotonNetwork.CurrentRoom.CustomProperties["TargetKilling"]].text;
+			
 			_playerInfoText = "玩家姓名"+ "   " + "选择角色" + "   " + "准备状态"+'\n';
 			foreach (Player playerinroom in PhotonNetwork.PlayerList)
 			{
@@ -240,7 +240,7 @@ namespace UI
 		{
 			Match.interactable = true;
 		}
-
+ 
 		public void ChooseCharacter()
 		{
 			PlayerPrefs.DeleteKey("Charactertype");
@@ -259,6 +259,11 @@ namespace UI
 							
 							//PlayerPrefs.SetInt("Charactertype", 1);
 							LocalSettings.SetCharacter(CharacterType.Rusher);
+							break;
+						case "TrapperToggle":
+							
+							//PlayerPrefs.SetInt("Charactertype", 1);
+							LocalSettings.SetCharacter(CharacterType.Trapper);
 							break;
 					}
 					break;
