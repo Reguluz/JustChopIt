@@ -27,6 +27,7 @@
             <e p="LWMoveGridTransparent.shader" t="Include" />
             <e p="LWTerrain.shader" t="Include" />
             <e p="LWTerrainDyn.shader" t="Include" />
+            <e p="LWThemeGridMove.shader" t="Include" />
             <e p="RetroGridsTransparent.shader" t="Include" />
             <e p="Silhouette.shader" t="Include" />
             <e p="TerrainGrid.shader" t="Include" />

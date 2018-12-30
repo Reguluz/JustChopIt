@@ -1,52 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b0fba88-989d-4ff0-b8cf-76a689292ced" name="Default" comment="LWRP Replace (terrain 1.1)">
+    <list default="true" id="6b0fba88-989d-4ff0-b8cf-76a689292ced" name="Default" comment="v0.3.5 技能按钮功能合并">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.JustChopIt/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.JustChopIt/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.JustChopIt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.JustChopIt/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollower.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlayer/Characters/CircleSkillController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlayer/Characters/CircleSkillController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlayer/Characters/DiamondSkillController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlayer/Characters/DiamondSkillController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlayer/Characters/GamePlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlayer/Characters/GamePlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlayer/Characters/TrapperSkillController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlayer/Characters/TrapperSkillController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlayer/Derivative/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlayer/Derivative/Bullet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GamePlayer/MoveController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GamePlayer/MoveController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CoolDownImageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CoolDownImageController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/EasyTouchSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/EasyTouchSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RetroAesthetics/Textures/Grids/grid_256_thick.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RetroAesthetics/Textures/Grids/grid_256_thick.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/Collab/CollabSnapshot_4dade7ad-9247-4d6c-afe7-224ded3ad396.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/Collab/CollabSnapshot_4dade7ad-9247-4d6c-afe7-224ded3ad396.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/EditorUserBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/EditorUserBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ShaderCache.db" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/6c5f61-da9569de0f72ccd418.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/6c5f61-da9569de0f72ccd418.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/6c5f61-f4a3e019fab2f5448a.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/6c5f61-f4a3e019fab2f5448a.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptMapper" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptMapper" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/6c5f61-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/6c5f61-mainStage.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/5c9a94-da9569de0f72ccd418.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/5c9a94-da9569de0f72ccd418.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/5c9a94-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/5c9a94-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/assetDatabase3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/29/296c9ad74b2c4c8b835814e69864ea54" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/29/296c9ad74b2c4c8b835814e69864ea54" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/3e/3eeac54119fd439409c5f64cf7be6670" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/3e/3eeac54119fd439409c5f64cf7be6670" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/46/4630468a244590e45819d77593a33d51" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/46/4630468a244590e45819d77593a33d51" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/56/560199742e42cc443b4412f673cce32a" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/56/560199742e42cc443b4412f673cce32a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/73/73797f05374dd2a41a161da516b4083d" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/73/73797f05374dd2a41a161da516b4083d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/87/8718150964da4a2183595244ad37337d" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/87/8718150964da4a2183595244ad37337d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/a2/a23bdf880228ba14fb08b48eed065ac7" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/a2/a23bdf880228ba14fb08b48eed065ac7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/a2/a23bdf880228ba14fb08b48eed065ac7.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/a2/a23bdf880228ba14fb08b48eed065ac7.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/be/be13034ef5a6621438d83a175f4f09d5" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/be/be13034ef5a6621438d83a175f4f09d5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/be/be13034ef5a6621438d83a175f4f09d5.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/be/be13034ef5a6621438d83a175f4f09d5.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/ce/ce033b809b286e044a672a1ff527ab1d" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ce/ce033b809b286e044a672a1ff527ab1d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/ce/ce11e7a0ef700b643b009fda12a2c772" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ce/ce11e7a0ef700b643b009fda12a2c772" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/ce/ce11e7a0ef700b643b009fda12a2c772.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ce/ce11e7a0ef700b643b009fda12a2c772.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/da/da9569de0f72ccd4181fc75226587206" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/da/da9569de0f72ccd4181fc75226587206" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/da/da9569de0f72ccd4181fc75226587206.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/da/da9569de0f72ccd4181fc75226587206.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/da/daa55c494256fb042ac574f422631f2e" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/da/daa55c494256fb042ac574f422631f2e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/dd/ddbd3dea37b16824d8c027e9b795c9ef.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/dd/ddbd3dea37b16824d8c027e9b795c9ef.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/f4/f4a3e019fab2f5448a77f50ccb840954" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/f4/f4a3e019fab2f5448a77f50ccb840954" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/f4/f4a3e019fab2f5448a77f50ccb840954.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/f4/f4a3e019fab2f5448a77f50ccb840954.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/98/98d05bc502f7e4a4685067d7a9be4ae5" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/98/98d05bc502f7e4a4685067d7a9be4ae5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/98/98d05bc502f7e4a4685067d7a9be4ae5.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/98/98d05bc502f7e4a4685067d7a9be4ae5.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/bf/bf05bc3a7644ba7488a79631b87c173d.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/bf/bf05bc3a7644ba7488a79631b87c173d.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe10.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe10.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe11.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe11.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe3.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe4.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe4.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe5.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe5.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe6.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe6.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe7.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe7.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe8.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe8.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe9.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe9.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,29 +81,29 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cs" value="17134" />
-          <entry key="shader" value="2444" />
-          <entry key="txt" value="239" />
+          <entry key="shader" value="2895" />
+          <entry key="txt" value="262" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="C#" value="17134" />
-          <entry key="PLAIN_TEXT" value="239" />
-          <entry key="ShaderLab" value="2444" />
+          <entry key="PLAIN_TEXT" value="262" />
+          <entry key="ShaderLab" value="2895" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
         <counts>
-          <entry key="git.branch.merge" value="4" />
+          <entry key="git.branch.merge" value="5" />
           <entry key="git.branch.rebase" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="C#" value="404" />
-          <entry key="Cg" value="6" />
+          <entry key="Cg" value="23" />
           <entry key="Csproj" value="2" />
-          <entry key="ShaderLab" value="45" />
+          <entry key="ShaderLab" value="61" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -132,14 +111,14 @@
         <counts>
           <entry key="cs" value="404" />
           <entry key="csproj" value="2" />
-          <entry key="hlsl" value="6" />
-          <entry key="shader" value="45" />
+          <entry key="hlsl" value="23" />
+          <entry key="shader" value="61" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7832311">
+    <splitter split-orientation="horizontal" split-proportion="0.5336916">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -235,30 +214,9 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraFollower.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="765">
-                  <caret line="54" column="29" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
-                  <folding>
-                    <marker date="1546159738112" expanded="false" signature="6:96" ph="..." />
-                    <marker date="1546159738112" expanded="true" signature="115:1285" ph="{...}" />
-                    <marker date="1546159738112" expanded="true" signature="162:1281" ph="{...}" />
-                    <marker date="1546159738112" expanded="true" signature="483:585" ph="{...}" />
-                    <marker date="1546159738112" expanded="true" signature="646:912" ph="{...}" />
-                    <marker date="1546159738112" expanded="true" signature="763:799" ph="{...}" />
-                    <marker date="1546159738112" expanded="true" signature="860:908" ph="{...}" />
-                    <marker date="1546159738112" expanded="true" signature="941:1087" ph="{...}" />
-                    <marker date="1546159738112" expanded="true" signature="1112:1186" ph="{...}" />
-                    <marker date="1546159738112" expanded="true" signature="1218:1276" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/CoolDownImageController.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="886">
+                <state relative-caret-position="895">
                   <caret line="114" column="37" selection-start-line="114" selection-start-column="37" selection-end-line="114" selection-end-column="37" />
                   <folding>
                     <marker date="1546161910599" expanded="false" signature="6:175" ph="..." />
@@ -286,43 +244,69 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/EasyTouchSkill.cs">
+            <entry file="file://$PROJECT_DIR$/Assets/Material/Shader/LWMoveGridTransparent.shader">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="797">
-                  <caret line="108" column="33" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
+                <state relative-caret-position="1143">
+                  <caret line="210" column="6" selection-start-line="210" selection-start-column="6" selection-end-line="210" selection-end-column="6" />
                   <folding>
-                    <marker date="1546162195655" expanded="false" signature="6:123" ph="..." />
-                    <marker date="1546162195655" expanded="true" signature="137:4416" ph="{...}" />
-                    <marker date="1546162195655" expanded="true" signature="239:4414" ph="{...}" />
-                    <marker date="1546162195655" expanded="true" signature="980:1185" ph="{...}" />
-                    <marker date="1546162195655" expanded="true" signature="1251:1418" ph="{...}" />
-                    <marker date="1546162195655" expanded="true" signature="1459:2300" ph="{...}" />
-                    <marker date="1546162195655" expanded="true" signature="1670:2214" ph="{...}" />
-                    <marker date="1546162195655" expanded="true" signature="1712:2026" ph="{...}" />
-                    <marker date="1546162195655" expanded="true" signature="2047:2200" ph="{...}" />
-                    <marker date="1546162195655" expanded="true" signature="2372:2503" ph="{...}" />
-                    <marker date="1546162195655" expanded="true" signature="2433:2493" ph="{...}" />
-                    <marker date="1546162195655" expanded="true" signature="2559:3575" ph="{...}" />
-                    <marker date="1546162195655" expanded="true" signature="3318:3425" ph="{...}" />
-                    <marker date="1546162195655" expanded="true" signature="3442:3551" ph="{...}" />
-                    <marker date="1546162195655" expanded="true" signature="3634:4190" ph="{...}" />
-                    <marker date="1546162195655" expanded="true" signature="4225:4258" ph="{...}" />
-                    <marker date="1546162195655" expanded="true" signature="4296:4329" ph="{...}" />
-                    <marker date="1546162195655" expanded="true" signature="4365:4398" ph="{...}" />
+                    <marker date="1546175347339" expanded="true" signature="62:7912" ph="{...}" />
+                    <marker date="1546175347339" expanded="true" signature="83:1179" ph="{...}" />
+                    <marker date="1546175347339" expanded="true" signature="1198:1684" ph="{...}" />
+                    <marker date="1546175347339" expanded="true" signature="1449:1684" ph="{...}" />
+                    <marker date="1546175347339" expanded="true" signature="1499:1684" ph="{...}" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Assets/Scripts/GamePlayer/Characters/CharacterType.cs">
+            <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/Unlit.shader">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="75">
-                  <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+                <state relative-caret-position="-810">
                   <folding>
-                    <marker date="1544201970132" expanded="true" signature="35:170" ph="{...}" />
-                    <marker date="1544201970132" expanded="true" signature="86:168" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="43:6777" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="64:739" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="758:6644" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="992:5248" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="1042:5231" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="5271:6043" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="5388:6026" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="6151:6638" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="6262:6621" ph="{...}" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/Lit.shader">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-990">
+                  <folding>
+                    <marker date="1544178043000" expanded="true" signature="41:7617" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="62:1696" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="1716:7486" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="1726:2036" ph="/* Lightweight Pipeline tag is required. If Lightweight render pipeline is not set in the graphics settings ... */" />
+                    <marker date="1544178043000" expanded="true" signature="2168:2318" ph="/* ------------------------------------------------------------------ ... */" />
+                    <marker date="1544178043000" expanded="true" signature="2340:4766" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="2354:2543" ph="/* Lightmode matches the ShaderPassName set in LightweightRenderPipeline.cs. SRPDefaultUnlit and passes with ... */" />
+                    <marker date="1544178043000" expanded="true" signature="2744:4749" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="4789:5696" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="4966:5679" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="5719:6614" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="5889:6597" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="6722:7479" ph="{...}" />
+                    <marker date="1544178043000" expanded="true" signature="6833:7462" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/LitForwardPass.hlsl">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="190">
+                  <caret line="83" column="22" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -330,27 +314,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+        <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Assets/Material/Shader/TerrainTransparent.shader">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1097">
-                  <caret line="95" column="63" selection-start-line="95" selection-start-column="53" selection-end-line="95" selection-end-column="63" />
-                  <folding>
-                    <marker date="1545643831923" expanded="true" signature="103:3756" ph="{...}" />
-                    <marker date="1545643831923" expanded="true" signature="124:811" ph="{...}" />
-                    <marker date="1545643831923" expanded="true" signature="830:3731" ph="{...}" />
-                    <marker date="1545643831923" expanded="true" signature="1061:3720" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/SimpleLitForwardPass.hlsl">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1155">
-                  <caret line="77" column="28" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="28" />
+                <state relative-caret-position="1785">
+                  <caret line="122" column="27" selection-start-line="122" selection-start-column="6" selection-end-line="122" selection-end-column="27" />
                 </state>
               </provider>
             </entry>
@@ -358,29 +327,29 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/ShaderLibrary/Core.hlsl">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="540">
-                  <caret line="36" column="45" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="45" />
+                <state relative-caret-position="765">
+                  <caret line="51" column="40" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="40" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/SimpleLit.shader">
+            <entry file="file://$PROJECT_DIR$/Assets/Material/Shader/LWThemeGridMove.shader">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2025">
-                  <caret line="135" column="28" selection-start-line="135" selection-start-column="28" selection-end-line="135" selection-end-column="28" />
+                <state relative-caret-position="780">
+                  <caret line="103" column="50" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="50" />
                   <folding>
-                    <marker date="1544178043000" expanded="true" signature="119:6729" ph="{...}" />
-                    <marker date="1544178043000" expanded="true" signature="211:1838" ph="{...}" />
-                    <marker date="1544178043000" expanded="true" signature="1858:6592" ph="{...}" />
-                    <marker date="1544178043000" expanded="true" signature="2006:4043" ph="{...}" />
-                    <marker date="1544178043000" expanded="true" signature="2278:4026" ph="{...}" />
-                    <marker date="1544178043000" expanded="true" signature="4066:4970" ph="{...}" />
-                    <marker date="1544178043000" expanded="true" signature="4243:4953" ph="{...}" />
-                    <marker date="1544178043000" expanded="true" signature="4993:5885" ph="{...}" />
-                    <marker date="1544178043000" expanded="true" signature="5163:5868" ph="{...}" />
-                    <marker date="1544178043000" expanded="true" signature="5993:6586" ph="{...}" />
-                    <marker date="1544178043000" expanded="true" signature="6106:6569" ph="{...}" />
+                    <marker date="1546174065269" expanded="true" signature="58:11107" ph="{...}" />
+                    <marker date="1546174065269" expanded="true" signature="150:2176" ph="{...}" />
+                    <marker date="1546174065269" expanded="true" signature="2196:10968" ph="{...}" />
+                    <marker date="1546174065269" expanded="true" signature="2344:8045" ph="{...}" />
+                    <marker date="1546174065269" expanded="true" signature="2616:8028" ph="{...}" />
+                    <marker date="1546174065269" expanded="true" signature="8068:9122" ph="{...}" />
+                    <marker date="1546174065269" expanded="true" signature="8245:9105" ph="{...}" />
+                    <marker date="1546174065269" expanded="true" signature="9145:10149" ph="{...}" />
+                    <marker date="1546174065269" expanded="true" signature="9315:10132" ph="{...}" />
+                    <marker date="1546174065269" expanded="true" signature="10257:10962" ph="{...}" />
+                    <marker date="1546174065269" expanded="true" signature="10370:10945" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -423,6 +392,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonRealtime/Code/LoadbalancingPeer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonRealtime/Code/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Material/Shader/LWTerrainDyn.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Material/Shader/LWThemeGridMove.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonRealtime/Code/LoadBalancingClient.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AE6430AD-8B78-4A16-A56D-7E56AECB0D00/9a/6bee19ec/ScriptableRuntimeReflectionSystemWrapper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AE6430AD-8B78-4A16-A56D-7E56AECB0D00/76/d7cbf303/RenderPipelineManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -451,12 +421,16 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/SimpleLitForwardPass.hlsl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Hyperbit Arsenal/Demo/Scripts/HyperbitLoadSceneOnClick.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/Lit.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/Professional/Unity/package/ScriptableRenderPipeline-4.1.0-preview/com.unity.render-pipelines.lightweight/Shaders/Utils/Blit.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Scripts/ThirdPersonUserControl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/SimpleLit.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/LitForwardPass.hlsl" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/SimpleLitInput.hlsl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/System/MonsterSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/Professional/Unity/package/ScriptableRenderPipeline-4.1.0-preview/com.unity.render-pipelines.lightweight/Shaders/Utils/CopyDepth.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/VersionShow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/LitInput.hlsl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AC823E2B-B42B-41BD-A679-24A45A0173C3/59/48fc2fba/IntPtr.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AE6430AD-8B78-4A16-A56D-7E56AECB0D00/53/cf579839/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/Tools/Level Generator Tool/Scripts/LevelGenerator.cs" root0="FORCE_HIGHLIGHTING" />
@@ -482,6 +456,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlayer/Characters/TrapperSkillController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/ShaderLibrary/Core.hlsl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/EntryCompare.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/ShaderLibrary/SurfaceInput.hlsl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/ShaderLibrary/Lighting.hlsl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/EasyTouchMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/UIMouseFunction.cs" root0="FORCE_HIGHLIGHTING" />
@@ -542,7 +517,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerEntryController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/EntryCompare.cs" />
         <option value="$PROJECT_DIR$/Assets/Material/Shader/TerrainTest.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/System/MonsterModeController.cs" />
@@ -574,7 +548,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GamePlayer/Characters/DiamondFxController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GamePlayer/Characters/CharacterFxController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GamePlayer/Characters/TrapperFxController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Material/Shader/LWMoveGridTransparent.shader" />
         <option value="$PROJECT_DIR$/Assets/Material/Shader/TerrainOpaque.shader" />
         <option value="$PROJECT_DIR$/Assets/Plugins/RetroAesthetics/Shaders/Post-processing/RetroCameraEffect.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GamePlayer/BuffChecker.cs" />
@@ -593,6 +566,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GamePlayer/Characters/CircleSkillController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/CoolDownImageController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/EasyTouchSkill.cs" />
+        <option value="$PROJECT_DIR$/Assets/Material/Shader/LWThemeGridMove.shader" />
+        <option value="$PROJECT_DIR$/Assets/Material/Shader/LWMoveGridTransparent.shader" />
       </list>
     </option>
   </component>
@@ -602,7 +577,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1139" />
     <option name="width" value="1428" />
     <option name="height" value="1407" />
@@ -864,7 +839,7 @@
       <workItem from="1545708519288" duration="8365000" />
       <workItem from="1545840184097" duration="383000" />
       <workItem from="1546081329721" duration="9925000" />
-      <workItem from="1546156864643" duration="5320000" />
+      <workItem from="1546156864643" duration="13881000" />
     </task>
     <task id="LOCAL-00001" summary="修改指向性技能UI提示的逻辑">
       <created>1540973396150</created>
@@ -1013,11 +988,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545726748341</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="v0.3.5 技能按钮功能合并">
+      <created>1546162683887</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1546162683887</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="603350000" />
+    <option name="totallyTimeSpent" value="611911000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1029,10 +1011,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1139" y="0" width="1428" height="1407" extended-state="0" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2843567" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.03855326" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1141,7 +1123,8 @@
     <MESSAGE value="v0.3.3 新角色前置准备" />
     <MESSAGE value="LWRP Replace (terrain 1.0)" />
     <MESSAGE value="LWRP Replace (terrain 1.1)" />
-    <option name="LAST_COMMIT_MESSAGE" value="LWRP Replace (terrain 1.1)" />
+    <MESSAGE value="v0.3.5 技能按钮功能合并" />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.3.5 技能按钮功能合并" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1154,48 +1137,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Items/Buff/SpeedupBuff.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Plugins/Hyperbit Arsenal/Demo/Scripts/HyperbitLoadSceneOnClick.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GamePlayer/Characters/DiamondFxController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GamePlayer/Characters/TrapperFxController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Items/Buff/ShieldBuff.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GamePlayer/Derivative/Shriken.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/UIController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1217,9 +1158,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/Unlit.shader">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Material/Shader/TerrainOpaque.shader">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
@@ -1231,13 +1169,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Material/Shader/RetroGridsTransparent.shader">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="69" column="77" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="77" />
         </state>
       </provider>
     </entry>
@@ -1297,11 +1228,6 @@
     <entry file="file://$PROJECT_DIR$/Assembly-CSharp-Editor-firstpass.csproj">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/ShaderLibrary/Input.hlsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Temp/Compiled-Mobile-Diffuse.shader" />
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/System/MapController.cs">
       <provider selected="true" editor-type-id="text-editor">
@@ -1317,13 +1243,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="46" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/ShaderLibrary/Lighting.hlsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1353,24 +1272,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Material/Shader/LWMoveGridTransparent.shader">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="112" column="22" selection-start-line="112" selection-start-column="16" selection-end-line="112" selection-end-column="22" />
-          <folding>
-            <marker date="1544674127398" expanded="true" signature="62:7910" ph="{...}" />
-            <marker date="1544674127398" expanded="true" signature="83:1179" ph="{...}" />
-            <marker date="1544674127398" expanded="true" signature="1198:7777" ph="{...}" />
-            <marker date="1544674127398" expanded="true" signature="1449:6157" ph="{...}" />
-            <marker date="1544674127398" expanded="true" signature="1499:6140" ph="{...}" />
-            <marker date="1544674127398" expanded="true" signature="6180:7064" ph="{...}" />
-            <marker date="1544674127398" expanded="true" signature="6297:7047" ph="{...}" />
-            <marker date="1544674127398" expanded="true" signature="7172:7771" ph="{...}" />
-            <marker date="1544674127398" expanded="true" signature="7283:7754" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Material/Shader/TerrainTransparent.shader">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1097">
@@ -1380,40 +1281,6 @@
             <marker date="1545643831923" expanded="true" signature="124:811" ph="{...}" />
             <marker date="1545643831923" expanded="true" signature="830:3731" ph="{...}" />
             <marker date="1545643831923" expanded="true" signature="1061:3720" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/SimpleLitForwardPass.hlsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="77" column="28" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/ShaderLibrary/Core.hlsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="45" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/SimpleLit.shader">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2025">
-          <caret line="135" column="28" selection-start-line="135" selection-start-column="28" selection-end-line="135" selection-end-column="28" />
-          <folding>
-            <marker date="1544178043000" expanded="true" signature="119:6729" ph="{...}" />
-            <marker date="1544178043000" expanded="true" signature="211:1838" ph="{...}" />
-            <marker date="1544178043000" expanded="true" signature="1858:6592" ph="{...}" />
-            <marker date="1544178043000" expanded="true" signature="2006:4043" ph="{...}" />
-            <marker date="1544178043000" expanded="true" signature="2278:4026" ph="{...}" />
-            <marker date="1544178043000" expanded="true" signature="4066:4970" ph="{...}" />
-            <marker date="1544178043000" expanded="true" signature="4243:4953" ph="{...}" />
-            <marker date="1544178043000" expanded="true" signature="4993:5885" ph="{...}" />
-            <marker date="1544178043000" expanded="true" signature="5163:5868" ph="{...}" />
-            <marker date="1544178043000" expanded="true" signature="5993:6586" ph="{...}" />
-            <marker date="1544178043000" expanded="true" signature="6106:6569" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1431,37 +1298,6 @@
             <marker date="1544242951066" expanded="true" signature="585:669" ph="{...}" />
             <marker date="1544242951066" expanded="true" signature="721:788" ph="{...}" />
             <marker date="1544242951066" expanded="true" signature="858:921" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GamePlayer/Characters/CharacterType.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding>
-            <marker date="1544201970132" expanded="true" signature="35:170" ph="{...}" />
-            <marker date="1544201970132" expanded="true" signature="86:168" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GamePlayer/MoveController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-          <folding>
-            <marker date="1546159404024" expanded="false" signature="6:96" ph="..." />
-            <marker date="1546159404024" expanded="true" signature="118:1773" ph="{...}" />
-            <marker date="1546159404024" expanded="true" signature="166:1771" ph="{...}" />
-            <marker date="1546159404024" expanded="true" signature="330:572" ph="/* private Vector3 _forwardposition; ... */" />
-            <marker date="1546159404024" expanded="true" signature="587:633" ph="{...}" />
-            <marker date="1546159404024" expanded="true" signature="687:719" ph="{...}" />
-            <marker date="1546159404024" expanded="true" signature="755:1552" ph="{...}" />
-            <marker date="1546159404024" expanded="true" signature="846:876" ph="{...}" />
-            <marker date="1546159404024" expanded="true" signature="959:1548" ph="{...}" />
-            <marker date="1546159404024" expanded="true" signature="1251:1353" ph="/* 向前移动 ... */" />
-            <marker date="1546159404024" expanded="true" signature="1556:1766" ph="/* [PunRPC] ... */" />
           </folding>
         </state>
       </provider>
@@ -1484,26 +1320,6 @@
             <marker date="1546158409118" expanded="true" signature="1193:1459" ph="{...}" />
             <marker date="1546158409118" expanded="true" signature="1529:1620" ph="{...}" />
             <marker date="1546158409118" expanded="true" signature="1697:1759" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Material/Shader/LWTerrain.shader">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="127" column="34" selection-start-line="127" selection-start-column="34" selection-end-line="127" selection-end-column="34" />
-          <folding>
-            <marker date="1546157139347" expanded="true" signature="52:11932" ph="{...}" />
-            <marker date="1546157139347" expanded="true" signature="144:2116" ph="{...}" />
-            <marker date="1546157139347" expanded="true" signature="2136:11793" ph="{...}" />
-            <marker date="1546157139347" expanded="true" signature="2284:8870" ph="{...}" />
-            <marker date="1546157139347" expanded="true" signature="2556:8853" ph="{...}" />
-            <marker date="1546157139347" expanded="true" signature="8893:9947" ph="{...}" />
-            <marker date="1546157139347" expanded="true" signature="9070:9930" ph="{...}" />
-            <marker date="1546157139347" expanded="true" signature="9970:10974" ph="{...}" />
-            <marker date="1546157139347" expanded="true" signature="10140:10957" ph="{...}" />
-            <marker date="1546157139347" expanded="true" signature="11082:11787" ph="{...}" />
-            <marker date="1546157139347" expanded="true" signature="11195:11770" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1694,9 +1510,173 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/EasyTouchSkill.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="892">
+          <caret line="126" column="16" selection-start-line="126" selection-start-column="16" selection-end-line="126" selection-end-column="16" />
+          <folding>
+            <marker date="1546162195655" expanded="false" signature="6:123" ph="..." />
+            <marker date="1546162195655" expanded="true" signature="137:4416" ph="{...}" />
+            <marker date="1546162195655" expanded="true" signature="239:4414" ph="{...}" />
+            <marker date="1546162195655" expanded="true" signature="980:1185" ph="{...}" />
+            <marker date="1546162195655" expanded="true" signature="1251:1418" ph="{...}" />
+            <marker date="1546162195655" expanded="true" signature="1459:2300" ph="{...}" />
+            <marker date="1546162195655" expanded="true" signature="1670:2214" ph="{...}" />
+            <marker date="1546162195655" expanded="true" signature="1712:2026" ph="{...}" />
+            <marker date="1546162195655" expanded="true" signature="2047:2200" ph="{...}" />
+            <marker date="1546162195655" expanded="true" signature="2372:2503" ph="{...}" />
+            <marker date="1546162195655" expanded="true" signature="2433:2493" ph="{...}" />
+            <marker date="1546162195655" expanded="true" signature="2559:3575" ph="{...}" />
+            <marker date="1546162195655" expanded="true" signature="3318:3425" ph="{...}" />
+            <marker date="1546162195655" expanded="true" signature="3442:3551" ph="{...}" />
+            <marker date="1546162195655" expanded="true" signature="3634:4190" ph="{...}" />
+            <marker date="1546162195655" expanded="true" signature="4225:4258" ph="{...}" />
+            <marker date="1546162195655" expanded="true" signature="4296:4329" ph="{...}" />
+            <marker date="1546162195655" expanded="true" signature="4365:4398" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GamePlayer/Characters/CharacterType.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding>
+            <marker date="1544201970132" expanded="true" signature="35:170" ph="{...}" />
+            <marker date="1544201970132" expanded="true" signature="86:168" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Material/Shader/LWTerrain.shader">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="849">
+          <caret line="172" column="67" selection-start-line="172" selection-start-column="67" selection-end-line="172" selection-end-column="67" />
+          <folding>
+            <marker date="1546157139347" expanded="true" signature="52:11932" ph="{...}" />
+            <marker date="1546157139347" expanded="true" signature="144:2116" ph="{...}" />
+            <marker date="1546157139347" expanded="true" signature="2136:11793" ph="{...}" />
+            <marker date="1546157139347" expanded="true" signature="2284:8870" ph="{...}" />
+            <marker date="1546157139347" expanded="true" signature="2556:8853" ph="{...}" />
+            <marker date="1546157139347" expanded="true" signature="8893:9947" ph="{...}" />
+            <marker date="1546157139347" expanded="true" signature="9070:9930" ph="{...}" />
+            <marker date="1546157139347" expanded="true" signature="9970:10974" ph="{...}" />
+            <marker date="1546157139347" expanded="true" signature="10140:10957" ph="{...}" />
+            <marker date="1546157139347" expanded="true" signature="11082:11787" ph="{...}" />
+            <marker date="1546157139347" expanded="true" signature="11195:11770" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/ShaderLibrary/Input.hlsl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/ShaderLibrary/SurfaceInput.hlsl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/LitInput.hlsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-284" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/SimpleLitInput.hlsl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Material/Shader/LWThemeGridMove.shader">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="103" column="50" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="50" />
+          <folding>
+            <marker date="1546174065269" expanded="true" signature="58:11107" ph="{...}" />
+            <marker date="1546174065269" expanded="true" signature="150:2176" ph="{...}" />
+            <marker date="1546174065269" expanded="true" signature="2196:10968" ph="{...}" />
+            <marker date="1546174065269" expanded="true" signature="2344:8045" ph="{...}" />
+            <marker date="1546174065269" expanded="true" signature="2616:8028" ph="{...}" />
+            <marker date="1546174065269" expanded="true" signature="8068:9122" ph="{...}" />
+            <marker date="1546174065269" expanded="true" signature="8245:9105" ph="{...}" />
+            <marker date="1546174065269" expanded="true" signature="9145:10149" ph="{...}" />
+            <marker date="1546174065269" expanded="true" signature="9315:10132" ph="{...}" />
+            <marker date="1546174065269" expanded="true" signature="10257:10962" ph="{...}" />
+            <marker date="1546174065269" expanded="true" signature="10370:10945" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/ShaderLibrary/Core.hlsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="40" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/SimpleLitForwardPass.hlsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="122" column="27" selection-start-line="122" selection-start-column="6" selection-end-line="122" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/ShaderLibrary/Lighting.hlsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1215" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Material/Shader/RetroGridsTransparent.shader">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <marker date="1542124637078" expanded="true" signature="36:2105" ph="{...}" />
+            <marker date="1542124637078" expanded="true" signature="50:575" ph="{...}" />
+            <marker date="1542124637078" expanded="true" signature="588:2080" ph="{...}" />
+            <marker date="1542124637078" expanded="true" signature="710:2072" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/SimpleLit.shader">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="60" column="46" lean-forward="true" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
+          <folding>
+            <marker date="1544178043000" expanded="true" signature="119:6729" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="211:1838" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="1858:6592" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="2006:4043" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="2278:4026" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="4066:4970" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="4243:4953" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="4993:5885" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="5163:5868" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="5993:6586" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="6106:6569" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/GamePlayer/MoveController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+          <folding>
+            <marker date="1546159404024" expanded="false" signature="6:96" ph="..." />
+            <marker date="1546159404024" expanded="true" signature="118:1773" ph="{...}" />
+            <marker date="1546159404024" expanded="true" signature="166:1771" ph="{...}" />
+            <marker date="1546159404024" expanded="true" signature="330:572" ph="/* private Vector3 _forwardposition; ... */" />
+            <marker date="1546159404024" expanded="true" signature="587:633" ph="{...}" />
+            <marker date="1546159404024" expanded="true" signature="687:719" ph="{...}" />
+            <marker date="1546159404024" expanded="true" signature="755:1552" ph="{...}" />
+            <marker date="1546159404024" expanded="true" signature="846:876" ph="{...}" />
+            <marker date="1546159404024" expanded="true" signature="959:1548" ph="{...}" />
+            <marker date="1546159404024" expanded="true" signature="1251:1353" ph="/* 向前移动 ... */" />
+            <marker date="1546159404024" expanded="true" signature="1556:1766" ph="/* [PunRPC] ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/CoolDownImageController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="886">
+        <state relative-caret-position="895">
           <caret line="114" column="37" selection-start-line="114" selection-start-column="37" selection-end-line="114" selection-end-column="37" />
           <folding>
             <marker date="1546161910599" expanded="false" signature="6:175" ph="..." />
@@ -1722,29 +1702,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/UI/EasyTouchSkill.cs">
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/LitForwardPass.hlsl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="797">
-          <caret line="108" column="33" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
+        <state relative-caret-position="190">
+          <caret line="83" column="22" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/Lit.shader">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-990">
           <folding>
-            <marker date="1546162195655" expanded="false" signature="6:123" ph="..." />
-            <marker date="1546162195655" expanded="true" signature="137:4416" ph="{...}" />
-            <marker date="1546162195655" expanded="true" signature="239:4414" ph="{...}" />
-            <marker date="1546162195655" expanded="true" signature="980:1185" ph="{...}" />
-            <marker date="1546162195655" expanded="true" signature="1251:1418" ph="{...}" />
-            <marker date="1546162195655" expanded="true" signature="1459:2300" ph="{...}" />
-            <marker date="1546162195655" expanded="true" signature="1670:2214" ph="{...}" />
-            <marker date="1546162195655" expanded="true" signature="1712:2026" ph="{...}" />
-            <marker date="1546162195655" expanded="true" signature="2047:2200" ph="{...}" />
-            <marker date="1546162195655" expanded="true" signature="2372:2503" ph="{...}" />
-            <marker date="1546162195655" expanded="true" signature="2433:2493" ph="{...}" />
-            <marker date="1546162195655" expanded="true" signature="2559:3575" ph="{...}" />
-            <marker date="1546162195655" expanded="true" signature="3318:3425" ph="{...}" />
-            <marker date="1546162195655" expanded="true" signature="3442:3551" ph="{...}" />
-            <marker date="1546162195655" expanded="true" signature="3634:4190" ph="{...}" />
-            <marker date="1546162195655" expanded="true" signature="4225:4258" ph="{...}" />
-            <marker date="1546162195655" expanded="true" signature="4296:4329" ph="{...}" />
-            <marker date="1546162195655" expanded="true" signature="4365:4398" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="41:7617" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="62:1696" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="1716:7486" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="1726:2036" ph="/* Lightweight Pipeline tag is required. If Lightweight render pipeline is not set in the graphics settings ... */" />
+            <marker date="1544178043000" expanded="true" signature="2168:2318" ph="/* ------------------------------------------------------------------ ... */" />
+            <marker date="1544178043000" expanded="true" signature="2340:4766" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="2354:2543" ph="/* Lightmode matches the ShaderPassName set in LightweightRenderPipeline.cs. SRPDefaultUnlit and passes with ... */" />
+            <marker date="1544178043000" expanded="true" signature="2744:4749" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="4789:5696" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="4966:5679" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="5719:6614" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="5889:6597" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="6722:7479" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="6833:7462" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.lightweight@4.6.0-preview/Shaders/Unlit.shader">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-810">
+          <folding>
+            <marker date="1544178043000" expanded="true" signature="43:6777" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="64:739" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="758:6644" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="992:5248" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="1042:5231" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="5271:6043" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="5388:6026" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="6151:6638" ph="{...}" />
+            <marker date="1544178043000" expanded="true" signature="6262:6621" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Material/Shader/LWMoveGridTransparent.shader">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1143">
+          <caret line="210" column="6" selection-start-line="210" selection-start-column="6" selection-end-line="210" selection-end-column="6" />
+          <folding>
+            <marker date="1546175347339" expanded="true" signature="62:7912" ph="{...}" />
+            <marker date="1546175347339" expanded="true" signature="83:1179" ph="{...}" />
+            <marker date="1546175347339" expanded="true" signature="1198:1684" ph="{...}" />
+            <marker date="1546175347339" expanded="true" signature="1449:1684" ph="{...}" />
+            <marker date="1546175347339" expanded="true" signature="1499:1684" ph="{...}" />
           </folding>
         </state>
       </provider>

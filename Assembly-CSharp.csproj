@@ -192,6 +192,7 @@
     <None Include="Assets\Material\Shader\LWTerrainDyn.shader" />
     <None Include="Assets\Material\Shader\TerrainOpaque.shader" />
     <None Include="Assets\Photon\PhotonUnityNetworking\readme.txt" />
+    <None Include="Assets\Material\Shader\LWThemeGridMove.shader" />
     <None Include="Assets\Material\Shader\GridsTransparent.shader" />
     <None Include="Assets\Material\Shader\RetroGridsTransparent.shader" />
     <None Include="Assets\Photon\PhotonUnityNetworking\changelog.txt" />
