@@ -111,8 +111,15 @@ namespace GamePlayer.Characters
 				//GameObject shriken = PhotonNetwork.PrefabPool.Instantiate("Player/Derivative/" + ShrikenPrefab.name, transform.position,transform.rotation);
 				GameObject shriken = PhotonNetwork.Instantiate(ShrikenPrefab.name, transform.position, transform.rotation, 0);		
 				PhotonView pv = shriken.GetComponent<PhotonView>();
-				pv.RPC("SetOwner", RpcTarget.All,gameObject.GetComponent<PhotonView>().ViewID);		
-				pv.RPC("SetDirection",RpcTarget.All,direction);
+				pv.RPC("SetOwner", RpcTarget.All,gameObject.GetComponent<PhotonView>().ViewID);
+				if (direction == Vector3.zero)
+				{
+					pv.RPC("SetDirection",RpcTarget.All,transform.forward);
+				}
+				else
+				{
+					pv.RPC("SetDirection",RpcTarget.All,direction);
+				}
 			}
 			_fxController.PlayFx("SkillRelease");
 		}

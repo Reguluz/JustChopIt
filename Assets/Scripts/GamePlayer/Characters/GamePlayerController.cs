@@ -31,6 +31,7 @@ namespace GamePlayer.Characters
 
         public delegate bool DamageCalculate(GamePlayerController controller,bool isHurt);
         public DamageCalculate DamageCalculator;
+        public CharacterType CharacterType;
 
         
         public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -63,12 +64,14 @@ namespace GamePlayer.Characters
             SetMoveData();
             //向属性控制注册
             PropControllerRegister();
+            //注册角色种类
+            SetCharacterType();
         }
 
         private void SetMoveData()
         {
-            _moveController.RotateLevel = StaticData.RotateSpeed * SkillCo.RotateSpeed * BuffCo.RotateSpeed;
-            _moveController.SpeedLevel = StaticData.MoveSpeed * SkillCo.MoveSpeed * BuffCo.MoveSpeed;
+            _moveController.RotateLevel = StaticData.RotateSpeed + SkillCo.RotateSpeed + BuffCo.RotateSpeed;
+            _moveController.SpeedLevel = StaticData.MoveSpeed + SkillCo.MoveSpeed + BuffCo.MoveSpeed;
         }
 
         private void UiDataLink()
@@ -211,6 +214,7 @@ namespace GamePlayer.Characters
                 //GameObject shriken = PhotonNetwork.PrefabPool.Instantiate("Player/Derivative/" + ShrikenPrefab.name, transform.position,transform.rotation);
                 GameObject bullet = PhotonNetwork.Instantiate("Bullet", transform.position, transform.rotation, 0);		
                 PhotonView pv = bullet.GetComponent<PhotonView>();
+                pv.RPC("SetMesh",RpcTarget.All,Properties.CharacterType);
                 pv.RPC("SetOwner", RpcTarget.All,gameObject.GetComponent<PhotonView>().ViewID);		
                 pv.RPC("SetDirection",RpcTarget.All,transform.forward);
             }

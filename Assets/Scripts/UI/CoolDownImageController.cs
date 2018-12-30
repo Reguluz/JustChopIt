@@ -54,12 +54,13 @@ public class CoolDownImageController : MonoBehaviour,SkillButton
 		{
 			IntervalTime = 0;
 			SkillActived = true;
-			if (_type.Equals(SkillType.AutoTarget))
+			//Click.enabled = true;
+			if (!_type.Equals(SkillType.AutoTarget))
 			{
-				Click.enabled = true;
+				/*Click.enabled = true;
 			}
 			else
-			{
+			{*/
 				Drag.enabled = true;
 			}
 		}
@@ -72,16 +73,17 @@ public class CoolDownImageController : MonoBehaviour,SkillButton
 		DefaultImage.sprite = baseInfo.SkillImage;
 		EffectImage.sprite = baseInfo.SkillImage;
 		_type = baseInfo.SkillType;
+		Click.enabled = false;
 		if (_type.Equals(SkillType.AutoTarget))
 		{
-			Drag.enabled = false;
+			//Drag.enabled = false;
 			Owner.gameObject.GetComponentInChildren<LineRenderer>().enabled = false;
 			Owner.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
 		}
 		else
 		{
 			Debug.Log("是指向性技能");
-			Click.enabled = false;
+			//Click.enabled = false;
 			Drag.Init(Owner,baseInfo.SkillType.Equals(SkillType.LineTarget));
 			Owner.gameObject.GetComponentInChildren<LineRenderer>().enabled = false;
 			Owner.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
@@ -104,7 +106,7 @@ public class CoolDownImageController : MonoBehaviour,SkillButton
 			//Owner.SkillRelease(Serial,Vector3.zero);
 			IntervalTime = MaxCoolDown;
 			SkillActived = false;
-			Click.enabled = false;
+			//Click.enabled = false;
 		}
 	}
 
@@ -120,6 +122,11 @@ public class CoolDownImageController : MonoBehaviour,SkillButton
 			SkillActived = false;
 			Drag.enabled = false;
 		}
+	}
+
+	public void BanClick()
+	{
+		Click.enabled = false;
 	}
 
 }

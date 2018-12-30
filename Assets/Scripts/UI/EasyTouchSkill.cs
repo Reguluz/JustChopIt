@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 namespace UI
 {
-    public class EasyTouchSkill : MonoBehaviour, IDragHandler, IEndDragHandler
+    public class EasyTouchSkill : MonoBehaviour, IDragHandler, IEndDragHandler,IPointerClickHandler
     {
         public float DistanceRatio=2;
         
@@ -14,6 +14,9 @@ namespace UI
         public UnityEvent Hold;
         //释放事件
         public UnityEvent Release;
+        //单击事件
+        public UnityEvent Click;
+        
         //使用对象
         public GamePlayerController Owner;
         //适用对象的辅助UI
@@ -36,7 +39,9 @@ namespace UI
 
         private void Start()
         {
-            
+            Hold.AddListener(new UnityAction(ButtonHold));
+            Release.AddListener(new UnityAction(ButtonRelease));
+            Click.AddListener(new UnityAction(ButtonClick));
         }
 
         public void Init(GamePlayerController owner,bool isline)
@@ -67,11 +72,24 @@ namespace UI
             moveBackPos = transform.parent.transform.position;
             
         }
+        
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            //执行单击时运行的函数
+            if (!_ondrag)
+            {
+                Click.Invoke();
+            }
+        }
 
         public void OnDrag(PointerEventData eventData)
         {
+            //设置状态
             _ondrag = true;
             EndVector = Vector3.zero;
+            
+            //执行开始拖拽时运行的函数
+            Hold.Invoke();
             //获取向量的长度    
             Vector2 oppsitionVec = eventData.position - moveBackPos;
             Debug.DrawLine(Vector3.zero, eventData.position,Color.green);
@@ -96,10 +114,17 @@ namespace UI
 
         public void OnEndDrag(PointerEventData eventData)
         {
-
-            _ondrag = false;
+            
+            //获取位置
             EndVector = new Vector3(horizontal,0,vertical);
+            
+            //执行停止拖拽时运行的函数
             Release.Invoke();
+            
+            //设置状态
+            _ondrag = false;
+            
+            //复原
             transform.position = moveBackPos;
             transform.localPosition = Vector3.zero;
             Owner.gameObject.GetComponentInChildren<LineRenderer>().enabled = false;
@@ -116,12 +141,13 @@ namespace UI
         {
             
         }
-        
+
+        private void ButtonClick()
+        {
+            
+        }
 
 
-
-        
-
-        
+       
     }
 }

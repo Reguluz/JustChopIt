@@ -10,7 +10,7 @@ namespace Cameras
 
 		public GameObject GamerObject;
 		private PlayerProperties _gamerproperty;
-		private Vector3 _offset = new Vector3(0,150,-25f);
+		private Vector3 _offset = new Vector3(0,150,-45f);
 
 
 		private float _smoothTime = 0.5f;
@@ -45,7 +45,6 @@ namespace Cameras
 				_smoothTime);
 		}
 
-		
 		private void Follow()
 		{
 			transform.position = _offset + GamerObject.transform.position;

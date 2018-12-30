@@ -33,7 +33,7 @@ namespace GamePlayer
 		}
 
 		// Update is called once per frame
-		void FixedUpdate()
+		void Update()
 		{
 			MoveByVector3Lerp();
 		}

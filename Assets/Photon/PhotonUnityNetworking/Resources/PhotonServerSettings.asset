@@ -46,4 +46,5 @@ MonoBehaviour:
   - SkillRelease
   - AddBuff
   - RemoveAllBuff
+  - SetMesh
   DisableAutoOpenWizard: 1

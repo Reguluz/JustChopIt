@@ -79,7 +79,7 @@ namespace GamePlayer.Characters
 
 		public override void SetCharacterType()
 		{
-			Properties.CharacterType = CharacterType.Shooter;
+			Properties.CharacterType = CharacterType.Trapper;
 		}
 
 

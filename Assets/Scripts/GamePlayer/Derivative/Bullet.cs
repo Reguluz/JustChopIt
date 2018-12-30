@@ -1,4 +1,5 @@
-﻿using Photon.Pun;
+﻿using System;
+using Photon.Pun;
 using UnityEngine;
 
 namespace GamePlayer.Derivative
@@ -8,7 +9,14 @@ namespace GamePlayer.Derivative
 		//设置移动速度和生命时间
 		private readonly float _moveSpeed = 100;
 		private readonly float _lifeTime = 0.1f;
-		
+
+		private MeshFilter _meshFilter;
+		public Mesh[] Shadowmesh;
+
+		private void Awake()
+		{
+			_meshFilter = GetComponent<MeshFilter>();
+		}
 
 		private void OnEnable()
 		{
@@ -59,6 +67,13 @@ namespace GamePlayer.Derivative
 				
 			}
 		}
+
+		[PunRPC]
+		public void SetMesh(CharacterType characterType)
+		{
+			_meshFilter.mesh = Shadowmesh[(int)characterType];
+		}
+		
 
 
 	}

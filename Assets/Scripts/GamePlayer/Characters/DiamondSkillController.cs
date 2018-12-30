@@ -60,7 +60,7 @@ namespace GamePlayer.Characters
 			}
 		}
 
-
+		
 		
 		//被动伤害判定过滤
 		[PunRPC]
