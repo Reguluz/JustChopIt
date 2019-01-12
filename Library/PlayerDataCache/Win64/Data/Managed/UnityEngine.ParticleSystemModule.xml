@@ -542,7 +542,7 @@
     </member>
     <member name="P:UnityEngine.ParticleSystem.CollisionModule.quality">
       <summary>
-        <para>Specifies the accuracy of particle collisions against colliders in the scene.</para>
+        <para>Specifies the accuracy of particle collisions against colliders in the Scene.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.ParticleSystem.CollisionModule.radiusScale">
@@ -936,6 +936,11 @@
         <para>Enable/disable the External Forces module.</para>
       </summary>
     </member>
+    <member name="P:UnityEngine.ParticleSystem.ExternalForcesModule.influenceCount">
+      <summary>
+        <para>The number of Force Fields explicitly provided to the influencers list.</para>
+      </summary>
+    </member>
     <member name="P:UnityEngine.ParticleSystem.ExternalForcesModule.influenceFilter">
       <summary>
         <para>Apply all Force Fields belonging to a matching layer to this Particle System.</para>
@@ -946,6 +951,21 @@
         <para>Multiplies the magnitude of applied external forces.</para>
       </summary>
     </member>
+    <member name="M:UnityEngine.ParticleSystem.ExternalForcesModule.AddInfluence(UnityEngine.ParticleSystemForceField)">
+      <summary>
+        <para>Adds a ParticleSystemForceField to the influencers list.</para>
+      </summary>
+      <param name="field">The Force Field to add to the influencers list.</param>
+    </member>
+    <member name="M:UnityEngine.ParticleSystem.ExternalForcesModule.GetInfluence(System.Int32)">
+      <summary>
+        <para>Returns the ParticleSystemForceField at the given index in the influencers list.</para>
+      </summary>
+      <param name="index">The index to return the chosen Force Field from.</param>
+      <returns>
+        <para>The ForceField from the list.</para>
+      </returns>
+    </member>
     <member name="M:UnityEngine.ParticleSystem.ExternalForcesModule.IsAffectedBy(UnityEngine.ParticleSystemForceField)">
       <summary>
         <para>Determines whether any particles are inside the influence of a Force Field.</para>
@@ -954,6 +974,27 @@
       <returns>
         <para>Whether the Force Field affects the Particle System.</para>
       </returns>
+    </member>
+    <member name="M:UnityEngine.ParticleSystem.ExternalForcesModule.RemoveInfluence(System.Int32)">
+      <summary>
+        <para>Removes the Force Field from the influencers list at the given index.</para>
+      </summary>
+      <param name="index">The index to remove the chosen Force Field from.</param>
+      <param name="field">The Force Field to remove from the list.</param>
+    </member>
+    <member name="M:UnityEngine.ParticleSystem.ExternalForcesModule.RemoveInfluence(UnityEngine.ParticleSystemForceField)">
+      <summary>
+        <para>Removes the Force Field from the influencers list at the given index.</para>
+      </summary>
+      <param name="index">The index to remove the chosen Force Field from.</param>
+      <param name="field">The Force Field to remove from the list.</param>
+    </member>
+    <member name="M:UnityEngine.ParticleSystem.ExternalForcesModule.SetInfluence(System.Int32,UnityEngine.ParticleSystemForceField)">
+      <summary>
+        <para>Assigns the Force Field at the given index in the influencers list.</para>
+      </summary>
+      <param name="index">Index to assign the Force Field.</param>
+      <param name="field">Force Field that will be assigned.</param>
     </member>
     <member name="T:UnityEngine.ParticleSystem.ForceOverLifetimeModule">
       <summary>
@@ -1118,7 +1159,7 @@
     </member>
     <member name="P:UnityEngine.ParticleSystem.LightsModule.light">
       <summary>
-        <para>Select what Light prefab you want to base your particle lights on.</para>
+        <para>Select what Light Prefab you want to base your particle lights on.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.ParticleSystem.LightsModule.maxLights">
@@ -1825,6 +1866,11 @@ The Noise Module allows you to apply turbulence to the movement of your particle
         <para>The animated velocity of the particle.</para>
       </summary>
     </member>
+    <member name="P:UnityEngine.ParticleSystem.Particle.axisOfRotation">
+      <summary>
+        <para>Mesh particles will rotate around this axis.</para>
+      </summary>
+    </member>
     <member name="P:UnityEngine.ParticleSystem.Particle.lifetime">
       <summary>
         <para>The lifetime of the particle.</para>
@@ -1940,6 +1986,11 @@ The Noise Module allows you to apply turbulence to the movement of your particle
         <para>Starts the Particle System.</para>
       </summary>
       <param name="withChildren">Play all child Particle Systems as well.</param>
+    </member>
+    <member name="M:UnityEngine.ParticleSystem.ResetPreMappedBufferMemory">
+      <summary>
+        <para>Reset the cache of reserved graphics memory used for efficient rendering of Particle Systems.</para>
+      </summary>
     </member>
     <member name="T:UnityEngine.ParticleSystem.RotationBySpeedModule">
       <summary>
@@ -2750,6 +2801,11 @@ The Noise Module allows you to apply turbulence to the movement of your particle
         <para>Access the particle system trails module.</para>
       </summary>
     </member>
+    <member name="P:UnityEngine.ParticleSystem.TrailModule.attachRibbonsToTransform">
+      <summary>
+        <para>Adds an extra position to each ribbon, connecting it to the location of the Transform Component.</para>
+      </summary>
+    </member>
     <member name="P:UnityEngine.ParticleSystem.TrailModule.colorOverLifetime">
       <summary>
         <para>The gradient controlling the trail colors during the lifetime of the attached particle.</para>
@@ -2823,6 +2879,11 @@ The Noise Module allows you to apply turbulence to the movement of your particle
     <member name="P:UnityEngine.ParticleSystem.TrailModule.sizeAffectsWidth">
       <summary>
         <para>Set whether the particle size will act as a multiplier on top of the trail width.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.ParticleSystem.TrailModule.splitSubEmitterRibbons">
+      <summary>
+        <para>When used on a sub emitter, ribbons will connect particles from each parent particle independently.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.ParticleSystem.TrailModule.textureMode">
@@ -4098,6 +4159,11 @@ The position stream is always enabled, and any attempts to remove it will be ign
     <member name="F:UnityEngine.ParticleSystemSubEmitterProperties.InheritColor">
       <summary>
         <para>When spawning new particles, multiply the start color by the color of the parent particles.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.ParticleSystemSubEmitterProperties.InheritDuration">
+      <summary>
+        <para>When spawning new particles, use the duration and age properties from the parent system, when sampling Main module curves in the Sub-Emitter.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.ParticleSystemSubEmitterProperties.InheritEverything">

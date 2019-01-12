@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: DarkBlueSkybox
   m_Shader: {fileID: 104, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _SUNDISK_NONE
@@ -90,7 +91,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Rotation: 0
+    - _Rotation: 221
     - _SrcBlend: 1
     - _SunDisk: 0
     - _SunSize: 0.148
@@ -101,4 +102,4 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GroundColor: {r: 0.34818336, g: 0.47827387, b: 0.8455882, a: 1}
     - _SkyTint: {r: 0.11353808, g: 0.33607277, b: 0.77205884, a: 1}
-    - _Tint: {r: 0.16641437, g: 0.72703725, b: 0.83823526, a: 0.5}
+    - _Tint: {r: 1, g: 1, b: 1, a: 0.5}

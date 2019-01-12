@@ -18,7 +18,7 @@ namespace GamePlayer.Characters
 			StaticData.RotateSpeed = 1;
 			StaticData.MoveSpeed = 1;
 			Cooldown = new CoolDownImageController[ActiveSkillInfo.Length];
-			_fxController = gameObject.GetComponent<CircleFxController>();
+			FxController = gameObject.GetComponent<CircleFxController>();
 		}
 
 		[PunRPC]
@@ -90,7 +90,7 @@ namespace GamePlayer.Characters
 		{
 			Debug.Log("Dodge");
 			Properties.StateType = PlayerStateType.Vanity;
-			_fxController.PlayFx("Dodge");
+			FxController.PlayFx("Dodge");
 			//PhotonView.RPC("DodgeFx",RpcTarget.All);
 			Invoke(nameof(EndDodge),1f);
 		}
@@ -98,7 +98,7 @@ namespace GamePlayer.Characters
 		private  void EndDodge()
 		{
 			Properties.StateType = PlayerStateType.Alive;
-			_fxController.PlayFx("Rebuild");
+			FxController.PlayFx("Rebuild");
 			//PhotonView.RPC("FxRebuild",RpcTarget.All);
 		}
 
@@ -121,7 +121,7 @@ namespace GamePlayer.Characters
 					pv.RPC("SetDirection",RpcTarget.All,direction);
 				}
 			}
-			_fxController.PlayFx("SkillRelease");
+			FxController.PlayFx("SkillRelease");
 		}
 		
 		

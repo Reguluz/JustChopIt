@@ -12,7 +12,7 @@ namespace GamePlayer.Characters
     [RequireComponent(typeof(PlayerSetup))]
     [RequireComponent(typeof(PlayerProperties))]
     [RequireComponent(typeof(MoveController))]
-    public  class GamePlayerController:MonoBehaviour,IGamePlayerControl,IPunObservable
+    public  class GamePlayerController:MonoBehaviour,IGamePlayerControl
     {
         public  UIController              UiController;
         protected CoolDownImageController[] Cooldown;
@@ -23,7 +23,7 @@ namespace GamePlayer.Characters
         
         public SkillBaseInfo[] ActiveSkillInfo;    //技能信息
 
-        protected CharacterFxController _fxController;
+        protected CharacterFxController FxController;
         protected PlayerProperties Properties;
         protected PhotonView PhotonView;
         private MoveController _moveController;
@@ -32,13 +32,11 @@ namespace GamePlayer.Characters
         public delegate bool DamageCalculate(GamePlayerController controller,bool isHurt);
         public DamageCalculate DamageCalculator;
         public CharacterType CharacterType;
+        
+        private static readonly Vector3 Meshoffset = new Vector3(0,2,0);
 
         
-        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-        {
-            throw new System.NotImplementedException();
-        }
-        
+
         
         public void Start()
         {
@@ -212,13 +210,13 @@ namespace GamePlayer.Characters
             {
                 Debug.Log("Shoot");
                 //GameObject shriken = PhotonNetwork.PrefabPool.Instantiate("Player/Derivative/" + ShrikenPrefab.name, transform.position,transform.rotation);
-                GameObject bullet = PhotonNetwork.Instantiate("Bullet", transform.position, transform.rotation, 0);		
+                GameObject bullet = PhotonNetwork.Instantiate("Bullet", transform.position+Meshoffset, transform.rotation, 0);		
                 PhotonView pv = bullet.GetComponent<PhotonView>();
                 pv.RPC("SetMesh",RpcTarget.All,Properties.CharacterType);
                 pv.RPC("SetOwner", RpcTarget.All,gameObject.GetComponent<PhotonView>().ViewID);		
                 pv.RPC("SetDirection",RpcTarget.All,transform.forward);
             }
-            _fxController.PlayFx("SkillRelease");
+            FxController.PlayFx("SkillRelease");
         }
 
         public virtual void Rebuild()    //状态重置

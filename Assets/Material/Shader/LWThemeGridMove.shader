@@ -7,11 +7,12 @@
         _MainTex("Texture", 2D) = "white" {}
         _Color("Color", Color) = (1, 1, 1, 1)
         _Cutoff("AlphaCutout", Range(0.0, 1.0)) = 0.5
+        
         [Toggle] _SampleGI("SampleGI", float) = 0.0
         _ScrollXSpeed("X Scroll Speed", Range(0,10)) = 2
 		_ScrollYSpeed("Y Scroll Speed", Range(0,10)) = 2
 		_LineColor ("Line color", Color) = (0.1, 1, 0.1, 1)
-		//_EmissionColor ("Emission color", Color) = (1, 1, 1, 1)
+		_EmissionColor ("Emission color", Color) = (1, 1, 1, 1)
 		_EmissionGain ("Emission gain", Range(0, 1)) = 0.5
 		[Toggle] _UseSpecular ("Use Shininess", float) = 0
 		_Specular ("Shininess", Range(1, 1000)) = 100
@@ -52,7 +53,7 @@
 
     SubShader
     {
-        Tags { "RenderType" = "Opaque" "RenderPipeline" = "LightweightPipeline" "IgnoreProjector" = "True"}
+        Tags { "RenderType" = "Transparent" "RenderPipeline" = "LightweightPipeline" "IgnoreProjector" = "True"}
         LOD 300
 
         Pass

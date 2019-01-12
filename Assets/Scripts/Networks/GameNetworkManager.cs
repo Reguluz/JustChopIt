@@ -46,8 +46,7 @@ namespace Networks
 		{
 			Debug.Log("选择序号"+PlayerPrefs.GetInt("Charactertype"));
 
-			
-			
+
 			
 			//生成玩家角色
 			_localPlayer = PhotonNetwork.Instantiate(PlayerPrefab[(int) PhotonNetwork.LocalPlayer.CustomProperties["Character"]].name, new Vector3(0,1,0), Quaternion.identity, 0);

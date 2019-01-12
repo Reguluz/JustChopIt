@@ -17,7 +17,7 @@ namespace GamePlayer.Characters
 			StaticData.RotateSpeed = 1;
 			StaticData.MoveSpeed = 0.8f;
 			Cooldown = new CoolDownImageController[2];
-			_fxController = gameObject.GetComponent<TrapperFxController>();
+			FxController = gameObject.GetComponent<TrapperFxController>();
 		}
 
 		[PunRPC]
@@ -29,14 +29,7 @@ namespace GamePlayer.Characters
 
 		private void Update()
 		{
-#if UNITY_STANDALONE_WIN
-			if (Input.GetKey(KeyCode.J))
-			{
-				Shoot(Vector3.zero);
-			}else if (Input.GetKey(KeyCode.K)){
-				Dodge();
-			}
-#endif
+
 		}
 		
 	
@@ -92,7 +85,7 @@ namespace GamePlayer.Characters
 				PhotonView pv = trap.GetComponent<PhotonView>();
 				pv.RPC("SetOwner", RpcTarget.All,gameObject.GetComponent<PhotonView>().ViewID);
 			}
-			_fxController.PlayFx("SkillRelease");
+			FxController.PlayFx("SkillRelease");
 		}
     }
 }

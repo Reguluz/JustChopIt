@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using GamePlayer;
 using GamePlayer.Characters;
@@ -61,7 +62,7 @@ public class CoolDownImageController : MonoBehaviour,SkillButton
 			}
 			else
 			{*/
-				Drag.enabled = true;
+				Drag.IsActive = true;
 			}
 		}
 	}
@@ -71,23 +72,15 @@ public class CoolDownImageController : MonoBehaviour,SkillButton
 		Serial = baseInfo.Pos;
 		MaxCoolDown = baseInfo.CoolDown;
 		DefaultImage.sprite = baseInfo.SkillImage;
-		EffectImage.sprite = baseInfo.SkillImage;
+		//EffectImage.sprite = baseInfo.SkillImage;
 		_type = baseInfo.SkillType;
 		Click.enabled = false;
-		if (_type.Equals(SkillType.AutoTarget))
-		{
-			//Drag.enabled = false;
-			Owner.gameObject.GetComponentInChildren<LineRenderer>().enabled = false;
-			Owner.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
-		}
-		else
-		{
-			Debug.Log("是指向性技能");
-			//Click.enabled = false;
-			Drag.Init(Owner,baseInfo.SkillType.Equals(SkillType.LineTarget));
-			Owner.gameObject.GetComponentInChildren<LineRenderer>().enabled = false;
-			Owner.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
-		}
+		
+		//Drag.enabled = false;
+		Drag.Init(Owner, _type);
+		Owner.gameObject.GetComponentInChildren<LineRenderer>().enabled = false;
+		Owner.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
+		
 	}
 
 	public void RegisterOwner(GamePlayerController controller)
@@ -106,21 +99,22 @@ public class CoolDownImageController : MonoBehaviour,SkillButton
 			//Owner.SkillRelease(Serial,Vector3.zero);
 			IntervalTime = MaxCoolDown;
 			SkillActived = false;
+			Drag.IsActive = false;
 			//Click.enabled = false;
 		}
 	}
 
 	public void SkillButtonReleased()
 	{
-		Debug.Log("技能"+Serial+"点击了");
-		if (SkillActived && PlayerActived)
+		Debug.Log("技能"+Serial+"释放了");
+		if (SkillActived && PlayerActived && !_type.Equals(SkillType.AutoTarget))
 		{
 			Debug.Log("技能释放了"+Drag.EndVector);
 			OwnerPhotonView.RPC("SkillRelease",RpcTarget.All,Serial,Drag.EndVector);
 			//Owner.SkillRelease(Serial,Drag.EndVector);
 			IntervalTime = MaxCoolDown;
 			SkillActived = false;
-			Drag.enabled = false;
+			Drag.IsActive = false;
 		}
 	}
 

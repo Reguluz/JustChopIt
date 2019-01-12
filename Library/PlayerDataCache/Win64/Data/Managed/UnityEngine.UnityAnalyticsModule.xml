@@ -19,9 +19,19 @@
         <para>Controls whether the Analytics service is enabled at runtime.</para>
       </summary>
     </member>
+    <member name="P:UnityEngine.Analytics.Analytics.initializeOnStartup">
+      <summary>
+        <para>Reports whether Unity is set to initialize Analytics on startup.</para>
+      </summary>
+    </member>
     <member name="P:UnityEngine.Analytics.Analytics.limitUserTracking">
       <summary>
         <para>Controls whether to limit user tracking at runtime.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.Analytics.playerOptedOut">
+      <summary>
+        <para>Reports whether the player has opted out of data collection.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.Analytics.Analytics.CustomEvent(System.String,System.Collections.Generic.IDictionary`2&lt;System.String,System.Object&gt;)">
@@ -70,6 +80,11 @@
       <param name="vendorKey">Vendor key name.</param>
       <param name="prefix">Optional event name prefix value.</param>
       <param name="ver">Event version number.</param>
+    </member>
+    <member name="M:UnityEngine.Analytics.Analytics.ResumeInitialization">
+      <summary>
+        <para>Resume Analytics initialization.</para>
+      </summary>
     </member>
     <member name="M:UnityEngine.Analytics.Analytics.SendEvent(System.String,System.Object,System.Int32,System.String)">
       <summary>

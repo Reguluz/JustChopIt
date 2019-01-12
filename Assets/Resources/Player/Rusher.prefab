@@ -82,7 +82,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114665111849130046}
   - {fileID: 114923855956842564}
-  - {fileID: 0}
+  - {fileID: 1659076258427360507}
   viewIdField: 0
   InstantiationId: 1
   isRuntimeInstantiated: 0
@@ -108,14 +108,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135906766852410}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizeVelocity: 1
+  m_SynchronizeVelocity: 0
   m_SynchronizeAngularVelocity: 0
-  m_TeleportEnabled: 0
+  m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
 --- !u!114 &114966177438695250
 MonoBehaviour:

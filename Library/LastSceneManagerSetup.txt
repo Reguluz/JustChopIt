@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Map/TestMap3.unity
+- path: Assets/Scenes/temp/TempGame.unity
   isLoaded: 1
   isActive: 1

@@ -450,7 +450,7 @@ Only one class at any one time should set defaultBrush to true.</para>
     </member>
     <member name="M:UnityEngine.Tilemaps.TileBase.StartUp(UnityEngine.Vector3Int,UnityEngine.Tilemaps.ITilemap,UnityEngine.GameObject)">
       <summary>
-        <para>StartUp is called on the first frame of the running scene.</para>
+        <para>StartUp is called on the first frame of the running Scene.</para>
       </summary>
       <param name="position">Position of the Tile on the Tilemap.</param>
       <param name="tilemap">The Tilemap the tile is present on.</param>

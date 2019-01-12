@@ -71,7 +71,7 @@ Material:
     - _Blend: 2
     - _BumpScale: 1
     - _Cull: 2
-    - _Cutoff: 0.5
+    - _Cutoff: 0.64
     - _DetailNormalMapScale: 1
     - _DirectionPitch: 0
     - _DirectionYaw: 0

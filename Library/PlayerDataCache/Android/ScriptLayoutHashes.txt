@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-D:/Project/Unity/JustChopIt/JustChopItAndroidExport/chopitv0.3.4.apk
+D:/Project/Unity/JustChopIt/JustChopItAndroidExport/chopitv0.3.6.apk
 SceneListBegin?
 Assets/Scenes/MatchingScene.unity
 Assets/Scenes/Map/GameScene3D.unity
@@ -35,7 +35,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.P
 ee1dba1a186ac062d564e9eb73a1c56f Assembly-CSharp.dll:Photon.Pun.UtilityScripts.GraphicToggleIsOnTransition
 3ba023cd67d72cace33969ab863e0fd4 Assembly-CSharp.dll:Photon.Pun.UtilityScripts.PhotonStatsGui
 3748fbad2d474a315bda516b8363a0c5 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Effects.ParticleSystemMultiplier
-bfaaf5b71b62bf454bff463e820b5949 Assembly-CSharp.dll:GamePlayer.Derivative.Bullet
+65792f8023dc87ecfb9af073f8c1103a Assembly-CSharp.dll:GamePlayer.Derivative.Bullet
 0d85f4fda1e0e70cd92c084d12f05cdc Assembly-CSharp-firstpass.dll:UnityStandardAssets.Characters.ThirdPerson.AICharacterControl
 be8b29ecd05b56bbfb5cc0e39b16c11b Assembly-CSharp-firstpass.dll:UnityStandardAssets.Characters.FirstPerson.FirstPersonController
 71f7f12b8d0f4fd73590db8bcb6d453c Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.Bloom
@@ -127,6 +127,7 @@ fc108ce7d98c40ac0907e8ca7f500c76 UnityEngine.UI.dll:UnityEngine.UI.Text
 abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 64e54c0cbb0177c5ea26f340efb9ff85 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 57068c697717dd51af9abb23157cd794 Assembly-CSharp.dll:Photon.Realtime.Demo.ConnectAndJoinRandomLb
+6a02421faf087f0c7f6d5ba8ee342860 Assembly-CSharp.dll:.Rotating
 63d7b9b64a11859f416d72ba9a3c3fec Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.ScreenSpaceReflections
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp-firstpass.dll:UnityStandardAssets.Vehicles.Ball.BallUserControl
 1731d95cc8dce262956d345535456351 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Cameras.AutoCam
@@ -180,7 +181,6 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 7dc4f964f4c24e0b5f20af53e32ab243 Assembly-CSharp.dll:GamePlayer.Characters.TrapperFxController
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:Photon.Pun.UtilityScripts.PunPlayerScores
 e7aa62e1f291228958626e122c23c8f0 Assembly-CSharp.dll:Photon.Pun.UtilityScripts.ConnectAndJoinRandom
-728431993862c873e84d9976b26feece Assembly-CSharp-firstpass.dll:RetroAesthetics.Demos.MenuScripts
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 7e6ed836cbaa230e56d6a2bbae1b9bb5 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.PostProcessEffectSettings
@@ -188,7 +188,7 @@ db1f205a8c9dae1c39098cd23fc97f63 Assembly-CSharp-firstpass.dll:UnityStandardAsse
 22c018dd8fa228e66d586ea6215449b3 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.SimpleMouseRotator
 d67515fd6babd339b8727dc35ae03966 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Vehicles.Aeroplane.AeroplaneAudio
 6f82409a9c4b7323dc9878eb095eefc8 Assembly-CSharp-firstpass.dll:RetroAesthetics.UVScroller
-c6c0ceee35b747d274fdd08db708d570 Assembly-CSharp.dll:GamePlayer.Characters.DiamondSkillController
+e9929e8bf5aee24b536fec4d2a060590 Assembly-CSharp.dll:GamePlayer.Characters.DiamondSkillController
 9452dc0dca800cf5f781114ef25a9a87 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Vehicles.Aeroplane.AeroplaneController
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.DragRigidbody
 94017dcc9f00fe671ea7dc427b4da011 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
@@ -221,7 +221,6 @@ a4d879eed97e8d86fd752672fc026fa2 Assembly-CSharp-firstpass.dll:UnityStandardAsse
 0927e41b46e1bd11671f9b5adda4b832 Assembly-CSharp.dll:Photon.Pun.PhotonRigidbodyView
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp-firstpass.dll:.ForcedReset
 f8bd7a92bf9f22d289759689ae7b1fd4 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.SmoothFollow
-10de4a09054f2f74ee9de8191ac2c56b Assembly-CSharp-firstpass.dll:RetroAesthetics.Demos.SpeedTilt
 11df54cb47bd74c537f3c732a94ea97d Assembly-CSharp.dll:Photon.Realtime.ConnectionHandler
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
 79566861074b80c5467fa81dddcf4f5a Assembly-CSharp-firstpass.dll:HyperbitArsenal.HyperbitRotation
@@ -231,7 +230,7 @@ d6fc8d3165070298511ec776ea575626 Unity.Postprocessing.Runtime.dll:UnityEngine.Re
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 259988b2d867e1586634d64379c5ff81 Assembly-CSharp.dll:Photon.Pun.PhotonTransformView
 65c9e8f2d0653991d518373cd4240b97 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Vehicles.Aeroplane.LandingGear
-04adba5be6e285f0dc8d254dcb153b7a Assembly-CSharp.dll:UI.EasyTouchSkill
+e6ce419018e08329d8dc5d855115ee50 Assembly-CSharp.dll:UI.EasyTouchSkill
 74f2e2ba33456389d0b9c3133e298048 Assembly-CSharp.dll:Items.Items
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.MobileControlRig
 b5aaf686465544e9e949e46e293afee1 Assembly-CSharp-firstpass.dll:HyperbitArsenal.HyperbitDragMouseOrbit
@@ -252,7 +251,8 @@ b5aaf686465544e9e949e46e293afee1 Assembly-CSharp-firstpass.dll:.DragMouseOrbit
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp-firstpass.dll:UnityStandardAssets.Water.WaterBasic
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp-firstpass.dll:UnityStandardAssets.Effects.FireLight
 e88532fc2b28dfb9ecfb77b7558aaa84 Assembly-CSharp.dll:Photon.Pun.ServerSettings
-c6c0ceee35b747d274fdd08db708d570 Assembly-CSharp.dll:GamePlayer.Characters.GamePlayerController
+e9929e8bf5aee24b536fec4d2a060590 Assembly-CSharp.dll:GamePlayer.Characters.GamePlayerController
+dcf4c472bb04cf15e548961470dae6b1 Assembly-CSharp.dll:GamePlayer.Characters.SorcererFxController
 8216ca00094987954bcf22fd5ccf9bfd Assembly-CSharp-firstpass.dll:UnityStandardAssets.Cameras.FreeLookCam
 4fe8955e1c662935371b0936cafbb89b Assembly-CSharp.dll:Photon.Pun.UtilityScripts.TextButtonTransition
 f050e4ebd311386367bb1906f9218b01 Unity.RenderPipelines.Lightweight.Runtime.dll:UnityEngine.Experimental.Rendering.LightweightPipeline.LWRPAdditionalLightData
@@ -288,7 +288,7 @@ e51c09a4cc447f11db225afcd8e3e490 Unity.TextMeshPro.dll:TMPro.TMP_Settings
 c025a8f1c21a3ff9b4c799d63c130153 Assembly-CSharp.dll:GamePlayer.Monster
 74ef9834f798dfec27740a77366f605d Assembly-CSharp-firstpass.dll:UnityStandardAssets.Cameras.HandHeldCam
 b294ba655397a2a6c58cddd17cea876c Assembly-CSharp-firstpass.dll:UnityStandardAssets.Vehicles.Aeroplane.AeroplanePropellerAnimator
-03e73f2f2931a3049b1efc52dd511fd0 Assembly-CSharp.dll:GamePlayer.Characters.CircleSkillController
+2d47d9a2b53ade51309785b2879cd19f Assembly-CSharp.dll:GamePlayer.Characters.CircleSkillController
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 8e5e00ca42eeebc1eae2f91fabb1ee02 Assembly-CSharp-firstpass.dll:.ButtonScript
 cf96e5f7b3d069bab453925bd41be04e UnityEngine.TestRunner.dll:UnityEngine.TestTools.EnumerableSetUpTearDownCommandState
@@ -342,6 +342,7 @@ a8cd58c1680eb5251e5604e560cf89e9 Assembly-CSharp-firstpass.dll:UnityStandardAsse
 fd593c45f6f306e074555f101360c51e Assembly-CSharp.dll:Items.ItemCreator
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.VersionShow
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:Photon.Pun.UtilityScripts.OnPointerOverTooltip
+e9929e8bf5aee24b536fec4d2a060590 Assembly-CSharp.dll:GamePlayer.Characters.SorcererSkillController
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp-firstpass.dll:UnityStandardAssets.Water.GerstnerDisplace
 44c2d3bd57c3d764412e06815f612aa3 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Effects.Explosive
 bdd5d3bcb57418da762e873687bc164f Assembly-CSharp.dll:.MapController
@@ -364,7 +365,7 @@ d9864ada3db659b8d6f66a20aff414b3 Assembly-CSharp.dll:Photon.Pun.PhotonView
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 7dc4f964f4c24e0b5f20af53e32ab243 Assembly-CSharp.dll:GamePlayer.Characters.CharacterFxController
 87207d40b89ca632396b05b3cb1e69b0 Assembly-CSharp.dll:Photon.Pun.UtilityScripts.PlayerNumbering
-82ceb663a013b1d579a684d8beb91261 Assembly-CSharp.dll:GamePlayer.Characters.TrapperSkillController
+3e325c519bac922c3487c266df5f8d0d Assembly-CSharp.dll:GamePlayer.Characters.TrapperSkillController
 21be6cae3f7461a14687e20eae83531e Assembly-CSharp.dll:.NetOwnerFinder
 260f4919b259a45f5b7f3c5de25b778b Assembly-CSharp.dll:System.GameSettings
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp-firstpass.dll:.Projectile

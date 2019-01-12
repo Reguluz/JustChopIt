@@ -37,6 +37,12 @@
         <para>A unique string that identifies the subsystem that this Descriptor can create.</para>
       </summary>
     </member>
+    <member name="?:UnityEngine.Experimental.ISubsystem">
+      <summary>
+        <para>Interface implemented by both Subsystem and IntegratedSubsystem which provides control over the state of either.
+            </para>
+      </summary>
+    </member>
     <member name="M:UnityEngine.Experimental.ISubsystem.Destroy">
       <summary>
         <para>Destroys this instance of a subsystem.</para>
@@ -50,6 +56,12 @@
     <member name="M:UnityEngine.Experimental.ISubsystem.Stop">
       <summary>
         <para>Stops an instance of a subsystem.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Experimental.ISubsystemDescriptor">
+      <summary>
+        <para>A subsystem descriptor is metadata about a subsystem which can be inspected before loading / initializing a subsystem.
+            </para>
       </summary>
     </member>
     <member name="T:UnityEngine.Experimental.Subsystem">

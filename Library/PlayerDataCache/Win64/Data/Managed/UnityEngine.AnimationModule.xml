@@ -31,7 +31,7 @@
     </member>
     <member name="P:UnityEngine.Animation.isPlaying">
       <summary>
-        <para>Are we playing any animations?</para>
+        <para>Is an animation currently being played?</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Animation.localBounds">
@@ -173,28 +173,28 @@
     </member>
     <member name="M:UnityEngine.Animation.Play()">
       <summary>
-        <para>Plays an animation without any blending.</para>
+        <para>Plays an animation without blending.</para>
       </summary>
       <param name="mode"></param>
       <param name="animation"></param>
     </member>
     <member name="M:UnityEngine.Animation.Play(System.String)">
       <summary>
-        <para>Plays an animation without any blending.</para>
+        <para>Plays an animation without blending.</para>
       </summary>
       <param name="mode"></param>
       <param name="animation"></param>
     </member>
     <member name="M:UnityEngine.Animation.Play(UnityEngine.PlayMode)">
       <summary>
-        <para>Plays an animation without any blending.</para>
+        <para>Plays an animation without blending.</para>
       </summary>
       <param name="mode"></param>
       <param name="animation"></param>
     </member>
     <member name="M:UnityEngine.Animation.Play(System.String,UnityEngine.PlayMode)">
       <summary>
-        <para>Plays an animation without any blending.</para>
+        <para>Plays an animation without blending.</para>
       </summary>
       <param name="mode"></param>
       <param name="animation"></param>
@@ -616,7 +616,7 @@
     </member>
     <member name="F:UnityEngine.Animations.AimConstraint.WorldUpType.SceneUp">
       <summary>
-        <para>Uses and defines the world up vector as the Unity scene up vector (the Y axis).</para>
+        <para>Uses and defines the world up vector as the Unity Scene up vector (the Y axis).</para>
       </summary>
     </member>
     <member name="F:UnityEngine.Animations.AimConstraint.WorldUpType.Vector">
@@ -747,7 +747,7 @@
     </member>
     <member name="T:UnityEngine.Animations.AnimationPlayableOutput">
       <summary>
-        <para>A IPlayableOutput implementation that connects the PlayableGraph to an Animator in the scene.</para>
+        <para>A IPlayableOutput implementation that connects the PlayableGraph to an Animator in the Scene.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.Animations.AnimationPlayableOutput.Create(UnityEngine.Playables.PlayableGraph,System.String,UnityEngine.Animator)">
@@ -1510,7 +1510,7 @@
     </member>
     <member name="P:UnityEngine.Animator.feetPivotActive">
       <summary>
-        <para>Blends pivot point between body center of mass and feet pivot. At 0%, the blending point is body center of mass. At 100%, the blending point is feet pivot.</para>
+        <para>Blends pivot point between body center of mass and feet pivot.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Animator.fireEvents">
@@ -2046,7 +2046,7 @@
     </member>
     <member name="M:UnityEngine.Animator.MatchTarget(UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.AvatarTarget,UnityEngine.MatchTargetWeightMask,System.Single,System.Single)">
       <summary>
-        <para>Automatically adjust the gameobject position and rotation so that the AvatarTarget reaches the matchPosition when the current state is at the specified progress.</para>
+        <para>Automatically adjust the GameObject position and rotation.</para>
       </summary>
       <param name="matchPosition">The position we want the body part to reach.</param>
       <param name="matchRotation">The rotation in which we want the body part to be.</param>
@@ -2062,7 +2062,7 @@
       <param name="stateName">The state name.</param>
       <param name="stateNameHash">The state hash name. If stateNameHash is 0, it changes the current state time.</param>
       <param name="layer">The layer index. If layer is -1, it plays the first state with the given state name or hash.</param>
-      <param name="normalizedTime">The time offset (in percentage).</param>
+      <param name="normalizedTime">The time offset between zero and one.</param>
     </member>
     <member name="M:UnityEngine.Animator.Play(System.Int32,System.Int32,System.Single)">
       <summary>
@@ -2071,7 +2071,7 @@
       <param name="stateName">The state name.</param>
       <param name="stateNameHash">The state hash name. If stateNameHash is 0, it changes the current state time.</param>
       <param name="layer">The layer index. If layer is -1, it plays the first state with the given state name or hash.</param>
-      <param name="normalizedTime">The time offset (in percentage).</param>
+      <param name="normalizedTime">The time offset between zero and one.</param>
     </member>
     <member name="M:UnityEngine.Animator.PlayInFixedTime(System.String,System.Int32,System.Single)">
       <summary>
@@ -3467,7 +3467,7 @@
     </member>
     <member name="M:UnityEngine.Experimental.Animations.AnimatorJobExtensions.BindSceneProperty(UnityEngine.Animator,UnityEngine.Transform,System.Type,System.String)">
       <summary>
-        <para>Create a PropertySceneHandle representing the new binding on the Component property of a Transform in the scene.</para>
+        <para>Create a PropertySceneHandle representing the new binding on the Component property of a Transform in the Scene.</para>
       </summary>
       <param name="animator">The Animator instance the method is called on.</param>
       <param name="transform">The Transform to target.</param>
@@ -3480,7 +3480,7 @@
     </member>
     <member name="M:UnityEngine.Experimental.Animations.AnimatorJobExtensions.BindSceneProperty(UnityEngine.Animator,UnityEngine.Transform,System.Type,System.String,System.Boolean)">
       <summary>
-        <para>Create a PropertySceneHandle representing the new binding on the Component property of a Transform in the scene.</para>
+        <para>Create a PropertySceneHandle representing the new binding on the Component property of a Transform in the Scene.</para>
       </summary>
       <param name="animator">The Animator instance the method is called on.</param>
       <param name="transform">The Transform to target.</param>
@@ -3493,7 +3493,7 @@
     </member>
     <member name="M:UnityEngine.Experimental.Animations.AnimatorJobExtensions.BindSceneTransform(UnityEngine.Animator,UnityEngine.Transform)">
       <summary>
-        <para>Create a TransformSceneHandle representing the new binding between the Animator and a Transform in the scene.</para>
+        <para>Create a TransformSceneHandle representing the new binding between the Animator and a Transform in the Scene.</para>
       </summary>
       <param name="animator">The Animator instance the method is called on.</param>
       <param name="transform">The Transform to bind.</param>
@@ -3712,12 +3712,12 @@
     </member>
     <member name="T:UnityEngine.Experimental.Animations.PropertySceneHandle">
       <summary>
-        <para>Handle for a Component property on an object in the scene.</para>
+        <para>Handle for a Component property on an object in the Scene.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.Experimental.Animations.PropertySceneHandle.GetBool(UnityEngine.Experimental.Animations.AnimationStream)">
       <summary>
-        <para>Gets the boolean property value from an object in the scene.</para>
+        <para>Gets the boolean property value from an object in the Scene.</para>
       </summary>
       <param name="stream">The AnimationStream managing this handle.</param>
       <returns>
@@ -3726,7 +3726,7 @@
     </member>
     <member name="M:UnityEngine.Experimental.Animations.PropertySceneHandle.GetFloat(UnityEngine.Experimental.Animations.AnimationStream)">
       <summary>
-        <para>Gets the float property value from an object in the scene.</para>
+        <para>Gets the float property value from an object in the Scene.</para>
       </summary>
       <param name="stream">The AnimationStream managing this handle.</param>
       <returns>
@@ -3735,7 +3735,7 @@
     </member>
     <member name="M:UnityEngine.Experimental.Animations.PropertySceneHandle.GetInt(UnityEngine.Experimental.Animations.AnimationStream)">
       <summary>
-        <para>Gets the integer property value from an object in the scene.</para>
+        <para>Gets the integer property value from an object in the Scene.</para>
       </summary>
       <param name="stream">The AnimationStream managing this handle.</param>
       <returns>
@@ -3768,21 +3768,21 @@
     </member>
     <member name="M:UnityEngine.Experimental.Animations.PropertySceneHandle.SetBool(UnityEngine.Experimental.Animations.AnimationStream,System.Boolean)">
       <summary>
-        <para>Sets the boolean property value to an object in the scene.</para>
+        <para>Sets the boolean property value to an object in the Scene.</para>
       </summary>
       <param name="stream">The AnimationStream managing this handle.</param>
       <param name="value">The new boolean property value.</param>
     </member>
     <member name="M:UnityEngine.Experimental.Animations.PropertySceneHandle.SetFloat(UnityEngine.Experimental.Animations.AnimationStream,System.Single)">
       <summary>
-        <para>Sets the float property value to an object in the scene.</para>
+        <para>Sets the float property value to an object in the Scene.</para>
       </summary>
       <param name="stream">The AnimationStream managing this handle.</param>
       <param name="value">The new float property value.</param>
     </member>
     <member name="M:UnityEngine.Experimental.Animations.PropertySceneHandle.SetInt(UnityEngine.Experimental.Animations.AnimationStream,System.Int32)">
       <summary>
-        <para>Sets the integer property value to an object in the scene.</para>
+        <para>Sets the integer property value to an object in the Scene.</para>
       </summary>
       <param name="stream">The AnimationStream managing this handle.</param>
       <param name="value">The new integer property value.</param>
@@ -3866,7 +3866,7 @@
     </member>
     <member name="T:UnityEngine.Experimental.Animations.TransformSceneHandle">
       <summary>
-        <para>Position, rotation and scale of an object in the scene.</para>
+        <para>Position, rotation and scale of an object in the Scene.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.Experimental.Animations.TransformSceneHandle.GetLocalPosition(UnityEngine.Experimental.Animations.AnimationStream)">
@@ -4957,7 +4957,7 @@
     </member>
     <member name="T:UnityEngine.SkeletonBone">
       <summary>
-        <para>Details of the Transform name mapped to a model's skeleton bone and its default position and rotation in the T-pose.</para>
+        <para>Details of the Transform name mapped to the skeleton bone of a model and its default position and rotation in the T-pose.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.SkeletonBone.name">

@@ -10,7 +10,7 @@ namespace Cameras
 
 		public GameObject GamerObject;
 		private PlayerProperties _gamerproperty;
-		private Vector3 _offset = new Vector3(0,150,-45f);
+		private Vector3 _offset = new Vector3(0,150,-50f);
 
 
 		private float _smoothTime = 0.5f;

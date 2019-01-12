@@ -11,7 +11,7 @@
     </member>
     <member name="P:UnityEngine.AssetBundle.isStreamedSceneAssetBundle">
       <summary>
-        <para>Return true if the AssetBundle is a streamed scene AssetBundle.</para>
+        <para>Return true if the AssetBundle is a streamed Scene AssetBundle.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.AssetBundle.Contains(System.String)">
@@ -35,7 +35,7 @@
     </member>
     <member name="M:UnityEngine.AssetBundle.GetAllScenePaths">
       <summary>
-        <para>Return all the scene asset paths (paths to *.unity assets) in the AssetBundle.</para>
+        <para>Return all the Scene asset paths (paths to *.unity assets) in the AssetBundle.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.AssetBundle.LoadAllAssets(System.Type)">

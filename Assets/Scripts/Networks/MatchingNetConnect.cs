@@ -204,14 +204,14 @@ namespace Networks
 			{
 				case 0: 
 					Random r = new Random();
-					int temp = r.Next(1, 4);
+					int temp = r.Next(1, 2);
 					OpenMap(temp);
 					break;
 				case 1: 
-					PhotonNetwork.LoadLevel("GameScene3D");
+					PhotonNetwork.LoadLevel("TestMap3");
 					break;
 				case 2: 
-					PhotonNetwork.LoadLevel("TestMap1");
+					PhotonNetwork.LoadLevel("TestMap3");
 					break;
 				case 3:  
 					PhotonNetwork.LoadLevel("TestMap3");

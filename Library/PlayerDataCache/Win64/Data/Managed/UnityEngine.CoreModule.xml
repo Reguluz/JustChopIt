@@ -1704,7 +1704,7 @@ Note: Using raw JNI functions requires advanced knowledge of the Android Java Na
     </member>
     <member name="P:UnityEngine.Application.loadedLevel">
       <summary>
-        <para>The level index that was last loaded (Read Only).</para>
+        <para>Note: This is now obsolete. Use SceneManager.GetActiveScene instead. (Read Only).</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Application.loadedLevelName">
@@ -1777,7 +1777,7 @@ Here is an example of handling the callback:</para>
     </member>
     <member name="P:UnityEngine.Application.stackTraceLogType">
       <summary>
-        <para>Stack trace logging options. The default value is StackTraceLogType.ScriptOnly.</para>
+        <para>Obsolete. Use Application.SetStackTraceLogType.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Application.streamedBytes">
@@ -2013,7 +2013,7 @@ Here is an example of handling the callback:</para>
     </member>
     <member name="M:UnityEngine.Application.RequestUserAuthorization(UnityEngine.UserAuthorization)">
       <summary>
-        <para>Request authorization to use the webcam or microphone in the Web Player.</para>
+        <para>Request authorization to use the webcam or microphone on iOS.</para>
       </summary>
       <param name="mode"></param>
     </member>
@@ -2037,22 +2037,22 @@ Here is an example of handling the callback:</para>
     </member>
     <member name="M:UnityEngine.Application.UnloadLevel(System.Int32)">
       <summary>
-        <para>Unloads all GameObject associated with the given scene. Note that assets are currently not unloaded, in order to free up asset memory call Resources.UnloadAllUnusedAssets.</para>
+        <para>Unloads all GameObject associated with the given Scene. Note that assets are currently not unloaded, in order to free up asset memory call Resources.UnloadAllUnusedAssets.</para>
       </summary>
-      <param name="index">Index of the scene in the PlayerSettings to unload.</param>
-      <param name="scenePath">Name of the scene to Unload.</param>
+      <param name="index">Index of the Scene in the PlayerSettings to unload.</param>
+      <param name="scenePath">Name of the Scene to Unload.</param>
       <returns>
-        <para>Return true if the scene is unloaded.</para>
+        <para>Return true if the Scene is unloaded.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.Application.UnloadLevel(System.String)">
       <summary>
-        <para>Unloads all GameObject associated with the given scene. Note that assets are currently not unloaded, in order to free up asset memory call Resources.UnloadAllUnusedAssets.</para>
+        <para>Unloads all GameObject associated with the given Scene. Note that assets are currently not unloaded, in order to free up asset memory call Resources.UnloadAllUnusedAssets.</para>
       </summary>
-      <param name="index">Index of the scene in the PlayerSettings to unload.</param>
-      <param name="scenePath">Name of the scene to Unload.</param>
+      <param name="index">Index of the Scene in the PlayerSettings to unload.</param>
+      <param name="scenePath">Name of the Scene to Unload.</param>
       <returns>
-        <para>Return true if the scene is unloaded.</para>
+        <para>Return true if the Scene is unloaded.</para>
       </returns>
     </member>
     <member name="T:UnityEngine.ApplicationInstallMode">
@@ -2567,7 +2567,7 @@ Note: Every time you call the method with tolerance specified, a new instance of
     </member>
     <member name="P:UnityEngine.AsyncOperation.allowSceneActivation">
       <summary>
-        <para>Allow scenes to be activated as soon as it is ready.</para>
+        <para>Allow Scenes to be activated as soon as it is ready.</para>
       </summary>
     </member>
     <member name="?:UnityEngine.AsyncOperation.completed(System.Action`1&lt;UnityEngine.AsyncOperation&gt;)">
@@ -2719,7 +2719,7 @@ Note: Every time you call the method with tolerance specified, a new instance of
     </member>
     <member name="P:UnityEngine.Behaviour.isActiveAndEnabled">
       <summary>
-        <para>Has the Behaviour had enabled called.</para>
+        <para>Has the Behaviour had active and enabled called?</para>
       </summary>
     </member>
     <member name="T:UnityEngine.BillboardAsset">
@@ -3475,12 +3475,12 @@ Note: Every time you call the method with tolerance specified, a new instance of
     </member>
     <member name="P:UnityEngine.Camera.allCameras">
       <summary>
-        <para>Returns all enabled cameras in the scene.</para>
+        <para>Returns all enabled cameras in the Scene.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Camera.allCamerasCount">
       <summary>
-        <para>The number of cameras in the current scene.</para>
+        <para>The number of cameras in the current Scene.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Camera.allowDynamicResolution">
@@ -3540,7 +3540,7 @@ Note: Every time you call the method with tolerance specified, a new instance of
     </member>
     <member name="P:UnityEngine.Camera.cullingMask">
       <summary>
-        <para>This is used to render parts of the scene selectively.</para>
+        <para>This is used to render parts of the Scene selectively.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Camera.cullingMatrix">
@@ -3590,9 +3590,7 @@ Note: Every time you call the method with tolerance specified, a new instance of
     </member>
     <member name="P:UnityEngine.Camera.gateFit">
       <summary>
-        <para>
-                    There are two gates for a camera, the sensor gate and the resolution gate. The physical camera sensor gate is defined by the Camera.sensorSize property, the resolution gate is defined by the render target area.
-                </para>
+        <para>There are two gates for a camera, the sensor gate and the resolution gate. The physical camera sensor gate is defined by the sensorSize property, the resolution gate is defined by the render target area.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Camera.layerCullDistances">
@@ -3702,7 +3700,7 @@ Note: Every time you call the method with tolerance specified, a new instance of
     </member>
     <member name="P:UnityEngine.Camera.scene">
       <summary>
-        <para>If not null, the camera will only render the contents of the specified scene.</para>
+        <para>If not null, the camera will only render the contents of the specified Scene.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Camera.sensorSize">
@@ -3873,7 +3871,7 @@ If called outside of a rendering callback and stereo is enabled, it will return 
     </member>
     <member name="T:UnityEngine.Camera.GateFitMode">
       <summary>
-        <para>Enum used to specify how the sensor gate defined by Camera.sensorSize fits into the resolution gate (render frame).</para>
+        <para>Enum used to specify how the sensor gate (sensor frame) defined by Camera.sensorSize fits into the resolution gate (render frame).</para>
       </summary>
     </member>
     <member name="F:UnityEngine.Camera.GateFitMode.Fill">
@@ -3935,9 +3933,9 @@ If called outside of a rendering callback and stereo is enabled, it will return 
     </member>
     <member name="M:UnityEngine.Camera.GetAllCameras(UnityEngine.Camera[])">
       <summary>
-        <para>Fills an array of Camera with the current cameras in the scene, without allocating a new array.</para>
+        <para>Fills an array of Camera with the current cameras in the Scene, without allocating a new array.</para>
       </summary>
-      <param name="cameras">An array to be filled up with cameras currently in the scene.</param>
+      <param name="cameras">An array to be filled up with cameras currently in the Scene.</param>
     </member>
     <member name="M:UnityEngine.Camera.GetCommandBuffers(UnityEngine.Rendering.CameraEvent)">
       <summary>
@@ -4102,7 +4100,7 @@ The default value is Camera.MonoOrStereoscopicEye.Left, so Camera.MonoOrStereosc
     </member>
     <member name="M:UnityEngine.Camera.ResetWorldToCameraMatrix">
       <summary>
-        <para>Make the rendering position reflect the camera's position in the scene.</para>
+        <para>Make the rendering position reflect the camera's position in the Scene.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.Camera.ScreenPointToRay(UnityEngine.Vector3)">
@@ -4416,7 +4414,7 @@ The default value is Camera.MonoOrStereoscopicEye.Left, so Camera.MonoOrStereosc
       </summary>
       <param name="H">Hue [0..1].</param>
       <param name="S">Saturation [0..1].</param>
-      <param name="V">Value [0..1].</param>
+      <param name="V">Brightness value [0..1].</param>
       <param name="hdr">Output HDR colours. If true, the returned colour will not be clamped to [0..1].</param>
       <returns>
         <para>An opaque colour with HSV matching the input.</para>
@@ -4428,7 +4426,7 @@ The default value is Camera.MonoOrStereoscopicEye.Left, so Camera.MonoOrStereosc
       </summary>
       <param name="H">Hue [0..1].</param>
       <param name="S">Saturation [0..1].</param>
-      <param name="V">Value [0..1].</param>
+      <param name="V">Brightness value [0..1].</param>
       <param name="hdr">Output HDR colours. If true, the returned colour will not be clamped to [0..1].</param>
       <returns>
         <para>An opaque colour with HSV matching the input.</para>
@@ -4450,9 +4448,9 @@ The default value is Camera.MonoOrStereoscopicEye.Left, so Camera.MonoOrStereosc
       <summary>
         <para>Linearly interpolates between colors a and b by t.</para>
       </summary>
-      <param name="a">Color a</param>
-      <param name="b">Color b</param>
-      <param name="t">Float for combining a and b</param>
+      <param name="a">Color a.</param>
+      <param name="b">Color b.</param>
+      <param name="t">Float for combining a and b.</param>
     </member>
     <member name="M:UnityEngine.Color.LerpUnclamped(UnityEngine.Color,UnityEngine.Color,System.Single)">
       <summary>
@@ -5975,7 +5973,7 @@ The default value is Camera.MonoOrStereoscopicEye.Left, so Camera.MonoOrStereosc
       <summary>
         <para>Specify a custom cursor that you wish to use as a cursor.</para>
       </summary>
-      <param name="texture">The texture to use for the cursor or null to set the default cursor. Note that a texture needs to be imported with "Read/Write enabled" in the texture importer (or using the "Cursor" defaults), in order to be used as a cursor.</param>
+      <param name="texture">The texture to use for the cursor. To use a texture, you must first import it with `Read/Write`enabled. Alternatively, you can use the default cursor import setting. If you created your cursor texture from code, it must be in RGBA32 format, have alphaIsTransparency enabled, and have no mip chain. To use the default cursor, set the texture to `Null`.</param>
       <param name="hotspot">The offset from the top left of the texture to use as the target point (must be within the bounds of the cursor).</param>
       <param name="cursorMode">Allow this cursor to render as a hardware cursor on supported platforms, or force software cursor.</param>
     </member>
@@ -7060,7 +7058,7 @@ Note: this value can be set in the Lighting Window UI and it is serialized, that
     </member>
     <member name="T:UnityEngine.Events.UnityEvent">
       <summary>
-        <para>A zero argument persistent callback that can be saved with the scene.</para>
+        <para>A zero argument persistent callback that can be saved with the Scene.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.Events.UnityEvent.AddListener(UnityEngine.Events.UnityAction)">
@@ -7827,6 +7825,41 @@ Note: this value can be set in the Lighting Window UI and it is serialized, that
         <para>A native engine system. To get a valid value for this, you must copy it from one of the PlayerLoopSystems returned by PlayerLoop.GetDefaultPlayerLoop.</para>
       </summary>
     </member>
+    <member name="T:UnityEngine.Experimental.Networking.PlayerConnection.ConnectionTarget">
+      <summary>
+        <para>The type of the connected target.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Experimental.Networking.PlayerConnection.ConnectionTarget.Editor">
+      <summary>
+        <para>The connected target is an Editor.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Experimental.Networking.PlayerConnection.ConnectionTarget.None">
+      <summary>
+        <para>No target is connected, this is only possible in a Player.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Experimental.Networking.PlayerConnection.ConnectionTarget.Player">
+      <summary>
+        <para>The connected target is a Player.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Experimental.Networking.PlayerConnection.IConnectionState">
+      <summary>
+        <para>The state of an Editor-to-Player or Editor-to-Editor connection to be used in Experimental.Networking.PlayerConnection.EditorGUI.AttachToPlayerDropdown or Experimental.Networking.PlayerConnection.EditorGUILayout.AttachToPlayerDropdown.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.Networking.PlayerConnection.IConnectionState.connectedToTarget">
+      <summary>
+        <para>Supplies the type of the established connection, as in whether the target is a Player or an Editor.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.Networking.PlayerConnection.IConnectionState.connectionName">
+      <summary>
+        <para>The name of the connected target.</para>
+      </summary>
+    </member>
     <member name="T:UnityEngine.Experimental.Playables.CameraPlayable">
       <summary>
         <para>An implementation of IPlayable that produces a Camera texture.</para>
@@ -8187,6 +8220,11 @@ Note: this value can be set in the Lighting Window UI and it is serialized, that
         <para>Native engine system updated by the native player loop.</para>
       </summary>
     </member>
+    <member name="T:UnityEngine.Experimental.PlayerLoop.PostLateUpdate.EndGraphicsJobsAfterScriptLateUpdate">
+      <summary>
+        <para>Native engine system updated by the native player loop.</para>
+      </summary>
+    </member>
     <member name="T:UnityEngine.Experimental.PlayerLoop.PostLateUpdate.EnlightenRuntimeUpdate">
       <summary>
         <para>Native engine system updated by the native player loop.</para>
@@ -8397,7 +8435,7 @@ Note: this value can be set in the Lighting Window UI and it is serialized, that
         <para>Native engine system updated by the native player loop.</para>
       </summary>
     </member>
-    <member name="T:UnityEngine.Experimental.PlayerLoop.PreLateUpdate.EndGraphicsJobsLate">
+    <member name="T:UnityEngine.Experimental.PlayerLoop.PreLateUpdate.EndGraphicsJobsAfterScriptUpdate">
       <summary>
         <para>Native engine system updated by the native player loop.</para>
       </summary>
@@ -8628,7 +8666,7 @@ Note: this value can be set in the Lighting Window UI and it is serialized, that
     </member>
     <member name="F:UnityEngine.Experimental.Rendering.CullResults.visibleOffscreenVertexLights">
       <summary>
-        <para>Off screen lights that still effect visible scene vertices.</para>
+        <para>Off screen lights that still effect visible Scene vertices.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.Experimental.Rendering.CullResults.visibleReflectionProbes">
@@ -8756,7 +8794,7 @@ Note: this value can be set in the Lighting Window UI and it is serialized, that
       <param name="lightIndex">The index of the shadow-casting light.</param>
       <param name="outBounds">The bounds to be computed.</param>
       <returns>
-        <para>True if the light affects at least one shadow casting object in the scene.</para>
+        <para>True if the light affects at least one shadow casting object in the Scene.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.Experimental.Rendering.CullResults.SetLightIndexMap(System.Int32[])">
@@ -8916,7 +8954,7 @@ If an element of the array is set to -1, the light corresponding to that element
     </member>
     <member name="T:UnityEngine.Experimental.Rendering.DrawShadowsSettings">
       <summary>
-        <para>Settings for RenderLoop.DrawShadows.</para>
+        <para>Settings for ScriptableRenderContext.DrawShadows.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Experimental.Rendering.DrawShadowsSettings.cullResults">
@@ -11579,7 +11617,7 @@ All of the commands within the buffer are guaranteed to be executed on the same 
     </member>
     <member name="T:UnityEngine.GameObject">
       <summary>
-        <para>Base class for all entities in Unity scenes.</para>
+        <para>Base class for all entities in Unity Scenes.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.GameObject.activeInHierarchy">
@@ -11599,7 +11637,7 @@ All of the commands within the buffer are guaranteed to be executed on the same 
     </member>
     <member name="P:UnityEngine.GameObject.layer">
       <summary>
-        <para>The layer the game object is in. A layer is in the range [0...31].</para>
+        <para>The layer the game object is in.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.GameObject.scene">
@@ -11944,7 +11982,7 @@ All of the commands within the buffer are guaranteed to be executed on the same 
       <summary>
         <para>Activates/Deactivates the GameObject.</para>
       </summary>
-      <param name="value">Activate or deactivation the  object.</param>
+      <param name="value">Activate or deactivate the  object.</param>
     </member>
     <member name="T:UnityEngine.GeometryUtility">
       <summary>
@@ -12009,7 +12047,7 @@ All of the commands within the buffer are guaranteed to be executed on the same 
     </member>
     <member name="T:UnityEngine.Gizmos">
       <summary>
-        <para>Gizmos are used to give visual debugging or setup aids in the scene view.</para>
+        <para>Gizmos are used to give visual debugging or setup aids in the Scene view.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Gizmos.color">
@@ -12041,7 +12079,7 @@ All of the commands within the buffer are guaranteed to be executed on the same 
     </member>
     <member name="M:UnityEngine.Gizmos.DrawGUITexture(UnityEngine.Rect,UnityEngine.Texture)">
       <summary>
-        <para>Draw a texture in the scene.</para>
+        <para>Draw a texture in the Scene.</para>
       </summary>
       <param name="screenRect">The size and position of the texture on the "screen" defined by the XY plane.</param>
       <param name="texture">The texture to be displayed.</param>
@@ -12053,7 +12091,7 @@ All of the commands within the buffer are guaranteed to be executed on the same 
     </member>
     <member name="M:UnityEngine.Gizmos.DrawGUITexture(UnityEngine.Rect,UnityEngine.Texture,UnityEngine.Material)">
       <summary>
-        <para>Draw a texture in the scene.</para>
+        <para>Draw a texture in the Scene.</para>
       </summary>
       <param name="screenRect">The size and position of the texture on the "screen" defined by the XY plane.</param>
       <param name="texture">The texture to be displayed.</param>
@@ -12065,7 +12103,7 @@ All of the commands within the buffer are guaranteed to be executed on the same 
     </member>
     <member name="M:UnityEngine.Gizmos.DrawGUITexture(UnityEngine.Rect,UnityEngine.Texture,System.Int32,System.Int32,System.Int32,System.Int32)">
       <summary>
-        <para>Draw a texture in the scene.</para>
+        <para>Draw a texture in the Scene.</para>
       </summary>
       <param name="screenRect">The size and position of the texture on the "screen" defined by the XY plane.</param>
       <param name="texture">The texture to be displayed.</param>
@@ -12077,7 +12115,7 @@ All of the commands within the buffer are guaranteed to be executed on the same 
     </member>
     <member name="M:UnityEngine.Gizmos.DrawGUITexture(UnityEngine.Rect,UnityEngine.Texture,System.Int32,System.Int32,System.Int32,System.Int32,UnityEngine.Material)">
       <summary>
-        <para>Draw a texture in the scene.</para>
+        <para>Draw a texture in the Scene.</para>
       </summary>
       <param name="screenRect">The size and position of the texture on the "screen" defined by the XY plane.</param>
       <param name="texture">The texture to be displayed.</param>
@@ -12089,7 +12127,7 @@ All of the commands within the buffer are guaranteed to be executed on the same 
     </member>
     <member name="M:UnityEngine.Gizmos.DrawIcon(UnityEngine.Vector3,System.String)">
       <summary>
-        <para>Draw an icon at a position in the scene view.</para>
+        <para>Draw an icon at a position in the Scene view.</para>
       </summary>
       <param name="center"></param>
       <param name="name"></param>
@@ -12097,7 +12135,7 @@ All of the commands within the buffer are guaranteed to be executed on the same 
     </member>
     <member name="M:UnityEngine.Gizmos.DrawIcon(UnityEngine.Vector3,System.String,System.Boolean)">
       <summary>
-        <para>Draw an icon at a position in the scene view.</para>
+        <para>Draw an icon at a position in the Scene view.</para>
       </summary>
       <param name="center"></param>
       <param name="name"></param>
@@ -12804,7 +12842,7 @@ The destination texture format should be uncompressed and correspond to a suppor
       <param name="lightProbeUsage">LightProbeUsage for the mesh.</param>
       <param name="lightProbeProxyVolume"></param>
     </member>
-    <member name="M:UnityEngine.Graphics.DrawMeshInstanced(UnityEngine.Mesh,System.Int32,UnityEngine.Material,UnityEngine.Matrix4x4[],System.Int32,UnityEngine.MaterialPropertyBlock,UnityEngine.Rendering.ShadowCastingMode,System.Boolean,System.Int32,UnityEngine.Camera,UnityEngine.Rendering.LightProbeUsage)">
+    <member name="M:UnityEngine.Graphics.DrawMeshInstanced(UnityEngine.Mesh,System.Int32,UnityEngine.Material,UnityEngine.Matrix4x4[],System.Int32,UnityEngine.MaterialPropertyBlock,UnityEngine.Rendering.ShadowCastingMode,System.Boolean,System.Int32,UnityEngine.Camera,UnityEngine.Rendering.LightProbeUsage,UnityEngine.LightProbeProxyVolume)">
       <summary>
         <para>Draw the same mesh multiple times using GPU instancing.</para>
       </summary>
@@ -12821,7 +12859,7 @@ The destination texture format should be uncompressed and correspond to a suppor
       <param name="lightProbeUsage">LightProbeUsage for the instances.</param>
       <param name="lightProbeProxyVolume"></param>
     </member>
-    <member name="M:UnityEngine.Graphics.DrawMeshInstanced(UnityEngine.Mesh,System.Int32,UnityEngine.Material,System.Collections.Generic.List`1&lt;UnityEngine.Matrix4x4&gt;,UnityEngine.MaterialPropertyBlock,UnityEngine.Rendering.ShadowCastingMode,System.Boolean,System.Int32,UnityEngine.Camera,UnityEngine.Rendering.LightProbeUsage)">
+    <member name="M:UnityEngine.Graphics.DrawMeshInstanced(UnityEngine.Mesh,System.Int32,UnityEngine.Material,System.Collections.Generic.List`1&lt;UnityEngine.Matrix4x4&gt;,UnityEngine.MaterialPropertyBlock,UnityEngine.Rendering.ShadowCastingMode,System.Boolean,System.Int32,UnityEngine.Camera,UnityEngine.Rendering.LightProbeUsage,UnityEngine.LightProbeProxyVolume)">
       <summary>
         <para>Draw the same mesh multiple times using GPU instancing.</para>
       </summary>
@@ -12838,7 +12876,7 @@ The destination texture format should be uncompressed and correspond to a suppor
       <param name="lightProbeUsage">LightProbeUsage for the instances.</param>
       <param name="lightProbeProxyVolume"></param>
     </member>
-    <member name="M:UnityEngine.Graphics.DrawMeshInstancedIndirect(UnityEngine.Mesh,System.Int32,UnityEngine.Material,UnityEngine.Bounds,UnityEngine.ComputeBuffer,System.Int32,UnityEngine.MaterialPropertyBlock,UnityEngine.Rendering.ShadowCastingMode,System.Boolean,System.Int32,UnityEngine.Camera,UnityEngine.Rendering.LightProbeUsage)">
+    <member name="M:UnityEngine.Graphics.DrawMeshInstancedIndirect(UnityEngine.Mesh,System.Int32,UnityEngine.Material,UnityEngine.Bounds,UnityEngine.ComputeBuffer,System.Int32,UnityEngine.MaterialPropertyBlock,UnityEngine.Rendering.ShadowCastingMode,System.Boolean,System.Int32,UnityEngine.Camera,UnityEngine.Rendering.LightProbeUsage,UnityEngine.LightProbeProxyVolume)">
       <summary>
         <para>Draw the same mesh multiple times using GPU instancing.</para>
       </summary>
@@ -13390,7 +13428,7 @@ All of the commands within the buffer are guaranteed to be executed on the same 
     </member>
     <member name="F:UnityEngine.HideFlags.DontSave">
       <summary>
-        <para>The object will not be saved to the scene. It will not be destroyed when a new scene is loaded. It is a shortcut for HideFlags.DontSaveInBuild | HideFlags.DontSaveInEditor | HideFlags.DontUnloadUnusedAsset.</para>
+        <para>The object will not be saved to the Scene. It will not be destroyed when a new Scene is loaded. It is a shortcut for HideFlags.DontSaveInBuild | HideFlags.DontSaveInEditor | HideFlags.DontUnloadUnusedAsset.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.HideFlags.DontSaveInBuild">
@@ -13400,7 +13438,7 @@ All of the commands within the buffer are guaranteed to be executed on the same 
     </member>
     <member name="F:UnityEngine.HideFlags.DontSaveInEditor">
       <summary>
-        <para>The object will not be saved to the scene in the editor.</para>
+        <para>The object will not be saved to the Scene in the editor.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.HideFlags.DontUnloadUnusedAsset">
@@ -13632,7 +13670,7 @@ All of the commands within the buffer are guaranteed to be executed on the same 
     </member>
     <member name="T:UnityEngine.ImageEffectAllowedInSceneView">
       <summary>
-        <para>Any Image Effect with this attribute can be rendered into the scene view camera.</para>
+        <para>Any Image Effect with this attribute can be rendered into the Scene view camera.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.ImageEffectOpaque">
@@ -13853,7 +13891,7 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
     </member>
     <member name="M:UnityEngine.Input.GetKey(System.String)">
       <summary>
-        <para>Returns true while the user holds down the key identified by name. Think auto fire.</para>
+        <para>Returns true while the user holds down the key identified by name.</para>
       </summary>
       <param name="name"></param>
     </member>
@@ -13966,7 +14004,7 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
     </member>
     <member name="P:UnityEngine.Jobs.TransformAccess.localPosition">
       <summary>
-        <para>The scale of the transform relative to the parent.</para>
+        <para>The position of the transform relative to the parent.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Jobs.TransformAccess.localRotation">
@@ -15770,7 +15808,7 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
     </member>
     <member name="T:UnityEngine.LayerMask">
       <summary>
-        <para>LayerMask allow you to display the LayerMask popup menu in the inspector.</para>
+        <para>Specifies Layers to use in a Physics.Raycast.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.LayerMask.value">
@@ -15877,7 +15915,7 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
     </member>
     <member name="P:UnityEngine.Light.cullingMask">
       <summary>
-        <para>This is used to light certain objects in the scene selectively.</para>
+        <para>This is used to light certain objects in the Scene selectively.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Light.flare">
@@ -16093,7 +16131,7 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
     </member>
     <member name="T:UnityEngine.LightmapSettings">
       <summary>
-        <para>Stores lightmaps of the scene.</para>
+        <para>Stores lightmaps of the Scene.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.LightmapSettings.lightmaps">
@@ -16103,7 +16141,7 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
     </member>
     <member name="P:UnityEngine.LightmapSettings.lightmapsMode">
       <summary>
-        <para>Non-directional, Directional or Directional Specular lightmaps rendering mode.</para>
+        <para>NonDirectional or CombinedDirectional Specular lightmaps rendering mode.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.LightmapSettings.lightProbes">
@@ -16318,7 +16356,7 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
     </member>
     <member name="T:UnityEngine.LightProbes">
       <summary>
-        <para>Stores light probes for the scene.</para>
+        <para>Stores light probes for the Scene.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.LightProbes.bakedProbes">
@@ -16527,7 +16565,7 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
     </member>
     <member name="P:UnityEngine.LineRenderer.positionCount">
       <summary>
-        <para>Set the number of line segments.</para>
+        <para>Set/get the number of vertices.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.LineRenderer.shadowBias">
@@ -16610,7 +16648,7 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
       <summary>
         <para>Get the positions of all vertices in the line.</para>
       </summary>
-      <param name="positions">The array of positions to retrieve. The array passed should be of at least numPositions in size.</param>
+      <param name="positions">The array of positions to retrieve. The array passed should be of at least positionCount in size.</param>
       <returns>
         <para>How many positions were actually stored in the output array.</para>
       </returns>
@@ -18506,9 +18544,12 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
       <summary>
         <para>Calculates the linear parameter t that produces the interpolant value within the range [a, b].</para>
       </summary>
-      <param name="a"></param>
-      <param name="b"></param>
-      <param name="value"></param>
+      <param name="a">Start value.</param>
+      <param name="b">End value.</param>
+      <param name="value">Value between start and end.</param>
+      <returns>
+        <para>Percentage of value between start and end.</para>
+      </returns>
     </member>
     <member name="M:UnityEngine.Mathf.IsPowerOfTwo(System.Int32)">
       <summary>
@@ -18658,7 +18699,7 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
     </member>
     <member name="M:UnityEngine.Mathf.NextPowerOfTwo(System.Int32)">
       <summary>
-        <para>Returns the next power of two value.</para>
+        <para>Returns the next power of two that is equal to, or greater than, the argument.</para>
       </summary>
       <param name="value"></param>
     </member>
@@ -18669,12 +18710,12 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
       <param name="x">X-coordinate of sample point.</param>
       <param name="y">Y-coordinate of sample point.</param>
       <returns>
-        <para>Value between 0.0 and 1.0.</para>
+        <para>Value between 0.0 and 1.0. (Return value might be slightly beyond 1.0.)</para>
       </returns>
     </member>
     <member name="F:UnityEngine.Mathf.PI">
       <summary>
-        <para>The infamous 3.14159265358979... value (Read Only).</para>
+        <para>The well-known 3.14159265358979... value (Read Only).</para>
       </summary>
     </member>
     <member name="M:UnityEngine.Mathf.PingPong(System.Single,System.Single)">
@@ -19096,7 +19137,7 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
     </member>
     <member name="P:UnityEngine.Mesh.isReadable">
       <summary>
-        <para>Returns state of the Read/Write Enabled checkbox when model was imported.</para>
+        <para>Returns true if the Mesh is read/write enabled, or false if it is not.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Mesh.normals">
@@ -19657,7 +19698,7 @@ Use false when you want to use the existing bounding box and reduce the CPU cost
     </member>
     <member name="F:UnityEngine.MixedLightingMode.Subtractive">
       <summary>
-        <para>Mixed lights provide baked direct and indirect lighting for static objects. Dynamic objects receive realtime direct lighting and cast shadows on static objects using the main directional light in the scene.</para>
+        <para>Mixed lights provide baked direct and indirect lighting for static objects. Dynamic objects receive realtime direct lighting and cast shadows on static objects using the main directional light in the Scene.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.MonoBehaviour">
@@ -19930,7 +19971,7 @@ The Player ID is always 1, because only one Editor can be connected.</param>
     </member>
     <member name="P:UnityEngine.Object.hideFlags">
       <summary>
-        <para>Should the object be hidden, saved with the scene or modifiable by the user?</para>
+        <para>Should the object be hidden, saved with the Scene or modifiable by the user?</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Object.name">
@@ -19968,9 +20009,9 @@ The Player ID is always 1, because only one Editor can be connected.</param>
     </member>
     <member name="M:UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)">
       <summary>
-        <para>Makes the object target not be destroyed automatically when loading a new scene.</para>
+        <para>Do not destroy the target Object when loading a new Scene.</para>
       </summary>
-      <param name="target">The object which is not destroyed on scene change.</param>
+      <param name="target">An Object not destroyed on Scene change.</param>
     </member>
     <member name="M:UnityEngine.Object.FindObjectOfType(System.Type)">
       <summary>
@@ -20450,6 +20491,11 @@ The Player ID is always 1, because only one Editor can be connected.</param>
         <para>The accumulated speed of the parent Playable during the PlayableGraph traversal.</para>
       </summary>
     </member>
+    <member name="P:UnityEngine.Playables.FrameData.effectivePlayState">
+      <summary>
+        <para>The accumulated play state of this playable.</para>
+      </summary>
+    </member>
     <member name="P:UnityEngine.Playables.FrameData.effectiveSpeed">
       <summary>
         <para>The accumulated speed of the Playable during the PlayableGraph traversal.</para>
@@ -20601,7 +20647,7 @@ The Player ID is always 1, because only one Editor can be connected.</param>
     </member>
     <member name="T:UnityEngine.Playables.PlayableAsset">
       <summary>
-        <para>An base class for assets that can be used to instatiate a Playable at runtime.</para>
+        <para>A base class for assets that can be used to instantiate a Playable at runtime.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Playables.PlayableAsset.duration">
@@ -20638,7 +20684,10 @@ The Player ID is always 1, because only one Editor can be connected.</param>
     </member>
     <member name="M:UnityEngine.Playables.PlayableBehaviour.OnBehaviourPause(UnityEngine.Playables.Playable,UnityEngine.Playables.FrameData)">
       <summary>
-        <para>This function is called when the Playable play state is changed to Playables.PlayState.Paused.</para>
+        <para>This method is invoked when one of the following situations occurs:
+&lt;br&gt;&lt;br&gt;
+     The effective play state during traversal is changed to Playables.PlayState.Paused. This state is indicated by FrameData.effectivePlayState.&lt;br&gt;&lt;br&gt;
+     The PlayableGraph is stopped while the playable play state is Playing. This state is indicated by PlayableGraph.IsPlaying returning true.</para>
       </summary>
       <param name="playable">The Playable that owns the current PlayableBehaviour.</param>
       <param name="info">A FrameData structure that contains information about the current frame context.</param>
@@ -21639,7 +21688,7 @@ The Player ID is always 1, because only one Editor can be connected.</param>
     </member>
     <member name="F:UnityEngine.PrimitiveType.Quad">
       <summary>
-        <para>A Quad primitive.</para>
+        <para>A quad primitive.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.PrimitiveType.Sphere">
@@ -22256,7 +22305,15 @@ Returns "UnityEngine.PropertyName" in the player.</para>
       <summary>
         <para>Async texture upload provides timesliced async texture upload on the render thread with tight control over memory and timeslicing. There are no allocations except for the ones which driver has to do. To read data and upload texture data a ringbuffer whose size can be controlled is re-used.
 
-Use asyncUploadBufferSize to set the buffer size for asynchronous texture uploads. The size is in megabytes. Minimum value is 2 and maximum is 512. Although the buffer will resize automatically to fit the largest texture currently loading, it is recommended to set the value approximately to the size of biggest texture used in the scene to avoid re-sizing of the buffer which can incur performance cost.</para>
+Use asyncUploadBufferSize to set the buffer size for asynchronous texture uploads. The size is in megabytes. Minimum value is 2 and maximum is 512. Although the buffer will resize automatically to fit the largest texture currently loading, it is recommended to set the value approximately to the size of biggest texture used in the Scene to avoid re-sizing of the buffer which can incur performance cost.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.QualitySettings.asyncUploadPersistentBuffer">
+      <summary>
+        <para>This flag controls if the async upload pipeline's ring buffer remains allocated when there are no active loading operations.
+To make the ring buffer allocation persist after all upload operations have completed, set this to true.
+If you have issues with excessive memory usage, you can set this to false. This means you reduce the runtime memory footprint, but memory fragmentation can occur.
+The default value is true.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.QualitySettings.asyncUploadTimeSlice">
@@ -22448,7 +22505,7 @@ frame. Minimum value is 1 and maximum is 33.</para>
     </member>
     <member name="P:UnityEngine.Quaternion.eulerAngles">
       <summary>
-        <para>Returns the euler angle representation of the rotation.</para>
+        <para>Returns or sets the euler angle representation of the rotation.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Quaternion.identity">
@@ -22463,7 +22520,7 @@ frame. Minimum value is 1 and maximum is 33.</para>
     </member>
     <member name="F:UnityEngine.Quaternion.w">
       <summary>
-        <para>W component of the Quaternion. Don't modify this directly unless you know quaternions inside out.</para>
+        <para>W component of the Quaternion. Do not directly modify quaternions.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.Quaternion.x">
@@ -22916,8 +22973,8 @@ frame. Minimum value is 1 and maximum is 33.</para>
       <summary>
         <para>Creates a 2D ray starting at origin along direction.</para>
       </summary>
-      <param name="Vector2">origin</param>
-      <param name="Vector2">direction</param>
+      <param name="Vector2">Origin.</param>
+      <param name="Vector2">Direction.</param>
       <param name="origin"></param>
       <param name="direction"></param>
     </member>
@@ -23448,7 +23505,7 @@ frame. Minimum value is 1 and maximum is 33.</para>
       <summary>
         <para>Get the corners of the calculated rectangle in world space.</para>
       </summary>
-      <param name="fourCornersArray">The ray that corners are filled into.</param>
+      <param name="fourCornersArray">The array that corners are filled into.</param>
     </member>
     <member name="T:UnityEngine.RectTransform.ReapplyDrivenProperties">
       <summary>
@@ -23574,7 +23631,7 @@ frame. Minimum value is 1 and maximum is 33.</para>
     </member>
     <member name="?:UnityEngine.ReflectionProbe.reflectionProbeChanged(System.Action`2&lt;UnityEngine.ReflectionProbe,UnityEngine.ReflectionProbe/ReflectionProbeEvent&gt;)">
       <summary>
-        <para>Adds a delegate to get notifications when a Reflection Probe is added to a scene or removed from a scene.</para>
+        <para>Adds a delegate to get notifications when a Reflection Probe is added to a Scene or removed from a Scene.</para>
       </summary>
       <param name="value"></param>
     </member>
@@ -23644,17 +23701,17 @@ See Also: ReflectionProbeTimeSlicingMode.</para>
     </member>
     <member name="T:UnityEngine.ReflectionProbe.ReflectionProbeEvent">
       <summary>
-        <para>Types of events that occur when ReflectionProbe components are used in a scene.</para>
+        <para>Types of events that occur when ReflectionProbe components are used in a Scene.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.ReflectionProbe.ReflectionProbeEvent.ReflectionProbeAdded">
       <summary>
-        <para>An event that occurs when a Reflection Probe component is added to a scene or enabled in a scene.</para>
+        <para>An event that occurs when a Reflection Probe component is added to a Scene or enabled in a Scene.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.ReflectionProbe.ReflectionProbeEvent.ReflectionProbeRemoved">
       <summary>
-        <para>An event that occurs when a Reflection Probe component is unloaded from a scene or disabled in a scene.</para>
+        <para>An event that occurs when a Reflection Probe component is unloaded from a Scene or disabled in a Scene.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.ReflectionProbe.RenderProbe(UnityEngine.RenderTexture)">
@@ -26385,11 +26442,6 @@ Allows for CPU determination of whether the GPU has passed the point in its proc
         <para>PlayStation Mobile (PSM) graphics API.</para>
       </summary>
     </member>
-    <member name="F:UnityEngine.Rendering.GraphicsDeviceType.PlayStationVita">
-      <summary>
-        <para>PlayStation Vita graphics API.</para>
-      </summary>
-    </member>
     <member name="F:UnityEngine.Rendering.GraphicsDeviceType.Switch">
       <summary>
         <para>Nintendo Switch graphics API.</para>
@@ -26578,7 +26630,7 @@ See Also: Graphics.activeTier.</para>
     </member>
     <member name="F:UnityEngine.Rendering.LightProbeUsage.Off">
       <summary>
-        <para>Light Probes are not used. The scene's ambient probe is provided to the shader.</para>
+        <para>Light Probes are not used. The Scene's ambient probe is provided to the shader.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.Rendering.LightProbeUsage.UseProxyVolume">
@@ -26857,7 +26909,7 @@ See Also: ReflectionProbe.RenderProbe.</para>
     <member name="T:UnityEngine.Rendering.ReflectionProbeTimeSlicingMode">
       <summary>
         <para>When a probe's ReflectionProbe.refreshMode is set to ReflectionProbeRefreshMode.EveryFrame, this enum specify whether or not Unity should update the probe's cubemap over several frames or update the whole cubemap in one frame.
-Updating a probe's cubemap is a costly operation. Unity needs to render the entire scene for each face of the cubemap, as well as perform special blurring in order to get glossy reflections. The impact on frame rate can be significant. Time-slicing helps maintaning a more constant frame rate during these updates by performing the rendering over several frames.</para>
+Updating a probe's cubemap is a costly operation. Unity needs to render the entire Scene for each face of the cubemap, as well as perform special blurring in order to get glossy reflections. The impact on frame rate can be significant. Time-slicing helps maintaning a more constant frame rate during these updates by performing the rendering over several frames.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.Rendering.ReflectionProbeTimeSlicingMode.AllFacesAtOnce">
@@ -26867,7 +26919,7 @@ Updating a probe's cubemap is a costly operation. Unity needs to render the enti
     </member>
     <member name="F:UnityEngine.Rendering.ReflectionProbeTimeSlicingMode.IndividualFaces">
       <summary>
-        <para>Instructs Unity to spread the rendering of each face over several frames. Using this option, updating the cubemap will take 14 frames. This option greatly reduces the impact on frame rate, however it may produce incorrect results, especially in scenes where lighting conditions change over these 14 frames.</para>
+        <para>Instructs Unity to spread the rendering of each face over several frames. Using this option, updating the cubemap will take 14 frames. This option greatly reduces the impact on frame rate, however it may produce incorrect results, especially in Scenes where lighting conditions change over these 14 frames.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.Rendering.ReflectionProbeTimeSlicingMode.NoTimeSlicing">
@@ -27242,7 +27294,7 @@ Updating a probe's cubemap is a costly operation. Unity needs to render the enti
     </member>
     <member name="F:UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly">
       <summary>
-        <para>Object casts shadows, but is otherwise invisible in the scene.</para>
+        <para>Object casts shadows, but is otherwise invisible in the Scene.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.Rendering.ShadowCastingMode.TwoSided">
@@ -27668,7 +27720,7 @@ Updating a probe's cubemap is a costly operation. Unity needs to render the enti
     </member>
     <member name="T:UnityEngine.RenderSettings">
       <summary>
-        <para>The Render Settings contain values for a range of visual elements in your scene, like fog and ambient light.</para>
+        <para>The Render Settings contain values for a range of visual elements in your Scene, like fog and ambient light.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.RenderSettings.ambientEquatorColor">
@@ -27683,7 +27735,7 @@ Updating a probe's cubemap is a costly operation. Unity needs to render the enti
     </member>
     <member name="P:UnityEngine.RenderSettings.ambientIntensity">
       <summary>
-        <para>How much the light from the Ambient Source affects the scene.</para>
+        <para>How much the light from the Ambient Source affects the Scene.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.RenderSettings.ambientLight">
@@ -27723,12 +27775,12 @@ Updating a probe's cubemap is a costly operation. Unity needs to render the enti
     </member>
     <member name="P:UnityEngine.RenderSettings.flareFadeSpeed">
       <summary>
-        <para>The fade speed of all flares in the scene.</para>
+        <para>The fade speed of all flares in the Scene.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.RenderSettings.flareStrength">
       <summary>
-        <para>The intensity of all flares in the scene.</para>
+        <para>The intensity of all flares in the Scene.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.RenderSettings.fog">
@@ -27773,7 +27825,7 @@ Updating a probe's cubemap is a costly operation. Unity needs to render the enti
     </member>
     <member name="P:UnityEngine.RenderSettings.reflectionIntensity">
       <summary>
-        <para>How much the skybox / custom cubemap reflection affects the scene.</para>
+        <para>How much the skybox / custom cubemap reflection affects the Scene.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.RenderSettings.skybox">
@@ -27978,7 +28030,7 @@ Updating a probe's cubemap is a costly operation. Unity needs to render the enti
     </member>
     <member name="P:UnityEngine.RenderTexture.sRGB">
       <summary>
-        <para>Does this render texture use sRGB read/write conversions (Read Only).</para>
+        <para>Does this render texture use sRGB read/write conversions? (Read Only).</para>
       </summary>
     </member>
     <member name="P:UnityEngine.RenderTexture.useDynamicScale">
@@ -28619,9 +28671,12 @@ See RenderTexture.useMipMap.</para>
     </member>
     <member name="M:UnityEngine.Resources.Load(System.String)">
       <summary>
-        <para>Loads an asset stored at path in a Resources folder.</para>
+        <para>Loads an asset stored at path in a folder called Resources.</para>
       </summary>
-      <param name="path">Pathname of the target folder. When using the empty string (i.e., ""), the function will load the entire contents of the Resources folder.</param>
+      <param name="path">Pathname of the target folder.</param>
+      <returns>
+        <para>The requested asset returned as a Type.</para>
+      </returns>
     </member>
     <member name="M:UnityEngine.Resources.Load(System.String)">
       <summary>
@@ -28629,6 +28684,9 @@ See RenderTexture.useMipMap.</para>
       </summary>
       <param name="path">Pathname of the target folder. When using the empty string (i.e., ""), the function will load the entire contents of the Resources folder.</param>
       <param name="systemTypeInstance">Type filter for objects returned.</param>
+      <returns>
+        <para>The requested asset returned as an Object.</para>
+      </returns>
     </member>
     <member name="M:UnityEngine.Resources.Load(System.String,System.Type)">
       <summary>
@@ -28636,6 +28694,9 @@ See RenderTexture.useMipMap.</para>
       </summary>
       <param name="path">Pathname of the target folder. When using the empty string (i.e., ""), the function will load the entire contents of the Resources folder.</param>
       <param name="systemTypeInstance">Type filter for objects returned.</param>
+      <returns>
+        <para>The requested asset returned as an Object.</para>
+      </returns>
     </member>
     <member name="M:UnityEngine.Resources.LoadAll(System.String)">
       <summary>
@@ -28700,12 +28761,12 @@ See RenderTexture.useMipMap.</para>
     </member>
     <member name="F:UnityEngine.RuntimeInitializeLoadType.AfterSceneLoad">
       <summary>
-        <para>After scene is loaded.</para>
+        <para>After Scene is loaded.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.RuntimeInitializeLoadType.BeforeSceneLoad">
       <summary>
-        <para>Before scene is loaded.</para>
+        <para>Before Scene is loaded.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.RuntimeInitializeOnLoadMethodAttribute">
@@ -28721,17 +28782,17 @@ See RenderTexture.useMipMap.</para>
     </member>
     <member name="M:UnityEngine.RuntimeInitializeOnLoadMethodAttribute.#ctor">
       <summary>
-        <para>Creation of the runtime class used when scenes are loaded.</para>
+        <para>Creation of the runtime class used when Scenes are loaded.</para>
       </summary>
       <param name="loadType">Determine whether methods are called before or after the
-        scene is loaded.</param>
+        Scene is loaded.</param>
     </member>
     <member name="M:UnityEngine.RuntimeInitializeOnLoadMethodAttribute.#ctor(UnityEngine.RuntimeInitializeLoadType)">
       <summary>
-        <para>Creation of the runtime class used when scenes are loaded.</para>
+        <para>Creation of the runtime class used when Scenes are loaded.</para>
       </summary>
       <param name="loadType">Determine whether methods are called before or after the
-        scene is loaded.</param>
+        Scene is loaded.</param>
     </member>
     <member name="T:UnityEngine.RuntimePlatform">
       <summary>
@@ -28867,17 +28928,18 @@ See RenderTexture.useMipMap.</para>
     </member>
     <member name="T:UnityEngine.SceneManagement.LoadSceneMode">
       <summary>
-        <para>Used when loading a scene in a player.</para>
+        <para>Used when loading a Scene in a player.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.SceneManagement.LoadSceneMode.Additive">
       <summary>
-        <para>Adds the scene to the current loaded scenes.</para>
+        <para>Adds the Scene to the current loaded Scenes.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.SceneManagement.LoadSceneMode.Single">
       <summary>
-        <para>Closes all current loaded scenes and loads a scene.</para>
+        <para>Closes all current loaded Scenes
+                and loads a Scene.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.SceneManagement.LoadSceneParameters">
@@ -28899,7 +28961,7 @@ See RenderTexture.useMipMap.</para>
       <summary>
         <para>Constructor for LoadSceneParameters. See SceneManager.LoadScene.</para>
       </summary>
-      <param name="mode">See LoadSceneMode.</param>
+      <param name="mode">See LoadSceneParameters.loadSceneMode.</param>
     </member>
     <member name="T:UnityEngine.SceneManagement.LocalPhysicsMode">
       <summary>
@@ -28908,17 +28970,17 @@ See RenderTexture.useMipMap.</para>
     </member>
     <member name="F:UnityEngine.SceneManagement.LocalPhysicsMode.None">
       <summary>
-        <para>No local 2D or 3D physics scene will be created.</para>
+        <para>No local 2D or 3D physics Scene will be created.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.SceneManagement.LocalPhysicsMode.Physics2D">
       <summary>
-        <para>A local 2D physics scene will be created and owned by the Scene.</para>
+        <para>A local 2D physics Scene will be created and owned by the Scene.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.SceneManagement.LocalPhysicsMode.Physics3D">
       <summary>
-        <para>A local 3D physics scene will be created and owned by the Scene.</para>
+        <para>A local 3D physics Scene will be created and owned by the Scene.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.SceneManagement.Scene">
@@ -28928,37 +28990,37 @@ See RenderTexture.useMipMap.</para>
     </member>
     <member name="P:UnityEngine.SceneManagement.Scene.buildIndex">
       <summary>
-        <para>Returns the index of the scene in the Build Settings. Always returns -1 if the scene was loaded through an AssetBundle.</para>
+        <para>Return the index of the Scene in the Build Settings.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.SceneManagement.Scene.isDirty">
       <summary>
-        <para>Returns true if the scene is modifed.</para>
+        <para>Returns true if the Scene is modifed.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.SceneManagement.Scene.isLoaded">
       <summary>
-        <para>Returns true if the scene is loaded.</para>
+        <para>Returns true if the Scene is loaded.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.SceneManagement.Scene.name">
       <summary>
-        <para>Returns the name of the scene.</para>
+        <para>Returns the name of the Scene.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.SceneManagement.Scene.path">
       <summary>
-        <para>Returns the relative path of the scene. Like: "AssetsMyScenesMyScene.unity".</para>
+        <para>Returns the relative path of the Scene. Like: "AssetsMyScenesMyScene.unity".</para>
       </summary>
     </member>
     <member name="P:UnityEngine.SceneManagement.Scene.rootCount">
       <summary>
-        <para>The number of root transforms of this scene.</para>
+        <para>The number of root transforms of this Scene.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.SceneManagement.Scene.GetRootGameObjects">
       <summary>
-        <para>Returns all the root game objects in the scene.</para>
+        <para>Returns all the root game objects in the Scene.</para>
       </summary>
       <returns>
         <para>An array of game objects.</para>
@@ -28966,17 +29028,17 @@ See RenderTexture.useMipMap.</para>
     </member>
     <member name="M:UnityEngine.SceneManagement.Scene.GetRootGameObjects(System.Collections.Generic.List`1&lt;UnityEngine.GameObject&gt;)">
       <summary>
-        <para>Returns all the root game objects in the scene.</para>
+        <para>Returns all the root game objects in the Scene.</para>
       </summary>
       <param name="rootGameObjects">A list which is used to return the root game objects.</param>
     </member>
     <member name="M:UnityEngine.SceneManagement.Scene.IsValid">
       <summary>
-        <para>Whether this is a valid scene.
-A scene may be invalid if, for example, you tried to open a scene that does not exist. In this case, the scene returned from EditorSceneManager.OpenScene would return False for IsValid.</para>
+        <para>Whether this is a valid Scene.
+A Scene may be invalid if, for example, you tried to open a Scene that does not exist. In this case, the Scene returned from EditorSceneManager.OpenScene would return False for IsValid.</para>
       </summary>
       <returns>
-        <para>Whether this is a valid scene.</para>
+        <para>Whether this is a valid Scene.</para>
       </returns>
     </member>
     <member name="?:UnityEngine.SceneManagement.Scene.op_Equal(UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene)">
@@ -29002,7 +29064,7 @@ A scene may be invalid if, for example, you tried to open a scene that does not 
       <summary>
         <para>Subscribe to this event to get notified when the active Scene has changed.</para>
       </summary>
-      <param name="value">Previous active scene and the new active scene.</param>
+      <param name="value">Use a subscription of either a UnityAction&lt;SceneManagement.Scene, SceneManagement.Scene&gt; or a method that takes two SceneManagement.Scene types arguments.</param>
     </member>
     <member name="P:UnityEngine.SceneManagement.SceneManager.sceneCount">
       <summary>
@@ -29018,20 +29080,20 @@ A scene may be invalid if, for example, you tried to open a scene that does not 
       <summary>
         <para>Add a delegate to this to get notifications when a Scene has loaded.</para>
       </summary>
-      <param name="value"></param>
+      <param name="value">Use a subscription of either a UnityAction&lt;SceneManagement.Scene, SceneManagement.LoadSceneMode&gt; or a method that takes a SceneManagement.Scene and a SceneManagement.LoadSceneMode.</param>
     </member>
     <member name="?:UnityEngine.SceneManagement.SceneManager.sceneUnloaded(UnityEngine.Events.UnityAction`1&lt;UnityEngine.SceneManagement.Scene&gt;)">
       <summary>
-        <para>Add a delegate to this to get notifications when a Scene has unloaded</para>
+        <para>Add a delegate to this to get notifications when a Scene has unloaded.</para>
       </summary>
-      <param name="value"></param>
+      <param name="value">Use a subscription of either a UnityAction&lt;SceneManagement.Scene&gt; or a method that takes a SceneManagement.Scene type argument.</param>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.CreateScene(System.String)">
       <summary>
         <para>Create an empty new Scene at runtime with the given name.</para>
       </summary>
       <param name="sceneName">The name of the new Scene. It cannot be empty or null, or same as the name of the existing Scenes.</param>
-      <param name="parameters">Various parameters used to create the scene.</param>
+      <param name="parameters">Various parameters used to create the Scene.</param>
       <returns>
         <para>A reference to the new Scene that was created, or an invalid Scene if creation failed.</para>
       </returns>
@@ -29041,7 +29103,7 @@ A scene may be invalid if, for example, you tried to open a scene that does not 
         <para>Create an empty new Scene at runtime with the given name.</para>
       </summary>
       <param name="sceneName">The name of the new Scene. It cannot be empty or null, or same as the name of the existing Scenes.</param>
-      <param name="parameters">Various parameters used to create the scene.</param>
+      <param name="parameters">Various parameters used to create the Scene.</param>
       <returns>
         <para>A reference to the new Scene that was created, or an invalid Scene if creation failed.</para>
       </returns>
@@ -29104,8 +29166,7 @@ A scene may be invalid if, for example, you tried to open a scene that does not 
       </summary>
       <param name="sceneName">Name or path of the Scene to load.</param>
       <param name="sceneBuildIndex">Index of the Scene in the Build Settings to load.</param>
-      <param name="mode">Allows you to specify whether or not to load the Scene additively.
-        See SceneManagement.LoadSceneMode for more information about the options.</param>
+      <param name="mode">Allows you to specify whether or not to load the Scene additively. See SceneManagement.LoadSceneMode for more information about the options.</param>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.LoadScene(System.String,UnityEngine.SceneManagement.LoadSceneMode)">
       <summary>
@@ -29113,75 +29174,28 @@ A scene may be invalid if, for example, you tried to open a scene that does not 
       </summary>
       <param name="sceneName">Name or path of the Scene to load.</param>
       <param name="sceneBuildIndex">Index of the Scene in the Build Settings to load.</param>
-      <param name="mode">Allows you to specify whether or not to load the Scene additively.
-        See SceneManagement.LoadSceneMode for more information about the options.</param>
+      <param name="mode">Allows you to specify whether or not to load the Scene additively. See SceneManagement.LoadSceneMode for more information about the options.</param>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.LoadScene(System.Int32,UnityEngine.SceneManagement.LoadSceneParameters)">
       <summary>
-        <para>Loads the Scene by its name or index in Build Settings.
-
-Note: In most cases, to avoid pauses or performance hiccups while
-        loading, you should use the asynchronous version of this command which is:
-        LoadSceneAsync.
-
-
-When using this SceneManager.LoadScene, the loading
-        does not happen immediately, it completes in the next frame. This semi-asynchronous
-        behavior can cause frame stuttering and can be confusing because load does not
-        complete immediately.
-
-Important: Since loading is set to complete in the next rendered frame, calling SceneManager.LoadScene forces all previous AsynOperations to complete, even if AsyncOperation.allowSceneActivation is set to false.
-This can be avoided by using LoadSceneAsync instead.
-
-        The given sceneName can either be the Scene name only, without the .unity
-        extension, or the path as shown in the BuildSettings window still without the
-        .unity extension. If only the Scene name is given this will load the first
-        Scene in the list that matches. If you have multiple Scenes with same name but
-        different paths, you should use the full path.
-
-Note that sceneName is case insensitive, except when you load the scene from an AssetBundle.
-
-For opening Scenes in the Editor see SceneManagement.EditorSceneManager.OpenScene.</para>
+        <para>Loads the Scene by its name or index in Build Settings.</para>
       </summary>
       <param name="sceneName">Name or path of the Scene to load.</param>
       <param name="sceneBuildIndex">Index of the Scene in the Build Settings to load.</param>
-      <param name="parameters">Various parameters used to load the scene.</param>
+      <param name="parameters">Various parameters used to load the Scene.</param>
       <returns>
-        <para>A handle to the scene being loaded.</para>
+        <para>A handle to the Scene being loaded.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.LoadScene(System.String,UnityEngine.SceneManagement.LoadSceneParameters)">
       <summary>
-        <para>Loads the Scene by its name or index in Build Settings.
-
-Note: In most cases, to avoid pauses or performance hiccups while
-        loading, you should use the asynchronous version of this command which is:
-        LoadSceneAsync.
-
-
-When using this SceneManager.LoadScene, the loading
-        does not happen immediately, it completes in the next frame. This semi-asynchronous
-        behavior can cause frame stuttering and can be confusing because load does not
-        complete immediately.
-
-Important: Since loading is set to complete in the next rendered frame, calling SceneManager.LoadScene forces all previous AsynOperations to complete, even if AsyncOperation.allowSceneActivation is set to false.
-This can be avoided by using LoadSceneAsync instead.
-
-        The given sceneName can either be the Scene name only, without the .unity
-        extension, or the path as shown in the BuildSettings window still without the
-        .unity extension. If only the Scene name is given this will load the first
-        Scene in the list that matches. If you have multiple Scenes with same name but
-        different paths, you should use the full path.
-
-Note that sceneName is case insensitive, except when you load the scene from an AssetBundle.
-
-For opening Scenes in the Editor see SceneManagement.EditorSceneManager.OpenScene.</para>
+        <para>Loads the Scene by its name or index in Build Settings.</para>
       </summary>
       <param name="sceneName">Name or path of the Scene to load.</param>
       <param name="sceneBuildIndex">Index of the Scene in the Build Settings to load.</param>
-      <param name="parameters">Various parameters used to load the scene.</param>
+      <param name="parameters">Various parameters used to load the Scene.</param>
       <returns>
-        <para>A handle to the scene being loaded.</para>
+        <para>A handle to the Scene being loaded.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(System.String,UnityEngine.SceneManagement.LoadSceneMode)">
@@ -29328,7 +29342,7 @@ For opening Scenes in the Editor see SceneManagement.EditorSceneManager.OpenScen
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneUtility.GetBuildIndexByScenePath(System.String)">
       <summary>
-        <para>Get the build index from a scene path.</para>
+        <para>Get the build index from a Scene path.</para>
       </summary>
       <param name="scenePath">Scene path (e.g: "AssetsScenesScene1.unity").</param>
       <returns>
@@ -29337,7 +29351,7 @@ For opening Scenes in the Editor see SceneManagement.EditorSceneManager.OpenScen
     </member>
     <member name="M:UnityEngine.SceneManagement.SceneUtility.GetScenePathByBuildIndex(System.Int32)">
       <summary>
-        <para>Get the scene path from a build index.</para>
+        <para>Get the Scene path from a build index.</para>
       </summary>
       <param name="buildIndex"></param>
       <returns>
@@ -29516,6 +29530,42 @@ For opening Scenes in the Editor see SceneManagement.EditorSceneManager.OpenScen
       <returns>
         <para>The created ScriptableObject.</para>
       </returns>
+    </member>
+    <member name="T:UnityEngine.Scripting.AlwaysLinkAssemblyAttribute">
+      <summary>
+        <para>Ensure an assembly is always processed during managed code stripping.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Scripting.GarbageCollector">
+      <summary>
+        <para>Experimental API to control the garbage collector on the Mono and IL2CPP scripting backends.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Scripting.GarbageCollector.GCMode">
+      <summary>
+        <para>Set and get global garbage collector operation mode.</para>
+      </summary>
+    </member>
+    <member name="?:UnityEngine.Scripting.GarbageCollector.GCModeChanged(System.Action`1&lt;UnityEngine.Scripting.GarbageCollector/Mode&gt;)">
+      <summary>
+        <para>Subscribe to this event to get notified when GarbageCollector.GCMode changes.</para>
+      </summary>
+      <param name="value"></param>
+    </member>
+    <member name="T:UnityEngine.Scripting.GarbageCollector.Mode">
+      <summary>
+        <para>Garbage collector operation mode.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Scripting.GarbageCollector.Mode.Disabled">
+      <summary>
+        <para>Disable garbage collector.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Scripting.GarbageCollector.Mode.Enabled">
+      <summary>
+        <para>Enable garbage collector.</para>
+      </summary>
     </member>
     <member name="T:UnityEngine.Scripting.PreserveAttribute">
       <summary>
@@ -30895,7 +30945,7 @@ Returns NULL if there is no associated alpha texture for the source sprite. This
     </member>
     <member name="P:UnityEngine.SpriteRenderer.size">
       <summary>
-        <para>Property to set/get the size to render when the SpriteRenderer.drawMode is set to SpriteDrawMode.NineSlice.</para>
+        <para>Property to set/get the size to render when the SpriteRenderer.drawMode is set to SpriteDrawMode.Sliced.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.SpriteRenderer.sprite">
@@ -31001,14 +31051,14 @@ Returns NULL if there is no associated alpha texture for the source sprite. This
       <summary>
         <para>StaticBatchingUtility.Combine prepares all children of the staticBatchRoot for static batching.</para>
       </summary>
-      <param name="staticBatchRoot"></param>
+      <param name="staticBatchRoot">The GameObject that should become the root of the combined batch.</param>
     </member>
     <member name="M:UnityEngine.StaticBatchingUtility.Combine(UnityEngine.GameObject[],UnityEngine.GameObject)">
       <summary>
-        <para>StaticBatchingUtility.Combine prepares all gos for static batching. staticBatchRoot is treated as their parent.</para>
+        <para>StaticBatchingUtility.Combine prepares all GameObjects contained in gos for static batching. staticBatchRoot is treated as their parent.</para>
       </summary>
-      <param name="gos"></param>
-      <param name="staticBatchRoot"></param>
+      <param name="gos">The GameObjects to prepare for static batching.</param>
+      <param name="staticBatchRoot">The GameObject that should become the root of the combined batch.</param>
     </member>
     <member name="T:UnityEngine.StereoTargetEyeMask">
       <summary>
@@ -31123,6 +31173,11 @@ Returns NULL if there is no associated alpha texture for the source sprite. This
     <member name="P:UnityEngine.SystemInfo.graphicsUVStartsAtTop">
       <summary>
         <para>Returns true if the texture UV coordinate convention for this platform has Y starting at the top of the image.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.SystemInfo.hasDynamicUniformArrayIndexingInFragmentShaders">
+      <summary>
+        <para>Returns true when the GPU has native support for indexing uniform arrays in fragment shaders without restrictions.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.SystemInfo.hasHiddenSurfaceRemovalOnGPU">
@@ -31339,13 +31394,12 @@ Note that GPUFences are only supported on PS4.</para>
         <para>This property is true if the current platform uses a reversed depth buffer (where values range from 1 at the near plane and 0 at far plane), and false if the depth buffer is normal (0 is near, 1 is far). (Read Only)</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.SystemInfo.IsFormatSupported(UnityEngine.Experimental.Rendering.GraphicsFormat,UnityEngine.Experimental.Rendering.FormatUsage)">
+    <member name="M:UnityEngine.SystemInfo.IsFormatSupported">
       <summary>
         <para>Verifies that the specified graphics format is supported for the specified usage.</para>
       </summary>
-      <param name="format">The GraphicsFormat format to look up.</param>
-      <param name="format">The FormatUsage usage to look up.</param>
-      <param name="usage"></param>
+      <param name="Format">The Experimental.Rendering.GraphicsFormat format to look up.</param>
+      <param name="Usage">The Experimental.Rendering.FormatUsage usage to look up.</param>
       <returns>
         <para>Returns true if the format is supported for the specific usage. Returns false otherwise.</para>
       </returns>
@@ -32672,7 +32726,7 @@ This constructor creates a TextAsset, which is not the same as a plain text file
     </member>
     <member name="P:UnityEngine.Time.maximumDeltaTime">
       <summary>
-        <para>The maximum time a frame can take. Physics and other fixed frame rate updates (like MonoBehaviour's MonoBehaviour.FixedUpdate).</para>
+        <para>The maximum time a frame can take. Physics and other fixed frame rate updates (like MonoBehaviour's MonoBehaviour.FixedUpdate) will be performed only for this duration of time per frame.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Time.maximumParticleDeltaTime">
@@ -33107,7 +33161,7 @@ This constructor creates a TextAsset, which is not the same as a plain text file
     </member>
     <member name="T:UnityEngine.TrailRenderer">
       <summary>
-        <para>The trail renderer is used to make trails behind objects in the scene as they move about.</para>
+        <para>The trail renderer is used to make trails behind objects in the Scene as they move about.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.TrailRenderer.alignment">
@@ -33293,7 +33347,7 @@ Useful for restarting a trail from a new position.</para>
     </member>
     <member name="P:UnityEngine.Transform.childCount">
       <summary>
-        <para>The number of children the Transform has.</para>
+        <para>The number of children the parent Transform has.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Transform.eulerAngles">
@@ -33333,7 +33387,7 @@ Useful for restarting a trail from a new position.</para>
     </member>
     <member name="P:UnityEngine.Transform.localRotation">
       <summary>
-        <para>The rotation of the transform relative to the parent transform's rotation.</para>
+        <para>The rotation of the transform relative to the transform rotation of the parent.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Transform.localScale">
@@ -33358,7 +33412,7 @@ Useful for restarting a trail from a new position.</para>
     </member>
     <member name="P:UnityEngine.Transform.position">
       <summary>
-        <para>The position of the transform in world space.</para>
+        <para>The world space position of the Transform.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Transform.right">
@@ -36515,13 +36569,13 @@ See Also: JobHandle.CombineDependencies.</para>
     </member>
     <member name="M:UnityEngine.Vector4.ToString">
       <summary>
-        <para>Returns a nicely formatted string for this vector.</para>
+        <para>Return the Vector4 formatted as a string.</para>
       </summary>
       <param name="format"></param>
     </member>
     <member name="M:UnityEngine.Vector4.ToString(System.String)">
       <summary>
-        <para>Returns a nicely formatted string for this vector.</para>
+        <para>Return the Vector4 formatted as a string.</para>
       </summary>
       <param name="format"></param>
     </member>
@@ -37013,7 +37067,7 @@ The GrammarRecognizer uses Extensible Markup Language (XML) elements and attribu
     </member>
     <member name="F:UnityEngine.Windows.Speech.SemanticMeaning.key">
       <summary>
-        <para>A key of semaning meaning.</para>
+        <para>A key of semantic meaning.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.Windows.Speech.SemanticMeaning.values">
