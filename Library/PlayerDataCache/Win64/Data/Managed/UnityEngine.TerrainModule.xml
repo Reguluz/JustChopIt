@@ -84,6 +84,228 @@
         <para>Will show the prototype using diffuse shading.</para>
       </summary>
     </member>
+    <member name="T:UnityEngine.Experimental.TerrainAPI.BrushTransform">
+      <summary>
+        <para>Represents a linear 2D transformation between brush UV space and a target XY space (typically this is a Terrain-local object space.)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.TerrainAPI.BrushTransform.brushOrigin">
+      <summary>
+        <para>(Read Only) Brush UV origin, in XY space.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.TerrainAPI.BrushTransform.brushU">
+      <summary>
+        <para>(Read Only) Brush U vector, in XY space.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.TerrainAPI.BrushTransform.brushV">
+      <summary>
+        <para>(Read Only) Brush V vector, in XY space.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.TerrainAPI.BrushTransform.targetOrigin">
+      <summary>
+        <para>(Read Only) Target XY origin, in Brush UV space.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.TerrainAPI.BrushTransform.targetX">
+      <summary>
+        <para>(Read Only) Target X vector, in Brush UV space.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.TerrainAPI.BrushTransform.targetY">
+      <summary>
+        <para>(Read Only) Target Y vector, in Brush UV space.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.BrushTransform.#ctor(UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2)">
+      <summary>
+        <para>Creates a BrushTransform.</para>
+      </summary>
+      <param name="brushOrigin">Origin of the brush, in target XY space.</param>
+      <param name="brushU">Brush U vector, in target XY space.</param>
+      <param name="brushV">Brush V vector, in target XY space.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.BrushTransform.FromBrushUV(UnityEngine.Vector2)">
+      <summary>
+        <para>Applies the transform to convert a Brush UV coordinate to the target XY space.</para>
+      </summary>
+      <param name="brushUV">Brush UV coordinate to transform.</param>
+      <returns>
+        <para>Target XY coordinate.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.BrushTransform.FromRect(UnityEngine.Rect)">
+      <summary>
+        <para>Creates an axis-aligned BrushTransform from a rectangle.</para>
+      </summary>
+      <param name="brushRect">Brush rectangle, in target XY coordinates.</param>
+      <returns>
+        <para>BrushTransform describing the brush.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.BrushTransform.GetBrushXYBounds">
+      <summary>
+        <para>Get the axis-aligned bounding rectangle of the brush, in target XY space.</para>
+      </summary>
+      <returns>
+        <para>Bounding rectangle in target XY space.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.BrushTransform.ToBrushUV(UnityEngine.Vector2)">
+      <summary>
+        <para>Applies the transform to convert a target XY coordinate to Brush UV space.</para>
+      </summary>
+      <param name="targetXY">Point in target XY space.</param>
+      <returns>
+        <para>Point transformed to Brush UV space.</para>
+      </returns>
+    </member>
+    <member name="T:UnityEngine.Experimental.TerrainAPI.PaintContext">
+      <summary>
+        <para>The context for a paint operation that may span multiple connected Terrains.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.TerrainAPI.PaintContext.destinationRenderTexture">
+      <summary>
+        <para>(Read Only) RenderTexture that an edit operation writes to modify the data.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.TerrainAPI.PaintContext.oldRenderTexture">
+      <summary>
+        <para>(Read Only) The value of RenderTexture.active at the time CreateRenderTargets is called.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.TerrainAPI.PaintContext.originTerrain">
+      <summary>
+        <para>(Read Only) The Terrain used to build the PaintContext.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.TerrainAPI.PaintContext.pixelRect">
+      <summary>
+        <para>(Read Only) The pixel rectangle that this PaintContext represents.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.TerrainAPI.PaintContext.pixelSize">
+      <summary>
+        <para>(Read Only) The size of a PaintContext pixel in terrain units (as defined by originTerrain.)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.TerrainAPI.PaintContext.sourceRenderTexture">
+      <summary>
+        <para>(Read Only) Render target that stores the original data from the Terrains.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.TerrainAPI.PaintContext.targetTextureHeight">
+      <summary>
+        <para>(Read Only) The height of the target terrain texture.  This is the resolution for a single Terrain.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.TerrainAPI.PaintContext.targetTextureWidth">
+      <summary>
+        <para>(Read Only) The width of the target terrain texture.  This is the resolution for a single Terrain.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.TerrainAPI.PaintContext.terrainCount">
+      <summary>
+        <para>(Read Only) The number of Terrains in this PaintContext.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.PaintContext.ApplyDelayedActions">
+      <summary>
+        <para>Flushes the delayed actions created by PaintContext heightmap and alphamap modifications.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.PaintContext.Cleanup(System.Boolean)">
+      <summary>
+        <para>Releases the allocated resources of this PaintContext.</para>
+      </summary>
+      <param name="restoreRenderTexture">When true, indicates that this function restores RenderTexture.active</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.PaintContext.CreateFromBounds(UnityEngine.Terrain,UnityEngine.Rect,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <para>Constructs a PaintContext that you can use to edit a texture on a Terrain, in the region defined by boundsInTerrainSpace and extraBorderPixels.</para>
+      </summary>
+      <param name="terrain">Terrain that defines terrain space for this PaintContext.</param>
+      <param name="boundsInTerrainSpace">Terrain space bounds to edit in the target terrain texture.</param>
+      <param name="targetTextureWidth">Width of the target terrain texture (per Terrain).</param>
+      <param name="targetTextureHeight">Height of the target terrain texture (per Terrain).</param>
+      <param name="extraBorderPixels">Number of extra border pixels required.</param>
+      <param name="inputTextureWidth"></param>
+      <param name="inputTextureHeight"></param>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.PaintContext.CreateRenderTargets(UnityEngine.RenderTextureFormat)">
+      <summary>
+        <para>Creates the sourceRenderTexture and destinationRenderTexture.</para>
+      </summary>
+      <param name="colorFormat">Render Texture format.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.PaintContext.#ctor(UnityEngine.Terrain,UnityEngine.RectInt,System.Int32,System.Int32)">
+      <summary>
+        <para>Creates a new PaintContext, to edit a target texture on a Terrain, in a region defined by pixelRect.</para>
+      </summary>
+      <param name="terrain">Terrain that defines terrain space for this PaintContext.</param>
+      <param name="pixelRect">Pixel rectangle to edit in the target terrain texture.</param>
+      <param name="targetTextureWidth">Width of the target terrain texture (per Terrain).</param>
+      <param name="targetTextureHeight">Height of the target terrain texture (per Terrain).</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.PaintContext.GatherAlphamap(UnityEngine.TerrainLayer,System.Boolean)">
+      <summary>
+        <para>Gathers the alphamap information into sourceRenderTexture.</para>
+      </summary>
+      <param name="inputLayer">TerrainLayer used for painting.</param>
+      <param name="addLayerIfDoesntExist">Set to true to specify that the inputLayer is added to the terrain if it does not already exist. Set to false to specify that terrain layers are not added to the terrain.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.PaintContext.GatherHeightmap">
+      <summary>
+        <para>Gathers the heightmap information into sourceRenderTexture.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.PaintContext.GatherNormals">
+      <summary>
+        <para>Gathers the normal information into sourceRenderTexture.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.PaintContext.GetClippedPixelRectInRenderTexturePixels(System.Int32)">
+      <summary>
+        <para>Retrieves the clipped pixel rectangle for a Terrain, relative to the PaintContext render textures.</para>
+      </summary>
+      <param name="terrainIndex">Index of the Terrain.</param>
+      <returns>
+        <para>Returns the clipped pixel rectangle.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.PaintContext.GetClippedPixelRectInTerrainPixels(System.Int32)">
+      <summary>
+        <para>Retrieves the clipped pixel rectangle for a Terrain.</para>
+      </summary>
+      <param name="terrainIndex">Index of the Terrain.</param>
+      <returns>
+        <para>Returns the clipped pixel rectangle.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.PaintContext.GetTerrain(System.Int32)">
+      <summary>
+        <para>Retrieves a Terrain from the PaintContext.</para>
+      </summary>
+      <param name="terrainIndex">Index of the terrain.</param>
+      <returns>
+        <para>Returns the Terrain object.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.PaintContext.ScatterAlphamap(System.String)">
+      <summary>
+        <para>Applies an edited alphamap PaintContext by copying modifications back to the source Terrains.</para>
+      </summary>
+      <param name="editorUndoName">Unique name used for the undo stack.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.PaintContext.ScatterHeightmap(System.String)">
+      <summary>
+        <para>Applies an edited heightmap PaintContext by copying modifications back to the source Terrains.</para>
+      </summary>
+      <param name="editorUndoName">Unique name used for the undo stack.</param>
+    </member>
     <member name="T:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility">
       <summary>
         <para>A set of utility functions for custom terrain paint tools.</para>
@@ -91,28 +313,61 @@
     </member>
     <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.BeginPaintHeightmap(UnityEngine.Terrain,UnityEngine.Rect)">
       <summary>
-        <para>Helper function for setting up a PaintContext before painting in the heightmap.</para>
+        <para>Helper function to set up a PaintContext for modifying the heightmap of one or more Terrain tiles.</para>
       </summary>
-      <param name="terrain">Terrain tile.</param>
-      <param name="bounds">Brush rectangle in terrain units.</param>
+      <param name="terrain">Reference Terrain tile. Defines terrain space and heightmap resolution.</param>
+      <param name="boundsInTerrainSpace">The region in terrain space to edit.</param>
+      <param name="extraBorderPixels">Number of extra border pixels required.</param>
       <returns>
-        <para>Returns a PaintContext with the relevant data for the paint procedure.</para>
+        <para>PaintContext containing the combined heightmap data for the specified region.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.BeginPaintHeightmap(UnityEngine.Terrain,UnityEngine.Rect,System.Int32)">
+      <summary>
+        <para>Helper function to set up a PaintContext for modifying the heightmap of one or more Terrain tiles.</para>
+      </summary>
+      <param name="terrain">Reference Terrain tile. Defines terrain space and heightmap resolution.</param>
+      <param name="boundsInTerrainSpace">The region in terrain space to edit.</param>
+      <param name="extraBorderPixels">Number of extra border pixels required.</param>
+      <returns>
+        <para>PaintContext containing the combined heightmap data for the specified region.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.BeginPaintTexture(UnityEngine.Terrain,UnityEngine.Rect,UnityEngine.TerrainLayer)">
       <summary>
-        <para>Helper function for setting up a PaintContext before painting in the alphamaps.</para>
+        <para>Helper function to set up a PaintContext for modifying the alphamap of one or more Terrain tiles.</para>
       </summary>
-      <param name="terrain">Terrain tile.</param>
-      <param name="inputLayer">TerrainLayer used for painting.</param>
-      <param name="bounds">Brush rectangle in terrain units.</param>
+      <param name="terrain">Reference Terrain tile. Defines terrain space and alphamap resolution.</param>
+      <param name="inputLayer">Selects the alphamap to paint.</param>
+      <param name="boundsInTerrainSpace">The region in terrain space to edit.</param>
+      <param name="extraBorderPixels">Number of extra border pixels required.</param>
       <returns>
-        <para>Returns a PaintContext with the relevant data for the paint procedure.</para>
+        <para>PaintContext containing the combined alphamap data for the specified region.</para>
       </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.BeginPaintTexture(UnityEngine.Terrain,UnityEngine.Rect,UnityEngine.TerrainLayer,System.Int32)">
+      <summary>
+        <para>Helper function to set up a PaintContext for modifying the alphamap of one or more Terrain tiles.</para>
+      </summary>
+      <param name="terrain">Reference Terrain tile. Defines terrain space and alphamap resolution.</param>
+      <param name="inputLayer">Selects the alphamap to paint.</param>
+      <param name="boundsInTerrainSpace">The region in terrain space to edit.</param>
+      <param name="extraBorderPixels">Number of extra border pixels required.</param>
+      <returns>
+        <para>PaintContext containing the combined alphamap data for the specified region.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.BuildTransformPaintContextUVToPaintContextUV(UnityEngine.Experimental.TerrainAPI.PaintContext,UnityEngine.Experimental.TerrainAPI.PaintContext,UnityEngine.Vector4&amp;)">
+      <summary>
+        <para>Builds a Scale &amp; Offset transform to convert between one PaintContext's UV space and another PaintContext's UV space.</para>
+      </summary>
+      <param name="src">Source PaintContext.</param>
+      <param name="dst">Destination PaintContext.</param>
+      <param name="scaleOffset">ScaleOffset transform.</param>
     </member>
     <member name="T:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.BuiltinPaintMaterialPasses">
       <summary>
-        <para>Built-in render passes for paint material.</para>
+        <para>Enumeration of the render passes in the built-in paint material.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.BuiltinPaintMaterialPasses.PaintTexture">
@@ -140,62 +395,52 @@
         <para>Built-in render pass for stamping heights on the terrain.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.CalcBrushRectInPixels(UnityEngine.Terrain,UnityEngine.Rect,System.Int32,System.Int32)">
+    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.CalculateBrushTransform(UnityEngine.Terrain,UnityEngine.Vector2,System.Single,System.Single)">
       <summary>
-        <para>Calculates the brush rectangle in pixels.</para>
+        <para>Creates a BrushTransform from the input parameters.</para>
       </summary>
-      <param name="terrain">Terrain tile.</param>
-      <param name="brushRect">The brush rectangle in terrain units.</param>
-      <param name="textureWidth">Texture width.</param>
-      <param name="textureHeight">Texture height.</param>
+      <param name="terrain">Reference terrain, defines terrain UV and object space.</param>
+      <param name="brushCenterTerrainUV">Center point of the brush, in terrain UV space (0-1 across the terrain tile).</param>
+      <param name="brushSize">Size of the brush, in terrain space.</param>
+      <param name="brushRotationDegrees">Brush rotation in degrees (clockwise).</param>
       <returns>
-        <para>Brush rectangle in pixels.</para>
+        <para>Transform from terrain space to Brush UVs.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.CalculateBrushRectInTerrainUnits(UnityEngine.Terrain,UnityEngine.Vector2,System.Single)">
+    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.CollectNormals(UnityEngine.Terrain,UnityEngine.Rect,System.Int32)">
       <summary>
-        <para>Calculates the brush rectangle in terrain units.</para>
+        <para>Helper function to set up a PaintContext that collects mesh normal data from one or more Terrain tiles.</para>
       </summary>
-      <param name="terrain">Terrain tile.</param>
-      <param name="uv">Normalized UV coordinates for the brush center relative to the terrain tile.</param>
-      <param name="brushSize">Brush size.</param>
+      <param name="terrain">Reference Terrain tile. Defines terrain space and heightmap resolution.</param>
+      <param name="boundsInTerrainSpace">The region in terrain space from which to collect normals.</param>
+      <param name="extraBorderPixels">Number of extra border pixels required.</param>
       <returns>
-        <para>Brush rectangle in terrain units.</para>
-      </returns>
-    </member>
-    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.ClipTerrainTiles(UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility/TerrainTile[],UnityEngine.RectInt)">
-      <summary>
-        <para>Clips an array of terrain tiles agains a brush.</para>
-      </summary>
-      <param name="terrainTiles">Array of terrain tiles.</param>
-      <param name="brushRect">Brush rect.</param>
-      <returns>
-        <para>Returns an array of clipped tiles.</para>
+        <para>PaintContext containing the combined normalmap data for the specified region.</para>
       </returns>
     </member>
     <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.CollectNormals(UnityEngine.Terrain,UnityEngine.Rect)">
       <summary>
-        <para>Helper function for setting up a PaintContext that collects a region from all the normal maps under the brush.</para>
+        <para>Helper function to set up a PaintContext that collects mesh normal data from one or more Terrain tiles.</para>
       </summary>
-      <param name="terrain">Terrain tile.</param>
-      <param name="bounds">Region in terrain units to collect normals from.
-See Also: Experimental.TerrainAPI.TerrainPaintUtility.BeginPaintHeightmap.</param>
+      <param name="terrain">Reference Terrain tile. Defines terrain space and heightmap resolution.</param>
+      <param name="boundsInTerrainSpace">The region in terrain space from which to collect normals.</param>
+      <param name="extraBorderPixels">Number of extra border pixels required.</param>
       <returns>
-        <para>Returns a PaintContext with the relevant data for the paint procedure.</para>
+        <para>PaintContext containing the combined normalmap data for the specified region.</para>
       </returns>
     </member>
-    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.EndPaintHeightmap(UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility/PaintContext,System.String)">
+    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.EndPaintHeightmap(UnityEngine.Experimental.TerrainAPI.PaintContext,System.String)">
       <summary>
-        <para>Helper function for finishing up a heightmap painting operation.</para>
+        <para>Helper function for completing a heightmap modification.</para>
       </summary>
-      <param name="ctx">The current paint context.</param>
+      <param name="ctx">The heightmap paint context to complete.</param>
       <param name="editorUndoName">Unique name used for the undo stack.</param>
     </member>
-    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.EndPaintTexture(UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility/PaintContext,System.String)">
+    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.EndPaintTexture(UnityEngine.Experimental.TerrainAPI.PaintContext,System.String)">
       <summary>
-        <para>Helper function for finishing up a texture painting operation.</para>
+        <para>Helper function for completing a texture alphamap modification.</para>
       </summary>
-      <param name="ctx">The current paint context.</param>
+      <param name="ctx">The texture paint context to complete.</param>
       <param name="editorUndoName">Unique name used for the undo stack.</param>
     </member>
     <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.FindTerrainLayerIndex(UnityEngine.Terrain,UnityEngine.TerrainLayer)">
@@ -207,23 +452,6 @@ See Also: Experimental.TerrainAPI.TerrainPaintUtility.BeginPaintHeightmap.</para
       <returns>
         <para>Returns the index of the terrain layer if it exists or -1 if it doesn't exist.</para>
       </returns>
-    </member>
-    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.FindTerrainTiles(UnityEngine.Terrain,System.Int32,System.Int32,UnityEngine.RectInt)">
-      <summary>
-        <para>Utlitiy function to find all the terrain tiles a brush intersects.</para>
-      </summary>
-      <param name="terrain">Starting Terrain tile.</param>
-      <param name="width">Target texture width ( Example: heightmap or alphamap width depending on the operation ).</param>
-      <param name="height">Target texture height ( Example: heightmap or alphamap height depending on the operation ).</param>
-      <param name="brushRect">Brush rect.</param>
-      <returns>
-        <para>Returns an array containing Terrain tiles intersected by the brush.</para>
-      </returns>
-    </member>
-    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.FlushAllPaints">
-      <summary>
-        <para>Flushes the delayed actions created by paint operations.</para>
-      </summary>
     </member>
     <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.GetBlitMaterial">
       <summary>
@@ -259,161 +487,19 @@ See Also: Experimental.TerrainAPI.TerrainPaintUtility.BeginPaintHeightmap.</para
         <para>Alphamap texture at mapIndex.</para>
       </returns>
     </member>
-    <member name="T:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.PaintContext">
-      <summary>
-        <para>The context for a paint operation.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.PaintContext.brushRect">
-      <summary>
-        <para>The active brush rectangle.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.PaintContext.clippedTiles">
-      <summary>
-        <para>All the tiles that the brush intersect.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.PaintContext.destinationRenderTexture">
-      <summary>
-        <para>Render target where the custom Paint operations have to write into.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.PaintContext.sourceRenderTexture">
-      <summary>
-        <para>Render target that the custom Paint operations should read from.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.PaintContext.terrainTiles">
-      <summary>
-        <para>Terrain tiles for the current paint operation.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.PaintContext.validPaintRects">
-      <summary>
-        <para>A list of rectangles that represent the paintable areas of terrain tiles. These are the areas in the sourceRenderTexture in which the terrain tiles were written.</para>
-      </summary>
-    </member>
-    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.PaintContext.CalculateBrushRect(UnityEngine.Terrain,UnityEngine.Rect,System.Int32,System.Int32)">
-      <summary>
-        <para>Calculates the brush rectangle of the paint context.</para>
-      </summary>
-      <param name="terrain">Terrain tile.</param>
-      <param name="bounds">The brush rectangle in terrain units.</param>
-      <param name="inputTextureWidth">Texture width.</param>
-      <param name="inputTextureHeight">Texture height.</param>
-    </member>
-    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.PaintContext.Cleanup">
-      <summary>
-        <para>Releases the allocated resources of this PaintContext.</para>
-      </summary>
-    </member>
-    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.PaintContext.CreateRenderTargets(UnityEngine.RenderTextureFormat)">
-      <summary>
-        <para>Creates the sourceRenderTexture and destinationRenderTexture textures.</para>
-      </summary>
-      <param name="colorFormat">Texture format.</param>
-    </member>
-    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.PaintContext.CreateTerrainTiles(UnityEngine.Terrain,System.Int32,System.Int32)">
-      <summary>
-        <para>Creates the terrain tiles and clipped tiles for the PaintContext.</para>
-      </summary>
-      <param name="terrain">Terrain tile.</param>
-      <param name="inputTextureWidth">Texture width.</param>
-      <param name="inputTextureHeight">Texture height.</param>
-    </member>
-    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.PaintContext.GatherAlphamap(UnityEngine.Terrain,UnityEngine.TerrainLayer,System.Boolean)">
-      <summary>
-        <para>Gathers the alphamap information into sourceRenderTexture.</para>
-      </summary>
-      <param name="terrain">Terrain tile.</param>
-      <param name="inputLayer">TerrainLayer used for painting.</param>
-      <param name="addLayerIfDoesntExist">Set to true to specify that a TerrainLayer inputLayer is added to the terrain if one does not already exist. Set to false to specify that terrain layers are not added to the terrain.</param>
-    </member>
-    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.PaintContext.GatherHeightmap(UnityEngine.Terrain)">
-      <summary>
-        <para>Gathers the heightmap information into sourceRenderTexture.</para>
-      </summary>
-      <param name="terrain">Terrain tile.</param>
-    </member>
-    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.PaintContext.GatherNormals(UnityEngine.Terrain)">
-      <summary>
-        <para>Gathers the normal information into sourceRenderTexture.</para>
-      </summary>
-      <param name="terrain">Terrain tile.</param>
-    </member>
-    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.PaintContext.ScatterAlphamap(System.String)">
-      <summary>
-        <para>Finishes texture painting by scattering the information back to the alphamap.</para>
-      </summary>
-      <param name="editorUndoName">Unique name used for the undo stack.</param>
-    </member>
-    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.PaintContext.ScatterHeightmap(System.String)">
-      <summary>
-        <para>Finishes heightmap painting by scattering the information back to the heightmap.</para>
-      </summary>
-      <param name="editorUndoName">Unique name used for the undo stack.</param>
-    </member>
-    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.ReleaseContextResources(UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility/PaintContext)">
+    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.ReleaseContextResources(UnityEngine.Experimental.TerrainAPI.PaintContext)">
       <summary>
         <para>Releases the allocated resources of the specified PaintContext.</para>
       </summary>
       <param name="ctx">The PaintContext containing the resources to release.</param>
     </member>
-    <member name="T:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.TerrainTile">
+    <member name="M:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.SetupTerrainToolMaterialProperties(UnityEngine.Experimental.TerrainAPI.PaintContext,UnityEngine.Experimental.TerrainAPI.BrushTransform,UnityEngine.Material)">
       <summary>
-        <para>Class describing a terrain tile.</para>
+        <para>Sets up all of the material properties used by functions in TerrainTool.cginc.</para>
       </summary>
-    </member>
-    <member name="F:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.TerrainTile.channelIndex">
-      <summary>
-        <para>Channel index. Only used for paint texture operations.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.TerrainTile.mapIndex">
-      <summary>
-        <para>Index of the alphamap.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.TerrainTile.readOffset">
-      <summary>
-        <para>Offset used for the initial collecting copy of the heightmap / alphamap into Experimental.TerrainAPI.TerrainPaintUtility.PaintContext.sourceRenderTexture.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.TerrainTile.rect">
-      <summary>
-        <para>Tile extents.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.TerrainTile.terrain">
-      <summary>
-        <para>The Terrain object for the tile.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.TerrainTile.writeOffset">
-      <summary>
-        <para>Offset used for the final copy of the Experimental.TerrainAPI.TerrainPaintUtility.PaintContext.destinationRenderTexture back into the source texture ( depending on the paint operation ).</para>
-      </summary>
-    </member>
-    <member name="T:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.ToolAction">
-      <summary>
-        <para>Enum for tool actions used by Undo.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.ToolAction.None">
-      <summary>
-        <para>No action.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.ToolAction.PaintHeightmap">
-      <summary>
-        <para>Paint Heightmap.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.Experimental.TerrainAPI.TerrainPaintUtility.ToolAction.PaintTexture">
-      <summary>
-        <para>Paint Texture.</para>
-      </summary>
+      <param name="paintContext">PaintContext describing the area we are editing, and the terrain space.</param>
+      <param name="brushXform">BrushTransform from terrain space to Brush UVs.</param>
+      <param name="material">Material to populate with transform properties.</param>
     </member>
     <member name="T:UnityEngine.Experimental.TerrainAPI.TerrainUtility">
       <summary>
@@ -538,12 +624,12 @@ See Also: Experimental.TerrainAPI.TerrainPaintUtility.BeginPaintHeightmap.</para
     </member>
     <member name="P:UnityEngine.Terrain.activeTerrain">
       <summary>
-        <para>The active terrain. This is a convenience function to get to the main terrain in the scene.</para>
+        <para>The active terrain. This is a convenience function to get to the main terrain in the Scene.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Terrain.activeTerrains">
       <summary>
-        <para>The active terrains in the scene.</para>
+        <para>The active terrains in the Scene.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Terrain.allowAutoConnect">

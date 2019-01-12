@@ -14,7 +14,7 @@ namespace UI
         public UnityEvent Hold;
         //释放事件
         public UnityEvent Release;
-        //单击事件
+        //单击事件int
         public UnityEvent Click;
         
         //使用对象
@@ -22,8 +22,8 @@ namespace UI
         //适用对象的辅助UI
         public GameObject GuideUI;
 
-        //是否为线性引导
-        public bool isLine;
+        //技能类型
+        public SkillType type;
         //图标移动最大半径
         public float maxTouchRadius;
         //初始化背景图标位置
@@ -37,19 +37,28 @@ namespace UI
         //松手时的向量
         public Vector3 EndVector;
 
+        public bool IsActive;
+
+
         private void Start()
         {
-            Hold.AddListener(new UnityAction(ButtonHold));
-            Release.AddListener(new UnityAction(ButtonRelease));
+            
             Click.AddListener(new UnityAction(ButtonClick));
         }
 
-        public void Init(GamePlayerController owner,bool isline)
+        public void Init(GamePlayerController owner,SkillType skilltype)
         {
             //初始化设置
             Owner = owner;
             GuideUI = Owner.transform.Find("GuideUI").gameObject;
-            this.isLine = isline;
+            this.type = skilltype;
+            if (!type.Equals(SkillType.AutoTarget))
+            {
+                Hold.AddListener(new UnityAction(ButtonHold));
+                Release.AddListener(new UnityAction(ButtonRelease));
+            }
+
+            IsActive = true;
         }
         
         private void Update () {
@@ -59,12 +68,12 @@ namespace UI
             //按住状态持续修改引导UI的状态
             if (_ondrag)
             {
-                if (isLine)
+                if (type.Equals(SkillType.LineTarget))
                 {
                     GuideUI.GetComponentInChildren<LineRenderer>()?.SetPosition(0,Owner.transform.position+new Vector3(0,0.5f,0));
                     GuideUI.GetComponentInChildren<LineRenderer>()?.SetPosition(1,Owner.transform.position+new Vector3(horizontal,0.5f,vertical));
                 }
-                else
+                else if(type.Equals(SkillType.AreaTarget))
                 {
                     GuideUI.transform.position = Owner.transform.position + new Vector3(horizontal, 0.5f, vertical);
                 }
@@ -84,31 +93,34 @@ namespace UI
 
         public void OnDrag(PointerEventData eventData)
         {
-            //设置状态
-            _ondrag = true;
-            EndVector = Vector3.zero;
-            
-            //执行开始拖拽时运行的函数
-            Hold.Invoke();
-            //获取向量的长度    
-            Vector2 oppsitionVec = eventData.position - moveBackPos;
-            Debug.DrawLine(Vector3.zero, eventData.position,Color.green);
-            Debug.DrawLine(Owner.transform.position, Owner.transform.position + new Vector3(horizontal,0.5f,vertical),Color.white);
            
-            //最小值与最大值之间取半径
-            float distance = Vector3.Magnitude(oppsitionVec);
-            //限制半径长度
-            float radius = Mathf.Clamp(distance, 0, maxTouchRadius);
-            transform.position = moveBackPos + oppsitionVec.normalized * radius;
-            if (isLine)
+            if (!type.Equals(SkillType.AutoTarget)&&IsActive)
             {
-                GuideUI.GetComponentInChildren<LineRenderer>().enabled = true;
-            }
-            else
-            {
-                GuideUI.GetComponentInChildren<SpriteRenderer>().enabled = true;
-            }
+                //设置状态
+                _ondrag = true;
+                EndVector = Vector3.zero;
             
+                //执行开始拖拽时运行的函数
+                Hold.Invoke();
+                //获取向量的长度    
+                Vector2 oppsitionVec = eventData.position - moveBackPos;
+                Debug.DrawLine(Vector3.zero, eventData.position,Color.green);
+                Debug.DrawLine(Owner.transform.position, Owner.transform.position + new Vector3(horizontal,0.5f,vertical),Color.white);
+           
+                //最小值与最大值之间取半径
+                float distance = Vector3.Magnitude(oppsitionVec);
+                //限制半径长度
+                float radius = Mathf.Clamp(distance, 0, maxTouchRadius);
+                transform.position = moveBackPos + oppsitionVec.normalized * radius;
+                if (type.Equals(SkillType.LineTarget))
+                {
+                    GuideUI.GetComponentInChildren<LineRenderer>().enabled = true;
+                }
+                else if(type.Equals(SkillType.AreaTarget))
+                {
+                    GuideUI.GetComponentInChildren<SpriteRenderer>().enabled = true;
+                } 
+            }
 
         }
 
@@ -129,6 +141,7 @@ namespace UI
             transform.localPosition = Vector3.zero;
             Owner.gameObject.GetComponentInChildren<LineRenderer>().enabled = false;
             Owner.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            
             
         }
 

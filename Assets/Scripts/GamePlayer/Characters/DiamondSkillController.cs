@@ -16,7 +16,7 @@ namespace GamePlayer.Characters
 			StaticData.RotateSpeed = 3;
 			StaticData.MoveSpeed = 1f;
 			Cooldown = new CoolDownImageController[2];
-			_fxController = gameObject.GetComponent<DiamondFxController>();
+			FxController = gameObject.GetComponent<DiamondFxController>();
 		}
 
 		[PunRPC]
@@ -90,8 +90,8 @@ namespace GamePlayer.Characters
 			SkillCo.MoveSpeed = 0.5f;
 			SkillCo.RotateSpeed = 5f;
 			_isRush = true;
-			_fxController.PlayFx("Rush");
-			_fxController.SkillRelease();
+			FxController.PlayFx("Rush");
+			FxController.SkillRelease();
 			//PhotonView.RPC("RushFx",RpcTarget.All,true);
 			Invoke(nameof(EndRush),1f);
 		}
@@ -100,7 +100,7 @@ namespace GamePlayer.Characters
 		{
 			SkillCo.MoveSpeed = 0;
 			SkillCo.RotateSpeed = 0;
-			_fxController.StopFx("Rush");
+			FxController.StopFx("Rush");
 			//PhotonView.RPC("RushFx",RpcTarget.All,false);
 			_isRush = false;
 		}

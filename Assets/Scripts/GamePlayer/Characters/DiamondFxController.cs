@@ -23,8 +23,6 @@ namespace GamePlayer.Characters
 					break;
 				case "Relieve":RelieveFx();
 					break;
-				case "Dodge": DodgeFx();
-					break;
 				case "Rebuild":RebuildFx();
 					break;
 				case "SkillRelease":SkillRelease();

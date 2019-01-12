@@ -196,7 +196,7 @@
     </member>
     <member name="T:UnityEngine.Experimental.UIElements.Button.UxmlTraits">
       <summary>
-        <para>UxmlTraits for the Button.</para>
+        <para>UxmlTraits for the UI.Button.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.Experimental.UIElements.Button.UxmlTraits.#ctor">
@@ -1364,6 +1364,16 @@
         <para>Constructor.</para>
       </summary>
     </member>
+    <member name="?:UnityEngine.Experimental.UIElements.IManipulator">
+      <summary>
+        <para>An interface for Manipulator classes.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.UIElements.IManipulator.target">
+      <summary>
+        <para>The element that handles the interaction.</para>
+      </summary>
+    </member>
     <member name="M:UnityEngine.Experimental.UIElements.IMGUIContainer.MarkDirtyLayout">
       <summary>
         <para>Marks layout as dirty to trigger a redraw.</para>
@@ -2366,6 +2376,26 @@
       <param name="bag">The attribute bag.</param>
       <param name="cc">The creation context; unused.</param>
     </member>
+    <member name="T:UnityEngine.Experimental.UIElements.Manipulator">
+      <summary>
+        <para>Base class for objects that define user interaction with a VisualElement. Most often manipulators hold state for complex interactions, for example interactions that require a mouse down, mouse move mouse up sequence.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Experimental.UIElements.Manipulator.target">
+      <summary>
+        <para>The element that handles the interaction.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.UIElements.Manipulator.RegisterCallbacksOnTarget">
+      <summary>
+        <para>Register event callbacks on the target visual element.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.UIElements.Manipulator.UnregisterCallbacksFromTarget">
+      <summary>
+        <para>Unregister event callbacks on the target visual element.</para>
+      </summary>
+    </member>
     <member name="T:UnityEngine.Experimental.UIElements.ManipulatorActivationFilter">
       <summary>
         <para>Used by manipulators to match events against their requirements.</para>
@@ -3038,6 +3068,11 @@
     <member name="F:UnityEngine.Experimental.UIElements.SelectionType.Single">
       <summary>
         <para>Only one item is selectable.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEngine.Experimental.UIElements.Slider">
+      <summary>
+        <para>Experimental.UIElements.Slider is a controller allowing the selection of a value from a range (min, max, value).</para>
       </summary>
     </member>
     <member name="T:UnityEngine.Experimental.UIElements.Slider.UxmlFactory">
@@ -4612,7 +4647,7 @@
     </member>
     <member name="P:UnityEngine.Experimental.UIElements.UxmlTraits.canHaveAnyAttribute">
       <summary>
-        <para>Must return true if the UXML element attributes are not restricted to the values enumerated by uxmlAttributesDescription.</para>
+        <para>Must return true if the UXML element attributes are not restricted to the values enumerated by UxmlTraits.uxmlAttributesDescription.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Experimental.UIElements.UxmlTraits.uxmlAttributesDescription">
@@ -5154,9 +5189,9 @@
     </member>
     <member name="M:UnityEngine.Experimental.UIElements.VisualElement.SetEnabled(System.Boolean)">
       <summary>
-        <para>Changes the VisualElement enabled state. A disabled VisualElement does not receive most events.</para>
+        <para>Changes whether the current VisualElement is enabled or not. When disabled, a VisualElement does not receive most events.</para>
       </summary>
-      <param name="value">New enabled state</param>
+      <param name="value">New enabled state.</param>
     </member>
     <member name="M:UnityEngine.Experimental.UIElements.VisualElement.Sort(System.Comparison`1&lt;UnityEngine.Experimental.UIElements.VisualElement&gt;)">
       <summary>
@@ -5304,6 +5339,43 @@
       </summary>
       <param name="currentFocusable"></param>
       <param name="direction"></param>
+    </member>
+    <member name="T:UnityEngine.Experimental.UIElements.VisualTreeAsset">
+      <summary>
+        <para>Instances of this class hold a tree of `VisualElementAsset`s. It is created from an UXML file, and each `VisualElementAsset` represents a UXML node inside this file. A `VisualTreeAsset` can be Cloned to yield a tree of `VisualElement`s.</para>
+      </summary>
+    </member>
+    <member name="M:UnityEngine.Experimental.UIElements.VisualTreeAsset.CloneTree(System.Collections.Generic.Dictionary`2&lt;System.String,UnityEngine.Experimental.UIElements.VisualElement&gt;)">
+      <summary>
+        <para>Build a tree of VisualElements from the asset.</para>
+      </summary>
+      <param name="slotInsertionPoints">A mapping of slot names to the VisualElements at their root.</param>
+      <param name="bindingPath">Path of the target property to be bound to the cloned tree root.</param>
+      <returns>
+        <para>The root of the tree of VisualElements that was just cloned.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.UIElements.VisualTreeAsset.CloneTree(System.Collections.Generic.Dictionary`2&lt;System.String,UnityEngine.Experimental.UIElements.VisualElement&gt;,System.String)">
+      <summary>
+        <para>Build a tree of VisualElements from the asset.</para>
+      </summary>
+      <param name="slotInsertionPoints">A mapping of slot names to the VisualElements at their root.</param>
+      <param name="bindingPath">Path of the target property to be bound to the cloned tree root.</param>
+      <returns>
+        <para>The root of the tree of VisualElements that was just cloned.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.Experimental.UIElements.VisualTreeAsset.CloneTree(UnityEngine.Experimental.UIElements.VisualElement,System.Collections.Generic.Dictionary`2&lt;System.String,UnityEngine.Experimental.UIElements.VisualElement&gt;)">
+      <summary>
+        <para>Build a tree of VisualElements from the asset.</para>
+      </summary>
+      <param name="target">A VisualElement that will act as the root of the cloned tree.</param>
+      <param name="slotInsertionPoints">A mapping of slot names to the VisualElements at their root.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.UIElements.VisualTreeAsset.#ctor">
+      <summary>
+        <para>Constructor.</para>
+      </summary>
     </member>
     <member name="T:UnityEngine.Experimental.UIElements.WheelEvent">
       <summary>

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4695067659809374}
   - component: {fileID: 33666444389891776}
   - component: {fileID: 23974328037651396}
-  - component: {fileID: 136087198668788748}
+  - component: {fileID: 4834264936287471867}
   - component: {fileID: 114354424012984832}
   - component: {fileID: 114078883528610462}
   - component: {fileID: 7679441437104648065}
@@ -81,8 +81,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &136087198668788748
-CapsuleCollider:
+--- !u!64 &4834264936287471867
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -91,10 +91,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.7
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: -0.0000000018626451, y: 0, z: -0.0000000027939677}
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 65a2489438c4cb74586a662263934a19, type: 3}
 --- !u!114 &114354424012984832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114078883528610462}
   viewIdField: 0
-  InstantiationId: 3
+  InstantiationId: 1
   isRuntimeInstantiated: 0
 --- !u!114 &114078883528610462
 MonoBehaviour:

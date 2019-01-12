@@ -319,6 +319,9 @@
           <e p="Account" t="Include">
             <e p="AccountInfo.cs" t="Include" />
           </e>
+          <e p="Auxiliary" t="Include">
+            <e p="Rotating.cs" t="Include" />
+          </e>
           <e p="Camera" t="Include">
             <e p="CameraFollower.cs" t="Include" />
           </e>
@@ -336,6 +339,8 @@
               <e p="GamePlayerController.cs" t="Include" />
               <e p="IGamePlayerControl.cs" t="Include" />
               <e p="SkillType.cs" t="Include" />
+              <e p="SorcererFxController.cs" t="Include" />
+              <e p="SorcererSkillController.cs" t="Include" />
               <e p="TrapperFxController.cs" t="Include" />
               <e p="TrapperSkillController.cs" t="Include" />
             </e>

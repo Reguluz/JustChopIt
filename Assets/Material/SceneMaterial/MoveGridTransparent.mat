@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MoveGridTransparent
-  m_Shader: {fileID: 4800000, guid: 1e323efeea4e2c2489b85b2bfad3143f, type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON _USESPECULAR_ON
+  m_Shader: {fileID: 4800000, guid: 95a93188646f3c24784520181ff28390, type: 3}
+  m_ShaderKeywords: _ALPHATEST_ON _EMISSION _NORMALMAP _SPECGLOSSMAP _USESPECULAR_ON
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0

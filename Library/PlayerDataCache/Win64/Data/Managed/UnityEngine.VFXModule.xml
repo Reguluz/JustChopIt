@@ -670,7 +670,7 @@
     </member>
     <member name="T:UnityEngine.Experimental.VFX.VisualEffect">
       <summary>
-        <para>The visual effect class that references an Experimental.VFX.VisualEffectAsset instance within the scene.</para>
+        <para>The visual effect class that references an Experimental.VFX.VisualEffectAsset instance within the Scene.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Experimental.VFX.VisualEffect.aliveParticleCount">
@@ -1147,7 +1147,13 @@
     </member>
     <member name="M:UnityEngine.Experimental.VFX.VisualEffect.Play(UnityEngine.Experimental.VFX.VFXEventAttribute)">
       <summary>
-        <para>Sends a stop event to all Spawn systems. If Experimental.VFX.VisualEffect._resetSeedOnPlay is true, this methods recomputes a new random seed for the random value generator.</para>
+        <para>Sends a stop event to all Spawn systems. If Experimental.VFX.VisualEffect._resetSeedOnPlay is true, this methods recomputes a new random seed for the random value generator and resets internal total time to zero.</para>
+      </summary>
+      <param name="eventAttribute">Can be null or eventAttribute instantiated with Experimental.VFX.VisualEffect.CreateVFXEventAttribute.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.VFX.VisualEffect.Play">
+      <summary>
+        <para>Sends a stop event to all Spawn systems. If Experimental.VFX.VisualEffect._resetSeedOnPlay is true, this methods recomputes a new random seed for the random value generator and resets internal total time to zero.</para>
       </summary>
       <param name="eventAttribute">Can be null or eventAttribute instantiated with Experimental.VFX.VisualEffect.CreateVFXEventAttribute.</param>
     </member>
@@ -1170,11 +1176,36 @@
       <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
       <param name="name">The name of the property.</param>
     </member>
+    <member name="M:UnityEngine.Experimental.VFX.VisualEffect.SendEvent">
+      <summary>
+        <para>Send a custom named event.</para>
+      </summary>
+      <param name="eventName">The name of the event.</param>
+      <param name="eventNameID">The name ID of the event retrieved by Shader.PropertyToID.</param>
+      <param name="eventAttribute">Can be null or eventAttribute instantiated with Experimental.VFX.VisualEffect.CreateVFXEventAttribute.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.VFX.VisualEffect.SendEvent(System.String)">
+      <summary>
+        <para>Send a custom named event.</para>
+      </summary>
+      <param name="eventName">The name of the event.</param>
+      <param name="eventNameID">The name ID of the event retrieved by Shader.PropertyToID.</param>
+      <param name="eventAttribute">Can be null or eventAttribute instantiated with Experimental.VFX.VisualEffect.CreateVFXEventAttribute.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.VFX.VisualEffect.SendEvent(System.Int32,UnityEngine.Experimental.VFX.VFXEventAttribute)">
+      <summary>
+        <para>Send a custom named event.</para>
+      </summary>
+      <param name="eventName">The name of the event.</param>
+      <param name="eventNameID">The name ID of the event retrieved by Shader.PropertyToID.</param>
+      <param name="eventAttribute">Can be null or eventAttribute instantiated with Experimental.VFX.VisualEffect.CreateVFXEventAttribute.</param>
+    </member>
     <member name="M:UnityEngine.Experimental.VFX.VisualEffect.SendEvent(System.String,UnityEngine.Experimental.VFX.VFXEventAttribute)">
       <summary>
         <para>Send a custom named event.</para>
       </summary>
       <param name="eventName">The name of the event.</param>
+      <param name="eventNameID">The name ID of the event retrieved by Shader.PropertyToID.</param>
       <param name="eventAttribute">Can be null or eventAttribute instantiated with Experimental.VFX.VisualEffect.CreateVFXEventAttribute.</param>
     </member>
     <member name="M:UnityEngine.Experimental.VFX.VisualEffect.SetAnimationCurve(System.Int32,UnityEngine.AnimationCurve)">
@@ -1368,6 +1399,12 @@
       <param name="nameID">The name ID of the property retrieved by Shader.PropertyToID.</param>
       <param name="name">The name of the property.</param>
       <param name="v">The new Vector4 value.</param>
+    </member>
+    <member name="M:UnityEngine.Experimental.VFX.VisualEffect.Stop">
+      <summary>
+        <para>Send a stop event to all Spawn systems.</para>
+      </summary>
+      <param name="eventAttribute">Can be null or eventAttribute instantiated with Experimental.VFX.VisualEffect.CreateVFXEventAttribute.</param>
     </member>
     <member name="M:UnityEngine.Experimental.VFX.VisualEffect.Stop(UnityEngine.Experimental.VFX.VFXEventAttribute)">
       <summary>

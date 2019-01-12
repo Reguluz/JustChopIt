@@ -157,27 +157,27 @@
     </member>
     <member name="M:UnityEngine.XR.WSA.HolographicSettings.SetFocusPointForFrame(UnityEngine.Vector3)">
       <summary>
-        <para>Sets a point in 3d space that is the focal point of the scene for the user for this frame. This helps improve the visual fidelity of content around this point. This must be set every frame.</para>
+        <para>Sets a point in 3d space that is the focal point of the Scene for the user for this frame. This helps improve the visual fidelity of content around this point. This must be set every frame.</para>
       </summary>
-      <param name="position">The position of the focal point in the scene, relative to the camera.</param>
+      <param name="position">The position of the focal point in the Scene, relative to the camera.</param>
       <param name="normal">Surface normal of the plane being viewed at the focal point.</param>
-      <param name="velocity">A vector that describes how the focus point is moving in the scene at this point in time. This allows the HoloLens to compensate for both your head movement and the movement of the object in the scene.</param>
+      <param name="velocity">A vector that describes how the focus point is moving in the Scene at this point in time. This allows the HoloLens to compensate for both your head movement and the movement of the object in the Scene.</param>
     </member>
     <member name="M:UnityEngine.XR.WSA.HolographicSettings.SetFocusPointForFrame(UnityEngine.Vector3,UnityEngine.Vector3)">
       <summary>
-        <para>Sets a point in 3d space that is the focal point of the scene for the user for this frame. This helps improve the visual fidelity of content around this point. This must be set every frame.</para>
+        <para>Sets a point in 3d space that is the focal point of the Scene for the user for this frame. This helps improve the visual fidelity of content around this point. This must be set every frame.</para>
       </summary>
-      <param name="position">The position of the focal point in the scene, relative to the camera.</param>
+      <param name="position">The position of the focal point in the Scene, relative to the camera.</param>
       <param name="normal">Surface normal of the plane being viewed at the focal point.</param>
-      <param name="velocity">A vector that describes how the focus point is moving in the scene at this point in time. This allows the HoloLens to compensate for both your head movement and the movement of the object in the scene.</param>
+      <param name="velocity">A vector that describes how the focus point is moving in the Scene at this point in time. This allows the HoloLens to compensate for both your head movement and the movement of the object in the Scene.</param>
     </member>
     <member name="M:UnityEngine.XR.WSA.HolographicSettings.SetFocusPointForFrame(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">
       <summary>
-        <para>Sets a point in 3d space that is the focal point of the scene for the user for this frame. This helps improve the visual fidelity of content around this point. This must be set every frame.</para>
+        <para>Sets a point in 3d space that is the focal point of the Scene for the user for this frame. This helps improve the visual fidelity of content around this point. This must be set every frame.</para>
       </summary>
-      <param name="position">The position of the focal point in the scene, relative to the camera.</param>
+      <param name="position">The position of the focal point in the Scene, relative to the camera.</param>
       <param name="normal">Surface normal of the plane being viewed at the focal point.</param>
-      <param name="velocity">A vector that describes how the focus point is moving in the scene at this point in time. This allows the HoloLens to compensate for both your head movement and the movement of the object in the scene.</param>
+      <param name="velocity">A vector that describes how the focus point is moving in the Scene at this point in time. This allows the HoloLens to compensate for both your head movement and the movement of the object in the Scene.</param>
     </member>
     <member name="T:UnityEngine.XR.WSA.HolographicStreamerConnectionFailureReason">
       <summary>

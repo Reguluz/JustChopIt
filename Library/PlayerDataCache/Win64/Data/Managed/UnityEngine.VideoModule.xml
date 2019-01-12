@@ -623,12 +623,12 @@
     </member>
     <member name="F:UnityEngine.Video.VideoRenderMode.CameraFarPlane">
       <summary>
-        <para>Draw video content behind a camera's scene.</para>
+        <para>Draw video content behind a camera's Scene.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.Video.VideoRenderMode.CameraNearPlane">
       <summary>
-        <para>Draw video content in front of a camera's scene.</para>
+        <para>Draw video content in front of a camera's Scene.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.Video.VideoRenderMode.MaterialOverride">

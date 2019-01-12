@@ -11,11 +11,13 @@ namespace GamePlayer.Derivative
 		private readonly float _lifeTime = 0.1f;
 
 		private MeshFilter _meshFilter;
+		private MeshCollider _collider;
 		public Mesh[] Shadowmesh;
 
 		private void Awake()
 		{
 			_meshFilter = GetComponent<MeshFilter>();
+			_collider = GetComponent<MeshCollider>();
 		}
 
 		private void OnEnable()
@@ -72,6 +74,7 @@ namespace GamePlayer.Derivative
 		public void SetMesh(CharacterType characterType)
 		{
 			_meshFilter.mesh = Shadowmesh[(int)characterType];
+			_collider.sharedMesh = _meshFilter.mesh;
 		}
 		
 
