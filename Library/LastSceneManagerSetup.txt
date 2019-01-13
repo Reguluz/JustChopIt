@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/temp/TempGame.unity
+- path: Assets/Scenes/MatchingScene.unity
   isLoaded: 1
   isActive: 1
