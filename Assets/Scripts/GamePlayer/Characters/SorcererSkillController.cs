@@ -67,7 +67,7 @@ namespace GamePlayer.Characters
 
 		public override void SetCharacterType()
 		{
-			Properties.CharacterType = CharacterType.Shooter;
+			Properties.CharacterType = CharacterType.Sorcerer;
 		}
 
 	    private void Chant()
@@ -85,22 +85,27 @@ namespace GamePlayer.Characters
 	    private void MatrixRelease()
 	    {
 		    FxController.PlayFx("MatrixRelease");
-		    Collider[] target = Physics.OverlapSphere(transform.position, 5, 1 << LayerMask.NameToLayer("Player"));
+		    Collider[] target = Physics.OverlapSphere(transform.position, 8, 1 << LayerMask.NameToLayer("Player"));
 
-		    foreach (Collider player in target)
+		    if (target.Length > 0)
 		    {
-			    if (player.GetComponent<PhotonView>().ViewID != GetComponent<PhotonView>().ViewID)
+			    foreach (Collider player in target)
 			    {
-				    if (player.GetComponent<PlayerProperties>().StateType != PlayerStateType.Dead &&
-				        player.GetComponent<PlayerProperties>().StateType != PlayerStateType.Relieve)
+				    GameObject go = player.transform.parent.gameObject;
+				    PhotonView pv = go.GetPhotonView();
+				    if (pv.ViewID != GetComponent<PhotonView>().ViewID)
 				    {
-					    Debug.Log(gameObject.GetComponent<PhotonView>().ViewID+"法阵攻击到"+player.GetComponent<PhotonView>().ViewID);
-					    PhotonView pv = player.gameObject.GetPhotonView();
-					    pv.RPC("Hurt", RpcTarget.All, DamageType.Normal,PhotonView.ViewID);
-				    }
+					    if (go.GetComponent<PlayerProperties>().StateType != PlayerStateType.Dead &&
+					        go.GetComponent<PlayerProperties>().StateType != PlayerStateType.Relieve)
+					    {
+						    Debug.Log(gameObject.GetComponent<PhotonView>().ViewID+"法阵攻击到"+pv.ViewID);    
+						    pv.RPC("Hurt", RpcTarget.All, DamageType.Normal,PhotonView.ViewID);
+					    }
 			
+				    }
 			    }
 		    }
+		    
 	    }
 		
     }

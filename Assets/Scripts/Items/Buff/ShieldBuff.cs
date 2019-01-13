@@ -36,7 +36,7 @@ namespace Items.Buff
             player.BuffCo?.Sub(Coefficient);
             if (Owner.GetPhotonView().IsMine)
             {
-                PhotonNetwork.Destroy(Effect); 
+                Effect.GetPhotonView().RPC("DestoryEffect",RpcTarget.All);
             }
                 
         }

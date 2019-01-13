@@ -8,6 +8,7 @@ namespace GamePlayer
         //角色类型
         Shooter=0,
         Rusher=1,
-        Trapper=2
+        Trapper=2,
+        Sorcerer=3
     }
 }

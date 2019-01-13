@@ -7,6 +7,10 @@ public class NetOwnerFinder : MonoBehaviour,IPunInstantiateMagicCallback
 {
     public List<PhotonView> _playerCharacterlist = new List<PhotonView>();
 
+    public ParticleSystem DestoryParticle;
+    public GameObject[] BanedParticle;
+    public float DestoryDelay;
+
     private PhotonView _photonView;
     // Start is called before the first frame update
     void Awake()
@@ -25,7 +29,14 @@ public class NetOwnerFinder : MonoBehaviour,IPunInstantiateMagicCallback
         if (_playerCharacterlist.Count<1)
         {
             Init();
-        }           
+        }
+        else
+        {
+            foreach (GameObject system in BanedParticle)
+            {
+                system.SetActive(true);
+            }
+        }
     }
 
     public void Init()
@@ -36,6 +47,8 @@ public class NetOwnerFinder : MonoBehaviour,IPunInstantiateMagicCallback
         {
             _playerCharacterlist.Add(player.GetPhotonView());
         }
+
+        
 
     }
     // Update is called once per frame
@@ -59,4 +72,26 @@ public class NetOwnerFinder : MonoBehaviour,IPunInstantiateMagicCallback
             }
         }
     }
+
+    [PunRPC]
+    public void DestoryEffect()
+    {
+        if (DestoryParticle != null)
+        {
+            foreach (GameObject system in BanedParticle)
+            {
+                system.SetActive(false);
+            } 
+            DestoryParticle.Play();
+            DestoryParticle.gameObject.GetComponent<AudioSource>().Play();
+        }
+        Invoke(nameof(Destoryself),DestoryDelay);
+        
+    }
+
+    private void Destoryself()
+    {
+        PhotonNetwork.Destroy(gameObject);
+    }
+
 }

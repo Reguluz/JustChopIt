@@ -8,11 +8,13 @@ namespace GamePlayer.Characters
 	public class DiamondFxController : CharacterFxController {
 
 		public ParticleSystem RushfxParticle;
+		private AudioSource _rushfxClip;
 		public TrailRenderer RushTrail;
 
 		void OnEnable()
 		{
 			RushfxParticle.Stop();
+			_rushfxClip = RushfxParticle.gameObject.GetComponent<AudioSource>();
 			RushTrail.enabled = false;
 		}
 		public override void PlayFx(string fxname)
@@ -49,9 +51,11 @@ namespace GamePlayer.Characters
 			Debug.Log("Rush is "+isenable);
 			if(isenable){
 				RushfxParticle.Play();
+				_rushfxClip.Play();
 				RushTrail.enabled = true;
 			}else{
 				RushfxParticle.Stop();
+				_rushfxClip.Stop();
 				RushTrail.enabled = false;
 			}
 			

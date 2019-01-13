@@ -67,7 +67,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 0}
   viewIdField: 0
-  InstantiationId: 3
+  InstantiationId: 1
   isRuntimeInstantiated: 0
 --- !u!114 &1594805210586058304
 MonoBehaviour:
@@ -81,12 +81,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e74147e7fff84dd68b654f5af02bde54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Owner: {fileID: 0}
   Bufftype: 2
---- !u!4 &3313810961080904671 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 451034, guid: 6821ad6df12f689468bd912e29582716, type: 3}
-  m_PrefabInstance: {fileID: 3313810961080715781}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3313810961080715781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94,6 +90,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1279930162440067756}
     m_Modifications:
+    - target: {fileID: 117644, guid: 6821ad6df12f689468bd912e29582716, type: 3}
+      propertyPath: m_Name
+      value: PowerupShield
+      objectReference: {fileID: 0}
     - target: {fileID: 451034, guid: 6821ad6df12f689468bd912e29582716, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -138,10 +138,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 117644, guid: 6821ad6df12f689468bd912e29582716, type: 3}
-      propertyPath: m_Name
-      value: PowerupShield
-      objectReference: {fileID: 0}
     - target: {fileID: 451034, guid: 6821ad6df12f689468bd912e29582716, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
@@ -151,6 +147,30 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 451034, guid: 6821ad6df12f689468bd912e29582716, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 422688, guid: 6821ad6df12f689468bd912e29582716, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 422688, guid: 6821ad6df12f689468bd912e29582716, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 422688, guid: 6821ad6df12f689468bd912e29582716, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 446322, guid: 6821ad6df12f689468bd912e29582716, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 446322, guid: 6821ad6df12f689468bd912e29582716, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 446322, guid: 6821ad6df12f689468bd912e29582716, type: 3}
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
@@ -182,18 +202,6 @@ PrefabInstance:
       propertyPath: InitialModule.startRotationY.minMaxState
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 446322, guid: 6821ad6df12f689468bd912e29582716, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 446322, guid: 6821ad6df12f689468bd912e29582716, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 446322, guid: 6821ad6df12f689468bd912e29582716, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 19869486, guid: 6821ad6df12f689468bd912e29582716, type: 3}
       propertyPath: simulationSpeed
       value: 0.25
@@ -202,17 +210,11 @@ PrefabInstance:
       propertyPath: simulationSpeed
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 422688, guid: 6821ad6df12f689468bd912e29582716, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 422688, guid: 6821ad6df12f689468bd912e29582716, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 422688, guid: 6821ad6df12f689468bd912e29582716, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6821ad6df12f689468bd912e29582716, type: 3}
+--- !u!4 &3313810961080904671 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 451034, guid: 6821ad6df12f689468bd912e29582716,
+    type: 3}
+  m_PrefabInstance: {fileID: 3313810961080715781}
+  m_PrefabAsset: {fileID: 0}

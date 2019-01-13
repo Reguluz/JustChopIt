@@ -11,12 +11,14 @@ namespace GamePlayer.Derivative
 	    [Tooltip("半径和粒子StartSize的比例为2.5:1")]
         public float EffectRadius = 10;
 	    private MeshRenderer _mesh;
-
+		private AudioSource _audioSource;
+			
 	    private void Awake()
 	    {
 		    _mesh = GetComponent<MeshRenderer>();
 		    var trapParticleMain = TrapParticle.main;
 		    trapParticleMain.startSize = EffectRadius / 2.5f;
+		    _audioSource = GetComponent<AudioSource>();
 	    }
 
 	    private void OnEnable()
@@ -43,6 +45,7 @@ namespace GamePlayer.Derivative
             if (photonView.IsMine)
 			{
 				Debug.Log("陷阱生效");
+				_audioSource.Play();
 				//命中检测
 				Collider[] players =
 					Physics.OverlapSphere(transform.position, EffectRadius, 1 << LayerMask.NameToLayer("Player"));

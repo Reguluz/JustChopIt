@@ -265,6 +265,11 @@ namespace UI
 							//PlayerPrefs.SetInt("Charactertype", 1);
 							LocalSettings.SetCharacter(CharacterType.Trapper);
 							break;
+						case "SorcererToggle":
+							
+							//PlayerPrefs.SetInt("Charactertype", 1);
+							LocalSettings.SetCharacter(CharacterType.Sorcerer);
+							break;
 					}
 					break;
 				}

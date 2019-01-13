@@ -8,6 +8,8 @@ namespace GamePlayer.Derivative
 		//设置移动速度和生命时间
 		private readonly float _moveSpeed = 100;
 		private readonly float _lifeTime = 2;
+		public AudioSource Hit;
+		
 		
 
 		private void OnEnable()
@@ -30,6 +32,7 @@ namespace GamePlayer.Derivative
 			if (photonView.IsMine)
 			{
 				Debug.Log("命中");
+				
 				//命中类型检测
 				if (other.CompareTag("PlayerModel"))
 				{
@@ -39,6 +42,7 @@ namespace GamePlayer.Derivative
 					//排除自伤
 					if (enemy.GetComponent<PhotonView>().ViewID != CreatorId)
 					{
+						Hit.Play();
 						//检测状态（非死亡状态）
 						if (enemy.GetComponent<PlayerProperties>().StateType != PlayerStateType.Dead &&
 						    enemy.GetComponent<PlayerProperties>().StateType != PlayerStateType.Relieve)

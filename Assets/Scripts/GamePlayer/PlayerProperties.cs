@@ -35,6 +35,7 @@ namespace GamePlayer
 
 		//fx
 		public ParticleSystem Deadparticles;
+		private CharacterFxController usefordeath;
 
 		private GameObject _meshModel;
 		//public _2dxFX_GoldFX AvatarFx;
@@ -63,10 +64,11 @@ namespace GamePlayer
 			_uiController = GameObject.Find("GameCanvas").GetComponent<UIController>();
 			_photonView = GetComponent<PhotonView>();
 			Controller = GetComponent<GamePlayerController>();
+			usefordeath = GetComponent<CharacterFxController>();
 			User = _photonView.Owner;
 			_board = GameObject.Find("ScoreBoard").GetComponent<GameBoard>();
 			_board.AddEntry(this.gameObject);
-			Dead();
+			StartCoroutine(FirstRelieve());
 		}
 
 		
@@ -136,9 +138,10 @@ namespace GamePlayer
 			
 			StateType = PlayerStateType.Dead;
 			
-			_meshModel.SetActive(true);
+
 			//FXrenderer.enabled = false;
-			Deadparticles.Play();
+			//Deadparticles.Play();
+			usefordeath.DeadFx();
 			_meshModel.SetActive(false);
 			_photonView.RPC("RemoveAllBuff",RpcTarget.All);
 			
@@ -185,11 +188,38 @@ namespace GamePlayer
 			}
 			//AvatarFx.enabled = false;
 			Controller.Rebuild();
+			usefordeath.RebuildFx();
 			//_photonView.RPC("Rebuild",RpcTarget.All);
 			StateType = PlayerStateType.Alive;
 			_board.DataRefresh(this);
-			
+
 		}
+		
+		IEnumerator FirstRelieve()
+		{
+			StateType = PlayerStateType.Dead;
+			_meshModel.SetActive(false);
+			_photonView.RPC("RemoveAllBuff",RpcTarget.All);
+			//屏幕特效
+			if (_photonView.IsMine)
+			{
+				_uiController.DisableSkill();
+				
+			}
+			yield return new WaitForSeconds(1f);
+			if (_photonView.IsMine)
+			{
+				transform.position = Map.GetRelievePoint();	
+				_uiController.AbleSkill();
+			}
+			_meshModel.SetActive(true);
+			Controller.Rebuild();
+			usefordeath.RebuildFx();
+			//_photonView.RPC("Rebuild",RpcTarget.All);
+			StateType = PlayerStateType.Alive;
+			_board.DataRefresh(this);
+		}
+		
 	
 		private void Relieve()
 		{

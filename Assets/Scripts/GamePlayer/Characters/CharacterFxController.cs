@@ -14,6 +14,16 @@ namespace GamePlayer.Characters
         
         public MeshRenderer Mesh;
         public ParticleSystem SkillReleaseParticle;
+        public ParticleSystem DeadParticle;
+        private AudioSource _skillReleaseClip;
+        private AudioSource _deadfxClip;
+
+
+        private void Awake()
+        {
+            _skillReleaseClip = SkillReleaseParticle.gameObject.GetComponent<AudioSource>();
+            _deadfxClip = DeadParticle.gameObject.GetComponent<AudioSource>();
+        }
 
         public virtual void PlayFx(string fxname)
         {
@@ -41,6 +51,8 @@ namespace GamePlayer.Characters
         public void DeadFx()
         {		
             Mesh.material = Vanish;
+            DeadParticle.Play();
+            _deadfxClip.Play();
         }
 
         //[PunRPC]
@@ -63,10 +75,12 @@ namespace GamePlayer.Characters
         void OnEnable()
         {
             SkillReleaseParticle.Stop();
+           
         }
         public void SkillRelease()
         {
             SkillReleaseParticle.Play();
+            _skillReleaseClip.Play();
         }
     }
 }
